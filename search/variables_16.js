@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['za_3023',['za',['../structNvmeZoneDescr.html#aad408ac3045c84d106809b7a2b684afd',1,'NvmeZoneDescr']]],
+  ['zasl_3024',['zasl',['../structFemuCtrl.html#a8dc93dbc4b721983afa203722a769e7a',1,'FemuCtrl::zasl()'],['../structNvmeIdCtrlZoned.html#a4c7dc94b9701b0dc6ef3b8875e1e8820',1,'NvmeIdCtrlZoned::zasl()']]],
+  ['zasl_5fbs_3025',['zasl_bs',['../structFemuCtrl.html#ac6e80e0bc39d8878bee79720f0733909',1,'FemuCtrl']]],
+  ['zcap_3026',['zcap',['../structNvmeZoneDescr.html#a5360d246a3f047192480695171e0d37f',1,'NvmeZoneDescr']]],
+  ['zd_5fextension_5fsize_3027',['zd_extension_size',['../structFemuCtrl.html#ac31c5055e8db3e4124d1bceb15d16f6b',1,'FemuCtrl::zd_extension_size()'],['../structNvmeNamespaceParams.html#a63ad5d3228b90d35df95b2d71fda6850',1,'NvmeNamespaceParams::zd_extension_size()']]],
+  ['zd_5fextensions_3028',['zd_extensions',['../structFemuCtrl.html#aad9ab3272256c2c2a4dea360e3392032',1,'FemuCtrl']]],
+  ['zdes_3029',['zdes',['../structNvmeLBAFE.html#ad42d0fa49eccc65d5e9510de7dd38c53',1,'NvmeLBAFE']]],
+  ['zoc_3030',['zoc',['../structNvmeIdNsZoned.html#a9e353280dd471a8ea6cb2c96ff6018e8',1,'NvmeIdNsZoned']]],
+  ['zone_3031',['zone',['../structzns__zone__reset__ctx.html#ac114730fcfcfe48a1575e98b75e43a39',1,'zns_zone_reset_ctx']]],
+  ['zone_5farray_3032',['zone_array',['../structFemuCtrl.html#aaad2dc59565b90a54c8b118032d67801',1,'FemuCtrl']]],
+  ['zone_5fcap_5fbs_3033',['zone_cap_bs',['../structFemuCtrl.html#ac3284df15757fa3c9e773199fa426d51',1,'FemuCtrl::zone_cap_bs()'],['../structNvmeNamespaceParams.html#ae9f053b3bb9a0d3b3c759ae18de00ccd',1,'NvmeNamespaceParams::zone_cap_bs()']]],
+  ['zone_5fcapacity_3034',['zone_capacity',['../structFemuCtrl.html#aacb80a44168a3ad90772b9e623dfed94',1,'FemuCtrl']]],
+  ['zone_5fsize_3035',['zone_size',['../structFemuCtrl.html#adaa9832711cd5744244c2cd80e0b027c',1,'FemuCtrl']]],
+  ['zone_5fsize_5fbs_3036',['zone_size_bs',['../structFemuCtrl.html#abb0af9e86a49398d043a81869f2c89da',1,'FemuCtrl::zone_size_bs()'],['../structNvmeNamespaceParams.html#a2b54d06db984d0841661eb1586d722fc',1,'NvmeNamespaceParams::zone_size_bs()']]],
+  ['zone_5fsize_5flog2_3037',['zone_size_log2',['../structFemuCtrl.html#afdc1d22ac9fbea382272a39bfdd52db7',1,'FemuCtrl']]],
+  ['zoned_3038',['zoned',['../structFemuCtrl.html#a22f0cfaa256d6bc65497853249789c83',1,'FemuCtrl::zoned()'],['../structNvmeNamespaceParams.html#ac77d68baa3a22e0639a4ef8e79f74c01',1,'NvmeNamespaceParams::zoned()']]],
+  ['zs_3039',['zs',['../structNvmeZoneDescr.html#a8a7ee2fa67d9368e1a3eb9b8a72f0759',1,'NvmeZoneDescr']]],
+  ['zslba_3040',['zslba',['../structNvmeZoneDescr.html#a626c7b988cfde334d69cae1ff7a9fe2c',1,'NvmeZoneDescr']]],
+  ['zsze_3041',['zsze',['../structNvmeLBAFE.html#aa8a5633997607babbd25a84cc3ab2495',1,'NvmeLBAFE']]],
+  ['zt_3042',['zt',['../structNvmeZoneDescr.html#a068bbc643247a8243a5c8aaaa7e9380b',1,'NvmeZoneDescr']]]
+];

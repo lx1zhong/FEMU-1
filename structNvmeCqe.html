@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: NvmeCqe结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structNvmeCqe.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">NvmeCqe结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="nvme_8h_source.html">nvme.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:aa1a8c5fb6dd8666b85f7f82cd06ff072"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a540eba82d65ef6fb416d4701e3d66ecc"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a258fc6d5a655a921378d5ddcb4241896"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="structNvmeCqe.html#ac2de6a8a4ffb6b1dffe582e3aa3c6466">result</a></td></tr>
+<tr class="separator:a258fc6d5a655a921378d5ddcb4241896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26fc753b047cfd289da568a136712d22"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="structNvmeCqe.html#a9dfc116d1df13c5ede000611fa2e64ec">rsvd</a></td></tr>
+<tr class="separator:a26fc753b047cfd289da568a136712d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540eba82d65ef6fb416d4701e3d66ecc"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structNvmeCqe.html#a04d90512c54de01e2e60649ecd1ea2e9">n</a></td></tr>
+<tr class="separator:a540eba82d65ef6fb416d4701e3d66ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10f0ce9bedd1dbb886742fa8e5ced78"><td class="memItemLeft" >&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structNvmeCqe.html#a158d1c5257810a7741bcf54ce08b0341">res64</a></td></tr>
+<tr class="separator:aa10f0ce9bedd1dbb886742fa8e5ced78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a8c5fb6dd8666b85f7f82cd06ff072"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aa1a8c5fb6dd8666b85f7f82cd06ff072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4707dde71101275a917c49286b4178c4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCqe.html#a4707dde71101275a917c49286b4178c4">sq_head</a></td></tr>
+<tr class="separator:a4707dde71101275a917c49286b4178c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7717de66db45f6ca9c69bc3880825aee"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCqe.html#a7717de66db45f6ca9c69bc3880825aee">sq_id</a></td></tr>
+<tr class="separator:a7717de66db45f6ca9c69bc3880825aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e87b5e0e44fd97e1e92f41c851eb764"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCqe.html#a8e87b5e0e44fd97e1e92f41c851eb764">cid</a></td></tr>
+<tr class="separator:a8e87b5e0e44fd97e1e92f41c851eb764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30104c7014aee1c55b68672efc0c143"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCqe.html#af30104c7014aee1c55b68672efc0c143">status</a></td></tr>
+<tr class="separator:af30104c7014aee1c55b68672efc0c143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="aa1a8c5fb6dd8666b85f7f82cd06ff072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a8c5fb6dd8666b85f7f82cd06ff072">&#9670;&nbsp;</a></span>@16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e87b5e0e44fd97e1e92f41c851eb764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e87b5e0e44fd97e1e92f41c851eb764">&#9670;&nbsp;</a></span>cid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCqe::cid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04d90512c54de01e2e60649ecd1ea2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d90512c54de01e2e60649ecd1ea2e9">&#9670;&nbsp;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }  NvmeCqe::n</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a158d1c5257810a7741bcf54ce08b0341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158d1c5257810a7741bcf54ce08b0341">&#9670;&nbsp;</a></span>res64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCqe::res64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2de6a8a4ffb6b1dffe582e3aa3c6466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2de6a8a4ffb6b1dffe582e3aa3c6466">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCqe::result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9dfc116d1df13c5ede000611fa2e64ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dfc116d1df13c5ede000611fa2e64ec">&#9670;&nbsp;</a></span>rsvd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCqe::rsvd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4707dde71101275a917c49286b4178c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4707dde71101275a917c49286b4178c4">&#9670;&nbsp;</a></span>sq_head</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCqe::sq_head</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7717de66db45f6ca9c69bc3880825aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7717de66db45f6ca9c69bc3880825aee">&#9670;&nbsp;</a></span>sq_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCqe::sq_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af30104c7014aee1c55b68672efc0c143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30104c7014aee1c55b68672efc0c143">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCqe::status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="nvme_8h_source.html">nvme.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structNvmeCqe.html">NvmeCqe</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: lib/rte_ring.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('rte__ring_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">rte_ring.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;inttypes.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;sys/queue.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="rte__ring_8h_source.html">../inc/rte_ring.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+rte_ring.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c__incl.png" border="0" usemap="#lib_2rte__ring_8c" alt=""/></div>
+<map name="lib_2rte__ring_8c" id="lib_2rte__ring_8c">
+<area shape="rect" title=" " alt="" coords="335,5,438,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,101,107"/>
+<area shape="rect" title=" " alt="" coords="125,80,200,107"/>
+<area shape="rect" title=" " alt="" coords="119,155,185,181"/>
+<area shape="rect" title=" " alt="" coords="571,80,645,107"/>
+<area shape="rect" title=" " alt="" coords="670,80,741,107"/>
+<area shape="rect" title=" " alt="" coords="210,155,281,181"/>
+<area shape="rect" title=" " alt="" coords="765,80,851,107"/>
+<area shape="rect" title=" " alt="" coords="305,155,373,181"/>
+<area shape="rect" title=" " alt="" coords="881,155,981,181"/>
+<area shape="rect" href="rte__ring_8h.html" title=" " alt="" coords="377,80,495,107"/>
+<area shape="rect" title=" " alt="" coords="397,155,499,181"/>
+<area shape="rect" href="rte__atomic__x86_8h.html" title=" " alt="" coords="523,155,658,181"/>
+<area shape="rect" href="rte__branch__prediction_8h.html" title=" " alt="" coords="682,155,857,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a9d095bc1979e862ea41c3222f153715c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a9d095bc1979e862ea41c3222f153715c">POWEROF2</a>(x)&#160;&#160;&#160;((((x)-1) &amp; (x)) == 0)</td></tr>
+<tr class="separator:a9d095bc1979e862ea41c3222f153715c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ac29f8523d355c107377858bdeb468486"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486">rte_ring_get_memsize</a> (unsigned count)</td></tr>
+<tr class="separator:ac29f8523d355c107377858bdeb468486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a44f25853c926ac1b29562857244366"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366">rte_ring_init</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *r, const char *name, unsigned count, unsigned flags)</td></tr>
+<tr class="separator:a7a44f25853c926ac1b29562857244366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122812947c00f9ed3066232accf5fa5a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a">rte_ring_create</a> (const char *name, unsigned count, unsigned flags)</td></tr>
+<tr class="separator:a122812947c00f9ed3066232accf5fa5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564e012c1eb4ae08f9eea3acfd08b377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a564e012c1eb4ae08f9eea3acfd08b377">rte_ring_free</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *r)</td></tr>
+<tr class="separator:a564e012c1eb4ae08f9eea3acfd08b377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c464281266543ebc0766902467c69b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a09c464281266543ebc0766902467c69b">rte_ring_dump</a> (FILE *f, const struct <a class="el" href="structrte__ring.html">rte_ring</a> *r)</td></tr>
+<tr class="separator:a09c464281266543ebc0766902467c69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc92444f7239ca27c5a89de99f5f4ac"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a6bc92444f7239ca27c5a89de99f5f4ac">femu_ring_create</a> (enum <a class="el" href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7">femu_ring_type</a> type, size_t count)</td></tr>
+<tr class="separator:a6bc92444f7239ca27c5a89de99f5f4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4026d87730ebef2cbcd08a42778e80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#aae4026d87730ebef2cbcd08a42778e80">femu_ring_free</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *ring)</td></tr>
+<tr class="separator:aae4026d87730ebef2cbcd08a42778e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ef17a77ac3deecdb8a1fb71b6bdf63"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a96ef17a77ac3deecdb8a1fb71b6bdf63">femu_ring_count</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *ring)</td></tr>
+<tr class="separator:a96ef17a77ac3deecdb8a1fb71b6bdf63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afc06d02f63e84fe1569c99955af57a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#a3afc06d02f63e84fe1569c99955af57a">femu_ring_enqueue</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *ring, void **objs, size_t count)</td></tr>
+<tr class="separator:a3afc06d02f63e84fe1569c99955af57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2417e0e85ffd0e61ec4b0ee263ab809"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rte__ring_8c.html#ab2417e0e85ffd0e61ec4b0ee263ab809">femu_ring_dequeue</a> (struct <a class="el" href="structrte__ring.html">rte_ring</a> *ring, void **objs, size_t count)</td></tr>
+<tr class="separator:ab2417e0e85ffd0e61ec4b0ee263ab809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a9d095bc1979e862ea41c3222f153715c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d095bc1979e862ea41c3222f153715c">&#9670;&nbsp;</a></span>POWEROF2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POWEROF2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((((x)-1) &amp; (x)) == 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a96ef17a77ac3deecdb8a1fb71b6bdf63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ef17a77ac3deecdb8a1fb71b6bdf63">&#9670;&nbsp;</a></span>femu_ring_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t femu_ring_count </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>ring</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the number of objects in the ring.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring</td><td>the ring.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of objects in the ring. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34">rte_ring_count</a>((<span class="keyword">struct</span> <a class="code" href="structrte__ring.html">rte_ring</a> *)ring);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_cgraph.png" border="0" usemap="#rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_cgraph" id="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34" title=" " alt="" coords="184,5,299,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_icgraph.png" border="0" usemap="#rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_icgraph" id="rte__ring_8c_a96ef17a77ac3deecdb8a1fb71b6bdf63_icgraph">
+<area shape="rect" title=" " alt="" coords="1689,31,1820,57"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title=" " alt="" coords="1517,5,1601,32"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title=" " alt="" coords="1477,56,1641,83"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title=" " alt="" coords="1342,5,1414,32"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="1170,5,1237,32"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title=" " alt="" coords="914,5,1075,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="667,5,861,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="472,5,579,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="229,5,353,32"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title=" " alt="" coords="1327,56,1429,83"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1128,56,1279,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="909,56,1080,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="693,56,835,83"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,56,619,83"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,56,384,83"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,56,149,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6bc92444f7239ca27c5a89de99f5f4ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc92444f7239ca27c5a89de99f5f4ac">&#9670;&nbsp;</a></span>femu_ring_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>* femu_ring_create </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7">femu_ring_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a ring.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Type for the ring. (FEMU_RING_TYPE_SP_SC or FEMU_RING_TYPE_MP_SC). </td></tr>
+    <tr><td class="paramname">count</td><td>Size of the ring in elements. </td></tr>
+    <tr><td class="paramname">socket_id</td><td>Socket ID to allocate memory on, or FEMU_ENV_SOCKET_ID_ANY for any socket.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>a pointer to the created ring. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">char</span> ring_name[64];</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">static</span> uint32_t ring_num = 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> = 0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7ab01c5582b0ca471ab9c188d7d1580c05">FEMU_RING_TYPE_SP_SC</a>:</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> = <a class="code" href="rte__ring_8h.html#a127c66adbeab4653a47649993b94f35b">RING_F_SP_ENQ</a> | <a class="code" href="rte__ring_8h.html#a421a61b2f94cdf65b3a6ac146c492fb9">RING_F_SC_DEQ</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7ad2388957eaf21c85bc07f6044f60af88">FEMU_RING_TYPE_MP_SC</a>:</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> = <a class="code" href="rte__ring_8h.html#a421a61b2f94cdf65b3a6ac146c492fb9">RING_F_SC_DEQ</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7a4d55236339bad776b055208601d2e4d4">FEMU_RING_TYPE_MP_MC</a>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> = 0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    snprintf(ring_name, <span class="keyword">sizeof</span>(ring_name), <span class="stringliteral">&quot;ring_%u_%d&quot;</span>,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;         __sync_fetch_and_add(&amp;ring_num, 1), getpid());</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a">rte_ring_create</a>(ring_name, count, <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a>);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_cgraph.png" border="0" usemap="#rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_cgraph" id="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,141,50"/>
+<area shape="rect" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a" title=" " alt="" coords="189,24,309,50"/>
+<area shape="rect" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1" title=" " alt="" coords="572,24,703,50"/>
+<area shape="rect" href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486" title=" " alt="" coords="357,24,524,50"/>
+<area shape="rect" href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366" title=" " alt="" coords="391,74,491,101"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_icgraph.png" border="0" usemap="#rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_icgraph" id="rte__ring_8c_a6bc92444f7239ca27c5a89de99f5f4ac_icgraph">
+<area shape="rect" title=" " alt="" coords="1275,5,1411,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1076,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab2417e0e85ffd0e61ec4b0ee263ab809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2417e0e85ffd0e61ec4b0ee263ab809">&#9670;&nbsp;</a></span>femu_ring_dequeue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t femu_ring_dequeue </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>ring</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>objs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dequeue count objects from the ring into the array objs.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring</td><td>A pointer to the ring. </td></tr>
+    <tr><td class="paramname">objs</td><td>A pointer to the array to be dequeued. </td></tr>
+    <tr><td class="paramname">count</td><td>Maximum number of elements to be dequeued.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of objects dequeued which is less than 'count'. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="rte__ring_8h.html#a8742d4b89ce43dbd93cc2ef48518ccf0">rte_ring_dequeue_burst</a>((<span class="keyword">struct</span> <a class="code" href="structrte__ring.html">rte_ring</a> *)ring, objs, count, NULL);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_cgraph.png" border="0" usemap="#rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_cgraph" alt=""/></div>
+<map name="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_cgraph" id="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="rte__ring_8h.html#a8742d4b89ce43dbd93cc2ef48518ccf0" title=" " alt="" coords="204,31,379,57"/>
+<area shape="rect" href="rte__ring_8h.html#a201b5c512389dd58216906866aba1ec5" title=" " alt="" coords="427,31,599,57"/>
+<area shape="rect" href="rte__ring_8h.html#a3a4127db74610c522be2a4f8f70c033d" title=" " alt="" coords="647,5,853,32"/>
+<area shape="rect" href="rte__ring_8h.html#a269bf4b0dad1a7d2bb0396350f5e7976" title=" " alt="" coords="703,56,797,83"/>
+<area shape="rect" href="rte__atomic__x86_8h.html#a092485d3d43a2cd7ee61a1c2d2178d31" title=" " alt="" coords="901,5,1064,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_icgraph.png" border="0" usemap="#rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_icgraph" alt=""/></div>
+<map name="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_icgraph" id="rte__ring_8c_ab2417e0e85ffd0e61ec4b0ee263ab809_icgraph">
+<area shape="rect" title=" " alt="" coords="1689,31,1840,57"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title=" " alt="" coords="1517,5,1601,32"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title=" " alt="" coords="1477,56,1641,83"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title=" " alt="" coords="1342,5,1414,32"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="1170,5,1237,32"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title=" " alt="" coords="914,5,1075,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="667,5,861,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="472,5,579,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="229,5,353,32"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title=" " alt="" coords="1327,56,1429,83"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1128,56,1279,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="909,56,1080,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="693,56,835,83"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,56,619,83"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,56,384,83"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,56,149,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3afc06d02f63e84fe1569c99955af57a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afc06d02f63e84fe1569c99955af57a">&#9670;&nbsp;</a></span>femu_ring_enqueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t femu_ring_enqueue </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>ring</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>objs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Queue the array of objects (with length count) on the ring.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring</td><td>A pointer to the ring. </td></tr>
+    <tr><td class="paramname">objs</td><td>A pointer to the array to be queued. </td></tr>
+    <tr><td class="paramname">count</td><td>Length count of the array of objects.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the number of objects enqueued. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d">rte_ring_enqueue_bulk</a>((<span class="keyword">struct</span> <a class="code" href="structrte__ring.html">rte_ring</a> *)ring, objs, count, NULL);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_cgraph.png" border="0" usemap="#rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_cgraph" id="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d" title=" " alt="" coords="204,31,375,57"/>
+<area shape="rect" href="rte__ring_8h.html#a388f737bcdf0a8ee4cf6f75464ca5979" title=" " alt="" coords="423,31,595,57"/>
+<area shape="rect" href="rte__ring_8h.html#a22ab749e8f41b8e232a5c54a5c100d16" title=" " alt="" coords="643,5,848,32"/>
+<area shape="rect" href="rte__ring_8h.html#a269bf4b0dad1a7d2bb0396350f5e7976" title=" " alt="" coords="698,56,793,83"/>
+<area shape="rect" href="rte__atomic__x86_8h.html#a092485d3d43a2cd7ee61a1c2d2178d31" title=" " alt="" coords="896,5,1059,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_icgraph.png" border="0" usemap="#rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_icgraph" id="rte__ring_8c_a3afc06d02f63e84fe1569c99955af57a_icgraph">
+<area shape="rect" title=" " alt="" coords="1683,31,1833,57"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title=" " alt="" coords="1514,5,1598,32"/>
+<area shape="rect" href="nvme-io_8c.html#aaa8fe64369c3e7b33785cabed5a4cbde" title=" " alt="" coords="1477,56,1635,83"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title=" " alt="" coords="1342,5,1414,32"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="1170,5,1237,32"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title=" " alt="" coords="914,5,1075,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="667,5,861,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="472,5,579,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="229,5,353,32"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title=" " alt="" coords="1327,56,1429,83"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1128,56,1279,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="909,56,1080,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="693,56,835,83"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,56,619,83"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,56,384,83"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,56,149,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aae4026d87730ebef2cbcd08a42778e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4026d87730ebef2cbcd08a42778e80">&#9670;&nbsp;</a></span>femu_ring_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void femu_ring_free </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>ring</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free the ring.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring</td><td>Ring to free. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="rte__ring_8c.html#a564e012c1eb4ae08f9eea3acfd08b377">rte_ring_free</a>((<span class="keyword">struct</span> <a class="code" href="structrte__ring.html">rte_ring</a> *)ring);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_cgraph.png" border="0" usemap="#rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_cgraph" alt=""/></div>
+<map name="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_cgraph" id="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,127,32"/>
+<area shape="rect" href="rte__ring_8c.html#a564e012c1eb4ae08f9eea3acfd08b377" title=" " alt="" coords="175,5,280,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_icgraph.png" border="0" usemap="#rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_icgraph" alt=""/></div>
+<map name="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_icgraph" id="rte__ring_8c_aae4026d87730ebef2cbcd08a42778e80_icgraph">
+<area shape="rect" title=" " alt="" coords="520,5,641,32"/>
+<area shape="rect" href="femu_8c.html#a749caeadb2968b6c63c5f1b2d646eb5a" title=" " alt="" coords="313,5,472,32"/>
+<area shape="rect" href="femu_8c.html#a340aa0343b4141d520e32a9e4bc303a0" title=" " alt="" coords="177,5,265,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a122812947c00f9ed3066232accf5fa5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122812947c00f9ed3066232accf5fa5a">&#9670;&nbsp;</a></span>rte_ring_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>* rte_ring_create </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a new ring named <em>name</em> in memory.</p>
+<p>This function uses <code>memzone_reserve()</code> to allocate memory. Then it calls <a class="el" href="rte__ring_8h.html#a7a44f25853c926ac1b29562857244366">rte_ring_init()</a> to initialize an empty ring.</p>
+<p>The new ring size is set to <em>count</em>, which must be a power of two. Water marking is disabled by default. The real usable ring size is <em>count-1</em> instead of <em>count</em> to differentiate a free ring from an empty ring.</p>
+<p>The ring is added in RTE_TAILQ_RING list.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the ring. </td></tr>
+    <tr><td class="paramname">count</td><td>The size of the ring (must be a power of 2). </td></tr>
+    <tr><td class="paramname">socket_id</td><td>The <em>socket_id</em> argument is the socket identifier in case of NUMA. The value can be <em>SOCKET_ID_ANY</em> if there is no NUMA constraint for the reserved zone. </td></tr>
+    <tr><td class="paramname">flags</td><td>An OR of the following:<ul>
+<li>RING_F_SP_ENQ: If this flag is set, the default behavior when using <code><a class="el" href="rte__ring_8h.html#aa1e5c7ff81ee177734288a1698b1106e">rte_ring_enqueue()</a></code> or <code><a class="el" href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d">rte_ring_enqueue_bulk()</a></code> is "single-producer". Otherwise, it is "multi-producers".</li>
+<li>RING_F_SC_DEQ: If this flag is set, the default behavior when using <code><a class="el" href="rte__ring_8h.html#a896024f865225e243f2c66c02825a9e2">rte_ring_dequeue()</a></code> or <code><a class="el" href="rte__ring_8h.html#a558ff95b944832acf8de439c769638f3">rte_ring_dequeue_bulk()</a></code> is "single-consumer". Otherwise, it is "multi-consumers". </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>On success, the pointer to the new allocated ring. NULL on error with rte_errno set appropriately. Possible errno values include:<ul>
+<li>E_RTE_NO_CONFIG - function could not get pointer to rte_config structure</li>
+<li>E_RTE_SECONDARY - function was called from a secondary process instance</li>
+<li>EINVAL - count provided is not a power of 2</li>
+<li>ENOSPC - the maximum number of memzones has already been allocated</li>
+<li>EEXIST - a memzone with the same name already exists</li>
+<li>ENOMEM - no appropriate memory area found in which to create memzone </li>
+</ul>
+</dd></dl>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">char</span> mz_name[<a class="code" href="rte__ring_8h.html#a54967fd85fe8fe16fe0b2925e5ceb170">RTE_NAMESIZE</a>];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">struct </span><a class="code" href="structrte__ring.html">rte_ring</a> *r;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    ssize_t ring_size;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> requested_count = count;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">int</span> ret;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">/* for an exact size ring, round up from count to a power of two */</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> &amp; <a class="code" href="rte__ring_8h.html#a136e9157866738284259cf2d64a06783">RING_F_EXACT_SZ</a>)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        count = <a class="code" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1">rte_align32pow2</a>(count + 1);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    ring_size = <a class="code" href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486">rte_ring_get_memsize</a>(count);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (ring_size &lt; 0) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ret = snprintf(mz_name, <span class="keyword">sizeof</span>(mz_name), <span class="stringliteral">&quot;%s%s&quot;</span>,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="rte__ring_8h.html#a2ef0470e7e801a61031e9e7f2994914c">RTE_RING_MZ_PREFIX</a>, <a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0 || ret &gt;= (<span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(mz_name)) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    r = (<span class="keyword">struct </span><a class="code" href="structrte__ring.html">rte_ring</a> *)valloc(ring_size);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366">rte_ring_init</a>(r, <a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>, requested_count, <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_cgraph.png" border="0" usemap="#rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_cgraph" id="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,125,50"/>
+<area shape="rect" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1" title=" " alt="" coords="388,24,519,50"/>
+<area shape="rect" href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486" title=" " alt="" coords="173,24,340,50"/>
+<area shape="rect" href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366" title=" " alt="" coords="207,74,307,101"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_icgraph.png" border="0" usemap="#rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_icgraph" id="rte__ring_8c_a122812947c00f9ed3066232accf5fa5a_icgraph">
+<area shape="rect" title=" " alt="" coords="1459,5,1579,32"/>
+<area shape="rect" href="rte__ring_8c.html#a6bc92444f7239ca27c5a89de99f5f4ac" title=" " alt="" coords="1275,5,1411,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1076,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a09c464281266543ebc0766902467c69b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c464281266543ebc0766902467c69b">&#9670;&nbsp;</a></span>rte_ring_dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rte_ring_dump </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dump the status of the ring to a file.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>A pointer to a file for output </td></tr>
+    <tr><td class="paramname">r</td><td>A pointer to the ring structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    fprintf(f, <span class="stringliteral">&quot;ring &lt;%s&gt;@%p\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>, r);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  flags=%x\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  size=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#a87cbbf8a4319375d954819403ff292d7">size</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  capacity=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#a5c1b5e68d4b572c4d95c4180937e377c">capacity</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  ct=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">cons</a>.<a class="code" href="structrte__ring__headtail.html#aba2365e2b056da3bac44e83a1f45de40">tail</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  ch=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">cons</a>.<a class="code" href="structrte__ring__headtail.html#a80db8266417a562dc74a4794fc615c4f">head</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  pt=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">prod</a>.<a class="code" href="structrte__ring__headtail.html#aba2365e2b056da3bac44e83a1f45de40">tail</a>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  ph=%&quot;</span>PRIu32<span class="stringliteral">&quot;\n&quot;</span>, r-&gt;<a class="code" href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">prod</a>.<a class="code" href="structrte__ring__headtail.html#a80db8266417a562dc74a4794fc615c4f">head</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  used=%u\n&quot;</span>, <a class="code" href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34">rte_ring_count</a>(r));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    fprintf(f, <span class="stringliteral">&quot;  avail=%u\n&quot;</span>, <a class="code" href="rte__ring_8h.html#aa6fe2e810cf4015bb95023c54e18b73a">rte_ring_free_count</a>(r));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a09c464281266543ebc0766902467c69b_cgraph.png" border="0" usemap="#rte__ring_8c_a09c464281266543ebc0766902467c69b_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a09c464281266543ebc0766902467c69b_cgraph" id="rte__ring_8c_a09c464281266543ebc0766902467c69b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34" title=" " alt="" coords="365,5,480,32"/>
+<area shape="rect" href="rte__ring_8h.html#aa6fe2e810cf4015bb95023c54e18b73a" title=" " alt="" coords="169,31,317,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a564e012c1eb4ae08f9eea3acfd08b377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564e012c1eb4ae08f9eea3acfd08b377">&#9670;&nbsp;</a></span>rte_ring_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rte_ring_free </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>De-allocate all memory used by the ring.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Ring to free </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (r == NULL)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    free(r);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a564e012c1eb4ae08f9eea3acfd08b377_icgraph.png" border="0" usemap="#rte__ring_8c_a564e012c1eb4ae08f9eea3acfd08b377_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a564e012c1eb4ae08f9eea3acfd08b377_icgraph" id="rte__ring_8c_a564e012c1eb4ae08f9eea3acfd08b377_icgraph">
+<area shape="rect" title=" " alt="" coords="689,5,795,32"/>
+<area shape="rect" href="rte__ring_8c.html#aae4026d87730ebef2cbcd08a42778e80" title=" " alt="" coords="520,5,641,32"/>
+<area shape="rect" href="femu_8c.html#a749caeadb2968b6c63c5f1b2d646eb5a" title=" " alt="" coords="313,5,472,32"/>
+<area shape="rect" href="femu_8c.html#a340aa0343b4141d520e32a9e4bc303a0" title=" " alt="" coords="177,5,265,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac29f8523d355c107377858bdeb468486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29f8523d355c107377858bdeb468486">&#9670;&nbsp;</a></span>rte_ring_get_memsize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t rte_ring_get_memsize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate the memory size needed for a ring</p>
+<p>This function returns the number of bytes needed for a ring, given the number of elements in it. This value is the sum of the size of the structure <a class="el" href="structrte__ring.html">rte_ring</a> and the size of the memory needed by the objects pointers. The value is aligned to a cache line size.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The number of elements in the ring (must be a power of 2). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>The memory size needed for the ring on success.</li>
+<li>-EINVAL if count is not a power of 2. </li>
+</ul>
+</dd></dl>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ssize_t sz;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">/* count must be a power of 2 */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> ((!<a class="code" href="rte__ring_8c.html#a9d095bc1979e862ea41c3222f153715c">POWEROF2</a>(count)) || (count &gt; <a class="code" href="rte__ring_8h.html#aeecc92053129fb9aff3e9ced08f3a834">RTE_RING_SZ_MASK</a> )) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    sz = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structrte__ring.html">rte_ring</a>) + count * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> sz;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_ac29f8523d355c107377858bdeb468486_icgraph.png" border="0" usemap="#rte__ring_8c_ac29f8523d355c107377858bdeb468486_icgraph" alt=""/></div>
+<map name="rte__ring_8c_ac29f8523d355c107377858bdeb468486_icgraph" id="rte__ring_8c_ac29f8523d355c107377858bdeb468486_icgraph">
+<area shape="rect" title=" " alt="" coords="1627,5,1793,32"/>
+<area shape="rect" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a" title=" " alt="" coords="1459,5,1579,32"/>
+<area shape="rect" href="rte__ring_8c.html#a6bc92444f7239ca27c5a89de99f5f4ac" title=" " alt="" coords="1275,5,1411,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1076,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a44f25853c926ac1b29562857244366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a44f25853c926ac1b29562857244366">&#9670;&nbsp;</a></span>rte_ring_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rte_ring_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structrte__ring.html">rte_ring</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize a ring structure.</p>
+<p>Initialize a ring structure in memory pointed by "r". The size of the memory area must be large enough to store the ring structure and the object table. It is advised to use <a class="el" href="rte__ring_8h.html#ac29f8523d355c107377858bdeb468486">rte_ring_get_memsize()</a> to get the appropriate size.</p>
+<p>The ring size is set to <em>count</em>, which must be a power of two. Water marking is disabled by default. The real usable ring size is <em>count-1</em> instead of <em>count</em> to differentiate a free ring from an empty ring.</p>
+<p>The ring is not added in RTE_TAILQ_RING global list. Indeed, the memory given by the caller may not be shareable among dpdk processes.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The pointer to the ring structure followed by the objects table. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the ring. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of elements in the ring (must be a power of 2). </td></tr>
+    <tr><td class="paramname">flags</td><td>An OR of the following:<ul>
+<li>RING_F_SP_ENQ: If this flag is set, the default behavior when using <code><a class="el" href="rte__ring_8h.html#aa1e5c7ff81ee177734288a1698b1106e">rte_ring_enqueue()</a></code> or <code><a class="el" href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d">rte_ring_enqueue_bulk()</a></code> is "single-producer". Otherwise, it is "multi-producers".</li>
+<li>RING_F_SC_DEQ: If this flag is set, the default behavior when using <code><a class="el" href="rte__ring_8h.html#a896024f865225e243f2c66c02825a9e2">rte_ring_dequeue()</a></code> or <code><a class="el" href="rte__ring_8h.html#a558ff95b944832acf8de439c769638f3">rte_ring_dequeue_bulk()</a></code> is "single-consumer". Otherwise, it is "multi-consumers". </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success, or a negative value on error. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> ret;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">/* init the ring structure */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    memset(r, 0, <span class="keyword">sizeof</span>(*r));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ret = snprintf(r-&gt;<a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>, <span class="keyword">sizeof</span>(r-&gt;<a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>), <span class="stringliteral">&quot;%s&quot;</span>, <a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (ret &lt; 0 || ret &gt;= (<span class="keywordtype">int</span>)<span class="keyword">sizeof</span>(r-&gt;<a class="code" href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">name</a>))</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> -ENAMETOOLONG;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    r-&gt;<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> = <a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    r-&gt;<a class="code" href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">prod</a>.<a class="code" href="structrte__ring__headtail.html#a95cc4b1cb9a073c09c3cd9cf41f8f9fb">single</a> = (<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> &amp; <a class="code" href="rte__ring_8h.html#a127c66adbeab4653a47649993b94f35b">RING_F_SP_ENQ</a>) ? <a class="code" href="rte__ring_8h.html#aad5423899c79ed55b32ec46ab28faf15">__IS_SP</a> : <a class="code" href="rte__ring_8h.html#a6797237f9f8cfa0ea1e8ae5362baf914">__IS_MP</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    r-&gt;<a class="code" href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">cons</a>.<a class="code" href="structrte__ring__headtail.html#a95cc4b1cb9a073c09c3cd9cf41f8f9fb">single</a> = (<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> &amp; <a class="code" href="rte__ring_8h.html#a421a61b2f94cdf65b3a6ac146c492fb9">RING_F_SC_DEQ</a>) ? <a class="code" href="rte__ring_8h.html#a11c27e4768116c096185f4cd260e2ec5">__IS_SC</a> : <a class="code" href="rte__ring_8h.html#aecdaba437ff3f20b3277728f69a81f01">__IS_MC</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">flags</a> &amp; <a class="code" href="rte__ring_8h.html#a136e9157866738284259cf2d64a06783">RING_F_EXACT_SZ</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a87cbbf8a4319375d954819403ff292d7">size</a> = <a class="code" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1">rte_align32pow2</a>(count + 1);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a1721b53743c15b90e0453679f66d12ac">mask</a> = r-&gt;<a class="code" href="structrte__ring.html#a87cbbf8a4319375d954819403ff292d7">size</a> - 1;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a5c1b5e68d4b572c4d95c4180937e377c">capacity</a> = count;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span> ((!<a class="code" href="rte__ring_8c.html#a9d095bc1979e862ea41c3222f153715c">POWEROF2</a>(count)) || (count &gt; <a class="code" href="rte__ring_8h.html#aeecc92053129fb9aff3e9ced08f3a834">RTE_RING_SZ_MASK</a>)) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">return</span> -EINVAL;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a87cbbf8a4319375d954819403ff292d7">size</a> = count;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a1721b53743c15b90e0453679f66d12ac">mask</a> = count - 1;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        r-&gt;<a class="code" href="structrte__ring.html#a5c1b5e68d4b572c4d95c4180937e377c">capacity</a> = r-&gt;<a class="code" href="structrte__ring.html#a1721b53743c15b90e0453679f66d12ac">mask</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    r-&gt;<a class="code" href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">prod</a>.<a class="code" href="structrte__ring__headtail.html#a80db8266417a562dc74a4794fc615c4f">head</a> = r-&gt;<a class="code" href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">cons</a>.<a class="code" href="structrte__ring__headtail.html#a80db8266417a562dc74a4794fc615c4f">head</a> = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    r-&gt;<a class="code" href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">prod</a>.<a class="code" href="structrte__ring__headtail.html#aba2365e2b056da3bac44e83a1f45de40">tail</a> = r-&gt;<a class="code" href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">cons</a>.<a class="code" href="structrte__ring__headtail.html#aba2365e2b056da3bac44e83a1f45de40">tail</a> = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a7a44f25853c926ac1b29562857244366_cgraph.png" border="0" usemap="#rte__ring_8c_a7a44f25853c926ac1b29562857244366_cgraph" alt=""/></div>
+<map name="rte__ring_8c_a7a44f25853c926ac1b29562857244366_cgraph" id="rte__ring_8c_a7a44f25853c926ac1b29562857244366_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,105,32"/>
+<area shape="rect" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1" title=" " alt="" coords="153,5,284,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="rte__ring_8c_a7a44f25853c926ac1b29562857244366_icgraph.png" border="0" usemap="#rte__ring_8c_a7a44f25853c926ac1b29562857244366_icgraph" alt=""/></div>
+<map name="rte__ring_8c_a7a44f25853c926ac1b29562857244366_icgraph" id="rte__ring_8c_a7a44f25853c926ac1b29562857244366_icgraph">
+<area shape="rect" title=" " alt="" coords="1627,5,1727,32"/>
+<area shape="rect" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a" title=" " alt="" coords="1459,5,1579,32"/>
+<area shape="rect" href="rte__ring_8c.html#a6bc92444f7239ca27c5a89de99f5f4ac" title=" " alt="" coords="1275,5,1411,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title=" " alt="" coords="1076,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title=" " alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title=" " alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="arte__ring_8h_html_aecdaba437ff3f20b3277728f69a81f01"><div class="ttname"><a href="rte__ring_8h.html#aecdaba437ff3f20b3277728f69a81f01">__IS_MC</a></div><div class="ttdeci">#define __IS_MC</div><div class="ttdef"><b>Definition:</b> rte_ring.h:164</div></div>
+<div class="ttc" id="arte__ring_8c_html_a9d095bc1979e862ea41c3222f153715c"><div class="ttname"><a href="rte__ring_8c.html#a9d095bc1979e862ea41c3222f153715c">POWEROF2</a></div><div class="ttdeci">#define POWEROF2(x)</div><div class="ttdef"><b>Definition:</b> rte_ring.c:84</div></div>
+<div class="ttc" id="arte__ring_8h_html_a40c2b32849ee40a3926720f2ab1cdec7a4d55236339bad776b055208601d2e4d4"><div class="ttname"><a href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7a4d55236339bad776b055208601d2e4d4">FEMU_RING_TYPE_MP_MC</a></div><div class="ttdeci">@ FEMU_RING_TYPE_MP_MC</div><div class="ttdef"><b>Definition:</b> rte_ring.h:1124</div></div>
+<div class="ttc" id="arte__ring_8h_html_aeecc92053129fb9aff3e9ced08f3a834"><div class="ttname"><a href="rte__ring_8h.html#aeecc92053129fb9aff3e9ced08f3a834">RTE_RING_SZ_MASK</a></div><div class="ttdeci">#define RTE_RING_SZ_MASK</div><div class="ttdef"><b>Definition:</b> rte_ring.h:158</div></div>
+<div class="ttc" id="arte__ring_8h_html_aad5423899c79ed55b32ec46ab28faf15"><div class="ttname"><a href="rte__ring_8h.html#aad5423899c79ed55b32ec46ab28faf15">__IS_SP</a></div><div class="ttdeci">#define __IS_SP</div><div class="ttdef"><b>Definition:</b> rte_ring.h:161</div></div>
+<div class="ttc" id="astructrte__ring_html_ab0a59b82d10d92cbd7b7f4fdcd706d5f"><div class="ttname"><a href="structrte__ring.html#ab0a59b82d10d92cbd7b7f4fdcd706d5f">rte_ring::name</a></div><div class="ttdeci">char name[RTE_NAMESIZE]</div><div class="ttdef"><b>Definition:</b> rte_ring.h:133</div></div>
+<div class="ttc" id="arte__ring_8h_html_abc8376d2c6e609707d52032860880b34"><div class="ttname"><a href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34">rte_ring_count</a></div><div class="ttdeci">static unsigned rte_ring_count(const struct rte_ring *r)</div><div class="ttdef"><b>Definition:</b> rte_ring.h:862</div></div>
+<div class="ttc" id="arte__ring_8h_html_ab8debfb458e927d559e7ce750048502d"><div class="ttname"><a href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d">rte_ring_enqueue_bulk</a></div><div class="ttdeci">static __rte_always_inline unsigned int rte_ring_enqueue_bulk(struct rte_ring *r, void *const *obj_table, unsigned int n, unsigned int *free_space)</div><div class="ttdef"><b>Definition:</b> rte_ring.h:650</div></div>
+<div class="ttc" id="arte__ring_8c_html_a564e012c1eb4ae08f9eea3acfd08b377"><div class="ttname"><a href="rte__ring_8c.html#a564e012c1eb4ae08f9eea3acfd08b377">rte_ring_free</a></div><div class="ttdeci">void rte_ring_free(struct rte_ring *r)</div><div class="ttdef"><b>Definition:</b> rte_ring.c:164</div></div>
+<div class="ttc" id="arte__ring_8h_html_a40c2b32849ee40a3926720f2ab1cdec7ad2388957eaf21c85bc07f6044f60af88"><div class="ttname"><a href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7ad2388957eaf21c85bc07f6044f60af88">FEMU_RING_TYPE_MP_SC</a></div><div class="ttdeci">@ FEMU_RING_TYPE_MP_SC</div><div class="ttdef"><b>Definition:</b> rte_ring.h:1123</div></div>
+<div class="ttc" id="arte__ring_8c_html_a7a44f25853c926ac1b29562857244366"><div class="ttname"><a href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366">rte_ring_init</a></div><div class="ttdeci">int rte_ring_init(struct rte_ring *r, const char *name, unsigned count, unsigned flags)</div><div class="ttdef"><b>Definition:</b> rte_ring.c:99</div></div>
+<div class="ttc" id="astructrte__ring_html_a87cbbf8a4319375d954819403ff292d7"><div class="ttname"><a href="structrte__ring.html#a87cbbf8a4319375d954819403ff292d7">rte_ring::size</a></div><div class="ttdeci">uint32_t size</div><div class="ttdef"><b>Definition:</b> rte_ring.h:136</div></div>
+<div class="ttc" id="arte__ring_8h_html_a8742d4b89ce43dbd93cc2ef48518ccf0"><div class="ttname"><a href="rte__ring_8h.html#a8742d4b89ce43dbd93cc2ef48518ccf0">rte_ring_dequeue_burst</a></div><div class="ttdeci">static __rte_always_inline unsigned rte_ring_dequeue_burst(struct rte_ring *r, void **obj_table, unsigned int n, unsigned int *available)</div><div class="ttdef"><b>Definition:</b> rte_ring.h:1113</div></div>
+<div class="ttc" id="arte__ring_8c_html_a122812947c00f9ed3066232accf5fa5a"><div class="ttname"><a href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a">rte_ring_create</a></div><div class="ttdeci">struct rte_ring * rte_ring_create(const char *name, unsigned count, unsigned flags)</div><div class="ttdef"><b>Definition:</b> rte_ring.c:132</div></div>
+<div class="ttc" id="arte__ring_8h_html_a2ef0470e7e801a61031e9e7f2994914c"><div class="ttname"><a href="rte__ring_8h.html#a2ef0470e7e801a61031e9e7f2994914c">RTE_RING_MZ_PREFIX</a></div><div class="ttdeci">#define RTE_RING_MZ_PREFIX</div><div class="ttdef"><b>Definition:</b> rte_ring.h:104</div></div>
+<div class="ttc" id="astructrte__ring_html"><div class="ttname"><a href="structrte__ring.html">rte_ring</a></div><div class="ttdef"><b>Definition:</b> rte_ring.h:127</div></div>
+<div class="ttc" id="astructrte__ring__headtail_html_a80db8266417a562dc74a4794fc615c4f"><div class="ttname"><a href="structrte__ring__headtail.html#a80db8266417a562dc74a4794fc615c4f">rte_ring_headtail::head</a></div><div class="ttdeci">volatile uint32_t head</div><div class="ttdef"><b>Definition:</b> rte_ring.h:112</div></div>
+<div class="ttc" id="arte__ring_8h_html_a40c2b32849ee40a3926720f2ab1cdec7ab01c5582b0ca471ab9c188d7d1580c05"><div class="ttname"><a href="rte__ring_8h.html#a40c2b32849ee40a3926720f2ab1cdec7ab01c5582b0ca471ab9c188d7d1580c05">FEMU_RING_TYPE_SP_SC</a></div><div class="ttdeci">@ FEMU_RING_TYPE_SP_SC</div><div class="ttdef"><b>Definition:</b> rte_ring.h:1122</div></div>
+<div class="ttc" id="arte__ring_8h_html_a6797237f9f8cfa0ea1e8ae5362baf914"><div class="ttname"><a href="rte__ring_8h.html#a6797237f9f8cfa0ea1e8ae5362baf914">__IS_MP</a></div><div class="ttdeci">#define __IS_MP</div><div class="ttdef"><b>Definition:</b> rte_ring.h:162</div></div>
+<div class="ttc" id="astructrte__ring_html_abd7c62a3cb4a6927816fe881f7940151"><div class="ttname"><a href="structrte__ring.html#abd7c62a3cb4a6927816fe881f7940151">rte_ring::cons</a></div><div class="ttdeci">struct rte_ring_headtail cons</div><div class="ttdef"><b>Definition:</b> rte_ring.h:144</div></div>
+<div class="ttc" id="arte__ring_8h_html_a421a61b2f94cdf65b3a6ac146c492fb9"><div class="ttname"><a href="rte__ring_8h.html#a421a61b2f94cdf65b3a6ac146c492fb9">RING_F_SC_DEQ</a></div><div class="ttdeci">#define RING_F_SC_DEQ</div><div class="ttdef"><b>Definition:</b> rte_ring.h:148</div></div>
+<div class="ttc" id="arte__ring_8c_html_ac29f8523d355c107377858bdeb468486"><div class="ttname"><a href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486">rte_ring_get_memsize</a></div><div class="ttdeci">ssize_t rte_ring_get_memsize(unsigned count)</div><div class="ttdef"><b>Definition:</b> rte_ring.c:87</div></div>
+<div class="ttc" id="arte__ring_8h_html_a11c27e4768116c096185f4cd260e2ec5"><div class="ttname"><a href="rte__ring_8h.html#a11c27e4768116c096185f4cd260e2ec5">__IS_SC</a></div><div class="ttdeci">#define __IS_SC</div><div class="ttdef"><b>Definition:</b> rte_ring.h:163</div></div>
+<div class="ttc" id="arte__ring_8h_html_a54967fd85fe8fe16fe0b2925e5ceb170"><div class="ttname"><a href="rte__ring_8h.html#a54967fd85fe8fe16fe0b2925e5ceb170">RTE_NAMESIZE</a></div><div class="ttdeci">#define RTE_NAMESIZE</div><div class="ttdef"><b>Definition:</b> rte_ring.h:116</div></div>
+<div class="ttc" id="arte__ring_8h_html_aa6fe2e810cf4015bb95023c54e18b73a"><div class="ttname"><a href="rte__ring_8h.html#aa6fe2e810cf4015bb95023c54e18b73a">rte_ring_free_count</a></div><div class="ttdeci">static unsigned rte_ring_free_count(const struct rte_ring *r)</div><div class="ttdef"><b>Definition:</b> rte_ring.h:879</div></div>
+<div class="ttc" id="astructrte__ring_html_a5c1b5e68d4b572c4d95c4180937e377c"><div class="ttname"><a href="structrte__ring.html#a5c1b5e68d4b572c4d95c4180937e377c">rte_ring::capacity</a></div><div class="ttdeci">uint32_t capacity</div><div class="ttdef"><b>Definition:</b> rte_ring.h:138</div></div>
+<div class="ttc" id="astructrte__ring_html_abd91203a74bb75092a568aedba0969b0"><div class="ttname"><a href="structrte__ring.html#abd91203a74bb75092a568aedba0969b0">rte_ring::flags</a></div><div class="ttdeci">int flags</div><div class="ttdef"><b>Definition:</b> rte_ring.h:134</div></div>
+<div class="ttc" id="arte__ring_8h_html_a127c66adbeab4653a47649993b94f35b"><div class="ttname"><a href="rte__ring_8h.html#a127c66adbeab4653a47649993b94f35b">RING_F_SP_ENQ</a></div><div class="ttdeci">#define RING_F_SP_ENQ</div><div class="ttdef"><b>Definition:</b> rte_ring.h:147</div></div>
+<div class="ttc" id="astructrte__ring__headtail_html_aba2365e2b056da3bac44e83a1f45de40"><div class="ttname"><a href="structrte__ring__headtail.html#aba2365e2b056da3bac44e83a1f45de40">rte_ring_headtail::tail</a></div><div class="ttdeci">volatile uint32_t tail</div><div class="ttdef"><b>Definition:</b> rte_ring.h:113</div></div>
+<div class="ttc" id="arte__ring_8h_html_a136e9157866738284259cf2d64a06783"><div class="ttname"><a href="rte__ring_8h.html#a136e9157866738284259cf2d64a06783">RING_F_EXACT_SZ</a></div><div class="ttdeci">#define RING_F_EXACT_SZ</div><div class="ttdef"><b>Definition:</b> rte_ring.h:157</div></div>
+<div class="ttc" id="astructrte__ring_html_a1721b53743c15b90e0453679f66d12ac"><div class="ttname"><a href="structrte__ring.html#a1721b53743c15b90e0453679f66d12ac">rte_ring::mask</a></div><div class="ttdeci">uint32_t mask</div><div class="ttdef"><b>Definition:</b> rte_ring.h:137</div></div>
+<div class="ttc" id="arte__ring_8h_html_a5a85fd1038be9376de166494057e6aa1"><div class="ttname"><a href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1">rte_align32pow2</a></div><div class="ttdeci">static uint32_t rte_align32pow2(uint32_t x)</div><div class="ttdef"><b>Definition:</b> rte_ring.h:167</div></div>
+<div class="ttc" id="astructrte__ring_html_ac2660d8388e6b02a1084654eb8ec88b1"><div class="ttname"><a href="structrte__ring.html#ac2660d8388e6b02a1084654eb8ec88b1">rte_ring::prod</a></div><div class="ttdeci">struct rte_ring_headtail prod</div><div class="ttdef"><b>Definition:</b> rte_ring.h:141</div></div>
+<div class="ttc" id="astructrte__ring__headtail_html_a95cc4b1cb9a073c09c3cd9cf41f8f9fb"><div class="ttname"><a href="structrte__ring__headtail.html#a95cc4b1cb9a073c09c3cd9cf41f8f9fb">rte_ring_headtail::single</a></div><div class="ttdeci">uint32_t single</div><div class="ttdef"><b>Definition:</b> rte_ring.h:114</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="rte__ring_8c.html">rte_ring.c</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
