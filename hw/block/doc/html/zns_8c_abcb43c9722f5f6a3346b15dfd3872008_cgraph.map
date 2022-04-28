@@ -1,0 +1,30 @@
+<map id="zns_write" name="zns_write">
+<area shape="rect" id="node1" title=" " alt="" coords="5,387,89,413"/>
+<area shape="rect" id="node2" href="$dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="167,173,265,200"/>
+<area shape="rect" id="node3" href="$nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="144,224,288,251"/>
+<area shape="rect" id="node4" href="$zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="351,132,521,159"/>
+<area shape="rect" id="node11" href="$zns_8c.html#ad5f4088354d2555f9d66e2ba441592ff" title=" " alt="" coords="137,325,295,352"/>
+<area shape="rect" id="node15" href="$zns_8c.html#ae9ed91ad4901fe7f2cd4f9df6c333901" title=" " alt="" coords="145,615,287,641"/>
+<area shape="rect" id="node16" href="$zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="353,463,519,489"/>
+<area shape="rect" id="node18" href="$zns_8h.html#a686c1e6209d4c3eaf3897e73484bdf9f" title=" " alt="" coords="629,579,699,605"/>
+<area shape="rect" id="node22" href="$zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="364,373,508,414"/>
+<area shape="rect" id="node24" href="$zns_8c.html#a9674ef207fca784d45d2b13fe63e31f5" title=" " alt="" coords="581,629,747,656"/>
+<area shape="rect" id="node26" href="$zns_8c.html#ab56987b404fc29d662252ee6f15e9012" title=" " alt="" coords="159,667,273,693"/>
+<area shape="rect" id="node5" href="$zns_8h.html#aa89459701c0f4b283d7ae01ea614877c" title=" " alt="" coords="591,56,737,83"/>
+<area shape="rect" id="node6" href="$zns_8h.html#a456d13e8923adbff0acc0ab45e47ec8f" title=" " alt="" coords="595,5,733,32"/>
+<area shape="rect" id="node7" href="$zns_8c.html#a819d2621fbd145acef21bd41486156a3" title=" " alt="" coords="579,157,749,184"/>
+<area shape="rect" id="node8" href="$zns_8h.html#a677294d02c732b61b18d610041851e4b" title=" " alt="" coords="799,284,949,311"/>
+<area shape="rect" id="node10" href="$zns_8h.html#a1f2a423f30678b841f4aaf3f09d0e7de" title=" " alt="" coords="577,360,751,387"/>
+<area shape="rect" id="node9" href="$zns_8h.html#afdc856385776185b67188b43c7569469" title=" " alt="" coords="799,157,949,184"/>
+<area shape="rect" id="node12" href="$zns_8c.html#a2bd0e00434954d61e13cfe8a65a02e34" title=" " alt="" coords="377,321,495,348"/>
+<area shape="rect" id="node13" href="$zns_8c.html#a02ec33ad0c6f39ad701ac9ea780811c4" title=" " alt="" coords="343,208,529,235"/>
+<area shape="rect" id="node14" href="$zns_8h.html#a14a74756029b38a3ee3d4bc79383ee6b" title=" " alt="" coords="593,208,735,235"/>
+<area shape="rect" id="node17" href="$zns_8c.html#a841382c8c3024053a641811800230a23" title=" " alt="" coords="581,462,747,503"/>
+<area shape="rect" id="node21" href="$zns_8h.html#ad064d2d81e65c1f8d539bafbee8cf353" title=" " alt="" coords="601,528,727,555"/>
+<area shape="rect" id="node19" href="$zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a" title=" " alt="" coords="820,579,928,605"/>
+<area shape="rect" id="node20" href="$zns_8h.html#a04721281dcdb77acc610b362cb5085ad" title=" " alt="" coords="997,579,1096,605"/>
+<area shape="rect" id="node23" href="$zns_8h.html#ad289f1f71a7a4a355201b3bd3bdb5f16" title=" " alt="" coords="589,411,739,437"/>
+<area shape="rect" id="node25" href="$zns_8c.html#a755fef089b9a7fc5ddd4be2d53455955" title=" " alt="" coords="819,629,929,656"/>
+<area shape="rect" id="node27" href="$dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="375,671,497,697"/>
+<area shape="rect" id="node28" href="$dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="599,680,729,707"/>
+</map>

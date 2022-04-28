@@ -1,0 +1,14 @@
+<map id="get_new_page" name="get_new_page">
+<area shape="rect" id="node1" title="获取新的page（wpp已经更新，取其指向的page地址即可）" alt="" coords="1733,31,1849,57"/>
+<area shape="rect" id="node2" href="$ftl_8c.html#a5b0fd3628f9c01d4151a9f849e03a6a8" title="gc产生的写" alt="" coords="1569,5,1685,32"/>
+<area shape="rect" id="node12" href="$ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="1151,56,1235,83"/>
+<area shape="rect" id="node3" href="$ftl_8c.html#ae4d530364d4008be453c27d200eacddf" title="gc清理一个block，将有效页转移" alt="" coords="1391,5,1521,32"/>
+<area shape="rect" id="node4" href="$ftl_8c.html#aedba9d148f29a3ea880cf3abbbc07fad" title="gc函数，清理一整个line" alt="" coords="1283,5,1343,32"/>
+<area shape="rect" id="node5" href="$ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="1019,31,1103,57"/>
+<area shape="rect" id="node6" href="$ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="899,31,971,57"/>
+<area shape="rect" id="node7" href="$bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="784,31,851,57"/>
+<area shape="rect" id="node8" href="$nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title=" " alt="" coords="575,31,736,57"/>
+<area shape="rect" id="node9" href="$femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,31,527,57"/>
+<area shape="rect" id="node10" href="$femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,31,284,57"/>
+<area shape="rect" id="node11" href="$femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,31,129,57"/>
+</map>

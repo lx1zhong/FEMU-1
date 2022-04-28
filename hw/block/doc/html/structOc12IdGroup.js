@@ -1,0 +1,26 @@
+var structOc12IdGroup =
+[
+    [ "cpar", "structOc12IdGroup.html#ad8919bf4f955421370dc3cb6d9719306", null ],
+    [ "csecs", "structOc12IdGroup.html#a2a0eb1952cba3783b0e56b12a5117975", null ],
+    [ "fmtype", "structOc12IdGroup.html#aa85ed70c5e53ba20ef52a4cd57a71ce5", null ],
+    [ "fpg_sz", "structOc12IdGroup.html#a5d709d4b4b3ddce6730de6673ed3f7ac", null ],
+    [ "mccap", "structOc12IdGroup.html#a14587b90e79e5a80b05c1e16ad70588a", null ],
+    [ "mpos", "structOc12IdGroup.html#a3eb0edbddade2269ac3e9acd04fa2147", null ],
+    [ "mtype", "structOc12IdGroup.html#aa5b6d65ac99901288264502f0a0b3c83", null ],
+    [ "num_blk", "structOc12IdGroup.html#ad4de9a793ea8301bcadc677d9524a6af", null ],
+    [ "num_ch", "structOc12IdGroup.html#a6a3f7995780567cae58de14a9596cee2", null ],
+    [ "num_lun", "structOc12IdGroup.html#a169a6f5a02954d7021c84743344bdaa0", null ],
+    [ "num_pg", "structOc12IdGroup.html#a7909a44a554f357cca989384aaf2495a", null ],
+    [ "num_pln", "structOc12IdGroup.html#a0970921f80b409749a095631d55b76a8", null ],
+    [ "res", "structOc12IdGroup.html#a4ca593d97fc4d384ed4241a71220f6b7", null ],
+    [ "res16", "structOc12IdGroup.html#a67bf57ce7a016cad24af5e1bd76d93f2", null ],
+    [ "rsvd1", "structOc12IdGroup.html#aabcf153247e53587ba88fc8b861bed30", null ],
+    [ "rsvd2", "structOc12IdGroup.html#aeb4d9899860b38fb85d25b580e8abb98", null ],
+    [ "sos", "structOc12IdGroup.html#afd2cafe94a33040426860a895c6d17af", null ],
+    [ "tbem", "structOc12IdGroup.html#ab1804f4795520f885926d84dda040ad9", null ],
+    [ "tbet", "structOc12IdGroup.html#adb46ff670c30aa51beb4579adb7c5a77", null ],
+    [ "tprm", "structOc12IdGroup.html#a6936e76b6a4ca61a37d1bcbc3ea01b85", null ],
+    [ "tprt", "structOc12IdGroup.html#a9acb718bf42389c90fd15bc003a04034", null ],
+    [ "trdm", "structOc12IdGroup.html#ad3b28b73abc825d8a84366bea0239392", null ],
+    [ "trdt", "structOc12IdGroup.html#aa712d374e318d3d06fe5114f924db0e4", null ]
+];

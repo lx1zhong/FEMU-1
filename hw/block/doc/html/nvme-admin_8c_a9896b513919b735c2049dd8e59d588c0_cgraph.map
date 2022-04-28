@@ -1,0 +1,10 @@
+<map id="nvme_identify_ns" name="nvme_identify_ns">
+<area shape="rect" id="node1" title=" " alt="" coords="5,89,143,115"/>
+<area shape="rect" id="node2" href="$dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="445,89,560,115"/>
+<area shape="rect" id="node5" href="$nvme-admin_8c.html#a59ac97b9a3caead40c6651273483ed4c" title=" " alt="" coords="191,38,397,65"/>
+<area shape="rect" id="node6" href="$nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="253,89,335,115"/>
+<area shape="rect" id="node7" href="$nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b" title=" " alt="" coords="228,139,360,166"/>
+<area shape="rect" id="node8" href="$nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5" title=" " alt="" coords="196,190,392,217"/>
+<area shape="rect" id="node3" href="$dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="608,89,731,115"/>
+<area shape="rect" id="node4" href="$dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="779,89,909,115"/>
+</map>

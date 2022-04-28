@@ -1,0 +1,7 @@
+<map id="ssd_channel" name="ssd_channel">
+<area shape="rect" id="node1" title="通道" alt="" coords="5,363,108,389"/>
+<area shape="rect" id="node2" href="$structnand__lun.html" title="晶圆" alt="" coords="16,273,97,300"/>
+<area shape="rect" id="node3" href="$structnand__plane.html" title="plane" alt="" coords="8,184,105,211"/>
+<area shape="rect" id="node4" href="$structnand__block.html" title="块" alt="" coords="9,95,105,121"/>
+<area shape="rect" id="node5" href="$structnand__page.html" title="页" alt="" coords="10,5,103,32"/>
+</map>
