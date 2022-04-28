@@ -4,11 +4,25 @@
 
 static void *ftl_thread(void *arg);
 
+/**
+ * @brief 空闲gc阈值
+ * 
+ * @param ssd 
+ * @return true 
+ * @return false 
+ */
 static inline bool should_gc(struct ssd *ssd)
 {
     return (ssd->lm.free_line_cnt <= ssd->sp.gc_thres_lines);
 }
 
+/**
+ * @brief gc阈值
+ * 
+ * @param ssd 
+ * @return true 
+ * @return false 
+ */
 static inline bool should_gc_high(struct ssd *ssd)
 {
     return (ssd->lm.free_line_cnt <= ssd->sp.gc_thres_lines_high);
@@ -19,6 +33,13 @@ static inline struct ppa get_maptbl_ent(struct ssd *ssd, uint64_t lpn)
     return ssd->maptbl[lpn];
 }
 
+/**
+ * @brief 赋值一个page映射表项
+ * 
+ * @param ssd 
+ * @param lpn 
+ * @param ppa 
+ */
 static inline void set_maptbl_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa)
 {
     ftl_assert(lpn < ssd->sp.tt_pgs);
@@ -48,7 +69,13 @@ static inline uint64_t get_rmap_ent(struct ssd *ssd, struct ppa *ppa)
     return ssd->rmap[pgidx];
 }
 
-/* set rmap[page_no(ppa)] -> lpn */
+/**
+ * @brief 赋值一个反向映射表项（rmap[page_no(ppa)] -> lpn）
+ * 
+ * @param ssd 
+ * @param lpn 
+ * @param ppa 
+ */
 static inline void set_rmap_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa)
 {
     uint64_t pgidx = ppa2pgidx(ssd, ppa);
@@ -81,6 +108,11 @@ static inline void victim_line_set_pos(void *a, size_t pos)
     ((struct line *)a)->pos = pos;
 }
 
+/**
+ * @brief 初始化lines，所有line加入free_line_list，而full_line_list和victim_line_pq为空
+ * 
+ * @param ssd 
+ */
 static void ssd_init_lines(struct ssd *ssd)
 {
     struct ssdparams *spp = &ssd->sp;
@@ -114,6 +146,11 @@ static void ssd_init_lines(struct ssd *ssd)
     lm->full_line_cnt = 0;
 }
 
+/**
+ * @brief 写指针初始化，指向0
+ * 
+ * @param ssd 
+ */
 static void ssd_init_write_pointer(struct ssd *ssd)
 {
     struct write_pointer *wpp = &ssd->wp;
@@ -154,6 +191,11 @@ static struct line *get_next_free_line(struct ssd *ssd)
     return curline;
 }
 
+/**
+ * @brief 写指针后移，每次写操作结束后调用
+ * 
+ * @param ssd 
+ */
 static void ssd_advance_write_pointer(struct ssd *ssd)
 {
     struct ssdparams *spp = &ssd->sp;
@@ -161,18 +203,22 @@ static void ssd_advance_write_pointer(struct ssd *ssd)
     struct line_mgmt *lm = &ssd->lm;
 
     check_addr(wpp->ch, spp->nchs);
+    //首先channel++
     wpp->ch++;
     if (wpp->ch == spp->nchs) {
+        //channel到顶了lun++
         wpp->ch = 0;
         check_addr(wpp->lun, spp->luns_per_ch);
         wpp->lun++;
         /* in this case, we should go to next lun */
         if (wpp->lun == spp->luns_per_ch) {
+            //lun到顶了page++
             wpp->lun = 0;
             /* go to next page in the block */
             check_addr(wpp->pg, spp->pgs_per_blk);
             wpp->pg++;
             if (wpp->pg == spp->pgs_per_blk) {
+                //一个line写完，换一个free的line
                 wpp->pg = 0;
                 /* move current line to {victim,full} line list */
                 if (wpp->curline->vpc == spp->pgs_per_line) {
@@ -208,6 +254,12 @@ static void ssd_advance_write_pointer(struct ssd *ssd)
     }
 }
 
+/**
+ * @brief 获取新的page（wpp已经更新，取其指向的page地址即可）
+ * 
+ * @param ssd 
+ * @return struct ppa 
+ */
 static struct ppa get_new_page(struct ssd *ssd)
 {
     struct write_pointer *wpp = &ssd->wp;
@@ -234,6 +286,11 @@ static void check_params(struct ssdparams *spp)
     //ftl_assert(is_power_of_2(spp->nchs));
 }
 
+/**
+ * @brief 设置nand大小/并行参数，做相关计算
+ * 
+ * @param spp 
+ */
 static void ssd_init_params(struct ssdparams *spp)
 {
     spp->secsz = 512;
@@ -360,6 +417,11 @@ static void ssd_init_rmap(struct ssd *ssd)
     }
 }
 
+/**
+ * @brief 初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程
+ * 
+ * @param n 
+ */
 void ssd_init(FemuCtrl *n)
 {
     struct ssd *ssd = n->ssd;
@@ -391,6 +453,14 @@ void ssd_init(FemuCtrl *n)
                        QEMU_THREAD_JOINABLE);
 }
 
+/**
+ * @brief ppa地址越界则为无效地址
+ * 
+ * @param ssd 
+ * @param ppa 
+ * @return true 
+ * @return false 
+ */
 static inline bool valid_ppa(struct ssd *ssd, struct ppa *ppa)
 {
     struct ssdparams *spp = &ssd->sp;
@@ -453,6 +523,14 @@ static inline struct nand_page *get_pg(struct ssd *ssd, struct ppa *ppa)
     return &(blk->pg[ppa->g.pg]);
 }
 
+/**
+ * @brief 根据操作类型，给出模拟的时延
+ * 
+ * @param ssd 
+ * @param ppa 操作地址
+ * @param ncmd 操作类型
+ * @return uint64_t 时延
+ */
 static uint64_t ssd_advance_status(struct ssd *ssd, struct ppa *ppa, struct
         nand_cmd *ncmd)
 {
@@ -524,7 +602,12 @@ static uint64_t ssd_advance_status(struct ssd *ssd, struct ppa *ppa, struct
     return lat;
 }
 
-/* update SSD status about one page from PG_VALID -> PG_VALID */
+/**
+ * @brief update SSD status about one page from PG_VALID -> PG_INVALID
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void mark_page_invalid(struct ssd *ssd, struct ppa *ppa)
 {
     struct line_mgmt *lm = &ssd->lm;
@@ -572,6 +655,12 @@ static void mark_page_invalid(struct ssd *ssd, struct ppa *ppa)
     }
 }
 
+/**
+ * @brief 将一个page从PG_FREE标记为PG_VALID
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void mark_page_valid(struct ssd *ssd, struct ppa *ppa)
 {
     struct nand_block *blk = NULL;
@@ -594,6 +683,12 @@ static void mark_page_valid(struct ssd *ssd, struct ppa *ppa)
     line->vpc++;
 }
 
+/**
+ * @brief 将一个空block中所有页标记为PG_FREE
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void mark_block_free(struct ssd *ssd, struct ppa *ppa)
 {
     struct ssdparams *spp = &ssd->sp;
@@ -614,6 +709,12 @@ static void mark_block_free(struct ssd *ssd, struct ppa *ppa)
     blk->erase_cnt++;
 }
 
+/**
+ * @brief gc产生的读page
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void gc_read_page(struct ssd *ssd, struct ppa *ppa)
 {
     /* advance ssd status, we don't care about how long it takes */
@@ -626,7 +727,15 @@ static void gc_read_page(struct ssd *ssd, struct ppa *ppa)
     }
 }
 
-/* move valid page data (already in DRAM) from victim line to a new page */
+/**
+ * @brief gc产生的写
+ * 
+ */
+ * 
+ * @param ssd 
+ * @param old_ppa 
+ * @return uint64_t 
+ */
 static uint64_t gc_write_page(struct ssd *ssd, struct ppa *old_ppa)
 {
     struct ppa new_ppa;
@@ -665,6 +774,13 @@ static uint64_t gc_write_page(struct ssd *ssd, struct ppa *old_ppa)
     return 0;
 }
 
+/**
+ * @brief 为gc选择一个victim line，优先队列中出队即可
+ * 
+ * @param ssd 
+ * @param force 
+ * @return struct line* 
+ */
 static struct line *select_victim_line(struct ssd *ssd, bool force)
 {
     struct line_mgmt *lm = &ssd->lm;
@@ -688,6 +804,12 @@ static struct line *select_victim_line(struct ssd *ssd, bool force)
 }
 
 /* here ppa identifies the block we want to clean */
+/**
+ * @brief gc清理一个block，将有效页转移
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void clean_one_block(struct ssd *ssd, struct ppa *ppa)
 {
     struct ssdparams *spp = &ssd->sp;
@@ -710,6 +832,12 @@ static void clean_one_block(struct ssd *ssd, struct ppa *ppa)
     ftl_assert(get_blk(ssd, ppa)->vpc == cnt);
 }
 
+/**
+ * @brief 将该line加入空闲line队列
+ * 
+ * @param ssd 
+ * @param ppa 
+ */
 static void mark_line_free(struct ssd *ssd, struct ppa *ppa)
 {
     struct line_mgmt *lm = &ssd->lm;
@@ -721,6 +849,13 @@ static void mark_line_free(struct ssd *ssd, struct ppa *ppa)
     lm->free_line_cnt++;
 }
 
+/**
+ * @brief gc函数，清理一整个line
+ * 
+ * @param ssd 
+ * @param force 
+ * @return int 
+ */
 static int do_gc(struct ssd *ssd, bool force)
 {
     struct line *victim_line = NULL;
@@ -803,6 +938,13 @@ static uint64_t ssd_read(struct ssd *ssd, NvmeRequest *req)
     return maxlat;
 }
 
+/**
+ * @brief ssd写延迟模拟
+ * 
+ * @param ssd 
+ * @param req 
+ * @return uint64_t 返回写延迟
+ */
 static uint64_t ssd_write(struct ssd *ssd, NvmeRequest *req)
 {
     uint64_t lba = req->slba;
@@ -858,6 +1000,12 @@ static uint64_t ssd_write(struct ssd *ssd, NvmeRequest *req)
     return maxlat;
 }
 
+/**
+ * @brief ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller
+ * 
+ * @param arg 
+ * @return void* 
+ */
 static void *ftl_thread(void *arg)
 {
     FemuCtrl *n = (FemuCtrl *)arg;

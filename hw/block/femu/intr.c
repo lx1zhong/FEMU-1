@@ -152,6 +152,11 @@ static void nvme_vector_poll(PCIDevice *dev, unsigned int vector_start, unsigned
     }
 }
 
+/**
+ * @brief 传统的中断通知方式
+ * 
+ * @param opaque 
+ */
 static void nvme_isr_notify_legacy(void *opaque)
 {
     NvmeCQueue *cq = opaque;
@@ -159,22 +164,35 @@ static void nvme_isr_notify_legacy(void *opaque)
 
     if (cq->irq_enabled) {
         if (msix_enabled(&(n->parent_obj))) {
+            // msi-x中断
             msix_notify(&(n->parent_obj), cq->vector);
         } else if (msi_enabled(&(n->parent_obj))) {
+            // msi中断
             if (!(n->bar.intms & (1 << cq->vector))) {
                 msi_notify(&(n->parent_obj), cq->vector);
             }
         } else {
+            // 不支持
             pci_irq_pulse(&n->parent_obj);
         }
     }
 }
 
+/**
+ * @brief 通知上层admin命令已完成
+ * 
+ * @param opaque 
+ */
 void nvme_isr_notify_admin(void *opaque)
 {
     return nvme_isr_notify_legacy(opaque);
 }
 
+/**
+ * @brief 中断通知上层取cq
+ * 
+ * @param opaque 
+ */
 void nvme_isr_notify_io(void *opaque)
 {
     NvmeCQueue *cq = opaque;

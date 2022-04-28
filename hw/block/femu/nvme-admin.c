@@ -948,6 +948,14 @@ static uint16_t nvme_format(FemuCtrl *n, NvmeCmd *cmd)
     return nvme_format_namespace(ns, lba_idx, meta_loc, pil, pi, sec_erase);
 }
 
+/**
+ * @brief 识别、执行admin命令
+ * 
+ * @param n 
+ * @param cmd 
+ * @param cqe 
+ * @return uint16_t 
+ */
 static uint16_t nvme_admin_cmd(FemuCtrl *n, NvmeCmd *cmd, NvmeCqe *cqe)
 {
     switch (cmd->opcode) {
@@ -1005,6 +1013,7 @@ static uint16_t nvme_admin_cmd(FemuCtrl *n, NvmeCmd *cmd, NvmeCqe *cqe)
     case NVME_ADM_CMD_SECURITY_RECV:
         return NVME_INVALID_OPCODE | NVME_DNR;
     default:
+        // 允许各模式下自定义admin命令
         if (n->ext_ops.admin_cmd) {
             return n->ext_ops.admin_cmd(n, cmd);
         }
@@ -1013,6 +1022,11 @@ static uint16_t nvme_admin_cmd(FemuCtrl *n, NvmeCmd *cmd, NvmeCqe *cqe)
     }
 }
 
+/**
+ * @brief 处理admin命令的sq队列
+ * 
+ * @param opaque 
+ */
 void nvme_process_sq_admin(void *opaque)
 {
     NvmeSQueue *sq = opaque;

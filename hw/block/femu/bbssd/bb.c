@@ -23,6 +23,12 @@ static void bb_init(FemuCtrl *n, Error **errp)
     ssd_init(n);
 }
 
+/**
+ * @brief blackbox识别、执行admin命令（可自定义）
+ * 
+ * @param n 
+ * @param cmd 
+ */
 static void bb_flip(FemuCtrl *n, NvmeCmd *cmd)
 {
     struct ssd *ssd = n->ssd;
@@ -70,12 +76,30 @@ static void bb_flip(FemuCtrl *n, NvmeCmd *cmd)
     }
 }
 
+/**
+ * @brief blackbox 读写命令
+ * 
+ * @param n 
+ * @param ns 
+ * @param cmd 
+ * @param req 
+ * @return uint16_t 
+ */
 static uint16_t bb_nvme_rw(FemuCtrl *n, NvmeNamespace *ns, NvmeCmd *cmd,
                            NvmeRequest *req)
 {
     return nvme_rw(n, ns, cmd, req);
 }
 
+/**
+ * @brief blackbox io命令
+ * 
+ * @param n 
+ * @param ns 
+ * @param cmd 
+ * @param req 
+ * @return uint16_t 
+ */
 static uint16_t bb_io_cmd(FemuCtrl *n, NvmeNamespace *ns, NvmeCmd *cmd,
                           NvmeRequest *req)
 {
@@ -88,6 +112,13 @@ static uint16_t bb_io_cmd(FemuCtrl *n, NvmeNamespace *ns, NvmeCmd *cmd,
     }
 }
 
+/**
+ * @brief blackbox admin命令
+ * 
+ * @param n 
+ * @param cmd 
+ * @return uint16_t 
+ */
 static uint16_t bb_admin_cmd(FemuCtrl *n, NvmeCmd *cmd)
 {
     switch (cmd->opcode) {

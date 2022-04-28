@@ -7,6 +7,10 @@
 #define INVALID_LPN     (~(0ULL))
 #define UNMAPPED_PPA    (~(0ULL))
 
+/**
+ * @brief NAND物理时延设置
+ * 
+ */
 enum {
     NAND_READ =  0,
     NAND_WRITE = 1,
