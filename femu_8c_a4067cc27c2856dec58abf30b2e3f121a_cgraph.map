@@ -1,7 +1,0 @@
-<map id="nvme_process_db_io" name="nvme_process_db_io">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,164,83"/>
-<area shape="rect" id="node2" href="$nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="215,5,354,32"/>
-<area shape="rect" id="node3" href="$nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="215,56,354,83"/>
-<area shape="rect" id="node4" href="$intr_8c.html#ac07d39a331aa32f4da4f27f31f1abc1c" title=" " alt="" coords="212,107,357,133"/>
-<area shape="rect" id="node5" href="$intr_8c.html#a1bcc1a1b3495a3ea33365a4afaf44b0a" title=" " alt="" coords="405,107,581,133"/>
-</map>

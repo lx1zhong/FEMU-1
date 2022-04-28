@@ -1,0 +1,10 @@
+<map id="femu/inc/rte_ring.h" name="femu/inc/rte_ring.h">
+<area shape="rect" id="node1" title=" " alt="" coords="277,5,422,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,80,167,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,80,291,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="315,80,383,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="407,80,510,107"/>
+<area shape="rect" id="node7" href="$rte__atomic__x86_8h.html" title=" " alt="" coords="534,80,669,107"/>
+<area shape="rect" id="node8" href="$rte__branch__prediction_8h.html" title=" " alt="" coords="693,80,867,107"/>
+</map>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: nand_block结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structnand__block.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">nand_block结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ftl_8h_source.html">ftl.h</a>&gt;</code></p>
+<div class="dynheader">
+nand_block 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structnand__block__coll__graph.png" border="0" usemap="#nand__block_coll__map" alt="Collaboration graph"/></div>
+<map name="nand__block_coll__map" id="nand__block_coll__map">
+<area shape="rect" title=" " alt="" coords="5,95,101,121"/>
+<area shape="rect" href="structnand__page.html" title=" " alt="" coords="7,5,100,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a8670e24bc47c15366be8fe4c238a2922"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnand__page.html">nand_page</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#a8670e24bc47c15366be8fe4c238a2922">pg</a></td></tr>
+<tr class="separator:a8670e24bc47c15366be8fe4c238a2922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd82eb2e8b19ec2dd70b0bfa3e602776"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#afd82eb2e8b19ec2dd70b0bfa3e602776">npgs</a></td></tr>
+<tr class="separator:afd82eb2e8b19ec2dd70b0bfa3e602776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c979863e9e1648cbf3a129bcd92820b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#a0c979863e9e1648cbf3a129bcd92820b">ipc</a></td></tr>
+<tr class="separator:a0c979863e9e1648cbf3a129bcd92820b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89ec2fe3aff210edec30210b24dd2039"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#a89ec2fe3aff210edec30210b24dd2039">vpc</a></td></tr>
+<tr class="separator:a89ec2fe3aff210edec30210b24dd2039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8629bef6da40ace33902c884d6b0127c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#a8629bef6da40ace33902c884d6b0127c">erase_cnt</a></td></tr>
+<tr class="separator:a8629bef6da40ace33902c884d6b0127c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424007f74aa840dea80296224af39d8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnand__block.html#a424007f74aa840dea80296224af39d8d">wp</a></td></tr>
+<tr class="separator:a424007f74aa840dea80296224af39d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a8629bef6da40ace33902c884d6b0127c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8629bef6da40ace33902c884d6b0127c">&#9670;&nbsp;</a></span>erase_cnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nand_block::erase_cnt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c979863e9e1648cbf3a129bcd92820b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c979863e9e1648cbf3a129bcd92820b">&#9670;&nbsp;</a></span>ipc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nand_block::ipc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd82eb2e8b19ec2dd70b0bfa3e602776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd82eb2e8b19ec2dd70b0bfa3e602776">&#9670;&nbsp;</a></span>npgs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nand_block::npgs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8670e24bc47c15366be8fe4c238a2922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8670e24bc47c15366be8fe4c238a2922">&#9670;&nbsp;</a></span>pg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structnand__page.html">nand_page</a>* nand_block::pg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89ec2fe3aff210edec30210b24dd2039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89ec2fe3aff210edec30210b24dd2039">&#9670;&nbsp;</a></span>vpc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nand_block::vpc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a424007f74aa840dea80296224af39d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424007f74aa840dea80296224af39d8d">&#9670;&nbsp;</a></span>wp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nand_block::wp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>femu/bbssd/<a class="el" href="ftl_8h_source.html">ftl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structnand__block.html">nand_block</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

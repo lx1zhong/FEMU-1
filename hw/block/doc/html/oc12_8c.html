@@ -1,0 +1,2487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: femu/ocssd/oc12.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('oc12_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">oc12.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="oc12_8h_source.html">./oc12.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+oc12.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c__incl.png" border="0" usemap="#femu_2ocssd_2oc12_8c" alt=""/></div>
+<map name="femu_2ocssd_2oc12_8c" id="femu_2ocssd_2oc12_8c">
+<area shape="rect" title=" " alt="" coords="865,5,1007,32"/>
+<area shape="rect" href="oc12_8h.html" title=" " alt="" coords="899,80,973,107"/>
+<area shape="rect" href="nvme_8h.html" title=" " alt="" coords="895,155,977,181"/>
+<area shape="rect" title=" " alt="" coords="5,229,120,256"/>
+<area shape="rect" title=" " alt="" coords="145,229,247,256"/>
+<area shape="rect" title=" " alt="" coords="272,229,379,256"/>
+<area shape="rect" title=" " alt="" coords="403,229,514,256"/>
+<area shape="rect" title=" " alt="" coords="539,229,651,256"/>
+<area shape="rect" title=" " alt="" coords="675,229,779,256"/>
+<area shape="rect" title=" " alt="" coords="803,229,933,256"/>
+<area shape="rect" title=" " alt="" coords="957,229,1053,256"/>
+<area shape="rect" title=" " alt="" coords="1078,229,1197,256"/>
+<area shape="rect" href="dram_8h.html" title=" " alt="" coords="1221,229,1347,256"/>
+<area shape="rect" href="rte__ring_8h.html" title=" " alt="" coords="1372,229,1479,256"/>
+<area shape="rect" href="pqueue_8h.html" title="Priority Queue function declarations" alt="" coords="1503,229,1609,256"/>
+<area shape="rect" href="nand_8h.html" title=" " alt="" coords="1633,229,1735,256"/>
+<area shape="rect" href="timing_8h.html" title=" " alt="" coords="1760,229,1928,256"/>
+<area shape="rect" title=" " alt="" coords="1134,304,1205,331"/>
+<area shape="rect" title=" " alt="" coords="1229,304,1296,331"/>
+<area shape="rect" title=" " alt="" coords="1321,304,1421,331"/>
+<area shape="rect" title=" " alt="" coords="1445,304,1513,331"/>
+<area shape="rect" title=" " alt="" coords="1537,304,1639,331"/>
+<area shape="rect" href="rte__atomic__x86_8h.html" title=" " alt="" coords="1663,304,1798,331"/>
+<area shape="rect" href="rte__branch__prediction_8h.html" title=" " alt="" coords="1822,304,1997,331"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a3bfb4ee5498ee9493ea2965fb44074dc"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a3bfb4ee5498ee9493ea2965fb44074dc">qemu_fls</a> (int i)</td></tr>
+<tr class="separator:a3bfb4ee5498ee9493ea2965fb44074dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925c68486d59404254ab3b2d34fed9df"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a925c68486d59404254ab3b2d34fed9df">is_oc12_admin_cmd</a> (uint8_t opcode)</td></tr>
+<tr class="separator:a925c68486d59404254ab3b2d34fed9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ce2e77da3b587fd610f820a2613ca1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a36ce2e77da3b587fd610f820a2613ca1">oc12_tbl_initialize</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a36ce2e77da3b587fd610f820a2613ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968e2bafefcfab11d1e90df7bc2284a8"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8">ppa2secidx</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t <a class="el" href="structppa.html">ppa</a>)</td></tr>
+<tr class="separator:a968e2bafefcfab11d1e90df7bc2284a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3ff44ce36ff8f6abba64c35bc5dc79"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a9a3ff44ce36ff8f6abba64c35bc5dc79">oc12_write_oob_meta</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t <a class="el" href="structppa.html">ppa</a>, void *meta)</td></tr>
+<tr class="separator:a9a3ff44ce36ff8f6abba64c35bc5dc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73121a1527886888f077d49b5e599cd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#ad73121a1527886888f077d49b5e599cd">oc12_read_oob_meta</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t <a class="el" href="structppa.html">ppa</a>, void *meta)</td></tr>
+<tr class="separator:ad73121a1527886888f077d49b5e599cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5be918e6cb93b49cf43fcc2c6a36d94"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94">oc12_meta_state_get</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t <a class="el" href="structppa.html">ppa</a>, uint32_t *<a class="el" href="oc12_8h.html#a1b0c7bd4d79798ef4e0ce23894c9aeb2">state</a>)</td></tr>
+<tr class="separator:ae5be918e6cb93b49cf43fcc2c6a36d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513d4b55522984724a7586103d0dccde"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde">oc12_meta_blk_set_erased</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t *psl, int nr_ppas)</td></tr>
+<tr class="separator:a513d4b55522984724a7586103d0dccde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca64e4af4809cbee3d39390041608175"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aca64e4af4809cbee3d39390041608175">oc12_meta_state_set_written</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, uint64_t <a class="el" href="structppa.html">ppa</a>)</td></tr>
+<tr class="separator:aca64e4af4809cbee3d39390041608175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8f07c03f101ab31074a64d1d430615"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a8c8f07c03f101ab31074a64d1d430615">oc12_meta_index</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln, void *meta, uint32_t index)</td></tr>
+<tr class="separator:a8c8f07c03f101ab31074a64d1d430615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834f283bef0c838d4b075ba5cc5405b1"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a834f283bef0c838d4b075ba5cc5405b1">oc12_rw_check_req</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req, uint64_t *psl, uint32_t nr_pages, uint32_t nlb, uint64_t data_size, uint64_t meta_size)</td></tr>
+<tr class="separator:a834f283bef0c838d4b075ba5cc5405b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73b76922bf7b9ecd50de33ff112412a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a">oc12_read_ppa_list</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structOc12RwCmd.html">Oc12RwCmd</a> *cmd, uint64_t *ppa_list)</td></tr>
+<tr class="separator:ad73b76922bf7b9ecd50de33ff112412a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5fa0dc26c1d7334be3de1917e950f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4">parse_ppa_list</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req, <a class="el" href="structAddrBucket.html">AddrBucket</a> *bucket, int *nr)</td></tr>
+<tr class="separator:a7c5fa0dc26c1d7334be3de1917e950f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf02ace1750d8b7b40286e2c3fe33a23"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23">oc12_advance_status</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:aaf02ace1750d8b7b40286e2c3fe33a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3ff8c5923a54ae4b9167627877b7ba"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba">oc12_read</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:a7e3ff8c5923a54ae4b9167627877b7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b73b03b7edcdc1740a24b053ce72a5"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5">oc12_write</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:af8b73b03b7edcdc1740a24b053ce72a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee96b1d201c8c59efdcf0ca09c94ae69"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aee96b1d201c8c59efdcf0ca09c94ae69">oc12_tbl_size</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:aee96b1d201c8c59efdcf0ca09c94ae69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126a85634fc530e22284c185df8f5f81"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a126a85634fc530e22284c185df8f5f81">oc12_identity</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a126a85634fc530e22284c185df8f5f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edf286a27463261b9a975ee1eeefcc8"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a6edf286a27463261b9a975ee1eeefcc8">oc12_get_l2p_tbl</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a6edf286a27463261b9a975ee1eeefcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad0ccde984b0ad5434da3622acc0389"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a9ad0ccde984b0ad5434da3622acc0389">oc12_bbt_get</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a9ad0ccde984b0ad5434da3622acc0389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada1f75e02b085c6a43438e5ab1c81e0"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aada1f75e02b085c6a43438e5ab1c81e0">oc12_bbt_set</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:aada1f75e02b085c6a43438e5ab1c81e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c3bc08fae8d78b595c291eee88526ad"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a9c3bc08fae8d78b595c291eee88526ad">oc12_read_tbls</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a9c3bc08fae8d78b595c291eee88526ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68620169de187b09e15ef18b52eb72c6"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6">oc12_admin_cmd</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a68620169de187b09e15ef18b52eb72c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1abde67fc0b44326b1772846549abf"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf">oc12_erase_async</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:aab1abde67fc0b44326b1772846549abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cb229f7099e5695f0525b8b74ffa37"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a22cb229f7099e5695f0525b8b74ffa37">oc12_init_id_ctrl</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln)</td></tr>
+<tr class="separator:a22cb229f7099e5695f0525b8b74ffa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa22cd7b8b8e5064da4267752f5f47016"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aa22cd7b8b8e5064da4267752f5f47016">oc12_init_meta</a> (<a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *ln)</td></tr>
+<tr class="separator:aa22cd7b8b8e5064da4267752f5f47016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d17602b61b416c29c19265374c0801b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a3d17602b61b416c29c19265374c0801b">oc12_init_bbtbl</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a3d17602b61b416c29c19265374c0801b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a412e9ba005df6611a73cfbb61ed85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a42a412e9ba005df6611a73cfbb61ed85">oc12_release_locks</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a42a412e9ba005df6611a73cfbb61ed85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e77c275cce3ddf13e9092d72285d6f5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a0e77c275cce3ddf13e9092d72285d6f5">oc12_init_misc</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a0e77c275cce3ddf13e9092d72285d6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f1fe491b2d6a603c05c6488eba019a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a59f1fe491b2d6a603c05c6488eba019a">oc12_init_params</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a59f1fe491b2d6a603c05c6488eba019a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d50fc7f025a0a40c4a68a76fd5a088"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088">oc12_init_more</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a08d50fc7f025a0a40c4a68a76fd5a088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2f63023ff079bd918f3e0a2fc99c0a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#adb2f63023ff079bd918f3e0a2fc99c0a">oc12_exit</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:adb2f63023ff079bd918f3e0a2fc99c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b547738c301cdf347f2ce68659c93d"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a62b547738c301cdf347f2ce68659c93d">oc12_nvme_rw</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:a62b547738c301cdf347f2ce68659c93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c41a58559ee2c92463ac4f25dab0a08"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08">oc12_io_cmd</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeRequest.html">NvmeRequest</a> *req)</td></tr>
+<tr class="separator:a3c41a58559ee2c92463ac4f25dab0a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef55b0e79dd4659d66fc1d7d83b3a88a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#aef55b0e79dd4659d66fc1d7d83b3a88a">oc12_set_ctrl_str</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:aef55b0e79dd4659d66fc1d7d83b3a88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0caef7cdff7d502bdf678c7e8c57e35e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e">oc12_init</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, Error **errp)</td></tr>
+<tr class="separator:a0caef7cdff7d502bdf678c7e8c57e35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a623f6939cbe95d9de1eab8847f6ddba0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0">nvme_register_ocssd12</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n)</td></tr>
+<tr class="separator:a623f6939cbe95d9de1eab8847f6ddba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a925c68486d59404254ab3b2d34fed9df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a925c68486d59404254ab3b2d34fed9df">&#9670;&nbsp;</a></span>is_oc12_admin_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool is_oc12_admin_cmd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a623f6939cbe95d9de1eab8847f6ddba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a623f6939cbe95d9de1eab8847f6ddba0">&#9670;&nbsp;</a></span>nvme_register_ocssd12()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nvme_register_ocssd12 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_cgraph.png" border="0" usemap="#oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_cgraph" alt=""/></div>
+<map name="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_cgraph" id="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,693,181,720"/>
+<area shape="rect" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6" title=" " alt="" coords="229,668,365,695"/>
+<area shape="rect" href="oc12_8c.html#adb2f63023ff079bd918f3e0a2fc99c0a" title=" " alt="" coords="255,744,340,771"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="257,908,338,935"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="435,360,541,387"/>
+<area shape="rect" href="oc12_8c.html#a9ad0ccde984b0ad5434da3622acc0389" title=" " alt="" coords="433,668,543,695"/>
+<area shape="rect" href="oc12_8c.html#aada1f75e02b085c6a43438e5ab1c81e0" title=" " alt="" coords="434,567,542,593"/>
+<area shape="rect" href="oc12_8c.html#a6edf286a27463261b9a975ee1eeefcc8" title=" " alt="" coords="422,719,554,745"/>
+<area shape="rect" href="oc12_8c.html#a126a85634fc530e22284c185df8f5f81" title=" " alt="" coords="433,617,543,644"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="633,655,747,681"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="855,629,978,656"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="1105,579,1236,605"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="631,579,749,605"/>
+<area shape="rect" href="oc12_8c.html#a42a412e9ba005df6611a73cfbb61ed85" title=" " alt="" coords="413,769,563,796"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="427,908,549,935"/>
+<area shape="rect" href="oc12_8c.html#aef55b0e79dd4659d66fc1d7d83b3a88a" title=" " alt="" coords="422,1060,554,1087"/>
+<area shape="rect" href="nand_8c.html#abf5d19b68122bdd6e7769c2d86d12e12" title=" " alt="" coords="630,756,750,783"/>
+<area shape="rect" href="oc12_8c.html#a3d17602b61b416c29c19265374c0801b" title=" " alt="" coords="629,807,751,833"/>
+<area shape="rect" href="oc12_8c.html#a22cb229f7099e5695f0525b8b74ffa37" title=" " alt="" coords="626,857,754,884"/>
+<area shape="rect" href="oc12_8c.html#aa22cd7b8b8e5064da4267752f5f47016" title=" " alt="" coords="629,908,751,935"/>
+<area shape="rect" href="oc12_8c.html#a0e77c275cce3ddf13e9092d72285d6f5" title=" " alt="" coords="631,959,749,985"/>
+<area shape="rect" href="oc12_8c.html#a59f1fe491b2d6a603c05c6488eba019a" title=" " alt="" coords="621,1009,759,1036"/>
+<area shape="rect" href="oc12_8c.html#a9c3bc08fae8d78b595c291eee88526ad" title=" " alt="" coords="630,1111,750,1137"/>
+<area shape="rect" href="oc12_8c.html#aee96b1d201c8c59efdcf0ca09c94ae69" title=" " alt="" coords="861,1085,972,1112"/>
+<area shape="rect" href="oc12_8c.html#a36ce2e77da3b587fd610f820a2613ca1" title=" " alt="" coords="620,705,760,732"/>
+<area shape="rect" href="nand_8c.html#ac06b76cb4e1499cd0f5086d231a92bf2" title=" " alt="" coords="834,731,999,757"/>
+<area shape="rect" href="nand_8c.html#a37e87937b3211fc7dbe4b940ba9b6797" title=" " alt="" coords="832,781,1001,808"/>
+<area shape="rect" href="nand_8c.html#a7710f745cac37cb6e8bce3f23563ae3f" title=" " alt="" coords="837,832,997,859"/>
+<area shape="rect" href="nand_8c.html#a8cb0a9f52feff4b7ff071d57c217cf86" title=" " alt="" coords="838,680,995,707"/>
+<area shape="rect" href="oc12_8c.html#a3bfb4ee5498ee9493ea2965fb44074dc" title=" " alt="" coords="876,883,957,909"/>
+<area shape="rect" href="timing_8c.html#aa8618254a23869568da186caca33e37b" title=" " alt="" coords="868,959,965,985"/>
+<area shape="rect" href="nvme-util_8c.html#a9e84e8328646dcb1f24be9c79018e6a0" title=" " alt="" coords="611,1161,769,1188"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="619,196,761,223"/>
+<area shape="rect" href="oc12_8c.html#a62b547738c301cdf347f2ce68659c93d" title=" " alt="" coords="630,411,750,437"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="645,272,735,299"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="643,360,737,387"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="835,157,998,184"/>
+<area shape="rect" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde" title=" " alt="" coords="817,5,1016,32"/>
+<area shape="rect" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a" title=" " alt="" coords="843,208,990,235"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="1064,157,1277,184"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="1076,208,1265,235"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="1113,107,1229,133"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="1089,31,1252,57"/>
+<area shape="rect" href="dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="867,411,966,437"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="849,259,984,285"/>
+<area shape="rect" href="oc12_8c.html#a8c8f07c03f101ab31074a64d1d430615" title=" " alt="" coords="848,309,985,336"/>
+<area shape="rect" href="oc12_8c.html#ad73121a1527886888f077d49b5e599cd" title=" " alt="" coords="836,56,997,83"/>
+<area shape="rect" href="oc12_8c.html#a834f283bef0c838d4b075ba5cc5405b1" title=" " alt="" coords="842,360,991,387"/>
+<area shape="rect" href="oc12_8c.html#aca64e4af4809cbee3d39390041608175" title=" " alt="" coords="836,462,997,503"/>
+<area shape="rect" href="oc12_8c.html#a9a3ff44ce36ff8f6abba64c35bc5dc79" title=" " alt="" coords="834,528,999,555"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_icgraph.png" border="0" usemap="#oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_icgraph" alt=""/></div>
+<map name="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_icgraph" id="oc12_8c_a623f6939cbe95d9de1eab8847f6ddba0_icgraph">
+<area shape="rect" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a68620169de187b09e15ef18b52eb72c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68620169de187b09e15ef18b52eb72c6">&#9670;&nbsp;</a></span>oc12_admin_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_admin_cmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a68620169de187b09e15ef18b52eb72c6_cgraph.png" border="0" usemap="#oc12_8c_a68620169de187b09e15ef18b52eb72c6_cgraph" alt=""/></div>
+<map name="oc12_8c_a68620169de187b09e15ef18b52eb72c6_cgraph" id="oc12_8c_a68620169de187b09e15ef18b52eb72c6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,141,108"/>
+<area shape="rect" href="oc12_8c.html#a9ad0ccde984b0ad5434da3622acc0389" title=" " alt="" coords="201,5,310,32"/>
+<area shape="rect" href="oc12_8c.html#aada1f75e02b085c6a43438e5ab1c81e0" title=" " alt="" coords="201,157,309,184"/>
+<area shape="rect" href="oc12_8c.html#a6edf286a27463261b9a975ee1eeefcc8" title=" " alt="" coords="189,56,321,83"/>
+<area shape="rect" href="oc12_8c.html#a126a85634fc530e22284c185df8f5f81" title=" " alt="" coords="200,107,311,133"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="371,69,486,96"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="536,107,659,133"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="707,107,837,133"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="369,132,488,159"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a68620169de187b09e15ef18b52eb72c6_icgraph.png" border="0" usemap="#oc12_8c_a68620169de187b09e15ef18b52eb72c6_icgraph" alt=""/></div>
+<map name="oc12_8c_a68620169de187b09e15ef18b52eb72c6_icgraph" id="oc12_8c_a68620169de187b09e15ef18b52eb72c6_icgraph">
+<area shape="rect" title=" " alt="" coords="799,5,935,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf02ace1750d8b7b40286e2c3fe33a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf02ace1750d8b7b40286e2c3fe33a23">&#9670;&nbsp;</a></span>oc12_advance_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_advance_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_cgraph.png" border="0" usemap="#oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_cgraph" alt=""/></div>
+<map name="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_cgraph" id="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_cgraph">
+<area shape="rect" title=" " alt="" coords="5,69,168,96"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="216,19,429,45"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="228,69,417,96"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="265,132,381,159"/>
+<area shape="rect" href="nand_8h.html#a8114ba8a535f9a3dba0f920bd8a3ade3" title=" " alt="" coords="482,5,650,32"/>
+<area shape="rect" href="nand_8h.html#a1df10f9cc5736ecc33431a60f6191356" title=" " alt="" coords="479,56,653,83"/>
+<area shape="rect" href="nand_8h.html#ab8913f0fbdd3cb447393cef3754be7c4" title=" " alt="" coords="477,107,655,133"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="507,157,625,184"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_icgraph.png" border="0" usemap="#oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_icgraph" alt=""/></div>
+<map name="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_icgraph" id="oc12_8c_aaf02ace1750d8b7b40286e2c3fe33a23_icgraph">
+<area shape="rect" title=" " alt="" coords="1143,56,1305,83"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="979,56,1069,83"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="977,107,1071,133"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,56,905,83"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,56,751,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ad0ccde984b0ad5434da3622acc0389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad0ccde984b0ad5434da3622acc0389">&#9670;&nbsp;</a></span>oc12_bbt_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_bbt_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_cgraph.png" border="0" usemap="#oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_cgraph" alt=""/></div>
+<map name="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_cgraph" id="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="163,5,277,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="325,5,448,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="496,5,627,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_icgraph.png" border="0" usemap="#oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_icgraph" alt=""/></div>
+<map name="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_icgraph" id="oc12_8c_a9ad0ccde984b0ad5434da3622acc0389_icgraph">
+<area shape="rect" title=" " alt="" coords="983,5,1092,32"/>
+<area shape="rect" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6" title=" " alt="" coords="799,5,935,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aada1f75e02b085c6a43438e5ab1c81e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aada1f75e02b085c6a43438e5ab1c81e0">&#9670;&nbsp;</a></span>oc12_bbt_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_bbt_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_cgraph.png" border="0" usemap="#oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_cgraph" alt=""/></div>
+<map name="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_cgraph" id="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="161,5,280,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="328,5,451,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="499,5,629,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_icgraph.png" border="0" usemap="#oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_icgraph" alt=""/></div>
+<map name="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_icgraph" id="oc12_8c_aada1f75e02b085c6a43438e5ab1c81e0_icgraph">
+<area shape="rect" title=" " alt="" coords="983,5,1091,32"/>
+<area shape="rect" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6" title=" " alt="" coords="799,5,935,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab1abde67fc0b44326b1772846549abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1abde67fc0b44326b1772846549abf">&#9670;&nbsp;</a></span>oc12_erase_async()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_erase_async </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aab1abde67fc0b44326b1772846549abf_cgraph.png" border="0" usemap="#oc12_8c_aab1abde67fc0b44326b1772846549abf_cgraph" alt=""/></div>
+<map name="oc12_8c_aab1abde67fc0b44326b1772846549abf_cgraph" id="oc12_8c_aab1abde67fc0b44326b1772846549abf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,189,147,216"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="213,127,375,153"/>
+<area shape="rect" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde" title=" " alt="" coords="195,189,393,216"/>
+<area shape="rect" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a" title=" " alt="" coords="221,265,367,292"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="441,31,655,57"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="453,81,643,108"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="490,132,606,159"/>
+<area shape="rect" href="nand_8h.html#a8114ba8a535f9a3dba0f920bd8a3ade3" title=" " alt="" coords="707,5,875,32"/>
+<area shape="rect" href="nand_8h.html#a1df10f9cc5736ecc33431a60f6191356" title=" " alt="" coords="705,56,878,83"/>
+<area shape="rect" href="nand_8h.html#ab8913f0fbdd3cb447393cef3754be7c4" title=" " alt="" coords="703,107,880,133"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="732,157,851,184"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="467,183,629,209"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="743,233,839,260"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="483,284,613,311"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aab1abde67fc0b44326b1772846549abf_icgraph.png" border="0" usemap="#oc12_8c_aab1abde67fc0b44326b1772846549abf_icgraph" alt=""/></div>
+<map name="oc12_8c_aab1abde67fc0b44326b1772846549abf_icgraph" id="oc12_8c_aab1abde67fc0b44326b1772846549abf_icgraph">
+<area shape="rect" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb2f63023ff079bd918f3e0a2fc99c0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2f63023ff079bd918f3e0a2fc99c0a">&#9670;&nbsp;</a></span>oc12_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_cgraph.png" border="0" usemap="#oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_cgraph" alt=""/></div>
+<map name="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_cgraph" id="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" href="oc12_8c.html#a42a412e9ba005df6611a73cfbb61ed85" title=" " alt="" coords="139,5,288,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_icgraph.png" border="0" usemap="#oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_icgraph" alt=""/></div>
+<map name="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_icgraph" id="oc12_8c_adb2f63023ff079bd918f3e0a2fc99c0a_icgraph">
+<area shape="rect" title=" " alt="" coords="799,5,884,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6edf286a27463261b9a975ee1eeefcc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edf286a27463261b9a975ee1eeefcc8">&#9670;&nbsp;</a></span>oc12_get_l2p_tbl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_get_l2p_tbl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_cgraph.png" border="0" usemap="#oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_cgraph" alt=""/></div>
+<map name="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_cgraph" id="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="185,5,300,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="348,5,471,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="519,5,649,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_icgraph.png" border="0" usemap="#oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_icgraph" alt=""/></div>
+<map name="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_icgraph" id="oc12_8c_a6edf286a27463261b9a975ee1eeefcc8_icgraph">
+<area shape="rect" title=" " alt="" coords="983,5,1115,32"/>
+<area shape="rect" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6" title=" " alt="" coords="799,5,935,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a126a85634fc530e22284c185df8f5f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126a85634fc530e22284c185df8f5f81">&#9670;&nbsp;</a></span>oc12_identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_identity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a126a85634fc530e22284c185df8f5f81_cgraph.png" border="0" usemap="#oc12_8c_a126a85634fc530e22284c185df8f5f81_cgraph" alt=""/></div>
+<map name="oc12_8c_a126a85634fc530e22284c185df8f5f81_cgraph" id="oc12_8c_a126a85634fc530e22284c185df8f5f81_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="164,5,279,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="327,5,449,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="497,5,628,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a126a85634fc530e22284c185df8f5f81_icgraph.png" border="0" usemap="#oc12_8c_a126a85634fc530e22284c185df8f5f81_icgraph" alt=""/></div>
+<map name="oc12_8c_a126a85634fc530e22284c185df8f5f81_icgraph" id="oc12_8c_a126a85634fc530e22284c185df8f5f81_icgraph">
+<area shape="rect" title=" " alt="" coords="983,5,1093,32"/>
+<area shape="rect" href="oc12_8c.html#a68620169de187b09e15ef18b52eb72c6" title=" " alt="" coords="799,5,935,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0caef7cdff7d502bdf678c7e8c57e35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0caef7cdff7d502bdf678c7e8c57e35e">&#9670;&nbsp;</a></span>oc12_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Error **&#160;</td>
+          <td class="paramname"><em>errp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_cgraph.png" border="0" usemap="#oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_cgraph" alt=""/></div>
+<map name="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_cgraph" id="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,436,87,463"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="139,335,262,361"/>
+<area shape="rect" href="oc12_8c.html#aef55b0e79dd4659d66fc1d7d83b3a88a" title=" " alt="" coords="135,461,267,488"/>
+<area shape="rect" href="nand_8c.html#abf5d19b68122bdd6e7769c2d86d12e12" title=" " alt="" coords="334,107,454,133"/>
+<area shape="rect" href="oc12_8c.html#a3d17602b61b416c29c19265374c0801b" title=" " alt="" coords="333,157,455,184"/>
+<area shape="rect" href="oc12_8c.html#a22cb229f7099e5695f0525b8b74ffa37" title=" " alt="" coords="330,208,458,235"/>
+<area shape="rect" href="oc12_8c.html#aa22cd7b8b8e5064da4267752f5f47016" title=" " alt="" coords="333,259,455,285"/>
+<area shape="rect" href="oc12_8c.html#a0e77c275cce3ddf13e9092d72285d6f5" title=" " alt="" coords="335,309,453,336"/>
+<area shape="rect" href="oc12_8c.html#a59f1fe491b2d6a603c05c6488eba019a" title=" " alt="" coords="325,360,463,387"/>
+<area shape="rect" href="oc12_8c.html#a9c3bc08fae8d78b595c291eee88526ad" title=" " alt="" coords="334,411,454,437"/>
+<area shape="rect" href="oc12_8c.html#aee96b1d201c8c59efdcf0ca09c94ae69" title=" " alt="" coords="551,436,661,463"/>
+<area shape="rect" href="oc12_8c.html#a36ce2e77da3b587fd610f820a2613ca1" title=" " alt="" coords="324,512,464,539"/>
+<area shape="rect" href="nand_8c.html#ac06b76cb4e1499cd0f5086d231a92bf2" title=" " alt="" coords="523,5,689,32"/>
+<area shape="rect" href="nand_8c.html#a37e87937b3211fc7dbe4b940ba9b6797" title=" " alt="" coords="521,56,691,83"/>
+<area shape="rect" href="nand_8c.html#a7710f745cac37cb6e8bce3f23563ae3f" title=" " alt="" coords="526,107,686,133"/>
+<area shape="rect" href="nand_8c.html#a8cb0a9f52feff4b7ff071d57c217cf86" title=" " alt="" coords="527,157,685,184"/>
+<area shape="rect" href="oc12_8c.html#a3bfb4ee5498ee9493ea2965fb44074dc" title=" " alt="" coords="565,208,647,235"/>
+<area shape="rect" href="timing_8c.html#aa8618254a23869568da186caca33e37b" title=" " alt="" coords="557,309,655,336"/>
+<area shape="rect" href="nvme-util_8c.html#a9e84e8328646dcb1f24be9c79018e6a0" title=" " alt="" coords="315,563,473,589"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_icgraph.png" border="0" usemap="#oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_icgraph" alt=""/></div>
+<map name="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_icgraph" id="oc12_8c_a0caef7cdff7d502bdf678c7e8c57e35e_icgraph">
+<area shape="rect" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3d17602b61b416c29c19265374c0801b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d17602b61b416c29c19265374c0801b">&#9670;&nbsp;</a></span>oc12_init_bbtbl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_init_bbtbl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a3d17602b61b416c29c19265374c0801b_icgraph.png" border="0" usemap="#oc12_8c_a3d17602b61b416c29c19265374c0801b_icgraph" alt=""/></div>
+<map name="oc12_8c_a3d17602b61b416c29c19265374c0801b_icgraph" id="oc12_8c_a3d17602b61b416c29c19265374c0801b_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1220,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a22cb229f7099e5695f0525b8b74ffa37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cb229f7099e5695f0525b8b74ffa37">&#9670;&nbsp;</a></span>oc12_init_id_ctrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_init_id_ctrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_cgraph.png" border="0" usemap="#oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_cgraph" alt=""/></div>
+<map name="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_cgraph" id="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,133,32"/>
+<area shape="rect" href="oc12_8c.html#a3bfb4ee5498ee9493ea2965fb44074dc" title=" " alt="" coords="181,5,263,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_icgraph.png" border="0" usemap="#oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_icgraph" alt=""/></div>
+<map name="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_icgraph" id="oc12_8c_a22cb229f7099e5695f0525b8b74ffa37_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1227,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa22cd7b8b8e5064da4267752f5f47016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22cd7b8b8e5064da4267752f5f47016">&#9670;&nbsp;</a></span>oc12_init_meta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_init_meta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aa22cd7b8b8e5064da4267752f5f47016_icgraph.png" border="0" usemap="#oc12_8c_aa22cd7b8b8e5064da4267752f5f47016_icgraph" alt=""/></div>
+<map name="oc12_8c_aa22cd7b8b8e5064da4267752f5f47016_icgraph" id="oc12_8c_aa22cd7b8b8e5064da4267752f5f47016_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1221,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0e77c275cce3ddf13e9092d72285d6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e77c275cce3ddf13e9092d72285d6f5">&#9670;&nbsp;</a></span>oc12_init_misc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_init_misc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_cgraph.png" border="0" usemap="#oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_cgraph" alt=""/></div>
+<map name="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_cgraph" id="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" href="timing_8c.html#aa8618254a23869568da186caca33e37b" title=" " alt="" coords="172,5,269,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_icgraph.png" border="0" usemap="#oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_icgraph" alt=""/></div>
+<map name="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_icgraph" id="oc12_8c_a0e77c275cce3ddf13e9092d72285d6f5_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1217,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08d50fc7f025a0a40c4a68a76fd5a088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d50fc7f025a0a40c4a68a76fd5a088">&#9670;&nbsp;</a></span>oc12_init_more()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_init_more </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_cgraph.png" border="0" usemap="#oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_cgraph" alt=""/></div>
+<map name="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_cgraph" id="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_cgraph">
+<area shape="rect" title=" " alt="" coords="5,309,128,336"/>
+<area shape="rect" href="nand_8c.html#abf5d19b68122bdd6e7769c2d86d12e12" title=" " alt="" coords="186,107,306,133"/>
+<area shape="rect" href="oc12_8c.html#a3d17602b61b416c29c19265374c0801b" title=" " alt="" coords="185,157,307,184"/>
+<area shape="rect" href="oc12_8c.html#a22cb229f7099e5695f0525b8b74ffa37" title=" " alt="" coords="182,208,310,235"/>
+<area shape="rect" href="oc12_8c.html#aa22cd7b8b8e5064da4267752f5f47016" title=" " alt="" coords="185,259,307,285"/>
+<area shape="rect" href="oc12_8c.html#a0e77c275cce3ddf13e9092d72285d6f5" title=" " alt="" coords="187,309,305,336"/>
+<area shape="rect" href="oc12_8c.html#a59f1fe491b2d6a603c05c6488eba019a" title=" " alt="" coords="177,360,315,387"/>
+<area shape="rect" href="oc12_8c.html#a9c3bc08fae8d78b595c291eee88526ad" title=" " alt="" coords="186,411,306,437"/>
+<area shape="rect" href="oc12_8c.html#aee96b1d201c8c59efdcf0ca09c94ae69" title=" " alt="" coords="393,436,504,463"/>
+<area shape="rect" href="oc12_8c.html#a36ce2e77da3b587fd610f820a2613ca1" title=" " alt="" coords="176,512,316,539"/>
+<area shape="rect" href="nand_8c.html#ac06b76cb4e1499cd0f5086d231a92bf2" title=" " alt="" coords="366,5,531,32"/>
+<area shape="rect" href="nand_8c.html#a37e87937b3211fc7dbe4b940ba9b6797" title=" " alt="" coords="364,56,533,83"/>
+<area shape="rect" href="nand_8c.html#a7710f745cac37cb6e8bce3f23563ae3f" title=" " alt="" coords="369,107,529,133"/>
+<area shape="rect" href="nand_8c.html#a8cb0a9f52feff4b7ff071d57c217cf86" title=" " alt="" coords="370,157,527,184"/>
+<area shape="rect" href="oc12_8c.html#a3bfb4ee5498ee9493ea2965fb44074dc" title=" " alt="" coords="408,208,489,235"/>
+<area shape="rect" href="timing_8c.html#aa8618254a23869568da186caca33e37b" title=" " alt="" coords="400,309,497,336"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_icgraph.png" border="0" usemap="#oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_icgraph" alt=""/></div>
+<map name="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_icgraph" id="oc12_8c_a08d50fc7f025a0a40c4a68a76fd5a088_icgraph">
+<area shape="rect" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59f1fe491b2d6a603c05c6488eba019a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f1fe491b2d6a603c05c6488eba019a">&#9670;&nbsp;</a></span>oc12_init_params()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_init_params </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a59f1fe491b2d6a603c05c6488eba019a_icgraph.png" border="0" usemap="#oc12_8c_a59f1fe491b2d6a603c05c6488eba019a_icgraph" alt=""/></div>
+<map name="oc12_8c_a59f1fe491b2d6a603c05c6488eba019a_icgraph" id="oc12_8c_a59f1fe491b2d6a603c05c6488eba019a_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1236,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c41a58559ee2c92463ac4f25dab0a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c41a58559ee2c92463ac4f25dab0a08">&#9670;&nbsp;</a></span>oc12_io_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_io_cmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_cgraph.png" border="0" usemap="#oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_cgraph" alt=""/></div>
+<map name="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_cgraph" id="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_cgraph">
+<area shape="rect" title=" " alt="" coords="5,480,112,507"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="160,385,301,412"/>
+<area shape="rect" href="oc12_8c.html#a62b547738c301cdf347f2ce68659c93d" title=" " alt="" coords="171,581,291,608"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="186,461,275,488"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="184,531,277,557"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="367,195,530,221"/>
+<area shape="rect" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde" title=" " alt="" coords="349,245,548,272"/>
+<area shape="rect" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a" title=" " alt="" coords="375,397,522,424"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="596,195,809,221"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="608,68,797,95"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="645,144,761,171"/>
+<area shape="rect" href="nand_8h.html#a8114ba8a535f9a3dba0f920bd8a3ade3" title=" " alt="" coords="862,107,1030,133"/>
+<area shape="rect" href="nand_8h.html#a1df10f9cc5736ecc33431a60f6191356" title=" " alt="" coords="859,5,1033,32"/>
+<area shape="rect" href="nand_8h.html#ab8913f0fbdd3cb447393cef3754be7c4" title=" " alt="" coords="857,56,1035,83"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="887,157,1005,184"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="621,296,784,323"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="898,347,994,373"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="637,600,768,627"/>
+<area shape="rect" href="dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="399,549,498,576"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="381,651,516,677"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="387,600,510,627"/>
+<area shape="rect" href="oc12_8c.html#a8c8f07c03f101ab31074a64d1d430615" title=" " alt="" coords="380,448,517,475"/>
+<area shape="rect" href="oc12_8c.html#ad73121a1527886888f077d49b5e599cd" title=" " alt="" coords="622,347,783,373"/>
+<area shape="rect" href="oc12_8c.html#a834f283bef0c838d4b075ba5cc5405b1" title=" " alt="" coords="374,499,523,525"/>
+<area shape="rect" href="oc12_8c.html#aca64e4af4809cbee3d39390041608175" title=" " alt="" coords="622,771,783,813"/>
+<area shape="rect" href="oc12_8c.html#a9a3ff44ce36ff8f6abba64c35bc5dc79" title=" " alt="" coords="620,673,785,700"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_icgraph.png" border="0" usemap="#oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_icgraph" alt=""/></div>
+<map name="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_icgraph" id="oc12_8c_a3c41a58559ee2c92463ac4f25dab0a08_icgraph">
+<area shape="rect" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a513d4b55522984724a7586103d0dccde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513d4b55522984724a7586103d0dccde">&#9670;&nbsp;</a></span>oc12_meta_blk_set_erased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_meta_blk_set_erased </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>psl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nr_ppas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a513d4b55522984724a7586103d0dccde_cgraph.png" border="0" usemap="#oc12_8c_a513d4b55522984724a7586103d0dccde_cgraph" alt=""/></div>
+<map name="oc12_8c_a513d4b55522984724a7586103d0dccde_cgraph" id="oc12_8c_a513d4b55522984724a7586103d0dccde_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,204,57"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="252,5,415,32"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="463,31,559,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a513d4b55522984724a7586103d0dccde_icgraph.png" border="0" usemap="#oc12_8c_a513d4b55522984724a7586103d0dccde_icgraph" alt=""/></div>
+<map name="oc12_8c_a513d4b55522984724a7586103d0dccde_icgraph" id="oc12_8c_a513d4b55522984724a7586103d0dccde_icgraph">
+<area shape="rect" title=" " alt="" coords="1143,5,1341,32"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c8f07c03f101ab31074a64d1d430615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8f07c03f101ab31074a64d1d430615">&#9670;&nbsp;</a></span>oc12_meta_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* oc12_meta_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a8c8f07c03f101ab31074a64d1d430615_icgraph.png" border="0" usemap="#oc12_8c_a8c8f07c03f101ab31074a64d1d430615_icgraph" alt=""/></div>
+<map name="oc12_8c_a8c8f07c03f101ab31074a64d1d430615_icgraph" id="oc12_8c_a8c8f07c03f101ab31074a64d1d430615_icgraph">
+<area shape="rect" title=" " alt="" coords="1095,31,1232,57"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="955,5,1045,32"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="953,56,1047,83"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,31,905,57"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,31,751,57"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,31,527,57"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,31,284,57"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,31,129,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae5be918e6cb93b49cf43fcc2c6a36d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5be918e6cb93b49cf43fcc2c6a36d94">&#9670;&nbsp;</a></span>oc12_meta_state_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_meta_state_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ppa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_cgraph.png" border="0" usemap="#oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_cgraph" alt=""/></div>
+<map name="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_cgraph" id="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="216,5,312,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_icgraph.png" border="0" usemap="#oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_icgraph" alt=""/></div>
+<map name="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_icgraph" id="oc12_8c_ae5be918e6cb93b49cf43fcc2c6a36d94_icgraph">
+<area shape="rect" title=" " alt="" coords="1389,31,1552,57"/>
+<area shape="rect" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde" title=" " alt="" coords="1143,5,1341,32"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="979,56,1069,83"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,31,905,57"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,31,751,57"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,31,527,57"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,31,284,57"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,31,129,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aca64e4af4809cbee3d39390041608175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca64e4af4809cbee3d39390041608175">&#9670;&nbsp;</a></span>oc12_meta_state_set_written()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_meta_state_set_written </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ppa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aca64e4af4809cbee3d39390041608175_cgraph.png" border="0" usemap="#oc12_8c_aca64e4af4809cbee3d39390041608175_cgraph" alt=""/></div>
+<map name="oc12_8c_aca64e4af4809cbee3d39390041608175_cgraph" id="oc12_8c_aca64e4af4809cbee3d39390041608175_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,167,47"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="215,13,311,39"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aca64e4af4809cbee3d39390041608175_icgraph.png" border="0" usemap="#oc12_8c_aca64e4af4809cbee3d39390041608175_icgraph" alt=""/></div>
+<map name="oc12_8c_aca64e4af4809cbee3d39390041608175_icgraph" id="oc12_8c_aca64e4af4809cbee3d39390041608175_icgraph">
+<area shape="rect" title=" " alt="" coords="1095,5,1256,47"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="953,13,1047,39"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,13,905,39"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,13,751,39"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,13,527,39"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,13,284,39"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,13,129,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a62b547738c301cdf347f2ce68659c93d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b547738c301cdf347f2ce68659c93d">&#9670;&nbsp;</a></span>oc12_nvme_rw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_nvme_rw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a62b547738c301cdf347f2ce68659c93d_icgraph.png" border="0" usemap="#oc12_8c_a62b547738c301cdf347f2ce68659c93d_icgraph" alt=""/></div>
+<map name="oc12_8c_a62b547738c301cdf347f2ce68659c93d_icgraph" id="oc12_8c_a62b547738c301cdf347f2ce68659c93d_icgraph">
+<area shape="rect" title=" " alt="" coords="953,5,1073,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7e3ff8c5923a54ae4b9167627877b7ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3ff8c5923a54ae4b9167627877b7ba">&#9670;&nbsp;</a></span>oc12_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_cgraph.png" border="0" usemap="#oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_cgraph" alt=""/></div>
+<map name="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_cgraph" id="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_cgraph">
+<area shape="rect" title=" " alt="" coords="5,245,95,272"/>
+<area shape="rect" href="dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="175,43,273,69"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="157,93,291,120"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="163,195,285,221"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="143,144,305,171"/>
+<area shape="rect" href="oc12_8c.html#a8c8f07c03f101ab31074a64d1d430615" title=" " alt="" coords="155,245,293,272"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="143,347,305,373"/>
+<area shape="rect" href="oc12_8c.html#ad73121a1527886888f077d49b5e599cd" title=" " alt="" coords="143,397,305,424"/>
+<area shape="rect" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a" title=" " alt="" coords="151,296,297,323"/>
+<area shape="rect" href="oc12_8c.html#a834f283bef0c838d4b075ba5cc5405b1" title=" " alt="" coords="149,448,299,475"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="395,271,525,297"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="353,195,567,221"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="365,68,555,95"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="402,144,518,171"/>
+<area shape="rect" href="nand_8h.html#a8114ba8a535f9a3dba0f920bd8a3ade3" title=" " alt="" coords="619,56,787,83"/>
+<area shape="rect" href="nand_8h.html#a1df10f9cc5736ecc33431a60f6191356" title=" " alt="" coords="617,107,790,133"/>
+<area shape="rect" href="nand_8h.html#ab8913f0fbdd3cb447393cef3754be7c4" title=" " alt="" coords="615,5,792,32"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="644,157,763,184"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="412,372,508,399"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_icgraph.png" border="0" usemap="#oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_icgraph" alt=""/></div>
+<map name="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_icgraph" id="oc12_8c_a7e3ff8c5923a54ae4b9167627877b7ba_icgraph">
+<area shape="rect" title=" " alt="" coords="953,5,1043,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad73121a1527886888f077d49b5e599cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73121a1527886888f077d49b5e599cd">&#9670;&nbsp;</a></span>oc12_read_oob_meta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_read_oob_meta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ppa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>meta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ad73121a1527886888f077d49b5e599cd_cgraph.png" border="0" usemap="#oc12_8c_ad73121a1527886888f077d49b5e599cd_cgraph" alt=""/></div>
+<map name="oc12_8c_ad73121a1527886888f077d49b5e599cd_cgraph" id="oc12_8c_ad73121a1527886888f077d49b5e599cd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,167,32"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="215,5,311,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ad73121a1527886888f077d49b5e599cd_icgraph.png" border="0" usemap="#oc12_8c_ad73121a1527886888f077d49b5e599cd_icgraph" alt=""/></div>
+<map name="oc12_8c_ad73121a1527886888f077d49b5e599cd_icgraph" id="oc12_8c_ad73121a1527886888f077d49b5e599cd_icgraph">
+<area shape="rect" title=" " alt="" coords="1091,5,1252,32"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="953,5,1043,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad73b76922bf7b9ecd50de33ff112412a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73b76922bf7b9ecd50de33ff112412a">&#9670;&nbsp;</a></span>oc12_read_ppa_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_read_ppa_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structOc12RwCmd.html">Oc12RwCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>ppa_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_cgraph.png" border="0" usemap="#oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_cgraph" alt=""/></div>
+<map name="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_cgraph" id="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="200,5,331,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_icgraph.png" border="0" usemap="#oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_icgraph" alt=""/></div>
+<map name="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_icgraph" id="oc12_8c_ad73b76922bf7b9ecd50de33ff112412a_icgraph">
+<area shape="rect" title=" " alt="" coords="1143,56,1289,83"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="979,56,1069,83"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="977,107,1071,133"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,56,905,83"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,56,751,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9c3bc08fae8d78b595c291eee88526ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3bc08fae8d78b595c291eee88526ad">&#9670;&nbsp;</a></span>oc12_read_tbls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_read_tbls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_cgraph.png" border="0" usemap="#oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_cgraph" alt=""/></div>
+<map name="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_cgraph" id="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" href="oc12_8c.html#aee96b1d201c8c59efdcf0ca09c94ae69" title=" " alt="" coords="173,5,284,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_icgraph.png" border="0" usemap="#oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_icgraph" alt=""/></div>
+<map name="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_icgraph" id="oc12_8c_a9c3bc08fae8d78b595c291eee88526ad_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1219,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a42a412e9ba005df6611a73cfbb61ed85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a412e9ba005df6611a73cfbb61ed85">&#9670;&nbsp;</a></span>oc12_release_locks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_release_locks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a42a412e9ba005df6611a73cfbb61ed85_icgraph.png" border="0" usemap="#oc12_8c_a42a412e9ba005df6611a73cfbb61ed85_icgraph" alt=""/></div>
+<map name="oc12_8c_a42a412e9ba005df6611a73cfbb61ed85_icgraph" id="oc12_8c_a42a412e9ba005df6611a73cfbb61ed85_icgraph">
+<area shape="rect" title=" " alt="" coords="932,5,1081,32"/>
+<area shape="rect" href="oc12_8c.html#adb2f63023ff079bd918f3e0a2fc99c0a" title=" " alt="" coords="799,5,884,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a834f283bef0c838d4b075ba5cc5405b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834f283bef0c838d4b075ba5cc5405b1">&#9670;&nbsp;</a></span>oc12_rw_check_req()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_rw_check_req </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>psl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nr_pages</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nlb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>meta_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a834f283bef0c838d4b075ba5cc5405b1_icgraph.png" border="0" usemap="#oc12_8c_a834f283bef0c838d4b075ba5cc5405b1_icgraph" alt=""/></div>
+<map name="oc12_8c_a834f283bef0c838d4b075ba5cc5405b1_icgraph" id="oc12_8c_a834f283bef0c838d4b075ba5cc5405b1_icgraph">
+<area shape="rect" title=" " alt="" coords="1095,31,1244,57"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="955,5,1045,32"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="953,56,1047,83"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,31,905,57"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,31,751,57"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,31,527,57"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,31,284,57"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,31,129,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aef55b0e79dd4659d66fc1d7d83b3a88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef55b0e79dd4659d66fc1d7d83b3a88a">&#9670;&nbsp;</a></span>oc12_set_ctrl_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_set_ctrl_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_cgraph.png" border="0" usemap="#oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_cgraph" alt=""/></div>
+<map name="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_cgraph" id="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" href="nvme-util_8c.html#a9e84e8328646dcb1f24be9c79018e6a0" title=" " alt="" coords="185,5,344,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_icgraph.png" border="0" usemap="#oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_icgraph" alt=""/></div>
+<map name="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_icgraph" id="oc12_8c_aef55b0e79dd4659d66fc1d7d83b3a88a_icgraph">
+<area shape="rect" title=" " alt="" coords="928,5,1060,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36ce2e77da3b587fd610f820a2613ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ce2e77da3b587fd610f820a2613ca1">&#9670;&nbsp;</a></span>oc12_tbl_initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void oc12_tbl_initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a36ce2e77da3b587fd610f820a2613ca1_icgraph.png" border="0" usemap="#oc12_8c_a36ce2e77da3b587fd610f820a2613ca1_icgraph" alt=""/></div>
+<map name="oc12_8c_a36ce2e77da3b587fd610f820a2613ca1_icgraph" id="oc12_8c_a36ce2e77da3b587fd610f820a2613ca1_icgraph">
+<area shape="rect" title=" " alt="" coords="1099,5,1239,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee96b1d201c8c59efdcf0ca09c94ae69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee96b1d201c8c59efdcf0ca09c94ae69">&#9670;&nbsp;</a></span>oc12_tbl_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t oc12_tbl_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_aee96b1d201c8c59efdcf0ca09c94ae69_icgraph.png" border="0" usemap="#oc12_8c_aee96b1d201c8c59efdcf0ca09c94ae69_icgraph" alt=""/></div>
+<map name="oc12_8c_aee96b1d201c8c59efdcf0ca09c94ae69_icgraph" id="oc12_8c_aee96b1d201c8c59efdcf0ca09c94ae69_icgraph">
+<area shape="rect" title=" " alt="" coords="1267,5,1377,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a9c3bc08fae8d78b595c291eee88526ad" title=" " alt="" coords="1099,31,1219,57"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8b73b03b7edcdc1740a24b053ce72a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b73b03b7edcdc1740a24b053ce72a5">&#9670;&nbsp;</a></span>oc12_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t oc12_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_cgraph.png" border="0" usemap="#oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_cgraph" alt=""/></div>
+<map name="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_cgraph" id="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,233,99,260"/>
+<area shape="rect" href="dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="180,5,279,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="401,157,532,184"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="162,107,297,133"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="168,208,291,235"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="148,309,311,336"/>
+<area shape="rect" href="oc12_8c.html#a8c8f07c03f101ab31074a64d1d430615" title=" " alt="" coords="161,259,298,285"/>
+<area shape="rect" href="oc12_8c.html#aca64e4af4809cbee3d39390041608175" title=" " alt="" coords="149,361,310,402"/>
+<area shape="rect" href="oc12_8c.html#ad73b76922bf7b9ecd50de33ff112412a" title=" " alt="" coords="156,56,303,83"/>
+<area shape="rect" href="oc12_8c.html#a834f283bef0c838d4b075ba5cc5405b1" title=" " alt="" coords="155,427,304,453"/>
+<area shape="rect" href="oc12_8c.html#a9a3ff44ce36ff8f6abba64c35bc5dc79" title=" " alt="" coords="147,477,312,504"/>
+<area shape="rect" href="timing_8c.html#a1e23cd59a19d5524e59e8a130a0318ca" title=" " alt="" coords="360,360,573,387"/>
+<area shape="rect" href="timing_8c.html#a30a08fb995a730b58d87013dab3f010e" title=" " alt="" coords="372,233,561,260"/>
+<area shape="rect" href="oc12_8c.html#a7c5fa0dc26c1d7334be3de1917e950f4" title=" " alt="" coords="409,309,525,336"/>
+<area shape="rect" href="nand_8h.html#a8114ba8a535f9a3dba0f920bd8a3ade3" title=" " alt="" coords="626,221,794,248"/>
+<area shape="rect" href="nand_8h.html#a1df10f9cc5736ecc33431a60f6191356" title=" " alt="" coords="623,272,797,299"/>
+<area shape="rect" href="nand_8h.html#ab8913f0fbdd3cb447393cef3754be7c4" title=" " alt="" coords="621,171,799,197"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="651,323,769,349"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="419,444,515,471"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_icgraph.png" border="0" usemap="#oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_icgraph" alt=""/></div>
+<map name="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_icgraph" id="oc12_8c_af8b73b03b7edcdc1740a24b053ce72a5_icgraph">
+<area shape="rect" title=" " alt="" coords="953,5,1047,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a3ff44ce36ff8f6abba64c35bc5dc79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3ff44ce36ff8f6abba64c35bc5dc79">&#9670;&nbsp;</a></span>oc12_write_oob_meta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int oc12_write_oob_meta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ppa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>meta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_cgraph.png" border="0" usemap="#oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_cgraph" alt=""/></div>
+<map name="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_cgraph" id="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,171,32"/>
+<area shape="rect" href="oc12_8c.html#a968e2bafefcfab11d1e90df7bc2284a8" title=" " alt="" coords="219,5,315,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_icgraph.png" border="0" usemap="#oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_icgraph" alt=""/></div>
+<map name="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_icgraph" id="oc12_8c_a9a3ff44ce36ff8f6abba64c35bc5dc79_icgraph">
+<area shape="rect" title=" " alt="" coords="1095,5,1260,32"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="953,5,1047,32"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,5,905,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c5fa0dc26c1d7334be3de1917e950f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c5fa0dc26c1d7334be3de1917e950f4">&#9670;&nbsp;</a></span>parse_ppa_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void parse_ppa_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> *&#160;</td>
+          <td class="paramname"><em>req</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAddrBucket.html">AddrBucket</a> *&#160;</td>
+          <td class="paramname"><em>bucket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_cgraph.png" border="0" usemap="#oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_cgraph" alt=""/></div>
+<map name="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_cgraph" id="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="nand_8h.html#aea24174b997828eb73fe8f0e7c83209e" title=" " alt="" coords="169,5,288,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_icgraph.png" border="0" usemap="#oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_icgraph" alt=""/></div>
+<map name="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_icgraph" id="oc12_8c_a7c5fa0dc26c1d7334be3de1917e950f4_icgraph">
+<area shape="rect" title=" " alt="" coords="1353,56,1469,83"/>
+<area shape="rect" href="oc12_8c.html#aaf02ace1750d8b7b40286e2c3fe33a23" title=" " alt="" coords="1143,56,1305,83"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,5,1095,32"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="979,56,1069,83"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="977,107,1071,133"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,56,905,83"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,56,751,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a968e2bafefcfab11d1e90df7bc2284a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968e2bafefcfab11d1e90df7bc2284a8">&#9670;&nbsp;</a></span>ppa2secidx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t ppa2secidx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td>
+          <td class="paramname"><em>ln</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>ppa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a968e2bafefcfab11d1e90df7bc2284a8_icgraph.png" border="0" usemap="#oc12_8c_a968e2bafefcfab11d1e90df7bc2284a8_icgraph" alt=""/></div>
+<map name="oc12_8c_a968e2bafefcfab11d1e90df7bc2284a8_icgraph" id="oc12_8c_a968e2bafefcfab11d1e90df7bc2284a8_icgraph">
+<area shape="rect" title=" " alt="" coords="1603,84,1699,111"/>
+<area shape="rect" href="oc12_8c.html#a513d4b55522984724a7586103d0dccde" title=" " alt="" coords="1143,34,1341,60"/>
+<area shape="rect" href="oc12_8c.html#ae5be918e6cb93b49cf43fcc2c6a36d94" title=" " alt="" coords="1391,34,1553,60"/>
+<area shape="rect" href="oc12_8c.html#aca64e4af4809cbee3d39390041608175" title=" " alt="" coords="1391,136,1553,177"/>
+<area shape="rect" href="oc12_8c.html#ad73121a1527886888f077d49b5e599cd" title=" " alt="" coords="1391,84,1553,111"/>
+<area shape="rect" href="oc12_8c.html#a9a3ff44ce36ff8f6abba64c35bc5dc79" title=" " alt="" coords="1389,202,1555,228"/>
+<area shape="rect" href="oc12_8c.html#aab1abde67fc0b44326b1772846549abf" title=" " alt="" coords="953,34,1095,60"/>
+<area shape="rect" href="oc12_8c.html#a3c41a58559ee2c92463ac4f25dab0a08" title=" " alt="" coords="799,84,905,111"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,84,751,111"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,84,527,111"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,84,284,111"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,84,129,111"/>
+<area shape="rect" href="oc12_8c.html#a7e3ff8c5923a54ae4b9167627877b7ba" title=" " alt="" coords="1197,84,1287,111"/>
+<area shape="rect" href="oc12_8c.html#af8b73b03b7edcdc1740a24b053ce72a5" title=" " alt="" coords="1195,143,1289,170"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3bfb4ee5498ee9493ea2965fb44074dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfb4ee5498ee9493ea2965fb44074dc">&#9670;&nbsp;</a></span>qemu_fls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int qemu_fls </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="oc12_8c_a3bfb4ee5498ee9493ea2965fb44074dc_icgraph.png" border="0" usemap="#oc12_8c_a3bfb4ee5498ee9493ea2965fb44074dc_icgraph" alt=""/></div>
+<map name="oc12_8c_a3bfb4ee5498ee9493ea2965fb44074dc_icgraph" id="oc12_8c_a3bfb4ee5498ee9493ea2965fb44074dc_icgraph">
+<area shape="rect" title=" " alt="" coords="1275,5,1356,32"/>
+<area shape="rect" href="oc12_8c.html#a22cb229f7099e5695f0525b8b74ffa37" title=" " alt="" coords="1099,5,1227,32"/>
+<area shape="rect" href="oc12_8c.html#a08d50fc7f025a0a40c4a68a76fd5a088" title=" " alt="" coords="928,5,1051,32"/>
+<area shape="rect" href="oc12_8c.html#a0caef7cdff7d502bdf678c7e8c57e35e" title=" " alt="" coords="799,5,880,32"/>
+<area shape="rect" href="oc12_8c.html#a623f6939cbe95d9de1eab8847f6ddba0" title=" " alt="" coords="575,5,751,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_a482d5bde24295b7334c8aec815f3a1a.html">femu</a></li><li class="navelem"><a class="el" href="dir_e7798e0680d4d03c0909bfea69c5000a.html">ocssd</a></li><li class="navelem"><a class="el" href="oc12_8c.html">oc12.c</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

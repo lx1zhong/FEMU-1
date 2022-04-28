@@ -1,0 +1,10 @@
+<map id="ssd_read" name="ssd_read">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,85,108"/>
+<area shape="rect" id="node2" href="$ftl_8c.html#af93eee663d18640559cfd06afdeb5409" title=" " alt="" coords="148,5,272,32"/>
+<area shape="rect" id="node3" href="$ftl_8c.html#a6e8a2a542e569fe2662cbb8cf647590b" title=" " alt="" coords="157,56,263,83"/>
+<area shape="rect" id="node5" href="$ftl_8c.html#a0299da5e7e5dd1eb868d80914de35ee8" title="根据操作类型，给出模拟的时延" alt="" coords="133,107,287,133"/>
+<area shape="rect" id="node8" href="$ftl_8c.html#a4237c1400d2e5e24f32b77e347163ab9" title="ppa地址越界则为无效地址" alt="" coords="167,157,253,184"/>
+<area shape="rect" id="node4" href="$structppa.html#a4dc2d1cdc8cce18cdf002f309395cba8" title=" " alt="" coords="335,56,413,83"/>
+<area shape="rect" id="node6" href="$ftl_8c.html#adc3fd6a4f50d3279de8a77eb9d605a8d" title=" " alt="" coords="339,107,409,133"/>
+<area shape="rect" id="node7" href="$ftl_8c.html#aadf575bf139734453ba8fa6af20b1ac3" title=" " alt="" coords="461,107,527,133"/>
+</map>
