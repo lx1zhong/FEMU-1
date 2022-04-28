@@ -1,6 +1,12 @@
 #ifndef __FEMU_FTL_H
 #define __FEMU_FTL_H
 
+/**
+ * @file ftl.h
+ * @brief ftl相关数据声明
+ * 
+ */
+
 #include "../nvme.h"
 
 #define INVALID_PPA     (~(0ULL))
@@ -56,7 +62,10 @@ enum {
 #define LUN_BITS    (8)
 #define CH_BITS     (7)
 
-/* describe a physical page addr */
+/**
+ * @brief describe a physical page addr
+ * 
+ */
 struct ppa {
     union {
         struct {
@@ -75,12 +84,20 @@ struct ppa {
 
 typedef int nand_sec_status_t;
 
+/**
+ * @brief 页
+ * 
+ */
 struct nand_page {
     nand_sec_status_t *sec;
     int nsecs;
     int status;
 };
 
+/**
+ * @brief 块
+ * 
+ */
 struct nand_block {
     struct nand_page *pg;
     int npgs;
@@ -90,11 +107,19 @@ struct nand_block {
     int wp; /* current write pointer */
 };
 
+/**
+ * @brief plane
+ * 
+ */
 struct nand_plane {
     struct nand_block *blk;
     int nblks;
 };
 
+/**
+ * @brief 晶圆
+ * 
+ */
 struct nand_lun {
     struct nand_plane *pl;
     int npls;
@@ -103,6 +128,10 @@ struct nand_lun {
     uint64_t gc_endtime;
 };
 
+/**
+ * @brief 通道
+ * 
+ */
 struct ssd_channel {
     struct nand_lun *lun;
     int nluns;
@@ -111,6 +140,10 @@ struct ssd_channel {
     uint64_t gc_endtime;
 };
 
+/**
+ * @brief ssd参数
+ * 
+ */
 struct ssdparams {
     int secsz;        /* sector size in bytes */
     int secs_per_pg;  /* # of sectors per page */
@@ -169,7 +202,10 @@ typedef struct line {
     size_t                  pos;
 } line;
 
-/* wp: record next write addr */
+/**
+ * @brief wp: record next write addr
+ * 
+ */
 struct write_pointer {
     struct line *curline;
     int ch;
@@ -179,6 +215,10 @@ struct write_pointer {
     int pl;
 };
 
+/**
+ * @brief 记录各种line的列表和数量
+ * 
+ */
 struct line_mgmt {
     struct line *lines;
     /* free line list, we only need to maintain a list of blk numbers */

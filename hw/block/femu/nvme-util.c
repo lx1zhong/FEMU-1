@@ -1,3 +1,9 @@
+/**
+ * @file nvme-util.c
+ * @brief nvme工具函数定义
+ * 
+ */
+
 #include "./nvme.h"
 
 int nvme_check_sqid(FemuCtrl *n, uint16_t sqid)

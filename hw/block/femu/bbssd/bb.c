@@ -1,3 +1,9 @@
+/**
+ * @file bb.c
+ * @brief bb <==> BlackBox
+ * 
+ */
+
 #include "../nvme.h"
 #include "./ftl.h"
 

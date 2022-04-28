@@ -1,3 +1,11 @@
+/**
+ * @file dram.c
+ * @brief dram后端操作
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "../nvme.h"
 
 /* Coperd: FEMU Memory Backend (mbe) for emulated SSD */

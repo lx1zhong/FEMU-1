@@ -1,3 +1,9 @@
+/**
+ * @file ftl.c
+ * @brief ftl主体
+ * 
+ */
+
 #include "ftl.h"
 
 //#define FEMU_DEBUG_FTL

@@ -1,3 +1,9 @@
+/**
+ * @file nvme-admin.c
+ * @brief nvme处理admin command相关操作
+ * 
+ */
+
 #include "./nvme.h"
 
 #define NVME_IDENTIFY_DATA_SIZE 4096

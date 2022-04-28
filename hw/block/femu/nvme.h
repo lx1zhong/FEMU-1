@@ -1,6 +1,12 @@
 #ifndef __FEMU_NVME_H
 #define __FEMU_NVME_H
 
+/**
+ * @file nvme.h
+ * @brief nvme相关数据声明
+ * 
+ */
+
 #include "qemu/osdep.h"
 #include "qemu/uuid.h"
 #include "qemu/units.h"

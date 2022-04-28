@@ -1,6 +1,14 @@
 #ifndef __FEMU_MEM_BACKEND
 #define __FEMU_MEM_BACKEND
 
+/**
+ * @file dram.h
+ * @brief dram后端相关定义
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdint.h>
 
 /* DRAM backend SSD address space */
