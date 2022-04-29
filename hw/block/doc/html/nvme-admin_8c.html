@@ -1,0 +1,2391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: femu/nvme-admin.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nvme-admin_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">nvme-admin.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>nvme处理admin command相关操作  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="nvme_8h_source.html">./nvme.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+nvme-admin.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c__incl.png" border="0" usemap="#femu_2nvme-admin_8c" alt=""/></div>
+<map name="femu_2nvme-admin_8c" id="femu_2nvme-admin_8c">
+<area shape="rect" title="nvme处理admin command相关操作" alt="" coords="859,5,1013,32"/>
+<area shape="rect" href="nvme_8h.html" title="nvme相关数据声明" alt="" coords="897,80,975,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,120,181"/>
+<area shape="rect" title=" " alt="" coords="145,155,247,181"/>
+<area shape="rect" title=" " alt="" coords="272,155,379,181"/>
+<area shape="rect" title=" " alt="" coords="403,155,514,181"/>
+<area shape="rect" title=" " alt="" coords="539,155,651,181"/>
+<area shape="rect" title=" " alt="" coords="675,155,779,181"/>
+<area shape="rect" title=" " alt="" coords="803,155,933,181"/>
+<area shape="rect" title=" " alt="" coords="957,155,1053,181"/>
+<area shape="rect" title=" " alt="" coords="1078,155,1197,181"/>
+<area shape="rect" href="dram_8h.html" title="DRAM后端相关声明" alt="" coords="1221,155,1347,181"/>
+<area shape="rect" href="rte__ring_8h.html" title=" " alt="" coords="1372,155,1479,181"/>
+<area shape="rect" href="pqueue_8h.html" title="Priority Queue function declarations" alt="" coords="1503,155,1609,181"/>
+<area shape="rect" href="nand_8h.html" title=" " alt="" coords="1633,155,1735,181"/>
+<area shape="rect" href="timing_8h.html" title=" " alt="" coords="1760,155,1928,181"/>
+<area shape="rect" title=" " alt="" coords="1134,229,1205,256"/>
+<area shape="rect" title=" " alt="" coords="1229,229,1296,256"/>
+<area shape="rect" title=" " alt="" coords="1321,229,1421,256"/>
+<area shape="rect" title=" " alt="" coords="1445,229,1513,256"/>
+<area shape="rect" title=" " alt="" coords="1537,229,1639,256"/>
+<area shape="rect" href="rte__atomic__x86_8h.html" title=" " alt="" coords="1663,229,1798,256"/>
+<area shape="rect" href="rte__branch__prediction_8h.html" title=" " alt="" coords="1822,229,1997,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a2b65aed5d655f3d24732cd3c6aa51ab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a2b65aed5d655f3d24732cd3c6aa51ab9">NVME_IDENTIFY_DATA_SIZE</a>&#160;&#160;&#160;4096</td></tr>
+<tr class="separator:a2b65aed5d655f3d24732cd3c6aa51ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a6f5c22b725b5eca5912f17066e95cf67"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a6f5c22b725b5eca5912f17066e95cf67">nvme_del_sq</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a6f5c22b725b5eca5912f17066e95cf67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c43f1bdb51a2e35c2ecdb9ed9db64ec"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a2c43f1bdb51a2e35c2ecdb9ed9db64ec">nvme_create_sq</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a2c43f1bdb51a2e35c2ecdb9ed9db64ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ddf1e4e280aa3f367a5b2b44879b41"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#af3ddf1e4e280aa3f367a5b2b44879b41">nvme_create_cq</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:af3ddf1e4e280aa3f367a5b2b44879b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1090eb738e0aa389ef5a647e647a09f"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#ac1090eb738e0aa389ef5a647e647a09f">nvme_del_cq</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:ac1090eb738e0aa389ef5a647e647a09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b2764426b75545dfc03229b811607eb"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb">nvme_set_db_memory</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, const <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a8b2764426b75545dfc03229b811607eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa248954e6428b4efed7549f41e77f2b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b">nvme_nsid_valid</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, uint32_t nsid)</td></tr>
+<tr class="separator:afa248954e6428b4efed7549f41e77f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908e1383f81ed82cd271ecf3aa68f9a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5">nvme_ns</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, uint32_t nsid)</td></tr>
+<tr class="separator:a908e1383f81ed82cd271ecf3aa68f9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4288308db73b3aa30b0c2253ffabd2d5"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5">nvme_rpt_empty_id_struct</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a4288308db73b3aa30b0c2253ffabd2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ac97b9a3caead40c6651273483ed4c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a59ac97b9a3caead40c6651273483ed4c">nvme_csi_has_nvm_support</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a59ac97b9a3caead40c6651273483ed4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9896b513919b735c2049dd8e59d588c0"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0">nvme_identify_ns</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a9896b513919b735c2049dd8e59d588c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ae77ec77f7a89c1a067df80c5cd767"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767">nvme_identify_ns_csi</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a50ae77ec77f7a89c1a067df80c5cd767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a27adda12530ad69ecc17512ede9ddd"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a6a27adda12530ad69ecc17512ede9ddd">nvme_identify_ctrl</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a6a27adda12530ad69ecc17512ede9ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db584730c5821def2e8208f0aaf3f05"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05">nvme_identify_ctrl_csi</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a7db584730c5821def2e8208f0aaf3f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eeb98def2fad8039662200e9854b7e7"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7">nvme_identify_nslist</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a9eeb98def2fad8039662200e9854b7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1067c1ab64f621b7e8d68043437c04eb"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb">nvme_identify_nslist_csi</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a1067c1ab64f621b7e8d68043437c04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb087910e36564f94d4dc54c6af7622c"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c">nvme_identify_ns_descr_list</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:aeb087910e36564f94d4dc54c6af7622c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834f603280a3a10a14da324da6bd9a62"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a834f603280a3a10a14da324da6bd9a62">nvme_identify_cmd_set</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:a834f603280a3a10a14da324da6bd9a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23b14397c30828a57903ec27a4c150c"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c">nvme_identify</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:ae23b14397c30828a57903ec27a4c150c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf593ed87b332bec6cb6fca0e2bed1be"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#abf593ed87b332bec6cb6fca0e2bed1be">nvme_get_feature</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeCqe.html">NvmeCqe</a> *cqe)</td></tr>
+<tr class="separator:abf593ed87b332bec6cb6fca0e2bed1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad712f926297fd28d117c32d18e3566dc"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#ad712f926297fd28d117c32d18e3566dc">nvme_set_feature</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeCqe.html">NvmeCqe</a> *cqe)</td></tr>
+<tr class="separator:ad712f926297fd28d117c32d18e3566dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295e47dd4c386bd7ad30d98ea4b45929"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a295e47dd4c386bd7ad30d98ea4b45929">nvme_fw_log_info</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, uint32_t buf_len)</td></tr>
+<tr class="separator:a295e47dd4c386bd7ad30d98ea4b45929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3add88b587075ed1a120f75f73ea44"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a4e3add88b587075ed1a120f75f73ea44">nvme_error_log_info</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, uint32_t buf_len)</td></tr>
+<tr class="separator:a4e3add88b587075ed1a120f75f73ea44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d9ef3eb88525869cf3506520028cf0"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#af7d9ef3eb88525869cf3506520028cf0">nvme_smart_info</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, uint32_t buf_len)</td></tr>
+<tr class="separator:af7d9ef3eb88525869cf3506520028cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff81480a8e081d70ea6fc2b09a02af21"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#aff81480a8e081d70ea6fc2b09a02af21">nvme_cmd_effects</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, uint8_t csi, uint32_t buf_len, uint64_t off)</td></tr>
+<tr class="separator:aff81480a8e081d70ea6fc2b09a02af21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace67c34426486b78b1b20cba61ab28b8"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8">nvme_get_log</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:ace67c34426486b78b1b20cba61ab28b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd65f91764a2624cdc4e608f3dc7932e"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#abd65f91764a2624cdc4e608f3dc7932e">nvme_abort_req</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, uint32_t *result)</td></tr>
+<tr class="separator:abd65f91764a2624cdc4e608f3dc7932e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1068e4177c9ff25ec1cc15b18d26356b"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a1068e4177c9ff25ec1cc15b18d26356b">nvme_format_namespace</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, uint8_t lba_idx, uint8_t meta_loc, uint8_t pil, uint8_t pi, uint8_t sec_erase)</td></tr>
+<tr class="separator:a1068e4177c9ff25ec1cc15b18d26356b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af11a6f9497c3496eb41dda00362bac96"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#af11a6f9497c3496eb41dda00362bac96">nvme_format</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd)</td></tr>
+<tr class="separator:af11a6f9497c3496eb41dda00362bac96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac726ef5f792706a8a28f07f19c5097b1"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1">nvme_admin_cmd</a> (<a class="el" href="structFemuCtrl.html">FemuCtrl</a> *n, <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *cmd, <a class="el" href="structNvmeCqe.html">NvmeCqe</a> *cqe)</td></tr>
+<tr class="memdesc:ac726ef5f792706a8a28f07f19c5097b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">识别、执行admin命令  <a href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1">更多...</a><br /></td></tr>
+<tr class="separator:ac726ef5f792706a8a28f07f19c5097b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7042f589909852500d6f26c36b78850b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a7042f589909852500d6f26c36b78850b">nvme_process_sq_admin</a> (void *opaque)</td></tr>
+<tr class="memdesc:a7042f589909852500d6f26c36b78850b"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理admin命令的sq队列  <a href="nvme-admin_8c.html#a7042f589909852500d6f26c36b78850b">更多...</a><br /></td></tr>
+<tr class="separator:a7042f589909852500d6f26c36b78850b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:aea2f9a310930687c4298773a3e9c1612"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#aea2f9a310930687c4298773a3e9c1612">nvme_cse_acs</a> [256]</td></tr>
+<tr class="separator:aea2f9a310930687c4298773a3e9c1612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d75f111de790b87949e3c7bf2d4ea04"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a3d75f111de790b87949e3c7bf2d4ea04">nvme_cse_iocs_nvm</a> [256]</td></tr>
+<tr class="separator:a3d75f111de790b87949e3c7bf2d4ea04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2e18c22d91a9627bba1982011c2d56"><td class="memItemLeft" align="right" valign="top">static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nvme-admin_8c.html#a1e2e18c22d91a9627bba1982011c2d56">nvme_cse_iocs_zoned</a> [256]</td></tr>
+<tr class="separator:a1e2e18c22d91a9627bba1982011c2d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>nvme处理admin command相关操作 </p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a2b65aed5d655f3d24732cd3c6aa51ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b65aed5d655f3d24732cd3c6aa51ab9">&#9670;&nbsp;</a></span>NVME_IDENTIFY_DATA_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NVME_IDENTIFY_DATA_SIZE&#160;&#160;&#160;4096</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="abd65f91764a2624cdc4e608f3dc7932e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd65f91764a2624cdc4e608f3dc7932e">&#9670;&nbsp;</a></span>nvme_abort_req()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_abort_req </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_cgraph.png" border="0" usemap="#nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_cgraph" id="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,133,108"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="185,5,316,32"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="183,56,318,83"/>
+<area shape="rect" href="nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="181,107,320,133"/>
+<area shape="rect" href="nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="188,157,313,184"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_icgraph.png" border="0" usemap="#nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_icgraph" id="nvme-admin_8c_abd65f91764a2624cdc4e608f3dc7932e_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,985,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac726ef5f792706a8a28f07f19c5097b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac726ef5f792706a8a28f07f19c5097b1">&#9670;&nbsp;</a></span>nvme_admin_cmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_admin_cmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCqe.html">NvmeCqe</a> *&#160;</td>
+          <td class="paramname"><em>cqe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>识别、执行admin命令 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td></td></tr>
+    <tr><td class="paramname">cmd</td><td></td></tr>
+    <tr><td class="paramname">cqe</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>uint16_t </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_cgraph.png" border="0" usemap="#nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_cgraph" id="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_cgraph">
+<area shape="rect" title="识别、执行admin命令" alt="" coords="5,547,148,574"/>
+<area shape="rect" href="nvme-admin_8c.html#abd65f91764a2624cdc4e608f3dc7932e" title=" " alt="" coords="217,91,345,118"/>
+<area shape="rect" href="nvme-admin_8c.html#af3ddf1e4e280aa3f367a5b2b44879b41" title=" " alt="" coords="217,446,346,473"/>
+<area shape="rect" href="nvme-admin_8c.html#a2c43f1bdb51a2e35c2ecdb9ed9db64ec" title=" " alt="" coords="217,319,346,346"/>
+<area shape="rect" href="nvme-admin_8c.html#ac1090eb738e0aa389ef5a647e647a09f" title=" " alt="" coords="227,395,335,422"/>
+<area shape="rect" href="nvme-admin_8c.html#a6f5c22b725b5eca5912f17066e95cf67" title=" " alt="" coords="227,243,335,270"/>
+<area shape="rect" href="nvme-admin_8c.html#af11a6f9497c3496eb41dda00362bac96" title=" " alt="" coords="226,547,337,574"/>
+<area shape="rect" href="nvme-admin_8c.html#abf593ed87b332bec6cb6fca0e2bed1be" title=" " alt="" coords="211,598,352,625"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="224,725,339,751"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="224,1054,339,1081"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="196,1206,367,1233"/>
+<area shape="rect" href="nvme-admin_8c.html#ad712f926297fd28d117c32d18e3566dc" title=" " alt="" coords="211,1307,351,1334"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="453,41,583,67"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="907,142,1041,169"/>
+<area shape="rect" href="nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="449,243,587,270"/>
+<area shape="rect" href="nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="911,41,1037,67"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="449,345,587,371"/>
+<area shape="rect" href="nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="461,395,575,422"/>
+<area shape="rect" href="nvme-util_8c.html#a6410408d19dd2986cba9a815d25871a8" title=" " alt="" coords="463,446,573,473"/>
+<area shape="rect" href="intr_8c.html#aa6089f663c0aef824344bde303c46238" title=" " alt="" coords="451,497,585,523"/>
+<area shape="rect" href="nvme-util_8c.html#a9d8a42fcd63a79e262250aa8f54522da" title=" " alt="" coords="680,294,848,321"/>
+<area shape="rect" href="intr_8c.html#a4546f8dc3153b6b272979b26d9ee3a5f" title=" " alt="" coords="669,573,859,599"/>
+<area shape="rect" href="intr_8c.html#a404cdb00218c3c3b27c4048b43d7d8db" title=" " alt="" coords="673,370,855,397"/>
+<area shape="rect" href="intr_8c.html#aef207536dce0a636e5d7c2467c73110a" title=" " alt="" coords="689,421,839,447"/>
+<area shape="rect" href="intr_8c.html#a05882837e726b101a16a02a652f3bbf0" title=" " alt="" coords="695,471,833,498"/>
+<area shape="rect" href="intr_8c.html#a1eff260b4323e3ba8942b9c13ac1c89d" title=" " alt="" coords="681,522,847,549"/>
+<area shape="rect" href="nvme-util_8c.html#ac3b74834e78afe9ce3db5074e8398a0f" title="初始化sq队列，预分配空间" alt="" coords="463,294,573,321"/>
+<area shape="rect" href="nvme-util_8c.html#ae00a56019ece0039e9a209dfa7bc398e" title=" " alt="" coords="461,193,575,219"/>
+<area shape="rect" href="nvme-io_8c.html#a03a3accd495e0b00d01b80e009af5c9f" title="将剩余的req都填入cq" alt="" coords="443,142,593,169"/>
+<area shape="rect" href="nvme-util_8c.html#a4e852fdb44ac17526a5b317eb3e4dac7" title=" " alt="" coords="709,193,819,219"/>
+<area shape="rect" href="intr_8c.html#ac07d39a331aa32f4da4f27f31f1abc1c" title="中断通知上层取cq" alt="" coords="691,243,837,270"/>
+<area shape="rect" href="nvme-io_8c.html#aa412c2f46a5bc43ac2234173c9743abe" title="将req实际封装入cq" alt="" coords="702,142,826,169"/>
+<area shape="rect" href="nvme-admin_8c.html#a1068e4177c9ff25ec1cc15b18d26356b" title=" " alt="" coords="422,547,614,574"/>
+<area shape="rect" href="nvme_8h.html#ab5233c5c538a64df4e9b391949d334e3" title=" " alt="" coords="729,623,799,650"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="707,953,821,979"/>
+<area shape="rect" href="nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="446,750,590,777"/>
+<area shape="rect" href="nvme-admin_8c.html#aff81480a8e081d70ea6fc2b09a02af21" title=" " alt="" coords="445,649,591,675"/>
+<area shape="rect" href="nvme-admin_8c.html#a4e3add88b587075ed1a120f75f73ea44" title=" " alt="" coords="440,699,596,726"/>
+<area shape="rect" href="nvme-admin_8c.html#a295e47dd4c386bd7ad30d98ea4b45929" title=" " alt="" coords="448,801,588,827"/>
+<area shape="rect" href="nvme-admin_8c.html#af7d9ef3eb88525869cf3506520028cf0" title=" " alt="" coords="450,851,586,878"/>
+<area shape="rect" href="nvme-admin_8c.html#a834f603280a3a10a14da324da6bd9a62" title=" " alt="" coords="429,1003,607,1030"/>
+<area shape="rect" href="nvme-admin_8c.html#a6a27adda12530ad69ecc17512ede9ddd" title=" " alt="" coords="447,1054,589,1081"/>
+<area shape="rect" href="nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05" title=" " alt="" coords="434,1105,602,1131"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="449,1155,587,1182"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="437,1206,599,1233"/>
+<area shape="rect" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="415,1257,621,1283"/>
+<area shape="rect" href="nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7" title=" " alt="" coords="439,902,597,929"/>
+<area shape="rect" href="nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb" title=" " alt="" coords="427,953,609,979"/>
+<area shape="rect" href="nvme-io_8c.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="443,1307,593,1334"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="459,1358,577,1385"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_icgraph.png" border="0" usemap="#nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_icgraph" id="nvme-admin_8c_ac726ef5f792706a8a28f07f19c5097b1_icgraph">
+<area shape="rect" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aff81480a8e081d70ea6fc2b09a02af21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff81480a8e081d70ea6fc2b09a02af21">&#9670;&nbsp;</a></span>nvme_cmd_effects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_cmd_effects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>csi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buf_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>off</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_cgraph.png" border="0" usemap="#nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_cgraph" id="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,151,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="199,5,313,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="361,5,484,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="532,5,663,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_icgraph.png" border="0" usemap="#nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_icgraph" id="nvme-admin_8c_aff81480a8e081d70ea6fc2b09a02af21_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1165,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af3ddf1e4e280aa3f367a5b2b44879b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ddf1e4e280aa3f367a5b2b44879b41">&#9670;&nbsp;</a></span>nvme_create_cq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_create_cq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_cgraph.png" border="0" usemap="#nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_cgraph" id="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,135,108"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="183,5,321,32"/>
+<area shape="rect" href="nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="195,56,309,83"/>
+<area shape="rect" href="nvme-util_8c.html#a6410408d19dd2986cba9a815d25871a8" title=" " alt="" coords="197,107,307,133"/>
+<area shape="rect" href="intr_8c.html#aa6089f663c0aef824344bde303c46238" title=" " alt="" coords="185,195,319,221"/>
+<area shape="rect" href="nvme-util_8c.html#a9d8a42fcd63a79e262250aa8f54522da" title=" " alt="" coords="380,68,548,95"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="607,68,741,95"/>
+<area shape="rect" href="intr_8c.html#a4546f8dc3153b6b272979b26d9ee3a5f" title=" " alt="" coords="369,119,559,145"/>
+<area shape="rect" href="intr_8c.html#a404cdb00218c3c3b27c4048b43d7d8db" title=" " alt="" coords="373,169,555,196"/>
+<area shape="rect" href="intr_8c.html#aef207536dce0a636e5d7c2467c73110a" title=" " alt="" coords="389,220,539,247"/>
+<area shape="rect" href="intr_8c.html#a05882837e726b101a16a02a652f3bbf0" title=" " alt="" coords="395,271,533,297"/>
+<area shape="rect" href="intr_8c.html#a1eff260b4323e3ba8942b9c13ac1c89d" title=" " alt="" coords="381,321,547,348"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_icgraph.png" border="0" usemap="#nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_icgraph" id="nvme-admin_8c_af3ddf1e4e280aa3f367a5b2b44879b41_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,987,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c43f1bdb51a2e35c2ecdb9ed9db64ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c43f1bdb51a2e35c2ecdb9ed9db64ec">&#9670;&nbsp;</a></span>nvme_create_sq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_create_sq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_cgraph.png" border="0" usemap="#nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_cgraph" id="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,135,83"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="183,5,321,32"/>
+<area shape="rect" href="nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="183,56,321,83"/>
+<area shape="rect" href="nvme-util_8c.html#ac3b74834e78afe9ce3db5074e8398a0f" title="初始化sq队列，预分配空间" alt="" coords="197,107,307,133"/>
+<area shape="rect" href="nvme-util_8c.html#a9d8a42fcd63a79e262250aa8f54522da" title=" " alt="" coords="369,107,537,133"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="585,107,720,133"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_icgraph.png" border="0" usemap="#nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_icgraph" id="nvme-admin_8c_a2c43f1bdb51a2e35c2ecdb9ed9db64ec_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,987,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a59ac97b9a3caead40c6651273483ed4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ac97b9a3caead40c6651273483ed4c">&#9670;&nbsp;</a></span>nvme_csi_has_nvm_support()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool nvme_csi_has_nvm_support </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a59ac97b9a3caead40c6651273483ed4c_icgraph.png" border="0" usemap="#nvme-admin_8c_a59ac97b9a3caead40c6651273483ed4c_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a59ac97b9a3caead40c6651273483ed4c_icgraph" id="nvme-admin_8c_a59ac97b9a3caead40c6651273483ed4c_icgraph">
+<area shape="rect" title=" " alt="" coords="1231,31,1437,57"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="1033,5,1170,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="1020,56,1183,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,31,972,57"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,31,809,57"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,31,619,57"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,31,384,57"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,31,149,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1090eb738e0aa389ef5a647e647a09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1090eb738e0aa389ef5a647e647a09f">&#9670;&nbsp;</a></span>nvme_del_cq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_del_cq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_cgraph.png" border="0" usemap="#nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_cgraph" id="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,113,57"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="161,5,300,32"/>
+<area shape="rect" href="nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="173,56,288,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_icgraph.png" border="0" usemap="#nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_icgraph" id="nvme-admin_8c_ac1090eb738e0aa389ef5a647e647a09f_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,965,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f5c22b725b5eca5912f17066e95cf67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5c22b725b5eca5912f17066e95cf67">&#9670;&nbsp;</a></span>nvme_del_sq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_del_sq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_cgraph.png" border="0" usemap="#nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_cgraph" id="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,113,108"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="167,5,306,32"/>
+<area shape="rect" href="nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="167,56,306,83"/>
+<area shape="rect" href="nvme-util_8c.html#ae00a56019ece0039e9a209dfa7bc398e" title=" " alt="" coords="179,107,294,133"/>
+<area shape="rect" href="nvme-io_8c.html#a03a3accd495e0b00d01b80e009af5c9f" title="将剩余的req都填入cq" alt="" coords="161,157,312,184"/>
+<area shape="rect" href="nvme-util_8c.html#a4e852fdb44ac17526a5b317eb3e4dac7" title=" " alt="" coords="378,107,487,133"/>
+<area shape="rect" href="intr_8c.html#ac07d39a331aa32f4da4f27f31f1abc1c" title="中断通知上层取cq" alt="" coords="360,157,505,184"/>
+<area shape="rect" href="nvme-io_8c.html#aa412c2f46a5bc43ac2234173c9743abe" title="将req实际封装入cq" alt="" coords="371,233,495,260"/>
+<area shape="rect" href="nvme-util_8c.html#a2c23400ec899cbc551757929a872089e" title=" " alt="" coords="555,107,727,133"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="777,107,908,133"/>
+<area shape="rect" href="intr_8c.html#a1bcc1a1b3495a3ea33365a4afaf44b0a" title="传统的中断通知方式" alt="" coords="553,157,729,184"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="574,208,709,235"/>
+<area shape="rect" href="nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="579,259,704,285"/>
+<area shape="rect" href="nvme-util_8c.html#a1983cbf62a2b154bc0c1e8f01f2bb1b6" title=" " alt="" coords="574,309,709,336"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_icgraph.png" border="0" usemap="#nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_icgraph" id="nvme-admin_8c_a6f5c22b725b5eca5912f17066e95cf67_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,965,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e3add88b587075ed1a120f75f73ea44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3add88b587075ed1a120f75f73ea44">&#9670;&nbsp;</a></span>nvme_error_log_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_error_log_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buf_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_cgraph.png" border="0" usemap="#nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_cgraph" id="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="209,5,324,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="372,5,495,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="543,5,673,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_icgraph.png" border="0" usemap="#nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_icgraph" id="nvme-admin_8c_a4e3add88b587075ed1a120f75f73ea44_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1176,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af11a6f9497c3496eb41dda00362bac96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af11a6f9497c3496eb41dda00362bac96">&#9670;&nbsp;</a></span>nvme_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_cgraph.png" border="0" usemap="#nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_cgraph" id="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a1068e4177c9ff25ec1cc15b18d26356b" title=" " alt="" coords="164,5,356,32"/>
+<area shape="rect" href="nvme_8h.html#ab5233c5c538a64df4e9b391949d334e3" title=" " alt="" coords="404,5,475,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_icgraph.png" border="0" usemap="#nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_icgraph" id="nvme-admin_8c_af11a6f9497c3496eb41dda00362bac96_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,968,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1068e4177c9ff25ec1cc15b18d26356b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1068e4177c9ff25ec1cc15b18d26356b">&#9670;&nbsp;</a></span>nvme_format_namespace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_format_namespace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>lba_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>meta_loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pil</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sec_erase</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_cgraph.png" border="0" usemap="#nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_cgraph" id="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,32"/>
+<area shape="rect" href="nvme_8h.html#ab5233c5c538a64df4e9b391949d334e3" title=" " alt="" coords="245,5,316,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_icgraph.png" border="0" usemap="#nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_icgraph" id="nvme-admin_8c_a1068e4177c9ff25ec1cc15b18d26356b_icgraph">
+<area shape="rect" title=" " alt="" coords="1016,5,1208,32"/>
+<area shape="rect" href="nvme-admin_8c.html#af11a6f9497c3496eb41dda00362bac96" title=" " alt="" coords="857,5,968,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a295e47dd4c386bd7ad30d98ea4b45929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295e47dd4c386bd7ad30d98ea4b45929">&#9670;&nbsp;</a></span>nvme_fw_log_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_fw_log_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buf_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_cgraph.png" border="0" usemap="#nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_cgraph" id="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="193,5,308,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="356,5,479,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="527,5,657,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_icgraph.png" border="0" usemap="#nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_icgraph" id="nvme-admin_8c_a295e47dd4c386bd7ad30d98ea4b45929_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1160,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf593ed87b332bec6cb6fca0e2bed1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf593ed87b332bec6cb6fca0e2bed1be">&#9670;&nbsp;</a></span>nvme_get_feature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_get_feature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCqe.html">NvmeCqe</a> *&#160;</td>
+          <td class="paramname"><em>cqe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_cgraph.png" border="0" usemap="#nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_cgraph" id="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,147,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="195,5,309,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="357,5,480,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="528,5,659,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_icgraph.png" border="0" usemap="#nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_icgraph" id="nvme-admin_8c_abf593ed87b332bec6cb6fca0e2bed1be_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,999,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace67c34426486b78b1b20cba61ab28b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace67c34426486b78b1b20cba61ab28b8">&#9670;&nbsp;</a></span>nvme_get_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_get_log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_cgraph.png" border="0" usemap="#nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_cgraph" id="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,120,133"/>
+<area shape="rect" href="nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="174,5,318,32"/>
+<area shape="rect" href="nvme-admin_8c.html#aff81480a8e081d70ea6fc2b09a02af21" title=" " alt="" coords="173,56,319,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a4e3add88b587075ed1a120f75f73ea44" title=" " alt="" coords="168,107,324,133"/>
+<area shape="rect" href="nvme-admin_8c.html#a295e47dd4c386bd7ad30d98ea4b45929" title=" " alt="" coords="176,157,316,184"/>
+<area shape="rect" href="nvme-admin_8c.html#af7d9ef3eb88525869cf3506520028cf0" title=" " alt="" coords="178,208,314,235"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="372,132,487,159"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="535,132,657,159"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="705,132,836,159"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_icgraph.png" border="0" usemap="#nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_icgraph" id="nvme-admin_8c_ace67c34426486b78b1b20cba61ab28b8_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae23b14397c30828a57903ec27a4c150c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae23b14397c30828a57903ec27a4c150c">&#9670;&nbsp;</a></span>nvme_identify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_cgraph.png" border="0" usemap="#nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_cgraph" id="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,284,120,311"/>
+<area shape="rect" href="nvme-admin_8c.html#a834f603280a3a10a14da324da6bd9a62" title=" " alt="" coords="437,5,615,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a6a27adda12530ad69ecc17512ede9ddd" title=" " alt="" coords="455,56,597,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05" title=" " alt="" coords="187,157,355,184"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="203,259,340,285"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="190,309,353,336"/>
+<area shape="rect" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="168,360,375,387"/>
+<area shape="rect" href="nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7" title=" " alt="" coords="193,436,350,463"/>
+<area shape="rect" href="nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb" title=" " alt="" coords="180,487,363,513"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="677,208,792,235"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="840,208,963,235"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="1011,208,1141,235"/>
+<area shape="rect" href="nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5" title=" " alt="" coords="428,157,624,184"/>
+<area shape="rect" href="nvme-admin_8c.html#a59ac97b9a3caead40c6651273483ed4c" title=" " alt="" coords="423,259,629,285"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="485,461,567,488"/>
+<area shape="rect" href="nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b" title=" " alt="" coords="460,360,592,387"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_icgraph.png" border="0" usemap="#nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_icgraph" id="nvme-admin_8c_ae23b14397c30828a57903ec27a4c150c_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a834f603280a3a10a14da324da6bd9a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834f603280a3a10a14da324da6bd9a62">&#9670;&nbsp;</a></span>nvme_identify_cmd_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_cmd_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_cgraph.png" border="0" usemap="#nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_cgraph" id="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="231,5,345,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="393,5,516,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="564,5,695,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_icgraph.png" border="0" usemap="#nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_icgraph" id="nvme-admin_8c_a834f603280a3a10a14da324da6bd9a62_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1197,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6a27adda12530ad69ecc17512ede9ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a27adda12530ad69ecc17512ede9ddd">&#9670;&nbsp;</a></span>nvme_identify_ctrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_ctrl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_cgraph.png" border="0" usemap="#nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_cgraph" id="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="196,5,311,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="359,5,481,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="529,5,660,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_icgraph.png" border="0" usemap="#nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_icgraph" id="nvme-admin_8c_a6a27adda12530ad69ecc17512ede9ddd_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1163,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7db584730c5821def2e8208f0aaf3f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7db584730c5821def2e8208f0aaf3f05">&#9670;&nbsp;</a></span>nvme_identify_ctrl_csi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_ctrl_csi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_cgraph.png" border="0" usemap="#nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_cgraph" id="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,173,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="465,5,580,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5" title=" " alt="" coords="221,31,417,57"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="628,5,751,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="799,5,929,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_icgraph.png" border="0" usemap="#nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_icgraph" id="nvme-admin_8c_a7db584730c5821def2e8208f0aaf3f05_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1188,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9896b513919b735c2049dd8e59d588c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9896b513919b735c2049dd8e59d588c0">&#9670;&nbsp;</a></span>nvme_identify_ns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_ns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_cgraph.png" border="0" usemap="#nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_cgraph" id="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,89,143,115"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="445,89,560,115"/>
+<area shape="rect" href="nvme-admin_8c.html#a59ac97b9a3caead40c6651273483ed4c" title=" " alt="" coords="191,38,397,65"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="253,89,335,115"/>
+<area shape="rect" href="nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b" title=" " alt="" coords="228,139,360,166"/>
+<area shape="rect" href="nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5" title=" " alt="" coords="196,190,392,217"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="608,89,731,115"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="779,89,909,115"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_icgraph.png" border="0" usemap="#nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_icgraph" id="nvme-admin_8c_a9896b513919b735c2049dd8e59d588c0_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1157,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a50ae77ec77f7a89c1a067df80c5cd767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ae77ec77f7a89c1a067df80c5cd767">&#9670;&nbsp;</a></span>nvme_identify_ns_csi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_ns_csi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_cgraph.png" border="0" usemap="#nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_cgraph" id="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_cgraph">
+<area shape="rect" title=" " alt="" coords="5,88,168,115"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="471,88,585,115"/>
+<area shape="rect" href="nvme-admin_8c.html#a59ac97b9a3caead40c6651273483ed4c" title=" " alt="" coords="216,37,423,64"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="279,88,360,115"/>
+<area shape="rect" href="nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b" title=" " alt="" coords="253,139,385,165"/>
+<area shape="rect" href="nvme-admin_8c.html#a4288308db73b3aa30b0c2253ffabd2d5" title=" " alt="" coords="221,189,417,216"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="633,88,756,115"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="804,88,935,115"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_icgraph.png" border="0" usemap="#nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_icgraph" id="nvme-admin_8c_a50ae77ec77f7a89c1a067df80c5cd767_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1183,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb087910e36564f94d4dc54c6af7622c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb087910e36564f94d4dc54c6af7622c">&#9670;&nbsp;</a></span>nvme_identify_ns_descr_list()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_ns_descr_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_cgraph.png" border="0" usemap="#nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_cgraph" id="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,212,83"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="269,5,383,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="285,56,367,83"/>
+<area shape="rect" href="nvme-admin_8c.html#afa248954e6428b4efed7549f41e77f2b" title=" " alt="" coords="260,107,392,133"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="440,5,563,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="611,5,741,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_icgraph.png" border="0" usemap="#nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_icgraph" id="nvme-admin_8c_aeb087910e36564f94d4dc54c6af7622c_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9eeb98def2fad8039662200e9854b7e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eeb98def2fad8039662200e9854b7e7">&#9670;&nbsp;</a></span>nvme_identify_nslist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_nslist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_cgraph.png" border="0" usemap="#nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_cgraph" id="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,163,57"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="211,5,325,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="227,56,309,83"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="373,5,496,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="544,5,675,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_icgraph.png" border="0" usemap="#nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_icgraph" id="nvme-admin_8c_a9eeb98def2fad8039662200e9854b7e7_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1177,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1067c1ab64f621b7e8d68043437c04eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1067c1ab64f621b7e8d68043437c04eb">&#9670;&nbsp;</a></span>nvme_identify_nslist_csi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_identify_nslist_csi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_cgraph.png" border="0" usemap="#nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_cgraph" id="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,188,57"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="236,5,351,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a908e1383f81ed82cd271ecf3aa68f9a5" title=" " alt="" coords="253,56,334,83"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="399,5,521,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="569,5,700,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_icgraph.png" border="0" usemap="#nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_icgraph" id="nvme-admin_8c_a1067c1ab64f621b7e8d68043437c04eb_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1203,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a908e1383f81ed82cd271ecf3aa68f9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908e1383f81ed82cd271ecf3aa68f9a5">&#9670;&nbsp;</a></span>nvme_ns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structNvmeNamespace.html">NvmeNamespace</a>* nvme_ns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nsid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a908e1383f81ed82cd271ecf3aa68f9a5_icgraph.png" border="0" usemap="#nvme-admin_8c_a908e1383f81ed82cd271ecf3aa68f9a5_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a908e1383f81ed82cd271ecf3aa68f9a5_icgraph" id="nvme-admin_8c_a908e1383f81ed82cd271ecf3aa68f9a5_icgraph">
+<area shape="rect" title=" " alt="" coords="1275,107,1356,133"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="1055,5,1192,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="1042,56,1205,83"/>
+<area shape="rect" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="1020,107,1227,133"/>
+<area shape="rect" href="nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7" title=" " alt="" coords="1045,157,1202,184"/>
+<area shape="rect" href="nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb" title=" " alt="" coords="1032,208,1215,235"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,107,972,133"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,107,809,133"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,107,619,133"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,107,384,133"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,107,149,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afa248954e6428b4efed7549f41e77f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa248954e6428b4efed7549f41e77f2b">&#9670;&nbsp;</a></span>nvme_nsid_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool nvme_nsid_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>nsid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_afa248954e6428b4efed7549f41e77f2b_icgraph.png" border="0" usemap="#nvme-admin_8c_afa248954e6428b4efed7549f41e77f2b_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_afa248954e6428b4efed7549f41e77f2b_icgraph" id="nvme-admin_8c_afa248954e6428b4efed7549f41e77f2b_icgraph">
+<area shape="rect" title=" " alt="" coords="1275,56,1407,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="1055,5,1192,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="1042,56,1205,83"/>
+<area shape="rect" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="1020,107,1227,133"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,56,972,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,56,809,83"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,56,619,83"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,56,384,83"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,56,149,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7042f589909852500d6f26c36b78850b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7042f589909852500d6f26c36b78850b">&#9670;&nbsp;</a></span>nvme_process_sq_admin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nvme_process_sq_admin </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>opaque</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>处理admin命令的sq队列 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opaque</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_cgraph.png" border="0" usemap="#nvme-admin_8c_a7042f589909852500d6f26c36b78850b_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_cgraph" id="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_cgraph">
+<area shape="rect" title="处理admin命令的sq队列" alt="" coords="5,503,192,530"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="725,215,855,242"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="1179,266,1313,292"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="256,478,399,504"/>
+<area shape="rect" href="nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="727,266,853,292"/>
+<area shape="rect" href="nvme-util_8c.html#a1983cbf62a2b154bc0c1e8f01f2bb1b6" title=" " alt="" coords="260,528,395,555"/>
+<area shape="rect" href="nvme-util_8c.html#a0c728e2926a6efc38005202a2b224647" title=" " alt="" coords="254,579,401,606"/>
+<area shape="rect" href="intr_8c.html#ab8fc684c66f6970e095cb683d02426d5" title="通知上层admin命令已完成" alt="" coords="240,630,415,656"/>
+<area shape="rect" href="nvme-util_8c.html#a4fdc790b9e67ae29e3ef256182ed345b" title=" " alt="" coords="262,680,393,707"/>
+<area shape="rect" href="nvme-admin_8c.html#abd65f91764a2624cdc4e608f3dc7932e" title=" " alt="" coords="487,367,615,394"/>
+<area shape="rect" href="nvme-admin_8c.html#af3ddf1e4e280aa3f367a5b2b44879b41" title=" " alt="" coords="486,164,615,191"/>
+<area shape="rect" href="nvme-admin_8c.html#a2c43f1bdb51a2e35c2ecdb9ed9db64ec" title=" " alt="" coords="486,420,615,447"/>
+<area shape="rect" href="nvme-admin_8c.html#ac1090eb738e0aa389ef5a647e647a09f" title=" " alt="" coords="497,316,605,343"/>
+<area shape="rect" href="nvme-admin_8c.html#a6f5c22b725b5eca5912f17066e95cf67" title=" " alt="" coords="497,478,605,504"/>
+<area shape="rect" href="nvme-admin_8c.html#af11a6f9497c3496eb41dda00362bac96" title=" " alt="" coords="495,540,606,567"/>
+<area shape="rect" href="nvme-admin_8c.html#abf593ed87b332bec6cb6fca0e2bed1be" title=" " alt="" coords="480,718,621,744"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="493,848,608,875"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="493,1152,608,1179"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="465,1203,636,1230"/>
+<area shape="rect" href="nvme-admin_8c.html#ad712f926297fd28d117c32d18e3566dc" title=" " alt="" coords="481,616,621,643"/>
+<area shape="rect" href="nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="721,418,859,444"/>
+<area shape="rect" href="nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="721,316,859,343"/>
+<area shape="rect" href="nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="733,164,847,191"/>
+<area shape="rect" href="nvme-util_8c.html#a6410408d19dd2986cba9a815d25871a8" title=" " alt="" coords="735,114,845,140"/>
+<area shape="rect" href="intr_8c.html#aa6089f663c0aef824344bde303c46238" title=" " alt="" coords="723,63,857,90"/>
+<area shape="rect" href="nvme-util_8c.html#a9d8a42fcd63a79e262250aa8f54522da" title=" " alt="" coords="952,266,1120,292"/>
+<area shape="rect" href="intr_8c.html#a4546f8dc3153b6b272979b26d9ee3a5f" title=" " alt="" coords="941,114,1131,140"/>
+<area shape="rect" href="intr_8c.html#a404cdb00218c3c3b27c4048b43d7d8db" title=" " alt="" coords="945,164,1127,191"/>
+<area shape="rect" href="intr_8c.html#aef207536dce0a636e5d7c2467c73110a" title=" " alt="" coords="961,63,1111,90"/>
+<area shape="rect" href="nvme-util_8c.html#ac3b74834e78afe9ce3db5074e8398a0f" title="初始化sq队列，预分配空间" alt="" coords="735,468,845,495"/>
+<area shape="rect" href="nvme-util_8c.html#ae00a56019ece0039e9a209dfa7bc398e" title=" " alt="" coords="733,519,847,546"/>
+<area shape="rect" href="nvme-io_8c.html#a03a3accd495e0b00d01b80e009af5c9f" title="将剩余的req都填入cq" alt="" coords="715,570,865,596"/>
+<area shape="rect" href="nvme-admin_8c.html#a1068e4177c9ff25ec1cc15b18d26356b" title=" " alt="" coords="694,620,886,647"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="979,1076,1093,1103"/>
+<area shape="rect" href="nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="718,772,862,799"/>
+<area shape="rect" href="nvme-admin_8c.html#aff81480a8e081d70ea6fc2b09a02af21" title=" " alt="" coords="717,874,863,900"/>
+<area shape="rect" href="nvme-admin_8c.html#a4e3add88b587075ed1a120f75f73ea44" title=" " alt="" coords="712,924,868,951"/>
+<area shape="rect" href="nvme-admin_8c.html#a295e47dd4c386bd7ad30d98ea4b45929" title=" " alt="" coords="720,975,860,1002"/>
+<area shape="rect" href="nvme-admin_8c.html#af7d9ef3eb88525869cf3506520028cf0" title=" " alt="" coords="722,823,858,850"/>
+<area shape="rect" href="nvme-admin_8c.html#a834f603280a3a10a14da324da6bd9a62" title=" " alt="" coords="701,1330,879,1356"/>
+<area shape="rect" href="nvme-admin_8c.html#a6a27adda12530ad69ecc17512ede9ddd" title=" " alt="" coords="719,1380,861,1407"/>
+<area shape="rect" href="nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05" title=" " alt="" coords="706,1026,874,1052"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="721,1076,859,1103"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="709,1127,871,1154"/>
+<area shape="rect" href="nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="687,1178,893,1204"/>
+<area shape="rect" href="nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7" title=" " alt="" coords="711,1228,869,1255"/>
+<area shape="rect" href="nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb" title=" " alt="" coords="699,1279,881,1306"/>
+<area shape="rect" href="nvme-io_8c.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="715,1431,865,1458"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="731,671,849,698"/>
+<area shape="rect" href="intr_8c.html#a1bcc1a1b3495a3ea33365a4afaf44b0a" title="传统的中断通知方式" alt="" coords="463,1254,639,1280"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_icgraph.png" border="0" usemap="#nvme-admin_8c_a7042f589909852500d6f26c36b78850b_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_icgraph" id="nvme-admin_8c_a7042f589909852500d6f26c36b78850b_icgraph">
+<area shape="rect" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4288308db73b3aa30b0c2253ffabd2d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4288308db73b3aa30b0c2253ffabd2d5">&#9670;&nbsp;</a></span>nvme_rpt_empty_id_struct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_rpt_empty_id_struct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_cgraph.png" border="0" usemap="#nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_cgraph" id="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,201,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="249,5,364,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="412,5,535,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="583,5,713,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_icgraph.png" border="0" usemap="#nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_icgraph" id="nvme-admin_8c_a4288308db73b3aa30b0c2253ffabd2d5_icgraph">
+<area shape="rect" title=" " alt="" coords="1236,56,1432,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05" title=" " alt="" coords="1020,5,1188,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="1035,56,1173,83"/>
+<area shape="rect" href="nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="1023,107,1185,133"/>
+<area shape="rect" href="nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="857,56,972,83"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,56,809,83"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,56,619,83"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,56,384,83"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,56,149,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b2764426b75545dfc03229b811607eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2764426b75545dfc03229b811607eb">&#9670;&nbsp;</a></span>nvme_set_db_memory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_set_db_memory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_cgraph.png" border="0" usemap="#nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_cgraph" id="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,271,176,297"/>
+<area shape="rect" href="nvme-io_8c.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="224,271,375,297"/>
+<area shape="rect" href="nvme-io_8c.html#a667ab7f8de6f02e513acd0c14c0407e9" title=" " alt="" coords="453,68,528,95"/>
+<area shape="rect" href="rte__ring_8h.html#a6bc92444f7239ca27c5a89de99f5f4ac" title=" " alt="" coords="423,119,559,145"/>
+<area shape="rect" href="nvme-io_8c.html#a2b5cc5f1e45642543fa0bfe8db2dd428" title=" " alt="" coords="454,169,527,196"/>
+<area shape="rect" href="nvme-io_8c.html#a4d0ede8cb67c2a87a6af7ba60b878b86" title=" " alt="" coords="457,220,524,247"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title="nvme poller线程函数，不断处理sq和生成cq" alt="" coords="439,321,542,348"/>
+<area shape="rect" href="pqueue_8h.html#a2c27c13ed1c988e9fc7b259e6820ca8c" title=" " alt="" coords="441,372,540,399"/>
+<area shape="rect" href="rte__ring_8h.html#abf9a7cda8ef5a62ee0a286c11d45d1bf" title=" " alt="" coords="628,220,749,247"/>
+<area shape="rect" href="nvme-io_8c.html#af3708eed16007bc4b715785d1ea06cd0" title=" " alt="" coords="455,423,527,449"/>
+<area shape="rect" href="nvme-io_8c.html#a4201ce0351a86f139fa684f7b963f867" title=" " alt="" coords="457,473,524,500"/>
+<area shape="rect" href="rte__ring_8c.html#a122812947c00f9ed3066232accf5fa5a" title=" " alt="" coords="629,81,749,108"/>
+<area shape="rect" href="rte__ring_8h.html#a5a85fd1038be9376de166494057e6aa1" title=" " alt="" coords="1087,95,1217,121"/>
+<area shape="rect" href="rte__ring_8c.html#ac29f8523d355c107377858bdeb468486" title=" " alt="" coords="834,56,1001,83"/>
+<area shape="rect" href="rte__ring_8c.html#a7a44f25853c926ac1b29562857244366" title=" " alt="" coords="867,5,967,32"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title="从to_poller队列中取req，放入cq中，然后通知上层操作已完成" alt="" coords="607,385,771,412"/>
+<area shape="rect" href="nvme-io_8c.html#aaa8fe64369c3e7b33785cabed5a4cbde" title="从sq中取出req，放入to_ftl队列中，交由ftl处理" alt="" coords="610,841,767,868"/>
+<area shape="rect" href="nvme_8h.html#acd64982aef4cb1864b53952a92068c27" title=" " alt="" coords="884,613,951,640"/>
+<area shape="rect" href="rte__ring_8h.html#a96ef17a77ac3deecdb8a1fb71b6bdf63" title=" " alt="" coords="852,208,983,235"/>
+<area shape="rect" href="rte__ring_8h.html#ab2417e0e85ffd0e61ec4b0ee263ab809" title=" " alt="" coords="842,309,993,336"/>
+<area shape="rect" href="intr_8c.html#ac07d39a331aa32f4da4f27f31f1abc1c" title="中断通知上层取cq" alt="" coords="845,360,990,387"/>
+<area shape="rect" href="nvme-io_8c.html#aa412c2f46a5bc43ac2234173c9743abe" title="将req实际封装入cq" alt="" coords="855,461,979,488"/>
+<area shape="rect" href="pqueue_8h.html#addd8cdfbc8c47b8cdd7eb4c4560de7aa" title=" " alt="" coords="860,411,975,437"/>
+<area shape="rect" href="pqueue_8h.html#a2919d3e817688b81da746d4123f51ba3" title=" " alt="" coords="863,512,972,539"/>
+<area shape="rect" href="pqueue_8h.html#abec9363c7a9cc89190bf0925a4a1652c" title=" " alt="" coords="867,259,968,285"/>
+<area shape="rect" href="pqueue_8h.html#ae0cf88c8360a5f08ada81feaaeb40505" title=" " alt="" coords="866,563,969,589"/>
+<area shape="rect" href="rte__ring_8h.html#abc8376d2c6e609707d52032860880b34" title=" " alt="" coords="1095,171,1209,197"/>
+<area shape="rect" href="rte__ring_8h.html#a8742d4b89ce43dbd93cc2ef48518ccf0" title=" " alt="" coords="1065,309,1239,336"/>
+<area shape="rect" href="rte__ring_8h.html#a201b5c512389dd58216906866aba1ec5" title=" " alt="" coords="1288,309,1460,336"/>
+<area shape="rect" href="intr_8c.html#a1bcc1a1b3495a3ea33365a4afaf44b0a" title="传统的中断通知方式" alt="" coords="1064,360,1240,387"/>
+<area shape="rect" href="dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="1085,667,1219,693"/>
+<area shape="rect" href="nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="1089,547,1215,573"/>
+<area shape="rect" href="nvme-util_8c.html#a1983cbf62a2b154bc0c1e8f01f2bb1b6" title=" " alt="" coords="1085,461,1219,488"/>
+<area shape="rect" href="pqueue_8c.html#a918fcd7df850b9a0c17111abc9c323b1" title=" " alt="" coords="1107,411,1197,437"/>
+<area shape="rect" href="pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="1089,259,1215,285"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="1333,259,1415,285"/>
+<area shape="rect" href="rte__ring_8h.html#a3afc06d02f63e84fe1569c99955af57a" title=" " alt="" coords="842,1031,993,1057"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="1309,1005,1439,1032"/>
+<area shape="rect" href="nvme-io_8c.html#aa9fdaa77f86c065d69d158184951be32" title="从dram中取cmd" alt="" coords="851,765,983,792"/>
+<area shape="rect" href="nvme-util_8c.html#a0c728e2926a6efc38005202a2b224647" title=" " alt="" coords="844,867,991,893"/>
+<area shape="rect" href="nvme-io_8c.html#ae6d2b4ae7957a876e1e221b7f2ee1fb8" title="nvme处理io类型的commad，识别cmd类型并调用相关函数" alt="" coords="861,917,974,944"/>
+<area shape="rect" href="nvme-util_8c.html#a4fdc790b9e67ae29e3ef256182ed345b" title=" " alt="" coords="852,715,983,741"/>
+<area shape="rect" href="nvme-io_8c.html#aa8cac05ad399a3b98a28abe2c89b5509" title=" " alt="" coords="819,816,1016,843"/>
+<area shape="rect" href="nvme-util_8c.html#a21b2434a9d5f978d0b4cf9661820ca63" title=" " alt="" coords="1071,1005,1233,1032"/>
+<area shape="rect" href="rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d" title=" " alt="" coords="1067,1056,1237,1083"/>
+<area shape="rect" href="nvme-io_8c.html#a1ea0938f847741b1399583080d7bd9ae" title="处理io cmd：compare命令" alt="" coords="1091,752,1213,779"/>
+<area shape="rect" href="nvme-io_8c.html#ae1f6c99fbfdd8d6c788ee82c6d13086d" title="处理io cmd：dataset management命令" alt="" coords="1105,904,1199,931"/>
+<area shape="rect" href="nvme-io_8c.html#a0ecae506951d74f3dc9826f76e133d81" title="处理io cmd：flush命令" alt="" coords="1103,955,1201,981"/>
+<area shape="rect" href="nvme-io_8c.html#a646ae4b9455eb7bf01b18eea275a2379" title="处理io cmd：write uncorrectable命令" alt="" coords="1081,803,1223,829"/>
+<area shape="rect" href="nvme-io_8c.html#ae3fe0206159ec6d704c59e7393b6d85c" title="处理io cmd：write zeros命令" alt="" coords="1081,853,1223,880"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_icgraph.png" border="0" usemap="#nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_icgraph" id="nvme-admin_8c_a8b2764426b75545dfc03229b811607eb_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad712f926297fd28d117c32d18e3566dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad712f926297fd28d117c32d18e3566dc">&#9670;&nbsp;</a></span>nvme_set_feature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_set_feature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCqe.html">NvmeCqe</a> *&#160;</td>
+          <td class="paramname"><em>cqe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_cgraph.png" border="0" usemap="#nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_cgraph" id="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,32"/>
+<area shape="rect" href="dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="193,5,312,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="360,5,483,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="531,5,661,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_icgraph.png" border="0" usemap="#nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_icgraph" id="nvme-admin_8c_ad712f926297fd28d117c32d18e3566dc_icgraph">
+<area shape="rect" title=" " alt="" coords="857,5,997,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af7d9ef3eb88525869cf3506520028cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d9ef3eb88525869cf3506520028cf0">&#9670;&nbsp;</a></span>nvme_smart_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t nvme_smart_info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeCmd.html">NvmeCmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>buf_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_cgraph.png" border="0" usemap="#nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_cgraph" alt=""/></div>
+<map name="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_cgraph" id="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,141,32"/>
+<area shape="rect" href="dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="189,5,304,32"/>
+<area shape="rect" href="dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="352,5,475,32"/>
+<area shape="rect" href="dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="523,5,653,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_icgraph.png" border="0" usemap="#nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_icgraph" alt=""/></div>
+<map name="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_icgraph" id="nvme-admin_8c_af7d9ef3eb88525869cf3506520028cf0_icgraph">
+<area shape="rect" title=" " alt="" coords="1020,5,1156,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="857,5,972,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="aea2f9a310930687c4298773a3e9c1612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2f9a310930687c4298773a3e9c1612">&#9670;&nbsp;</a></span>nvme_cse_acs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t nvme_cse_acs[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a417ffb2d4b3b805a596e05734e4a277b">NVME_ADM_CMD_DELETE_SQ</a>]        = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a9fe26376ca7f7f260e56724d5ca8d7ba">NVME_ADM_CMD_CREATE_SQ</a>]        = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a647d011a38718d421b6441e08e5519ab">NVME_ADM_CMD_GET_LOG_PAGE</a>]     = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a8df5d7d60a4198a9036e6c2b7005241e">NVME_ADM_CMD_DELETE_CQ</a>]        = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a2628e50d0a8811c53926a07090883b7e">NVME_ADM_CMD_CREATE_CQ</a>]        = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a30d757882f74173a6571542b16a90f62">NVME_ADM_CMD_IDENTIFY</a>]         = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a7a0e1726646532b948fb1d8b377bad37">NVME_ADM_CMD_ABORT</a>]            = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a6e5a3b773a6dd50a3c81c87c23815346">NVME_ADM_CMD_SET_FEATURES</a>]     = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a652e2c2c1bdde8e600c920e4ec442570">NVME_ADM_CMD_GET_FEATURES</a>]     = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a93a81a4a544e0244cbad00915c2bb20a">NVME_ADM_CMD_ASYNC_EV_REQ</a>]     = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3d75f111de790b87949e3c7bf2d4ea04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d75f111de790b87949e3c7bf2d4ea04">&#9670;&nbsp;</a></span>nvme_cse_iocs_nvm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t nvme_cse_iocs_nvm[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a95c9b9c84ed8581bc4a06c07611e594c">NVME_CMD_FLUSH</a>]                = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a012d1c22c46c99812568a7a7857eff90">NVME_CMD_WRITE_ZEROES</a>]         = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6af12c69a9bdf0ad418e4a144ef5424336">NVME_CMD_WRITE</a>]                = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a13421e16e166f06ef616c86258232336">NVME_CMD_READ</a>]                 = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a324318d7d84def33dd8a53724f14ab10">NVME_CMD_DSM</a>]                  = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6ada1d765c850987feea79854f0141694b">NVME_CMD_COMPARE</a>]              = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1e2e18c22d91a9627bba1982011c2d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2e18c22d91a9627bba1982011c2d56">&#9670;&nbsp;</a></span>nvme_cse_iocs_zoned</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t nvme_cse_iocs_zoned[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a95c9b9c84ed8581bc4a06c07611e594c">NVME_CMD_FLUSH</a>]                = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a012d1c22c46c99812568a7a7857eff90">NVME_CMD_WRITE_ZEROES</a>]         = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6af12c69a9bdf0ad418e4a144ef5424336">NVME_CMD_WRITE</a>]                = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a13421e16e166f06ef616c86258232336">NVME_CMD_READ</a>]                 = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a324318d7d84def33dd8a53724f14ab10">NVME_CMD_DSM</a>]                  = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6ada1d765c850987feea79854f0141694b">NVME_CMD_COMPARE</a>]              = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6af03a6460a154989e7816c9518c281422">NVME_CMD_ZONE_APPEND</a>]          = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a9c323c2099e3f3da156bb6896b824724">NVME_CMD_ZONE_MGMT_SEND</a>]       = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a> | <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a>,</div>
+<div class="line">    [<a class="code" href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6aa4fe58ce24eda3bf7e1e5e3c22470b30">NVME_CMD_ZONE_MGMT_RECV</a>]       = <a class="code" href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6a9c323c2099e3f3da156bb6896b824724"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a9c323c2099e3f3da156bb6896b824724">NVME_CMD_ZONE_MGMT_SEND</a></div><div class="ttdeci">@ NVME_CMD_ZONE_MGMT_SEND</div><div class="ttdef"><b>Definition:</b> nvme.h:346</div></div>
+<div class="ttc" id="anvme_8h_html_a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8"><div class="ttname"><a href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388abb43a71db274146e970ac1e4d59d1fc8">NVME_CMD_EFF_LBCC</a></div><div class="ttdeci">@ NVME_CMD_EFF_LBCC</div><div class="ttdef"><b>Definition:</b> nvme.h:648</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6a324318d7d84def33dd8a53724f14ab10"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a324318d7d84def33dd8a53724f14ab10">NVME_CMD_DSM</a></div><div class="ttdeci">@ NVME_CMD_DSM</div><div class="ttdef"><b>Definition:</b> nvme.h:345</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a9fe26376ca7f7f260e56724d5ca8d7ba"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a9fe26376ca7f7f260e56724d5ca8d7ba">NVME_ADM_CMD_CREATE_SQ</a></div><div class="ttdeci">@ NVME_ADM_CMD_CREATE_SQ</div><div class="ttdef"><b>Definition:</b> nvme.h:319</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a417ffb2d4b3b805a596e05734e4a277b"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a417ffb2d4b3b805a596e05734e4a277b">NVME_ADM_CMD_DELETE_SQ</a></div><div class="ttdeci">@ NVME_ADM_CMD_DELETE_SQ</div><div class="ttdef"><b>Definition:</b> nvme.h:318</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6a95c9b9c84ed8581bc4a06c07611e594c"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a95c9b9c84ed8581bc4a06c07611e594c">NVME_CMD_FLUSH</a></div><div class="ttdeci">@ NVME_CMD_FLUSH</div><div class="ttdef"><b>Definition:</b> nvme.h:339</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a647d011a38718d421b6441e08e5519ab"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a647d011a38718d421b6441e08e5519ab">NVME_ADM_CMD_GET_LOG_PAGE</a></div><div class="ttdeci">@ NVME_ADM_CMD_GET_LOG_PAGE</div><div class="ttdef"><b>Definition:</b> nvme.h:320</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a8df5d7d60a4198a9036e6c2b7005241e"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a8df5d7d60a4198a9036e6c2b7005241e">NVME_ADM_CMD_DELETE_CQ</a></div><div class="ttdeci">@ NVME_ADM_CMD_DELETE_CQ</div><div class="ttdef"><b>Definition:</b> nvme.h:321</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6ada1d765c850987feea79854f0141694b"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6ada1d765c850987feea79854f0141694b">NVME_CMD_COMPARE</a></div><div class="ttdeci">@ NVME_CMD_COMPARE</div><div class="ttdef"><b>Definition:</b> nvme.h:343</div></div>
+<div class="ttc" id="anvme_8h_html_a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04"><div class="ttname"><a href="nvme_8h.html#a385c44f6fb256e5716a2302a5b940388aa96fee4290456a0cb31701e59834fc04">NVME_CMD_EFF_CSUPP</a></div><div class="ttdeci">@ NVME_CMD_EFF_CSUPP</div><div class="ttdef"><b>Definition:</b> nvme.h:647</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6af12c69a9bdf0ad418e4a144ef5424336"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6af12c69a9bdf0ad418e4a144ef5424336">NVME_CMD_WRITE</a></div><div class="ttdeci">@ NVME_CMD_WRITE</div><div class="ttdef"><b>Definition:</b> nvme.h:340</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6aa4fe58ce24eda3bf7e1e5e3c22470b30"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6aa4fe58ce24eda3bf7e1e5e3c22470b30">NVME_CMD_ZONE_MGMT_RECV</a></div><div class="ttdeci">@ NVME_CMD_ZONE_MGMT_RECV</div><div class="ttdef"><b>Definition:</b> nvme.h:347</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a652e2c2c1bdde8e600c920e4ec442570"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a652e2c2c1bdde8e600c920e4ec442570">NVME_ADM_CMD_GET_FEATURES</a></div><div class="ttdeci">@ NVME_ADM_CMD_GET_FEATURES</div><div class="ttdef"><b>Definition:</b> nvme.h:326</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6a012d1c22c46c99812568a7a7857eff90"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a012d1c22c46c99812568a7a7857eff90">NVME_CMD_WRITE_ZEROES</a></div><div class="ttdeci">@ NVME_CMD_WRITE_ZEROES</div><div class="ttdef"><b>Definition:</b> nvme.h:344</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a2628e50d0a8811c53926a07090883b7e"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a2628e50d0a8811c53926a07090883b7e">NVME_ADM_CMD_CREATE_CQ</a></div><div class="ttdeci">@ NVME_ADM_CMD_CREATE_CQ</div><div class="ttdef"><b>Definition:</b> nvme.h:322</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a93a81a4a544e0244cbad00915c2bb20a"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a93a81a4a544e0244cbad00915c2bb20a">NVME_ADM_CMD_ASYNC_EV_REQ</a></div><div class="ttdeci">@ NVME_ADM_CMD_ASYNC_EV_REQ</div><div class="ttdef"><b>Definition:</b> nvme.h:327</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6af03a6460a154989e7816c9518c281422"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6af03a6460a154989e7816c9518c281422">NVME_CMD_ZONE_APPEND</a></div><div class="ttdeci">@ NVME_CMD_ZONE_APPEND</div><div class="ttdef"><b>Definition:</b> nvme.h:348</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a30d757882f74173a6571542b16a90f62"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a30d757882f74173a6571542b16a90f62">NVME_ADM_CMD_IDENTIFY</a></div><div class="ttdeci">@ NVME_ADM_CMD_IDENTIFY</div><div class="ttdef"><b>Definition:</b> nvme.h:323</div></div>
+<div class="ttc" id="anvme_8h_html_a01e3a918ff89282c841471f5d797fbf6a13421e16e166f06ef616c86258232336"><div class="ttname"><a href="nvme_8h.html#a01e3a918ff89282c841471f5d797fbf6a13421e16e166f06ef616c86258232336">NVME_CMD_READ</a></div><div class="ttdeci">@ NVME_CMD_READ</div><div class="ttdef"><b>Definition:</b> nvme.h:341</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a6e5a3b773a6dd50a3c81c87c23815346"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a6e5a3b773a6dd50a3c81c87c23815346">NVME_ADM_CMD_SET_FEATURES</a></div><div class="ttdeci">@ NVME_ADM_CMD_SET_FEATURES</div><div class="ttdef"><b>Definition:</b> nvme.h:325</div></div>
+<div class="ttc" id="anvme_8h_html_af84c4c35c60574c51e83e47bbc873fc2a7a0e1726646532b948fb1d8b377bad37"><div class="ttname"><a href="nvme_8h.html#af84c4c35c60574c51e83e47bbc873fc2a7a0e1726646532b948fb1d8b377bad37">NVME_ADM_CMD_ABORT</a></div><div class="ttdeci">@ NVME_ADM_CMD_ABORT</div><div class="ttdef"><b>Definition:</b> nvme.h:324</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_a482d5bde24295b7334c8aec815f3a1a.html">femu</a></li><li class="navelem"><a class="el" href="nvme-admin_8c.html">nvme-admin.c</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

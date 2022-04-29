@@ -1,0 +1,19 @@
+<map id="zns_read" name="zns_read">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,85,184"/>
+<area shape="rect" id="node2" href="$dram_8c.html#a1ccbcf0c92b7b084afc9890f3a7e5799" title=" " alt="" coords="165,5,264,32"/>
+<area shape="rect" id="node3" href="$nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="143,56,287,83"/>
+<area shape="rect" id="node4" href="$zns_8c.html#ae9ed91ad4901fe7f2cd4f9df6c333901" title=" " alt="" coords="143,107,286,133"/>
+<area shape="rect" id="node5" href="$zns_8c.html#a52ee538a6713c7b29769f23b61dad575" title=" " alt="" coords="149,157,281,184"/>
+<area shape="rect" id="node6" href="$zns_8c.html#a9a270c9ffa0fb88a1c6d57ecfe3e6815" title=" " alt="" coords="133,208,296,235"/>
+<area shape="rect" id="node12" href="$zns_8h.html#a686c1e6209d4c3eaf3897e73484bdf9f" title=" " alt="" coords="179,259,250,285"/>
+<area shape="rect" id="node15" href="$zns_8c.html#ab56987b404fc29d662252ee6f15e9012" title=" " alt="" coords="158,309,271,336"/>
+<area shape="rect" id="node7" href="$zns_8c.html#a3357eef3f827fdab1d88e5c95ae3c386" title=" " alt="" coords="346,91,513,133"/>
+<area shape="rect" id="node9" href="$zns_8c.html#a9674ef207fca784d45d2b13fe63e31f5" title=" " alt="" coords="346,157,513,184"/>
+<area shape="rect" id="node11" href="$zns_8h.html#aa03c395f4bba42d5fc5b8ef247b082ae" title=" " alt="" coords="344,208,515,235"/>
+<area shape="rect" id="node8" href="$zns_8h.html#a677294d02c732b61b18d610041851e4b" title=" " alt="" coords="563,99,713,125"/>
+<area shape="rect" id="node10" href="$zns_8c.html#a755fef089b9a7fc5ddd4be2d53455955" title=" " alt="" coords="583,157,693,184"/>
+<area shape="rect" id="node13" href="$zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a" title=" " alt="" coords="375,259,483,285"/>
+<area shape="rect" id="node14" href="$zns_8h.html#a04721281dcdb77acc610b362cb5085ad" title=" " alt="" coords="589,259,687,285"/>
+<area shape="rect" id="node16" href="$dma_8c.html#aff05c76845a6cc08d0131d2761153493" title=" " alt="" coords="368,309,491,336"/>
+<area shape="rect" id="node17" href="$dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="573,309,703,336"/>
+</map>

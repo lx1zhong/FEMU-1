@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: ppa结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structppa.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">ppa结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>describe a physical page addr  
+ <a href="structppa.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ftl_8h_source.html">ftl.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:acc663adfe09e4618d90125f1f80338d7"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a7751aa12963cc84e0a30314569000d5a"><td class="memItemLeft" >&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a725891edcfa2284daae8811a70ff0cb8"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a627815618e543bfecc85c0270b2627f8">blk</a>: <a class="el" href="ftl_8h.html#a248c1448579e0c4579d0b52313995552">BLK_BITS</a></td></tr>
+<tr class="separator:a725891edcfa2284daae8811a70ff0cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336bd0aff39bf4cb1210bf95638a2576"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a7e41b431057d4d5f81e8b79e6ff732ac">pg</a>: <a class="el" href="ftl_8h.html#a7e7c99782de81b38fa1b30a3fd617e0a">PG_BITS</a></td></tr>
+<tr class="separator:a336bd0aff39bf4cb1210bf95638a2576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eec47dc4268029f9f4b8bb150482a1e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a2a6aa96bc52767ee0f609ae28a01a6f7">sec</a>: <a class="el" href="ftl_8h.html#abde6be2e893748e5be41abb9c047e242">SEC_BITS</a></td></tr>
+<tr class="separator:a5eec47dc4268029f9f4b8bb150482a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f10605413a1874d1df5ae143c295c0d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a8a0a9d008a2c5a830b036bdc9c6d2764">pl</a>: <a class="el" href="ftl_8h.html#a612770e7e6bcfee88de7ef1efea82381">PL_BITS</a></td></tr>
+<tr class="separator:a0f10605413a1874d1df5ae143c295c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b2880d71d52c62a4550e0d68b041e9"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a9ca7013864c40d83a67ce2d8edf2350e">lun</a>: <a class="el" href="ftl_8h.html#ab31967eedd3ea866167c7e23a5940c4e">LUN_BITS</a></td></tr>
+<tr class="separator:ab4b2880d71d52c62a4550e0d68b041e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a9caa0090503c674d6d93ed6229427"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a2b5af16973594981a998ae3328eac8f7">ch</a>: <a class="el" href="ftl_8h.html#a7ba0ef88759dc996af5fba61bc232cd9">CH_BITS</a></td></tr>
+<tr class="separator:ab9a9caa0090503c674d6d93ed6229427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab17ca9f989c42b477bfc7fdb4b5de97"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a4e4391ce777dced78c6bb4ccddaee837">rsv</a>: 1</td></tr>
+<tr class="separator:aab17ca9f989c42b477bfc7fdb4b5de97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7751aa12963cc84e0a30314569000d5a"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structppa.html#a62bda76b2d5198e19ba1198df79c39f8">g</a></td></tr>
+<tr class="separator:a7751aa12963cc84e0a30314569000d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ca0ae25bdef6b2d8ae1d306ae22917"><td class="memItemLeft" >&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="structppa.html#a4dc2d1cdc8cce18cdf002f309395cba8">ppa</a></td></tr>
+<tr class="separator:a26ca0ae25bdef6b2d8ae1d306ae22917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc663adfe09e4618d90125f1f80338d7"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:acc663adfe09e4618d90125f1f80338d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>describe a physical page addr </p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a id="acc663adfe09e4618d90125f1f80338d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc663adfe09e4618d90125f1f80338d7">&#9670;&nbsp;</a></span>@5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a627815618e543bfecc85c0270b2627f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627815618e543bfecc85c0270b2627f8">&#9670;&nbsp;</a></span>blk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::blk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b5af16973594981a998ae3328eac8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5af16973594981a998ae3328eac8f7">&#9670;&nbsp;</a></span>ch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::ch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62bda76b2d5198e19ba1198df79c39f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bda76b2d5198e19ba1198df79c39f8">&#9670;&nbsp;</a></span>g</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }  ppa::g</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ca7013864c40d83a67ce2d8edf2350e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca7013864c40d83a67ce2d8edf2350e">&#9670;&nbsp;</a></span>lun</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::lun</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e41b431057d4d5f81e8b79e6ff732ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e41b431057d4d5f81e8b79e6ff732ac">&#9670;&nbsp;</a></span>pg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::pg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a0a9d008a2c5a830b036bdc9c6d2764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0a9d008a2c5a830b036bdc9c6d2764">&#9670;&nbsp;</a></span>pl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::pl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4dc2d1cdc8cce18cdf002f309395cba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc2d1cdc8cce18cdf002f309395cba8">&#9670;&nbsp;</a></span>ppa</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::ppa</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e4391ce777dced78c6bb4ccddaee837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e4391ce777dced78c6bb4ccddaee837">&#9670;&nbsp;</a></span>rsv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::rsv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a6aa96bc52767ee0f609ae28a01a6f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6aa96bc52767ee0f609ae28a01a6f7">&#9670;&nbsp;</a></span>sec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t ppa::sec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>femu/bbssd/<a class="el" href="ftl_8h_source.html">ftl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structppa.html">ppa</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

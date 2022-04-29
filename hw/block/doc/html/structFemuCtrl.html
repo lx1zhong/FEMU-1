@@ -1,0 +1,2451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: FemuCtrl结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structFemuCtrl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">FemuCtrl结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>femu相关控制参数和数据成员  
+ <a href="structFemuCtrl.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="nvme_8h_source.html">nvme.h</a>&gt;</code></p>
+<div class="dynheader">
+FemuCtrl 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structFemuCtrl__coll__graph.png" border="0" usemap="#FemuCtrl_coll__map" alt="Collaboration graph"/></div>
+<map name="FemuCtrl_coll__map" id="FemuCtrl_coll__map">
+<area shape="rect" title="femu相关控制参数和数据成员" alt="" coords="1337,384,1419,411"/>
+<area shape="rect" href="structNvmeNamespace.html" title=" " alt="" coords="1579,549,1717,576"/>
+<area shape="rect" href="structNvmeCQueue.html" title=" " alt="" coords="1592,376,1704,403"/>
+<area shape="rect" href="structNvmeSQueue.html" title=" " alt="" coords="2041,309,2152,336"/>
+<area shape="rect" href="structrte__ring.html" title=" " alt="" coords="820,627,892,653"/>
+<area shape="rect" href="structssd.html" title="模拟一个ssd" alt="" coords="1083,461,1127,488"/>
+<area shape="rect" href="structrte__ring__headtail.html" title=" " alt="" coords="505,727,637,753"/>
+<area shape="rect" href="structOcCtrlParams.html" title=" " alt="" coords="1049,728,1160,755"/>
+<area shape="rect" href="structNvmeRequest.html" title=" " alt="" coords="1833,380,1948,407"/>
+<area shape="rect" href="structNvmeIdNs.html" title=" " alt="" coords="1333,755,1423,781"/>
+<area shape="rect" href="structNvmeLBAF.html" title=" " alt="" coords="1057,880,1152,907"/>
+<area shape="rect" href="structOc12Bbt.html" title=" " alt="" coords="1339,553,1417,580"/>
+<area shape="rect" href="structNvmeRangeType.html" title=" " alt="" coords="1312,604,1444,631"/>
+<area shape="rect" href="structNvmeBar.html" title=" " alt="" coords="1063,779,1146,805"/>
+<area shape="rect" href="structNvmeFeatureVal.html" title=" " alt="" coords="1039,829,1170,856"/>
+<area shape="rect" href="structNvmeCmd.html" title=" " alt="" coords="1603,239,1693,265"/>
+<area shape="rect" href="unionNvmeCmdDptr.html" title=" " alt="" coords="1319,35,1437,61"/>
+<area shape="rect" href="structNvmeSglDescriptor.html" title=" " alt="" coords="1031,5,1179,32"/>
+<area shape="rect" href="structNvmeCqe.html" title=" " alt="" coords="1605,489,1691,516"/>
+<area shape="rect" href="structNvmeZone.html" title=" " alt="" coords="1057,56,1152,83"/>
+<area shape="rect" href="structNvmeZoneDescr.html" title=" " alt="" coords="791,5,921,32"/>
+<area shape="rect" href="structFemuExtCtrlOps.html" title="扩展操作接口，具体实现在各模式ssd中" alt="" coords="1041,107,1168,133"/>
+<area shape="rect" href="structOc12Ctrl.html" title=" " alt="" coords="1065,157,1144,184"/>
+<area shape="rect" href="structOc12IdCtrl.html" title=" " alt="" coords="811,56,901,83"/>
+<area shape="rect" href="structOc12IdGroup.html" title=" " alt="" coords="518,31,625,57"/>
+<area shape="rect" href="structOc12IdAddrFormat.html" title=" " alt="" coords="500,81,643,108"/>
+<area shape="rect" href="structOc12Params.html" title=" " alt="" coords="805,107,907,133"/>
+<area shape="rect" href="structOc12AddrF.html" title=" " alt="" coords="809,157,903,184"/>
+<area shape="rect" href="structNvmeParams.html" title=" " alt="" coords="1050,208,1159,235"/>
+<area shape="rect" href="structOc20Params.html" title=" " alt="" coords="805,208,907,235"/>
+<area shape="rect" href="structSsdDramBackend.html" title="DRAM backend SSD address space" alt="" coords="1037,259,1173,285"/>
+<area shape="rect" href="structNvmeIdNsZoned.html" title=" " alt="" coords="1039,309,1170,336"/>
+<area shape="rect" href="structNvmeLBAFE.html" title=" " alt="" coords="805,259,907,285"/>
+<area shape="rect" href="structNvmeErrorLog.html" title=" " alt="" coords="1047,360,1162,387"/>
+<area shape="rect" href="structpqueue__t.html" title=" " alt="" coords="530,644,613,671"/>
+<area shape="rect" href="structline__mgmt.html" title="记录各种line的列表和数量" alt="" coords="810,563,902,589"/>
+<area shape="rect" href="structssdparams.html" title="ssd参数" alt="" coords="809,461,903,488"/>
+<area shape="rect" href="structwrite__pointer.html" title="wp: record next write addr" alt="" coords="802,512,910,539"/>
+<area shape="rect" href="structline.html" title="line" alt="" coords="548,537,595,564"/>
+<area shape="rect" href="structppa.html" title="describe a physical page addr" alt="" coords="833,360,879,387"/>
+<area shape="rect" href="structssd__channel.html" title="通道" alt="" coords="805,411,907,437"/>
+<area shape="rect" href="structnand__lun.html" title="晶圆" alt="" coords="531,411,612,437"/>
+<area shape="rect" href="structnand__plane.html" title="plane" alt="" coords="337,411,435,437"/>
+<area shape="rect" href="structnand__block.html" title="块" alt="" coords="168,411,264,437"/>
+<area shape="rect" href="structnand__page.html" title="页" alt="" coords="5,411,99,437"/>
+<area shape="rect" href="structNvmeIdCtrl.html" title=" " alt="" coords="1057,411,1153,437"/>
+<area shape="rect" href="structNvmePSD.html" title=" " alt="" coords="813,309,899,336"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a93fc6932260a13cbfb3a3d5f90e97ea4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a93fc6932260a13cbfb3a3d5f90e97ea4">QTAILQ_HEAD</a> (, <a class="el" href="structNvmeZone.html">NvmeZone</a>) exp_open_zones</td></tr>
+<tr class="separator:a93fc6932260a13cbfb3a3d5f90e97ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea0ec49eef18e421f1a74126574c7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#acea0ec49eef18e421f1a74126574c7f0">QTAILQ_HEAD</a> (, <a class="el" href="structNvmeZone.html">NvmeZone</a>) imp_open_zones</td></tr>
+<tr class="separator:acea0ec49eef18e421f1a74126574c7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2027d2a5041fb88e8f6ebfec3b769edc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a2027d2a5041fb88e8f6ebfec3b769edc">QTAILQ_HEAD</a> (, <a class="el" href="structNvmeZone.html">NvmeZone</a>) closed_zones</td></tr>
+<tr class="separator:a2027d2a5041fb88e8f6ebfec3b769edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550c346387a4a5edd73682edd606965a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a550c346387a4a5edd73682edd606965a">QTAILQ_HEAD</a> (, <a class="el" href="structNvmeZone.html">NvmeZone</a>) full_zones</td></tr>
+<tr class="separator:a550c346387a4a5edd73682edd606965a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47833476fb091bfe8d4ba9fcb8679411"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a47833476fb091bfe8d4ba9fcb8679411">QSIMPLEQ_HEAD</a> (aer_queue, <a class="el" href="structNvmeAsyncEvent.html">NvmeAsyncEvent</a>) aer_queue</td></tr>
+<tr class="separator:a47833476fb091bfe8d4ba9fcb8679411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a9d862ea82682f6232413280b92ddc4d1"><td class="memItemLeft" align="right" valign="top">PCIDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9d862ea82682f6232413280b92ddc4d1">parent_obj</a></td></tr>
+<tr class="separator:a9d862ea82682f6232413280b92ddc4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84aa0e64f9fbe7fdac3eaaa26c077e3"><td class="memItemLeft" align="right" valign="top">MemoryRegion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad84aa0e64f9fbe7fdac3eaaa26c077e3">iomem</a></td></tr>
+<tr class="separator:ad84aa0e64f9fbe7fdac3eaaa26c077e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab880f4820c2fda0e6068c014eda64d1f"><td class="memItemLeft" align="right" valign="top">MemoryRegion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab880f4820c2fda0e6068c014eda64d1f">ctrl_mem</a></td></tr>
+<tr class="separator:ab880f4820c2fda0e6068c014eda64d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae419c3a209fe0ffb9f6e04bc6ff3cd7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeBar.html">NvmeBar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ae419c3a209fe0ffb9f6e04bc6ff3cd7e">bar</a></td></tr>
+<tr class="separator:ae419c3a209fe0ffb9f6e04bc6ff3cd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ede5f20b691c65e599d3f4e1d756bcb"><td class="memItemLeft" align="right" valign="top">QemuUUID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1ede5f20b691c65e599d3f4e1d756bcb">uuid</a></td></tr>
+<tr class="separator:a1ede5f20b691c65e599d3f4e1d756bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e80e0bc39d8878bee79720f0733909"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ac6e80e0bc39d8878bee79720f0733909">zasl_bs</a></td></tr>
+<tr class="separator:ac6e80e0bc39d8878bee79720f0733909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc93dbc4b721983afa203722a769e7a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8dc93dbc4b721983afa203722a769e7a">zasl</a></td></tr>
+<tr class="separator:a8dc93dbc4b721983afa203722a769e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f0cfaa256d6bc65497853249789c83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a22f0cfaa256d6bc65497853249789c83">zoned</a></td></tr>
+<tr class="separator:a22f0cfaa256d6bc65497853249789c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cfd4a7ec5ef933c85eeee459b97a7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aa7cfd4a7ec5ef933c85eeee459b97a7d">cross_zone_read</a></td></tr>
+<tr class="separator:aa7cfd4a7ec5ef933c85eeee459b97a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0af9e86a49398d043a81869f2c89da"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abb0af9e86a49398d043a81869f2c89da">zone_size_bs</a></td></tr>
+<tr class="separator:abb0af9e86a49398d043a81869f2c89da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3284df15757fa3c9e773199fa426d51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ac3284df15757fa3c9e773199fa426d51">zone_cap_bs</a></td></tr>
+<tr class="separator:ac3284df15757fa3c9e773199fa426d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7aabe80b46d1d28417b5f757b25f8d7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#af7aabe80b46d1d28417b5f757b25f8d7">max_active_zones</a></td></tr>
+<tr class="separator:af7aabe80b46d1d28417b5f757b25f8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2c007bdb0d6d63de0b2ef92eba5339"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ade2c007bdb0d6d63de0b2ef92eba5339">max_open_zones</a></td></tr>
+<tr class="separator:ade2c007bdb0d6d63de0b2ef92eba5339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac31c5055e8db3e4124d1bceb15d16f6b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ac31c5055e8db3e4124d1bceb15d16f6b">zd_extension_size</a></td></tr>
+<tr class="separator:ac31c5055e8db3e4124d1bceb15d16f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e42727fa7033cf1faa5c31f94a4e22f"><td class="memItemLeft" align="right" valign="top">const uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9e42727fa7033cf1faa5c31f94a4e22f">iocs</a></td></tr>
+<tr class="separator:a9e42727fa7033cf1faa5c31f94a4e22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b48d3c6cc09b094369348af59a3b096"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0b48d3c6cc09b094369348af59a3b096">csi</a></td></tr>
+<tr class="separator:a0b48d3c6cc09b094369348af59a3b096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa1d7586c6d9356cc321cc86b7ebb62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aeaa1d7586c6d9356cc321cc86b7ebb62">id_ns_zoned</a></td></tr>
+<tr class="separator:aeaa1d7586c6d9356cc321cc86b7ebb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad2dc59565b90a54c8b118032d67801"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aaad2dc59565b90a54c8b118032d67801">zone_array</a></td></tr>
+<tr class="separator:aaad2dc59565b90a54c8b118032d67801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101d7d739551ef1fafb2df650b9cf155"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a101d7d739551ef1fafb2df650b9cf155">num_zones</a></td></tr>
+<tr class="separator:a101d7d739551ef1fafb2df650b9cf155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa9832711cd5744244c2cd80e0b027c"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#adaa9832711cd5744244c2cd80e0b027c">zone_size</a></td></tr>
+<tr class="separator:adaa9832711cd5744244c2cd80e0b027c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb80a44168a3ad90772b9e623dfed94"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aacb80a44168a3ad90772b9e623dfed94">zone_capacity</a></td></tr>
+<tr class="separator:aacb80a44168a3ad90772b9e623dfed94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc1d22ac9fbea382272a39bfdd52db7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#afdc1d22ac9fbea382272a39bfdd52db7">zone_size_log2</a></td></tr>
+<tr class="separator:afdc1d22ac9fbea382272a39bfdd52db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9ab3272256c2c2a4dea360e3392032"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aad9ab3272256c2c2a4dea360e3392032">zd_extensions</a></td></tr>
+<tr class="separator:aad9ab3272256c2c2a4dea360e3392032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33144e9a783e4a96c1149c2fc04b4704"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a33144e9a783e4a96c1149c2fc04b4704">nr_open_zones</a></td></tr>
+<tr class="separator:a33144e9a783e4a96c1149c2fc04b4704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35028fa04e029ef80fb4da8a501bb02"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad35028fa04e029ef80fb4da8a501bb02">nr_active_zones</a></td></tr>
+<tr class="separator:ad35028fa04e029ef80fb4da8a501bb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5062ec29302229f8a4a3c3d4cf3b266d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeParams.html">NvmeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a5062ec29302229f8a4a3c3d4cf3b266d">params</a></td></tr>
+<tr class="separator:a5062ec29302229f8a4a3c3d4cf3b266d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b07accc41de60cd0c6de43adde355ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFemuExtCtrlOps.html">FemuExtCtrlOps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a2b07accc41de60cd0c6de43adde355ad">ext_ops</a></td></tr>
+<tr class="memdesc:a2b07accc41de60cd0c6de43adde355ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">nvme到各模式ssd接口  <a href="structFemuCtrl.html#a2b07accc41de60cd0c6de43adde355ad">更多...</a><br /></td></tr>
+<tr class="separator:a2b07accc41de60cd0c6de43adde355ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1a8fc9f8a06cfff7668affaa2fbbf6"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9d1a8fc9f8a06cfff7668affaa2fbbf6">start_time</a></td></tr>
+<tr class="separator:a9d1a8fc9f8a06cfff7668affaa2fbbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada17b92a62409a544d72524c34cfe8e4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ada17b92a62409a544d72524c34cfe8e4">temperature</a></td></tr>
+<tr class="separator:ada17b92a62409a544d72524c34cfe8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d0418e38e888b2b8980a34198bfd463"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6d0418e38e888b2b8980a34198bfd463">page_size</a></td></tr>
+<tr class="separator:a6d0418e38e888b2b8980a34198bfd463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9011b5ddb7b9f315e109cf606b9370"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#afd9011b5ddb7b9f315e109cf606b9370">page_bits</a></td></tr>
+<tr class="separator:afd9011b5ddb7b9f315e109cf606b9370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a362b7dc11bd4e51d46a93c43b2f011df"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a362b7dc11bd4e51d46a93c43b2f011df">max_prp_ents</a></td></tr>
+<tr class="separator:a362b7dc11bd4e51d46a93c43b2f011df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f8d305f94dfd341fe6e7f39c06c47c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ac4f8d305f94dfd341fe6e7f39c06c47c">cqe_size</a></td></tr>
+<tr class="separator:ac4f8d305f94dfd341fe6e7f39c06c47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbec385b70e8c6a03b463e00ac08d92"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a3cbec385b70e8c6a03b463e00ac08d92">sqe_size</a></td></tr>
+<tr class="separator:a3cbec385b70e8c6a03b463e00ac08d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9e10e513218bf41a5fe498fea33e1f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aad9e10e513218bf41a5fe498fea33e1f">oacs</a></td></tr>
+<tr class="separator:aad9e10e513218bf41a5fe498fea33e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b37fe5892ac52aa01e3b8e7e0035f1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a19b37fe5892ac52aa01e3b8e7e0035f1">oncs</a></td></tr>
+<tr class="separator:a19b37fe5892ac52aa01e3b8e7e0035f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a812bf164ed1eb955e470a1133abb8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab6a812bf164ed1eb955e470a1133abb8">reg_size</a></td></tr>
+<tr class="separator:ab6a812bf164ed1eb955e470a1133abb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd3f2107e1a59779f7d6a669e29b5af"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8bd3f2107e1a59779f7d6a669e29b5af">num_namespaces</a></td></tr>
+<tr class="separator:a8bd3f2107e1a59779f7d6a669e29b5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09f359cd5d2e1882bd8a04046becf28"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab09f359cd5d2e1882bd8a04046becf28">num_io_queues</a></td></tr>
+<tr class="memdesc:ab09f359cd5d2e1882bd8a04046becf28"><td class="mdescLeft">&#160;</td><td class="mdescRight">sq（cq）个数  <a href="structFemuCtrl.html#ab09f359cd5d2e1882bd8a04046becf28">更多...</a><br /></td></tr>
+<tr class="separator:ab09f359cd5d2e1882bd8a04046becf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6b7da5cc2c552343a87ed43323a575"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abd6b7da5cc2c552343a87ed43323a575">max_q_ents</a></td></tr>
+<tr class="separator:abd6b7da5cc2c552343a87ed43323a575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010a28b0d592b4f5b5f0f0131afc60ed"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a010a28b0d592b4f5b5f0f0131afc60ed">ns_size</a></td></tr>
+<tr class="separator:a010a28b0d592b4f5b5f0f0131afc60ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7a49ec4c0d8551955122bf9ddb73c5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a4f7a49ec4c0d8551955122bf9ddb73c5">db_stride</a></td></tr>
+<tr class="separator:a4f7a49ec4c0d8551955122bf9ddb73c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101673f97321bbc185c290625ce0d8b2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a101673f97321bbc185c290625ce0d8b2">aerl</a></td></tr>
+<tr class="separator:a101673f97321bbc185c290625ce0d8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeec16819b74093e71d70d08ec2a45eea"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aeec16819b74093e71d70d08ec2a45eea">acl</a></td></tr>
+<tr class="separator:aeec16819b74093e71d70d08ec2a45eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fb867a33c2ccad78e9c82456391e89"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a31fb867a33c2ccad78e9c82456391e89">elpe</a></td></tr>
+<tr class="separator:a31fb867a33c2ccad78e9c82456391e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1afb4cdf7871ec97ee3fe1aa2baa7138"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1afb4cdf7871ec97ee3fe1aa2baa7138">elp_index</a></td></tr>
+<tr class="separator:a1afb4cdf7871ec97ee3fe1aa2baa7138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81eb4ffac10eb4abea4985adc4b368e1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a81eb4ffac10eb4abea4985adc4b368e1">error_count</a></td></tr>
+<tr class="separator:a81eb4ffac10eb4abea4985adc4b368e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a216b7e1406665640e42409e2c8de8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab5a216b7e1406665640e42409e2c8de8">mdts</a></td></tr>
+<tr class="separator:ab5a216b7e1406665640e42409e2c8de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7dd5d44d6fade5dd64cc4bdd680a4b5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aa7dd5d44d6fade5dd64cc4bdd680a4b5">cqr</a></td></tr>
+<tr class="separator:aa7dd5d44d6fade5dd64cc4bdd680a4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a9b8afdf4fd7e494cc4025ba47d741"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad2a9b8afdf4fd7e494cc4025ba47d741">max_sqes</a></td></tr>
+<tr class="separator:ad2a9b8afdf4fd7e494cc4025ba47d741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae737130695e70cf78e89fa16269b28ab"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ae737130695e70cf78e89fa16269b28ab">max_cqes</a></td></tr>
+<tr class="separator:ae737130695e70cf78e89fa16269b28ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1785a80724176a123fa5f8ba458e643"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ae1785a80724176a123fa5f8ba458e643">meta</a></td></tr>
+<tr class="separator:ae1785a80724176a123fa5f8ba458e643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd8af12f361b973c120c80b43ca677c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1dd8af12f361b973c120c80b43ca677c">vwc</a></td></tr>
+<tr class="separator:a1dd8af12f361b973c120c80b43ca677c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addaf0def5160d73cf6adc2e5afb40948"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#addaf0def5160d73cf6adc2e5afb40948">mc</a></td></tr>
+<tr class="separator:addaf0def5160d73cf6adc2e5afb40948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8874d5f34ad77b916883e54291465e4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad8874d5f34ad77b916883e54291465e4">dpc</a></td></tr>
+<tr class="separator:ad8874d5f34ad77b916883e54291465e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3545397179421c6f3964e9953988655d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a3545397179421c6f3964e9953988655d">dps</a></td></tr>
+<tr class="separator:a3545397179421c6f3964e9953988655d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e0e0b10fb25b302ecbe19b1e085940"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a44e0e0b10fb25b302ecbe19b1e085940">nlbaf</a></td></tr>
+<tr class="separator:a44e0e0b10fb25b302ecbe19b1e085940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7be59e4d6d616e3104152b78d41350"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#afa7be59e4d6d616e3104152b78d41350">extended</a></td></tr>
+<tr class="separator:afa7be59e4d6d616e3104152b78d41350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665e480db08bf31552661c521abdd768"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a665e480db08bf31552661c521abdd768">lba_index</a></td></tr>
+<tr class="separator:a665e480db08bf31552661c521abdd768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6ee398ea78cc01b3e2d3c121e933aa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8b6ee398ea78cc01b3e2d3c121e933aa">mpsmin</a></td></tr>
+<tr class="separator:a8b6ee398ea78cc01b3e2d3c121e933aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac04c0f3706032920e00d55fbe18fbfe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aac04c0f3706032920e00d55fbe18fbfe">mpsmax</a></td></tr>
+<tr class="separator:aac04c0f3706032920e00d55fbe18fbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e995214401de43ac625f2e03c1b07b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab1e995214401de43ac625f2e03c1b07b">ms</a></td></tr>
+<tr class="separator:ab1e995214401de43ac625f2e03c1b07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32daff1e9e9dd77f87ae320a8cd2d83e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a32daff1e9e9dd77f87ae320a8cd2d83e">ms_max</a></td></tr>
+<tr class="separator:a32daff1e9e9dd77f87ae320a8cd2d83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5157a495168afc58a0631c7b689f0f23"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a5157a495168afc58a0631c7b689f0f23">intc</a></td></tr>
+<tr class="separator:a5157a495168afc58a0631c7b689f0f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b78b0a27397642311d5a7571397dd5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a10b78b0a27397642311d5a7571397dd5">intc_thresh</a></td></tr>
+<tr class="separator:a10b78b0a27397642311d5a7571397dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f33974ac2017aa9059ee2169fed8e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a17f33974ac2017aa9059ee2169fed8e5">intc_time</a></td></tr>
+<tr class="separator:a17f33974ac2017aa9059ee2169fed8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3eb8392b8874ca0db383fb2d570159"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9f3eb8392b8874ca0db383fb2d570159">outstanding_aers</a></td></tr>
+<tr class="separator:a9f3eb8392b8874ca0db383fb2d570159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76662c7f1b9027edb1088c28b811c335"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a76662c7f1b9027edb1088c28b811c335">temp_warn_issued</a></td></tr>
+<tr class="separator:a76662c7f1b9027edb1088c28b811c335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6461a7eda526fcc86770a43380615b7c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6461a7eda526fcc86770a43380615b7c">num_errors</a></td></tr>
+<tr class="separator:a6461a7eda526fcc86770a43380615b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0618f1775da9c2d49969b9690740e134"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0618f1775da9c2d49969b9690740e134">cqes_pending</a></td></tr>
+<tr class="separator:a0618f1775da9c2d49969b9690740e134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef4372b47aa52d5f1b56da9648c2af3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aaef4372b47aa52d5f1b56da9648c2af3">vid</a></td></tr>
+<tr class="separator:aaef4372b47aa52d5f1b56da9648c2af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2d2916702c9376ea6f688c9cb812e5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a5a2d2916702c9376ea6f688c9cb812e5">did</a></td></tr>
+<tr class="separator:a5a2d2916702c9376ea6f688c9cb812e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b84755dd43662963a848b8dd6d0679b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1b84755dd43662963a848b8dd6d0679b">dlfeat</a></td></tr>
+<tr class="separator:a1b84755dd43662963a848b8dd6d0679b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbbff9ca2a3d79e3a8a4c3bd4c892e3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abfbbff9ca2a3d79e3a8a4c3bd4c892e3">cmbsz</a></td></tr>
+<tr class="separator:abfbbff9ca2a3d79e3a8a4c3bd4c892e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599d81ece0c6074fae8893b34a929109"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a599d81ece0c6074fae8893b34a929109">cmbloc</a></td></tr>
+<tr class="separator:a599d81ece0c6074fae8893b34a929109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be1203ca1d05eb8f7824e365c3c44e2"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1be1203ca1d05eb8f7824e365c3c44e2">cmbuf</a></td></tr>
+<tr class="separator:a1be1203ca1d05eb8f7824e365c3c44e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226acb27573ba9226d9a426b95bfca20"><td class="memItemLeft" align="right" valign="top">QemuThread *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a226acb27573ba9226d9a426b95bfca20">poller</a></td></tr>
+<tr class="separator:a226acb27573ba9226d9a426b95bfca20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6291ffd43b13aa9c7bc871a7e1bb4a11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6291ffd43b13aa9c7bc871a7e1bb4a11">dataplane_started</a></td></tr>
+<tr class="separator:a6291ffd43b13aa9c7bc871a7e1bb4a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f0a61a35c7607ee9066006d588f7af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ac1f0a61a35c7607ee9066006d588f7af">vector_poll_started</a></td></tr>
+<tr class="separator:ac1f0a61a35c7607ee9066006d588f7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7058666c9b1eaec0493d7514a60493aa"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a7058666c9b1eaec0493d7514a60493aa">serial</a></td></tr>
+<tr class="separator:a7058666c9b1eaec0493d7514a60493aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0456828e9802380dee025b663079afcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeErrorLog.html">NvmeErrorLog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0456828e9802380dee025b663079afcf">elpes</a></td></tr>
+<tr class="separator:a0456828e9802380dee025b663079afcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc8bea7f714882de1433bb8c6303792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeRequest.html">NvmeRequest</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abbc8bea7f714882de1433bb8c6303792">aer_reqs</a></td></tr>
+<tr class="separator:abbc8bea7f714882de1433bb8c6303792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ca6ff3bc65ccc7f98a589e018b7d71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a98ca6ff3bc65ccc7f98a589e018b7d71">namespaces</a></td></tr>
+<tr class="separator:a98ca6ff3bc65ccc7f98a589e018b7d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f37c1e2d56205e4c7d0015aa9af44e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeSQueue.html">NvmeSQueue</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9f37c1e2d56205e4c7d0015aa9af44e2">sq</a></td></tr>
+<tr class="memdesc:a9f37c1e2d56205e4c7d0015aa9af44e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">sq队列列表（io）  <a href="structFemuCtrl.html#a9f37c1e2d56205e4c7d0015aa9af44e2">更多...</a><br /></td></tr>
+<tr class="separator:a9f37c1e2d56205e4c7d0015aa9af44e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380a277dfc1bb8f2a192f6244a3f4fdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeCQueue.html">NvmeCQueue</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a380a277dfc1bb8f2a192f6244a3f4fdb">cq</a></td></tr>
+<tr class="memdesc:a380a277dfc1bb8f2a192f6244a3f4fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">cq队列列表（io）  <a href="structFemuCtrl.html#a380a277dfc1bb8f2a192f6244a3f4fdb">更多...</a><br /></td></tr>
+<tr class="separator:a380a277dfc1bb8f2a192f6244a3f4fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586d06b8f4ebd787d1874a8e2e08536c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeSQueue.html">NvmeSQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a586d06b8f4ebd787d1874a8e2e08536c">admin_sq</a></td></tr>
+<tr class="memdesc:a586d06b8f4ebd787d1874a8e2e08536c"><td class="mdescLeft">&#160;</td><td class="mdescRight">sq队列（admin）  <a href="structFemuCtrl.html#a586d06b8f4ebd787d1874a8e2e08536c">更多...</a><br /></td></tr>
+<tr class="separator:a586d06b8f4ebd787d1874a8e2e08536c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7690748b8cf7f87af867703f1dd025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeCQueue.html">NvmeCQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a4b7690748b8cf7f87af867703f1dd025">admin_cq</a></td></tr>
+<tr class="memdesc:a4b7690748b8cf7f87af867703f1dd025"><td class="mdescLeft">&#160;</td><td class="mdescRight">cq队列（admin）  <a href="structFemuCtrl.html#a4b7690748b8cf7f87af867703f1dd025">更多...</a><br /></td></tr>
+<tr class="separator:a4b7690748b8cf7f87af867703f1dd025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bd5012806e5cda6eb475cb787f4be3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeFeatureVal.html">NvmeFeatureVal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a4bd5012806e5cda6eb475cb787f4be3d">features</a></td></tr>
+<tr class="separator:a4bd5012806e5cda6eb475cb787f4be3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13a4a3fc3667cdddbd181c34378b406"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNvmeIdCtrl.html">NvmeIdCtrl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#af13a4a3fc3667cdddbd181c34378b406">id_ctrl</a></td></tr>
+<tr class="separator:af13a4a3fc3667cdddbd181c34378b406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd0f279f75a8ff8575c7a830d3fb8dfb"><td class="memItemLeft" align="right" valign="top">QEMUTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abd0f279f75a8ff8575c7a830d3fb8dfb">aer_timer</a></td></tr>
+<tr class="separator:abd0f279f75a8ff8575c7a830d3fb8dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45247e5e62c92173076f634f536ba62f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a45247e5e62c92173076f634f536ba62f">aer_mask</a></td></tr>
+<tr class="separator:a45247e5e62c92173076f634f536ba62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eed30c84e2fdec251abd2d112aa857a"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9eed30c84e2fdec251abd2d112aa857a">dbs_addr</a></td></tr>
+<tr class="separator:a9eed30c84e2fdec251abd2d112aa857a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f86d8c1d2b5365aef55a5d879316868"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6f86d8c1d2b5365aef55a5d879316868">eis_addr</a></td></tr>
+<tr class="separator:a6f86d8c1d2b5365aef55a5d879316868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8deef2eb4dfac999392c54657407b645"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8deef2eb4dfac999392c54657407b645">dbs_addr_hva</a></td></tr>
+<tr class="separator:a8deef2eb4dfac999392c54657407b645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525d33d10ee74874b135c7899fe80847"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a525d33d10ee74874b135c7899fe80847">eis_addr_hva</a></td></tr>
+<tr class="separator:a525d33d10ee74874b135c7899fe80847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a157f69377a181cad8e1d1fe98aa6b31d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a157f69377a181cad8e1d1fe98aa6b31d">femu_mode</a></td></tr>
+<tr class="separator:a157f69377a181cad8e1d1fe98aa6b31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9adc8aaa77ccdd696a9e230e5d05311d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9adc8aaa77ccdd696a9e230e5d05311d">lver</a></td></tr>
+<tr class="memdesc:a9adc8aaa77ccdd696a9e230e5d05311d"><td class="mdescLeft">&#160;</td><td class="mdescRight">femu模式，包括blackbox,ocssd,...  <a href="structFemuCtrl.html#a9adc8aaa77ccdd696a9e230e5d05311d">更多...</a><br /></td></tr>
+<tr class="separator:a9adc8aaa77ccdd696a9e230e5d05311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50df220250d2ca0ff915e5ed29b5434"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#af50df220250d2ca0ff915e5ed29b5434">memsz</a></td></tr>
+<tr class="separator:af50df220250d2ca0ff915e5ed29b5434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1733fec286bf747df6e0e65c8f10e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOcCtrlParams.html">OcCtrlParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab1733fec286bf747df6e0e65c8f10e50">oc_params</a></td></tr>
+<tr class="separator:ab1733fec286bf747df6e0e65c8f10e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5781992b7e6de772798e9802d20d8913"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a5781992b7e6de772798e9802d20d8913">oc12_ctrl</a></td></tr>
+<tr class="separator:a5781992b7e6de772798e9802d20d8913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01c6604f4ef7eec3bfdcd0bdd6c43ac"><td class="memItemLeft" align="right" valign="top">volatile int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aa01c6604f4ef7eec3bfdcd0bdd6c43ac">chip_next_avail_time</a> [<a class="el" href="nvme_8h.html#aa099d68673fc69a8ebeeffc9b00a06d1">FEMU_MAX_NUM_CHIPS</a>]</td></tr>
+<tr class="separator:aa01c6604f4ef7eec3bfdcd0bdd6c43ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48cf26e3440955b976f0b77c8677c15c"><td class="memItemLeft" align="right" valign="top">pthread_spinlock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a48cf26e3440955b976f0b77c8677c15c">chip_locks</a> [<a class="el" href="nvme_8h.html#aa099d68673fc69a8ebeeffc9b00a06d1">FEMU_MAX_NUM_CHIPS</a>]</td></tr>
+<tr class="separator:a48cf26e3440955b976f0b77c8677c15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a337abc6776202efbda3ad932da7e020d"><td class="memItemLeft" align="right" valign="top">volatile int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a337abc6776202efbda3ad932da7e020d">chnl_next_avail_time</a> [<a class="el" href="nvme_8h.html#ad687b13a8721e862fd66459c865669e6">FEMU_MAX_NUM_CHNLS</a>]</td></tr>
+<tr class="separator:a337abc6776202efbda3ad932da7e020d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1b916dcb45d831a416bd84da70d25d"><td class="memItemLeft" align="right" valign="top">pthread_spinlock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0e1b916dcb45d831a416bd84da70d25d">chnl_locks</a> [<a class="el" href="nvme_8h.html#ad687b13a8721e862fd66459c865669e6">FEMU_MAX_NUM_CHNLS</a>]</td></tr>
+<tr class="separator:a0e1b916dcb45d831a416bd84da70d25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad680a603a7938f5270a6e881409386bf"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad680a603a7938f5270a6e881409386bf">upg_rd_lat_ns</a></td></tr>
+<tr class="separator:ad680a603a7938f5270a6e881409386bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdef9b36bd3bd52d952f3e374e8e765"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aecdef9b36bd3bd52d952f3e374e8e765">cpg_rd_lat_ns</a></td></tr>
+<tr class="separator:aecdef9b36bd3bd52d952f3e374e8e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cec0f252d115e67e707c1d682a96f20"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8cec0f252d115e67e707c1d682a96f20">cupg_rd_lat_ns</a></td></tr>
+<tr class="separator:a8cec0f252d115e67e707c1d682a96f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7fbdbb17859a7744a38fc0c358ea4d5"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#aa7fbdbb17859a7744a38fc0c358ea4d5">clpg_rd_lat_ns</a></td></tr>
+<tr class="separator:aa7fbdbb17859a7744a38fc0c358ea4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5041dc83c0338e246fff9287f3bf53ed"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a5041dc83c0338e246fff9287f3bf53ed">lpg_rd_lat_ns</a></td></tr>
+<tr class="separator:a5041dc83c0338e246fff9287f3bf53ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafee7b0c2ba0b0da504668a95a87191"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#afafee7b0c2ba0b0da504668a95a87191">upg_wr_lat_ns</a></td></tr>
+<tr class="separator:afafee7b0c2ba0b0da504668a95a87191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0edd7d0dd2ed8b710515adf43320675"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#af0edd7d0dd2ed8b710515adf43320675">cpg_wr_lat_ns</a></td></tr>
+<tr class="separator:af0edd7d0dd2ed8b710515adf43320675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a049134fdfb9f0454340a437f88666508"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a049134fdfb9f0454340a437f88666508">cupg_wr_lat_ns</a></td></tr>
+<tr class="separator:a049134fdfb9f0454340a437f88666508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b09bbeb9a9a24255d878060908cedcf"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6b09bbeb9a9a24255d878060908cedcf">clpg_wr_lat_ns</a></td></tr>
+<tr class="separator:a6b09bbeb9a9a24255d878060908cedcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7f32e83ebc30211ec827db395523e5"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a4b7f32e83ebc30211ec827db395523e5">lpg_wr_lat_ns</a></td></tr>
+<tr class="separator:a4b7f32e83ebc30211ec827db395523e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c79bc6a808f9fe2f27ee8e0fa385313"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a9c79bc6a808f9fe2f27ee8e0fa385313">blk_er_lat_ns</a></td></tr>
+<tr class="separator:a9c79bc6a808f9fe2f27ee8e0fa385313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb08c1f98c5566cf217fe63bce0f98e"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#abeb08c1f98c5566cf217fe63bce0f98e">chnl_pg_xfer_lat_ns</a></td></tr>
+<tr class="separator:abeb08c1f98c5566cf217fe63bce0f98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4464c81978268e5df515d91044ea1ec2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structssd.html">ssd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a4464c81978268e5df515d91044ea1ec2">ssd</a></td></tr>
+<tr class="memdesc:a4464c81978268e5df515d91044ea1ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">指向模拟的ssd  <a href="structFemuCtrl.html#a4464c81978268e5df515d91044ea1ec2">更多...</a><br /></td></tr>
+<tr class="separator:a4464c81978268e5df515d91044ea1ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f555e0b42bfe51c089ab004c88ff48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSsdDramBackend.html">SsdDramBackend</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ab4f555e0b42bfe51c089ab004c88ff48">mbe</a></td></tr>
+<tr class="memdesc:ab4f555e0b42bfe51c089ab004c88ff48"><td class="mdescLeft">&#160;</td><td class="mdescRight">femu后端内存（实际数据）  <a href="structFemuCtrl.html#ab4f555e0b42bfe51c089ab004c88ff48">更多...</a><br /></td></tr>
+<tr class="separator:ab4f555e0b42bfe51c089ab004c88ff48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c51540060b920896dd8897c51508e20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8c51540060b920896dd8897c51508e20">completed</a></td></tr>
+<tr class="separator:a8c51540060b920896dd8897c51508e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c69e429f2da05dd6a0ecb4591c2c4fb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a7c69e429f2da05dd6a0ecb4591c2c4fb">devname</a> [64]</td></tr>
+<tr class="separator:a7c69e429f2da05dd6a0ecb4591c2c4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff7c6d5e0e6313cc66e2d62f4e98221"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0ff7c6d5e0e6313cc66e2d62f4e98221">to_ftl</a></td></tr>
+<tr class="memdesc:a0ff7c6d5e0e6313cc66e2d62f4e98221"><td class="mdescLeft">&#160;</td><td class="mdescRight">生产者：nvme poller；消费者：ftl  <a href="structFemuCtrl.html#a0ff7c6d5e0e6313cc66e2d62f4e98221">更多...</a><br /></td></tr>
+<tr class="separator:a0ff7c6d5e0e6313cc66e2d62f4e98221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad818a28bdef83c4bb07c0d4f00942b06"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#ad818a28bdef83c4bb07c0d4f00942b06">to_poller</a></td></tr>
+<tr class="memdesc:ad818a28bdef83c4bb07c0d4f00942b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">生产者：ftl；消费者：nvme poller  <a href="structFemuCtrl.html#ad818a28bdef83c4bb07c0d4f00942b06">更多...</a><br /></td></tr>
+<tr class="separator:ad818a28bdef83c4bb07c0d4f00942b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b6bdba05fa2cf581ace5cc08cd365f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpqueue__t.html">pqueue_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a3b6bdba05fa2cf581ace5cc08cd365f5">pq</a></td></tr>
+<tr class="memdesc:a3b6bdba05fa2cf581ace5cc08cd365f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">pqueue，暂存req的队列  <a href="structFemuCtrl.html#a3b6bdba05fa2cf581ace5cc08cd365f5">更多...</a><br /></td></tr>
+<tr class="separator:a3b6bdba05fa2cf581ace5cc08cd365f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78003b6c4ed89a589c99c4b01b9c689a"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a78003b6c4ed89a589c99c4b01b9c689a">should_isr</a></td></tr>
+<tr class="memdesc:a78003b6c4ed89a589c99c4b01b9c689a"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否中断通知上层来取cq  <a href="structFemuCtrl.html#a78003b6c4ed89a589c99c4b01b9c689a">更多...</a><br /></td></tr>
+<tr class="separator:a78003b6c4ed89a589c99c4b01b9c689a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9669e4a908e3dd0b732c8d69b88a6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a0a9669e4a908e3dd0b732c8d69b88a6d">poller_on</a></td></tr>
+<tr class="separator:a0a9669e4a908e3dd0b732c8d69b88a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252a9c514e961fa6355b50061862bd34"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a252a9c514e961fa6355b50061862bd34">nr_tt_ios</a></td></tr>
+<tr class="memdesc:a252a9c514e961fa6355b50061862bd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">总io数量  <a href="structFemuCtrl.html#a252a9c514e961fa6355b50061862bd34">更多...</a><br /></td></tr>
+<tr class="separator:a252a9c514e961fa6355b50061862bd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da82e5488952cf964ffcb40f29e4f7a"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a8da82e5488952cf964ffcb40f29e4f7a">nr_tt_late_ios</a></td></tr>
+<tr class="memdesc:a8da82e5488952cf964ffcb40f29e4f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">没有按预计时延（超时）返回的io数量  <a href="structFemuCtrl.html#a8da82e5488952cf964ffcb40f29e4f7a">更多...</a><br /></td></tr>
+<tr class="separator:a8da82e5488952cf964ffcb40f29e4f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a16108410047b6e7d6ac06c3cb5cd76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a3a16108410047b6e7d6ac06c3cb5cd76">print_log</a></td></tr>
+<tr class="separator:a3a16108410047b6e7d6ac06c3cb5cd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6635a90258a97f71c6040b6cb9277b04"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a6635a90258a97f71c6040b6cb9277b04">multipoller_enabled</a></td></tr>
+<tr class="memdesc:a6635a90258a97f71c6040b6cb9277b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否创建多个nvme poller  <a href="structFemuCtrl.html#a6635a90258a97f71c6040b6cb9277b04">更多...</a><br /></td></tr>
+<tr class="separator:a6635a90258a97f71c6040b6cb9277b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78baba4717dd495d81af587a1a95a0b7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a78baba4717dd495d81af587a1a95a0b7">num_poller</a></td></tr>
+<tr class="memdesc:a78baba4717dd495d81af587a1a95a0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">nvme poller个数（前提是multupoller_enabled开启）  <a href="structFemuCtrl.html#a78baba4717dd495d81af587a1a95a0b7">更多...</a><br /></td></tr>
+<tr class="separator:a78baba4717dd495d81af587a1a95a0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1134e53459a8a70ec5615d1881b26b47"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFemuCtrl.html#a1134e53459a8a70ec5615d1881b26b47">flash_type</a></td></tr>
+<tr class="separator:a1134e53459a8a70ec5615d1881b26b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>femu相关控制参数和数据成员 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a47833476fb091bfe8d4ba9fcb8679411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47833476fb091bfe8d4ba9fcb8679411">&#9670;&nbsp;</a></span>QSIMPLEQ_HEAD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FemuCtrl::QSIMPLEQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype">aer_queue&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeAsyncEvent.html">NvmeAsyncEvent</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2027d2a5041fb88e8f6ebfec3b769edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2027d2a5041fb88e8f6ebfec3b769edc">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FemuCtrl::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93fc6932260a13cbfb3a3d5f90e97ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93fc6932260a13cbfb3a3d5f90e97ea4">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FemuCtrl::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a550c346387a4a5edd73682edd606965a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550c346387a4a5edd73682edd606965a">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FemuCtrl::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acea0ec49eef18e421f1a74126574c7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea0ec49eef18e421f1a74126574c7f0">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FemuCtrl::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="aeec16819b74093e71d70d08ec2a45eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec16819b74093e71d70d08ec2a45eea">&#9670;&nbsp;</a></span>acl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::acl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b7690748b8cf7f87af867703f1dd025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7690748b8cf7f87af867703f1dd025">&#9670;&nbsp;</a></span>admin_cq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeCQueue.html">NvmeCQueue</a> FemuCtrl::admin_cq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cq队列（admin） </p>
+
+</div>
+</div>
+<a id="a586d06b8f4ebd787d1874a8e2e08536c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586d06b8f4ebd787d1874a8e2e08536c">&#9670;&nbsp;</a></span>admin_sq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeSQueue.html">NvmeSQueue</a> FemuCtrl::admin_sq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sq队列（admin） </p>
+
+</div>
+</div>
+<a id="a45247e5e62c92173076f634f536ba62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45247e5e62c92173076f634f536ba62f">&#9670;&nbsp;</a></span>aer_mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::aer_mask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbc8bea7f714882de1433bb8c6303792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc8bea7f714882de1433bb8c6303792">&#9670;&nbsp;</a></span>aer_reqs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeRequest.html">NvmeRequest</a>** FemuCtrl::aer_reqs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd0f279f75a8ff8575c7a830d3fb8dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd0f279f75a8ff8575c7a830d3fb8dfb">&#9670;&nbsp;</a></span>aer_timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QEMUTimer* FemuCtrl::aer_timer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a101673f97321bbc185c290625ce0d8b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101673f97321bbc185c290625ce0d8b2">&#9670;&nbsp;</a></span>aerl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::aerl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae419c3a209fe0ffb9f6e04bc6ff3cd7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae419c3a209fe0ffb9f6e04bc6ff3cd7e">&#9670;&nbsp;</a></span>bar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeBar.html">NvmeBar</a> FemuCtrl::bar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c79bc6a808f9fe2f27ee8e0fa385313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c79bc6a808f9fe2f27ee8e0fa385313">&#9670;&nbsp;</a></span>blk_er_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::blk_er_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48cf26e3440955b976f0b77c8677c15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48cf26e3440955b976f0b77c8677c15c">&#9670;&nbsp;</a></span>chip_locks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_spinlock_t FemuCtrl::chip_locks[<a class="el" href="nvme_8h.html#aa099d68673fc69a8ebeeffc9b00a06d1">FEMU_MAX_NUM_CHIPS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa01c6604f4ef7eec3bfdcd0bdd6c43ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa01c6604f4ef7eec3bfdcd0bdd6c43ac">&#9670;&nbsp;</a></span>chip_next_avail_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int64_t FemuCtrl::chip_next_avail_time[<a class="el" href="nvme_8h.html#aa099d68673fc69a8ebeeffc9b00a06d1">FEMU_MAX_NUM_CHIPS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e1b916dcb45d831a416bd84da70d25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e1b916dcb45d831a416bd84da70d25d">&#9670;&nbsp;</a></span>chnl_locks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_spinlock_t FemuCtrl::chnl_locks[<a class="el" href="nvme_8h.html#ad687b13a8721e862fd66459c865669e6">FEMU_MAX_NUM_CHNLS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a337abc6776202efbda3ad932da7e020d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a337abc6776202efbda3ad932da7e020d">&#9670;&nbsp;</a></span>chnl_next_avail_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile int64_t FemuCtrl::chnl_next_avail_time[<a class="el" href="nvme_8h.html#ad687b13a8721e862fd66459c865669e6">FEMU_MAX_NUM_CHNLS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abeb08c1f98c5566cf217fe63bce0f98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb08c1f98c5566cf217fe63bce0f98e">&#9670;&nbsp;</a></span>chnl_pg_xfer_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::chnl_pg_xfer_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7fbdbb17859a7744a38fc0c358ea4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fbdbb17859a7744a38fc0c358ea4d5">&#9670;&nbsp;</a></span>clpg_rd_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::clpg_rd_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>center-lower page in QLC </p>
+
+</div>
+</div>
+<a id="a6b09bbeb9a9a24255d878060908cedcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b09bbeb9a9a24255d878060908cedcf">&#9670;&nbsp;</a></span>clpg_wr_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::clpg_wr_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a599d81ece0c6074fae8893b34a929109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599d81ece0c6074fae8893b34a929109">&#9670;&nbsp;</a></span>cmbloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::cmbloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfbbff9ca2a3d79e3a8a4c3bd4c892e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbbff9ca2a3d79e3a8a4c3bd4c892e3">&#9670;&nbsp;</a></span>cmbsz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::cmbsz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1be1203ca1d05eb8f7824e365c3c44e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be1203ca1d05eb8f7824e365c3c44e2">&#9670;&nbsp;</a></span>cmbuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* FemuCtrl::cmbuf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c51540060b920896dd8897c51508e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c51540060b920896dd8897c51508e20">&#9670;&nbsp;</a></span>completed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FemuCtrl::completed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aecdef9b36bd3bd52d952f3e374e8e765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdef9b36bd3bd52d952f3e374e8e765">&#9670;&nbsp;</a></span>cpg_rd_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::cpg_rd_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>center page in TLC </p>
+
+</div>
+</div>
+<a id="af0edd7d0dd2ed8b710515adf43320675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0edd7d0dd2ed8b710515adf43320675">&#9670;&nbsp;</a></span>cpg_wr_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::cpg_wr_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a380a277dfc1bb8f2a192f6244a3f4fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380a277dfc1bb8f2a192f6244a3f4fdb">&#9670;&nbsp;</a></span>cq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeCQueue.html">NvmeCQueue</a>** FemuCtrl::cq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cq队列列表（io） </p>
+
+</div>
+</div>
+<a id="ac4f8d305f94dfd341fe6e7f39c06c47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f8d305f94dfd341fe6e7f39c06c47c">&#9670;&nbsp;</a></span>cqe_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::cqe_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0618f1775da9c2d49969b9690740e134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0618f1775da9c2d49969b9690740e134">&#9670;&nbsp;</a></span>cqes_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::cqes_pending</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7dd5d44d6fade5dd64cc4bdd680a4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7dd5d44d6fade5dd64cc4bdd680a4b5">&#9670;&nbsp;</a></span>cqr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::cqr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7cfd4a7ec5ef933c85eeee459b97a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cfd4a7ec5ef933c85eeee459b97a7d">&#9670;&nbsp;</a></span>cross_zone_read</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::cross_zone_read</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b48d3c6cc09b094369348af59a3b096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b48d3c6cc09b094369348af59a3b096">&#9670;&nbsp;</a></span>csi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::csi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab880f4820c2fda0e6068c014eda64d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab880f4820c2fda0e6068c014eda64d1f">&#9670;&nbsp;</a></span>ctrl_mem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MemoryRegion FemuCtrl::ctrl_mem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cec0f252d115e67e707c1d682a96f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cec0f252d115e67e707c1d682a96f20">&#9670;&nbsp;</a></span>cupg_rd_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::cupg_rd_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>center-upper page in QLC </p>
+
+</div>
+</div>
+<a id="a049134fdfb9f0454340a437f88666508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049134fdfb9f0454340a437f88666508">&#9670;&nbsp;</a></span>cupg_wr_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::cupg_wr_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6291ffd43b13aa9c7bc871a7e1bb4a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6291ffd43b13aa9c7bc871a7e1bb4a11">&#9670;&nbsp;</a></span>dataplane_started</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::dataplane_started</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f7a49ec4c0d8551955122bf9ddb73c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7a49ec4c0d8551955122bf9ddb73c5">&#9670;&nbsp;</a></span>db_stride</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::db_stride</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9eed30c84e2fdec251abd2d112aa857a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eed30c84e2fdec251abd2d112aa857a">&#9670;&nbsp;</a></span>dbs_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::dbs_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8deef2eb4dfac999392c54657407b645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8deef2eb4dfac999392c54657407b645">&#9670;&nbsp;</a></span>dbs_addr_hva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::dbs_addr_hva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c69e429f2da05dd6a0ecb4591c2c4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c69e429f2da05dd6a0ecb4591c2c4fb">&#9670;&nbsp;</a></span>devname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char FemuCtrl::devname[64]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a2d2916702c9376ea6f688c9cb812e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2d2916702c9376ea6f688c9cb812e5">&#9670;&nbsp;</a></span>did</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::did</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b84755dd43662963a848b8dd6d0679b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b84755dd43662963a848b8dd6d0679b">&#9670;&nbsp;</a></span>dlfeat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::dlfeat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8874d5f34ad77b916883e54291465e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8874d5f34ad77b916883e54291465e4">&#9670;&nbsp;</a></span>dpc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::dpc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3545397179421c6f3964e9953988655d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3545397179421c6f3964e9953988655d">&#9670;&nbsp;</a></span>dps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::dps</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f86d8c1d2b5365aef55a5d879316868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f86d8c1d2b5365aef55a5d879316868">&#9670;&nbsp;</a></span>eis_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::eis_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a525d33d10ee74874b135c7899fe80847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525d33d10ee74874b135c7899fe80847">&#9670;&nbsp;</a></span>eis_addr_hva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::eis_addr_hva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1afb4cdf7871ec97ee3fe1aa2baa7138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1afb4cdf7871ec97ee3fe1aa2baa7138">&#9670;&nbsp;</a></span>elp_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::elp_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31fb867a33c2ccad78e9c82456391e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fb867a33c2ccad78e9c82456391e89">&#9670;&nbsp;</a></span>elpe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::elpe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0456828e9802380dee025b663079afcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0456828e9802380dee025b663079afcf">&#9670;&nbsp;</a></span>elpes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeErrorLog.html">NvmeErrorLog</a>* FemuCtrl::elpes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81eb4ffac10eb4abea4985adc4b368e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81eb4ffac10eb4abea4985adc4b368e1">&#9670;&nbsp;</a></span>error_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::error_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b07accc41de60cd0c6de43adde355ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b07accc41de60cd0c6de43adde355ad">&#9670;&nbsp;</a></span>ext_ops</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFemuExtCtrlOps.html">FemuExtCtrlOps</a> FemuCtrl::ext_ops</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>nvme到各模式ssd接口 </p>
+
+</div>
+</div>
+<a id="afa7be59e4d6d616e3104152b78d41350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7be59e4d6d616e3104152b78d41350">&#9670;&nbsp;</a></span>extended</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::extended</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bd5012806e5cda6eb475cb787f4be3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd5012806e5cda6eb475cb787f4be3d">&#9670;&nbsp;</a></span>features</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeFeatureVal.html">NvmeFeatureVal</a> FemuCtrl::features</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a157f69377a181cad8e1d1fe98aa6b31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157f69377a181cad8e1d1fe98aa6b31d">&#9670;&nbsp;</a></span>femu_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::femu_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1134e53459a8a70ec5615d1881b26b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1134e53459a8a70ec5615d1881b26b47">&#9670;&nbsp;</a></span>flash_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::flash_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Nand Flash Type: SLC/MLC/TLC/QLC/PLC </p>
+
+</div>
+</div>
+<a id="af13a4a3fc3667cdddbd181c34378b406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13a4a3fc3667cdddbd181c34378b406">&#9670;&nbsp;</a></span>id_ctrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeIdCtrl.html">NvmeIdCtrl</a> FemuCtrl::id_ctrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeaa1d7586c6d9356cc321cc86b7ebb62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa1d7586c6d9356cc321cc86b7ebb62">&#9670;&nbsp;</a></span>id_ns_zoned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a>* FemuCtrl::id_ns_zoned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5157a495168afc58a0631c7b689f0f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5157a495168afc58a0631c7b689f0f23">&#9670;&nbsp;</a></span>intc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::intc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10b78b0a27397642311d5a7571397dd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b78b0a27397642311d5a7571397dd5">&#9670;&nbsp;</a></span>intc_thresh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::intc_thresh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17f33974ac2017aa9059ee2169fed8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f33974ac2017aa9059ee2169fed8e5">&#9670;&nbsp;</a></span>intc_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::intc_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e42727fa7033cf1faa5c31f94a4e22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e42727fa7033cf1faa5c31f94a4e22f">&#9670;&nbsp;</a></span>iocs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t* FemuCtrl::iocs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad84aa0e64f9fbe7fdac3eaaa26c077e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84aa0e64f9fbe7fdac3eaaa26c077e3">&#9670;&nbsp;</a></span>iomem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MemoryRegion FemuCtrl::iomem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a665e480db08bf31552661c521abdd768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a665e480db08bf31552661c521abdd768">&#9670;&nbsp;</a></span>lba_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::lba_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5041dc83c0338e246fff9287f3bf53ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5041dc83c0338e246fff9287f3bf53ed">&#9670;&nbsp;</a></span>lpg_rd_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::lpg_rd_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>lower page in MLC/TLC/QLC </p>
+
+</div>
+</div>
+<a id="a4b7f32e83ebc30211ec827db395523e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7f32e83ebc30211ec827db395523e5">&#9670;&nbsp;</a></span>lpg_wr_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::lpg_wr_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9adc8aaa77ccdd696a9e230e5d05311d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9adc8aaa77ccdd696a9e230e5d05311d">&#9670;&nbsp;</a></span>lver</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::lver</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>femu模式，包括blackbox,ocssd,... </p>
+
+</div>
+</div>
+<a id="af7aabe80b46d1d28417b5f757b25f8d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7aabe80b46d1d28417b5f757b25f8d7">&#9670;&nbsp;</a></span>max_active_zones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::max_active_zones</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae737130695e70cf78e89fa16269b28ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae737130695e70cf78e89fa16269b28ab">&#9670;&nbsp;</a></span>max_cqes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::max_cqes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade2c007bdb0d6d63de0b2ef92eba5339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2c007bdb0d6d63de0b2ef92eba5339">&#9670;&nbsp;</a></span>max_open_zones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::max_open_zones</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a362b7dc11bd4e51d46a93c43b2f011df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362b7dc11bd4e51d46a93c43b2f011df">&#9670;&nbsp;</a></span>max_prp_ents</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::max_prp_ents</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd6b7da5cc2c552343a87ed43323a575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6b7da5cc2c552343a87ed43323a575">&#9670;&nbsp;</a></span>max_q_ents</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::max_q_ents</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2a9b8afdf4fd7e494cc4025ba47d741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a9b8afdf4fd7e494cc4025ba47d741">&#9670;&nbsp;</a></span>max_sqes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::max_sqes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4f555e0b42bfe51c089ab004c88ff48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f555e0b42bfe51c089ab004c88ff48">&#9670;&nbsp;</a></span>mbe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSsdDramBackend.html">SsdDramBackend</a>* FemuCtrl::mbe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>femu后端内存（实际数据） </p>
+
+</div>
+</div>
+<a id="addaf0def5160d73cf6adc2e5afb40948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addaf0def5160d73cf6adc2e5afb40948">&#9670;&nbsp;</a></span>mc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::mc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5a216b7e1406665640e42409e2c8de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5a216b7e1406665640e42409e2c8de8">&#9670;&nbsp;</a></span>mdts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::mdts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af50df220250d2ca0ff915e5ed29b5434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50df220250d2ca0ff915e5ed29b5434">&#9670;&nbsp;</a></span>memsz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::memsz</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1785a80724176a123fa5f8ba458e643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1785a80724176a123fa5f8ba458e643">&#9670;&nbsp;</a></span>meta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::meta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac04c0f3706032920e00d55fbe18fbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac04c0f3706032920e00d55fbe18fbfe">&#9670;&nbsp;</a></span>mpsmax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::mpsmax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b6ee398ea78cc01b3e2d3c121e933aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6ee398ea78cc01b3e2d3c121e933aa">&#9670;&nbsp;</a></span>mpsmin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::mpsmin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1e995214401de43ac625f2e03c1b07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e995214401de43ac625f2e03c1b07b">&#9670;&nbsp;</a></span>ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::ms</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a32daff1e9e9dd77f87ae320a8cd2d83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32daff1e9e9dd77f87ae320a8cd2d83e">&#9670;&nbsp;</a></span>ms_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::ms_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6635a90258a97f71c6040b6cb9277b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6635a90258a97f71c6040b6cb9277b04">&#9670;&nbsp;</a></span>multipoller_enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::multipoller_enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否创建多个nvme poller </p>
+
+</div>
+</div>
+<a id="a98ca6ff3bc65ccc7f98a589e018b7d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ca6ff3bc65ccc7f98a589e018b7d71">&#9670;&nbsp;</a></span>namespaces</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a>* FemuCtrl::namespaces</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44e0e0b10fb25b302ecbe19b1e085940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e0e0b10fb25b302ecbe19b1e085940">&#9670;&nbsp;</a></span>nlbaf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::nlbaf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad35028fa04e029ef80fb4da8a501bb02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35028fa04e029ef80fb4da8a501bb02">&#9670;&nbsp;</a></span>nr_active_zones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t FemuCtrl::nr_active_zones</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33144e9a783e4a96c1149c2fc04b4704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33144e9a783e4a96c1149c2fc04b4704">&#9670;&nbsp;</a></span>nr_open_zones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t FemuCtrl::nr_open_zones</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a252a9c514e961fa6355b50061862bd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252a9c514e961fa6355b50061862bd34">&#9670;&nbsp;</a></span>nr_tt_ios</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::nr_tt_ios</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>总io数量 </p>
+
+</div>
+</div>
+<a id="a8da82e5488952cf964ffcb40f29e4f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da82e5488952cf964ffcb40f29e4f7a">&#9670;&nbsp;</a></span>nr_tt_late_ios</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::nr_tt_late_ios</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>没有按预计时延（超时）返回的io数量 </p>
+
+</div>
+</div>
+<a id="a010a28b0d592b4f5b5f0f0131afc60ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010a28b0d592b4f5b5f0f0131afc60ed">&#9670;&nbsp;</a></span>ns_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::ns_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6461a7eda526fcc86770a43380615b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6461a7eda526fcc86770a43380615b7c">&#9670;&nbsp;</a></span>num_errors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::num_errors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab09f359cd5d2e1882bd8a04046becf28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09f359cd5d2e1882bd8a04046becf28">&#9670;&nbsp;</a></span>num_io_queues</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::num_io_queues</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sq（cq）个数 </p>
+
+</div>
+</div>
+<a id="a8bd3f2107e1a59779f7d6a669e29b5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd3f2107e1a59779f7d6a669e29b5af">&#9670;&nbsp;</a></span>num_namespaces</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::num_namespaces</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78baba4717dd495d81af587a1a95a0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78baba4717dd495d81af587a1a95a0b7">&#9670;&nbsp;</a></span>num_poller</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::num_poller</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>nvme poller个数（前提是multupoller_enabled开启） </p>
+
+</div>
+</div>
+<a id="a101d7d739551ef1fafb2df650b9cf155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101d7d739551ef1fafb2df650b9cf155">&#9670;&nbsp;</a></span>num_zones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::num_zones</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad9e10e513218bf41a5fe498fea33e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9e10e513218bf41a5fe498fea33e1f">&#9670;&nbsp;</a></span>oacs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::oacs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5781992b7e6de772798e9802d20d8913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5781992b7e6de772798e9802d20d8913">&#9670;&nbsp;</a></span>oc12_ctrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOc12Ctrl.html">Oc12Ctrl</a>* FemuCtrl::oc12_ctrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1733fec286bf747df6e0e65c8f10e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1733fec286bf747df6e0e65c8f10e50">&#9670;&nbsp;</a></span>oc_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structOcCtrlParams.html">OcCtrlParams</a> FemuCtrl::oc_params</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19b37fe5892ac52aa01e3b8e7e0035f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b37fe5892ac52aa01e3b8e7e0035f1">&#9670;&nbsp;</a></span>oncs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::oncs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f3eb8392b8874ca0db383fb2d570159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3eb8392b8874ca0db383fb2d570159">&#9670;&nbsp;</a></span>outstanding_aers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::outstanding_aers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd9011b5ddb7b9f315e109cf606b9370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9011b5ddb7b9f315e109cf606b9370">&#9670;&nbsp;</a></span>page_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::page_bits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d0418e38e888b2b8980a34198bfd463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0418e38e888b2b8980a34198bfd463">&#9670;&nbsp;</a></span>page_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::page_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5062ec29302229f8a4a3c3d4cf3b266d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5062ec29302229f8a4a3c3d4cf3b266d">&#9670;&nbsp;</a></span>params</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeParams.html">NvmeParams</a> FemuCtrl::params</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d862ea82682f6232413280b92ddc4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d862ea82682f6232413280b92ddc4d1">&#9670;&nbsp;</a></span>parent_obj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PCIDevice FemuCtrl::parent_obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a226acb27573ba9226d9a426b95bfca20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226acb27573ba9226d9a426b95bfca20">&#9670;&nbsp;</a></span>poller</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QemuThread* FemuCtrl::poller</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a9669e4a908e3dd0b732c8d69b88a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9669e4a908e3dd0b732c8d69b88a6d">&#9670;&nbsp;</a></span>poller_on</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::poller_on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b6bdba05fa2cf581ace5cc08cd365f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6bdba05fa2cf581ace5cc08cd365f5">&#9670;&nbsp;</a></span>pq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpqueue__t.html">pqueue_t</a>** FemuCtrl::pq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pqueue，暂存req的队列 </p>
+
+</div>
+</div>
+<a id="a3a16108410047b6e7d6ac06c3cb5cd76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a16108410047b6e7d6ac06c3cb5cd76">&#9670;&nbsp;</a></span>print_log</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::print_log</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6a812bf164ed1eb955e470a1133abb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a812bf164ed1eb955e470a1133abb8">&#9670;&nbsp;</a></span>reg_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::reg_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7058666c9b1eaec0493d7514a60493aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7058666c9b1eaec0493d7514a60493aa">&#9670;&nbsp;</a></span>serial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* FemuCtrl::serial</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78003b6c4ed89a589c99c4b01b9c689a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78003b6c4ed89a589c99c4b01b9c689a">&#9670;&nbsp;</a></span>should_isr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* FemuCtrl::should_isr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否中断通知上层来取cq </p>
+
+</div>
+</div>
+<a id="a9f37c1e2d56205e4c7d0015aa9af44e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f37c1e2d56205e4c7d0015aa9af44e2">&#9670;&nbsp;</a></span>sq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeSQueue.html">NvmeSQueue</a>** FemuCtrl::sq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sq队列列表（io） </p>
+
+</div>
+</div>
+<a id="a3cbec385b70e8c6a03b463e00ac08d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cbec385b70e8c6a03b463e00ac08d92">&#9670;&nbsp;</a></span>sqe_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::sqe_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4464c81978268e5df515d91044ea1ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4464c81978268e5df515d91044ea1ec2">&#9670;&nbsp;</a></span>ssd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structssd.html">ssd</a>* FemuCtrl::ssd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指向模拟的ssd </p>
+
+</div>
+</div>
+<a id="a9d1a8fc9f8a06cfff7668affaa2fbbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1a8fc9f8a06cfff7668affaa2fbbf6">&#9670;&nbsp;</a></span>start_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t FemuCtrl::start_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76662c7f1b9027edb1088c28b811c335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76662c7f1b9027edb1088c28b811c335">&#9670;&nbsp;</a></span>temp_warn_issued</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::temp_warn_issued</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada17b92a62409a544d72524c34cfe8e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada17b92a62409a544d72524c34cfe8e4">&#9670;&nbsp;</a></span>temperature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::temperature</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ff7c6d5e0e6313cc66e2d62f4e98221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff7c6d5e0e6313cc66e2d62f4e98221">&#9670;&nbsp;</a></span>to_ftl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>** FemuCtrl::to_ftl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>生产者：nvme poller；消费者：ftl </p>
+
+</div>
+</div>
+<a id="ad818a28bdef83c4bb07c0d4f00942b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad818a28bdef83c4bb07c0d4f00942b06">&#9670;&nbsp;</a></span>to_poller</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>** FemuCtrl::to_poller</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>生产者：ftl；消费者：nvme poller </p>
+
+</div>
+</div>
+<a id="ad680a603a7938f5270a6e881409386bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad680a603a7938f5270a6e881409386bf">&#9670;&nbsp;</a></span>upg_rd_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::upg_rd_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>upper page in MLC/TLC/QLC </p>
+
+</div>
+</div>
+<a id="afafee7b0c2ba0b0da504668a95a87191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afafee7b0c2ba0b0da504668a95a87191">&#9670;&nbsp;</a></span>upg_wr_lat_ns</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t FemuCtrl::upg_wr_lat_ns</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ede5f20b691c65e599d3f4e1d756bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ede5f20b691c65e599d3f4e1d756bcb">&#9670;&nbsp;</a></span>uuid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QemuUUID FemuCtrl::uuid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1f0a61a35c7607ee9066006d588f7af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f0a61a35c7607ee9066006d588f7af">&#9670;&nbsp;</a></span>vector_poll_started</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::vector_poll_started</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaef4372b47aa52d5f1b56da9648c2af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef4372b47aa52d5f1b56da9648c2af3">&#9670;&nbsp;</a></span>vid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t FemuCtrl::vid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1dd8af12f361b973c120c80b43ca677c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd8af12f361b973c120c80b43ca677c">&#9670;&nbsp;</a></span>vwc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::vwc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8dc93dbc4b721983afa203722a769e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc93dbc4b721983afa203722a769e7a">&#9670;&nbsp;</a></span>zasl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t FemuCtrl::zasl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6e80e0bc39d8878bee79720f0733909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e80e0bc39d8878bee79720f0733909">&#9670;&nbsp;</a></span>zasl_bs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::zasl_bs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac31c5055e8db3e4124d1bceb15d16f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac31c5055e8db3e4124d1bceb15d16f6b">&#9670;&nbsp;</a></span>zd_extension_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::zd_extension_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad9ab3272256c2c2a4dea360e3392032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9ab3272256c2c2a4dea360e3392032">&#9670;&nbsp;</a></span>zd_extensions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* FemuCtrl::zd_extensions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaad2dc59565b90a54c8b118032d67801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad2dc59565b90a54c8b118032d67801">&#9670;&nbsp;</a></span>zone_array</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNvmeZone.html">NvmeZone</a>* FemuCtrl::zone_array</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3284df15757fa3c9e773199fa426d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3284df15757fa3c9e773199fa426d51">&#9670;&nbsp;</a></span>zone_cap_bs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::zone_cap_bs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aacb80a44168a3ad90772b9e623dfed94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb80a44168a3ad90772b9e623dfed94">&#9670;&nbsp;</a></span>zone_capacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::zone_capacity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adaa9832711cd5744244c2cd80e0b027c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa9832711cd5744244c2cd80e0b027c">&#9670;&nbsp;</a></span>zone_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::zone_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb0af9e86a49398d043a81869f2c89da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0af9e86a49398d043a81869f2c89da">&#9670;&nbsp;</a></span>zone_size_bs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t FemuCtrl::zone_size_bs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afdc1d22ac9fbea382272a39bfdd52db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc1d22ac9fbea382272a39bfdd52db7">&#9670;&nbsp;</a></span>zone_size_log2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FemuCtrl::zone_size_log2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22f0cfaa256d6bc65497853249789c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f0cfaa256d6bc65497853249789c83">&#9670;&nbsp;</a></span>zoned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FemuCtrl::zoned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>femu/<a class="el" href="nvme_8h_source.html">nvme.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structFemuCtrl.html">FemuCtrl</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
