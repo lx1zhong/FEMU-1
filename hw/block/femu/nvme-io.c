@@ -21,6 +21,12 @@ static void nvme_update_sq_eventidx(const NvmeSQueue *sq)
     }
 }
 
+/**
+ * @brief 从dram中取cmd
+ * 
+ * @param dst 
+ * @param src 
+ */
 static inline void nvme_copy_cmd(NvmeCmd *dst, NvmeCmd *src)
 {
 #if defined(__AVX__)
@@ -73,11 +79,13 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
         /// sq头指针递增
         nvme_inc_sq_head(sq);
 
-        /// 取sq中req 
+        /// 取sq中req
         req = QTAILQ_FIRST(&sq->req_list);
         QTAILQ_REMOVE(&sq->req_list, req, entry);
+        /// （这时还是空req）
         memset(&req->cqe, 0, sizeof(req->cqe));
         /* Coperd: record req->stime at earliest convenience */
+        /// 用取出的cmd生成新req
         req->expire_time = req->stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
         req->cqe.cid = cmd.cid;
         req->cmd_opcode = cmd.opcode;
@@ -187,7 +195,7 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
             continue;
         /// 加入cq中
         nvme_post_cqe(cq, req);
-        /// ?
+        /// req结构体重新放回队列
         QTAILQ_INSERT_TAIL(&req->sq->req_list, req, entry);
         pqueue_pop(pq);
         processed++;

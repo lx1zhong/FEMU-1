@@ -490,6 +490,12 @@ static void nvme_init_pci(FemuCtrl *n)
     }
 }
 
+/**
+ * @brief 注册NOSSD/BBSSD/ZNSSD/OCSSD
+ * 
+ * @param n 
+ * @return int 
+ */
 static int nvme_register_extensions(FemuCtrl *n)
 {
     if (OCSSD(n)) {
@@ -515,6 +521,12 @@ static int nvme_register_extensions(FemuCtrl *n)
     return 0;
 }
 
+/**
+ * @brief femu初始化，分配空间
+ * 
+ * @param pci_dev 
+ * @param errp 
+ */
 static void femu_realize(PCIDevice *pci_dev, Error **errp)
 {
     FemuCtrl *n = FEMU(pci_dev);
@@ -550,6 +562,7 @@ static void femu_realize(PCIDevice *pci_dev, Error **errp)
 
     nvme_register_extensions(n);
 
+    /// 初始化相应模式ssd
     if (n->ext_ops.init) {
         n->ext_ops.init(n, errp);
     }
@@ -655,6 +668,12 @@ static const VMStateDescription femu_vmstate = {
     .unmigratable = 1,
 };
 
+/**
+ * @brief femu启动
+ * 
+ * @param oc 
+ * @param data 
+ */
 static void femu_class_init(ObjectClass *oc, void *data)
 {
     DeviceClass *dc = DEVICE_CLASS(oc);

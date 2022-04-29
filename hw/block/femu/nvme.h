@@ -1015,9 +1015,9 @@ typedef struct NvmeSQueue {
     uint32_t    head;
     uint32_t    tail;
     uint32_t    size;
-    uint64_t    dma_addr;
+    uint64_t    dma_addr;           ///< 数据在dram中地址
     uint64_t    dma_addr_hva;
-    uint64_t    completed;
+    uint64_t    completed;          ///< 已完成req数量
     uint64_t    *prp_list;
     NvmeRequest *io_req;
     QTAILQ_HEAD(sq_req_list, NvmeRequest) req_list;         ///< 存放req
@@ -1162,6 +1162,10 @@ typedef struct OcCtrlParams {
 } OcCtrlParams;
 
 struct FemuCtrl;
+/**
+ * @brief 扩展操作接口，具体实现在各模式ssd中
+ * 
+ */
 typedef struct FemuExtCtrlOps {
     void     *state;
     void     (*init)(struct FemuCtrl *, Error **);
@@ -1213,7 +1217,7 @@ typedef struct FemuCtrl {
 
     /* Coperd: OC2.0 FIXME */
     NvmeParams  params;
-    FemuExtCtrlOps ext_ops;
+    FemuExtCtrlOps ext_ops;         ///< nvme到各模式ssd接口
 
     time_t      start_time;
     uint16_t    temperature;
@@ -1226,7 +1230,7 @@ typedef struct FemuCtrl {
     uint16_t    oncs;
     uint32_t    reg_size;
     uint32_t    num_namespaces;
-    uint32_t    num_io_queues;
+    uint32_t    num_io_queues;          ///< sq（cq）个数
     uint32_t    max_q_ents;
     uint64_t    ns_size;
     uint8_t     db_stride;
@@ -1273,10 +1277,10 @@ typedef struct FemuCtrl {
     NvmeErrorLog    *elpes;
     NvmeRequest     **aer_reqs;
     NvmeNamespace   *namespaces;
-    NvmeSQueue      **sq;           ///<sq队列列表（io）
-    NvmeCQueue      **cq;           ///<cq队列列表（io）
-    NvmeSQueue      admin_sq;       ///<sq队列（admin）
-    NvmeCQueue      admin_cq;       ///<cq队列（admin）
+    NvmeSQueue      **sq;           ///< sq队列列表（io）
+    NvmeCQueue      **cq;           ///< cq队列列表（io）
+    NvmeSQueue      admin_sq;       ///< sq队列（admin）
+    NvmeCQueue      admin_cq;       ///< cq队列（admin）
     NvmeFeatureVal  features;
     NvmeIdCtrl      id_ctrl;
 
@@ -1289,7 +1293,7 @@ typedef struct FemuCtrl {
     uint64_t        dbs_addr_hva;
     uint64_t        eis_addr_hva;
 
-    uint8_t         femu_mode;
+    uint8_t         femu_mode;      /// femu模式，包括blackbox,ocssd,...
     uint8_t         lver; /* Coperd: OCSSD version, 0x1 -> OC1.2, 0x2 -> OC2.0 */
     uint32_t        memsz;
     OcCtrlParams    oc_params;
@@ -1314,7 +1318,7 @@ typedef struct FemuCtrl {
     int64_t blk_er_lat_ns;
     int64_t chnl_pg_xfer_lat_ns;
 
-    struct ssd      *ssd;           ///< ssd（模拟）
+    struct ssd      *ssd;           ///< 指向模拟的ssd
     SsdDramBackend  *mbe;           ///< femu后端内存（实际数据）
     int             completed;
 
@@ -1337,7 +1341,7 @@ typedef struct FemuCtrl {
 
 typedef struct NvmePollerThreadArgument {
     FemuCtrl        *n;
-    int             index;
+    int             index;                  ///< poller序号
 } NvmePollerThreadArgument;
 
 typedef struct NvmeDifTuple {
@@ -1462,6 +1466,15 @@ static inline uint64_t ns_blks(NvmeNamespace *ns, uint8_t lba_idx)
     return ns_size / lba_sz;
 }
 
+/**
+ * @brief 地址不连续时取cmd地址
+ * 
+ * @param dma_addr 
+ * @param page_size 
+ * @param queue_idx 
+ * @param entry_size 
+ * @return hwaddr 
+ */
 static inline hwaddr nvme_discontig(uint64_t *dma_addr, uint16_t page_size,
     uint16_t queue_idx, uint16_t entry_size)
 {

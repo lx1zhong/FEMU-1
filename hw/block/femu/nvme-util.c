@@ -161,6 +161,11 @@ void nvme_free_sq(NvmeSQueue *sq, FemuCtrl *n)
     }
 }
 
+/**
+ * @brief 初始化sq队列，预分配空间
+ * 
+ * @return uint16_t 
+ */
 uint16_t nvme_init_sq(NvmeSQueue *sq, FemuCtrl *n, uint64_t dma_addr, uint16_t
                       sqid, uint16_t cqid, uint16_t size, enum NvmeQueueFlags
                       prio, int contig)
@@ -187,6 +192,7 @@ uint16_t nvme_init_sq(NvmeSQueue *sq, FemuCtrl *n, uint64_t dma_addr, uint16_t
         }
     }
 
+    // 预分配sq队列空间
     sq->io_req = g_malloc0(sq->size * sizeof(*sq->io_req));
     QTAILQ_INIT(&sq->req_list);
     QTAILQ_INIT(&sq->out_req_list);

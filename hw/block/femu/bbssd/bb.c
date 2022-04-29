@@ -16,7 +16,7 @@ static void bb_init_ctrl_str(FemuCtrl *n)
     nvme_set_ctrl_name(n, vbbssd_mn, vbbssd_sn, &fsid_vbb);
 }
 
-/* bb <=> black-box */
+/* blackbox初始化 */
 static void bb_init(FemuCtrl *n, Error **errp)
 {
     struct ssd *ssd = n->ssd = g_malloc0(sizeof(struct ssd));
@@ -30,7 +30,7 @@ static void bb_init(FemuCtrl *n, Error **errp)
 }
 
 /**
- * @brief blackbox识别、执行admin命令（可自定义）
+ * @brief blackbox自定义admin命令
  * 
  * @param n 
  * @param cmd 
@@ -136,6 +136,12 @@ static uint16_t bb_admin_cmd(FemuCtrl *n, NvmeCmd *cmd)
     }
 }
 
+/**
+ * @brief 注册blackbox相关函数
+ * 
+ * @param n 
+ * @return int 
+ */
 int nvme_register_bbssd(FemuCtrl *n)
 {
     n->ext_ops = (FemuExtCtrlOps) {
