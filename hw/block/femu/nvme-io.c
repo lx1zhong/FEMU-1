@@ -61,7 +61,7 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
 
     nvme_update_sq_tail(sq);
     while (!(nvme_sq_empty(sq))) {
-        // 取cmd
+        /// 取cmd
         if (sq->phys_contig) {
             addr = sq->dma_addr + sq->head * n->sqe_size;
             nvme_copy_cmd(&cmd, (void *)&(((NvmeCmd *)sq->dma_addr_hva)[sq->head]));
@@ -70,10 +70,10 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
                                   n->sqe_size);
             nvme_addr_read(n, addr, (void *)&cmd, sizeof(cmd));
         }
-        // sq头指针递增
+        /// sq头指针递增
         nvme_inc_sq_head(sq);
 
-        // 取sq中req 
+        /// 取sq中req 
         req = QTAILQ_FIRST(&sq->req_list);
         QTAILQ_REMOVE(&sq->req_list, req, entry);
         memset(&req->cqe, 0, sizeof(req->cqe));
@@ -86,11 +86,11 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
         if (n->print_log) {
             femu_debug("%s,cid:%d\n", __func__, cmd.cid);
         }
-        // 实际处理cmd
+        /// 实际处理cmd
         status = nvme_io_cmd(n, &cmd, req);
         if (1 && status == NVME_SUCCESS) {
             req->status = status;
-            // 交给ftl（计算延迟）
+            /// 交给ftl（计算延迟）
             int rc = femu_ring_enqueue(n->to_ftl[index_poller], (void *)&req, 1);
             if (rc != 1) {
                 femu_err("enqueue failed, ret=%d\n", rc);
@@ -164,18 +164,18 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
 
     while (femu_ring_count(rp)) {
         req = NULL;
-        // 从to_poller中取出req
+        /// 从to_poller中取出req
         rc = femu_ring_dequeue(rp, (void *)&req, 1);
         if (rc != 1) {
             femu_err("dequeue from to_poller request failed\n");
         }
         assert(req);
 
-        // 暂存到pq
+        /// 暂存到pq
         pqueue_insert(pq, req);
     }
 
-    // 处理pq
+    /// 处理pq
     while ((req = pqueue_peek(pq))) {
         now = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
         if (now < req->expire_time) {
@@ -185,13 +185,14 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
         cq = n->cq[req->sq->sqid];
         if (!cq->is_active)
             continue;
-        // 加入cq中
+        /// 加入cq中
         nvme_post_cqe(cq, req);
+        /// ?
         QTAILQ_INSERT_TAIL(&req->sq->req_list, req, entry);
         pqueue_pop(pq);
         processed++;
         n->nr_tt_ios++;
-        // 超时
+        /// 超时
         if (now - req->expire_time >= 20000) {
             n->nr_tt_late_ios++;
             if (n->print_log) {
@@ -206,7 +207,7 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
     if (processed == 0)
         return;
 
-    // 通知
+    /// 通知
     switch (n->multipoller_enabled) {
     case 1:
         nvme_isr_notify_io(n->cq[index_poller]);
@@ -624,7 +625,7 @@ static uint16_t nvme_io_cmd(FemuCtrl *n, NvmeCmd *cmd, NvmeRequest *req)
         }
         return NVME_INVALID_OPCODE | NVME_DNR;
     default:
-        // 进入各模式femu（如blackbox）定义的io处理函数
+        /// 进入各模式femu（如blackbox）定义的io处理函数
         if (n->ext_ops.io_cmd) {
             return n->ext_ops.io_cmd(n, ns, cmd, req);
         }

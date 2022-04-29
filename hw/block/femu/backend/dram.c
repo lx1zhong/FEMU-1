@@ -1,6 +1,6 @@
 /**
  * @file dram.c
- * @brief dram后端操作
+ * @brief dram后端操作函数定义
  * 
  * @copyright Copyright (c) 2022
  * 

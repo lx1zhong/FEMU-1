@@ -3,7 +3,7 @@
 
 /**
  * @file dram.h
- * @brief DRAM后端相关定义
+ * @brief DRAM后端相关声明
  * 
  * @copyright Copyright (c) 2022
  * 

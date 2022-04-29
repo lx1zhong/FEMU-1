@@ -460,7 +460,7 @@ void ssd_init(FemuCtrl *n)
 }
 
 /**
- * @brief ppa地址越界则为无效地址
+ * @brief 判断ppa地址是否越界
  * 
  * @param ssd 
  * @param ppa 

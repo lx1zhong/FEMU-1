@@ -191,6 +191,10 @@ struct ssdparams {
     int tt_luns;      /**< total # of LUNs in the SSD */
 };
 
+/**
+ * @brief line
+ * 
+ */
 typedef struct line {
     int id;  /**< line id, the same as corresponding block id */
     int ipc; /**< invalid page count in this line */
@@ -236,6 +240,10 @@ struct nand_cmd {
     int64_t stime; /**< Coperd: request arrival time */
 };
 
+/**
+ * @brief 模拟一个ssd
+ * 
+ */
 struct ssd {
     char *ssdname;
     struct ssdparams sp;
