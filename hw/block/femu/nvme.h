@@ -518,7 +518,7 @@ typedef struct NvmeCqe {
     };
     uint16_t    sq_head;
     uint16_t    sq_id;
-    uint16_t    cid;        // cmd id
+    uint16_t    cid;        ///< cmd id
     uint16_t    status;
 } NvmeCqe;
 
@@ -969,9 +969,9 @@ typedef struct NvmeRequest {
     struct NvmeCQueue       *cq;
     struct NvmeNamespace    *ns;
     uint16_t                status;
-    uint64_t                slba;           // 开始lba
-    uint16_t                is_write;       // 是否为写操作
-    uint16_t                nlb;            // 逻辑块个数
+    uint64_t                slba;           ///< 开始lba
+    uint16_t                is_write;       ///< 是否为写操作
+    uint16_t                nlb;            ///< 逻辑块个数
     uint16_t                ctrl;
     uint64_t                meta_size;
     uint64_t                mptr;
@@ -981,13 +981,13 @@ typedef struct NvmeRequest {
     NvmeCmd                 cmd;
     NvmeCqe                 cqe;
     uint8_t                 cmd_opcode;
-    QEMUSGList              qsg;            // dma用
+    QEMUSGList              qsg;            ///< dma用
     QEMUIOVector            iov;
     QTAILQ_ENTRY(NvmeRequest)entry;
-    int64_t                 stime;          // io开始时间
-    int64_t                 reqlat;         // io延迟
+    int64_t                 stime;          ///< io开始时间
+    int64_t                 reqlat;         ///< io延迟
     int64_t                 gcrt;
-    int64_t                 expire_time;    // io应该结束的时间
+    int64_t                 expire_time;    ///< io应该结束的时间
 
     /* OC2.0: sector offset relative to slba where reads become invalid */
     uint64_t predef;
@@ -1008,7 +1008,7 @@ typedef struct DMAOff {
 
 typedef struct NvmeSQueue {
     struct FemuCtrl *ctrl;
-    uint8_t     phys_contig;        // 在mbe中的地址是否连续
+    uint8_t     phys_contig;        ///< 在mbe中的地址是否连续
     uint8_t     arb_burst;
     uint16_t    sqid;
     uint16_t    cqid;
@@ -1020,7 +1020,7 @@ typedef struct NvmeSQueue {
     uint64_t    completed;
     uint64_t    *prp_list;
     NvmeRequest *io_req;
-    QTAILQ_HEAD(sq_req_list, NvmeRequest) req_list;         // 存放req
+    QTAILQ_HEAD(sq_req_list, NvmeRequest) req_list;         ///< 存放req
     QTAILQ_HEAD(out_req_list, NvmeRequest) out_req_list;
     QTAILQ_ENTRY(NvmeSQueue) entry;
 
@@ -1033,10 +1033,10 @@ typedef struct NvmeSQueue {
 
 typedef struct NvmeCQueue {
     struct FemuCtrl *ctrl;
-    uint8_t     phys_contig;        // 存储在mbe中的地址是否连续
+    uint8_t     phys_contig;        ///< 存储在mbe中的地址是否连续
     uint8_t     phase;
     uint16_t    cqid;
-    uint16_t    irq_enabled;        // irq 中断用
+    uint16_t    irq_enabled;        ///< irq 中断用
     uint32_t    head;
     uint32_t    tail;
     int32_t     virq;
@@ -1273,10 +1273,10 @@ typedef struct FemuCtrl {
     NvmeErrorLog    *elpes;
     NvmeRequest     **aer_reqs;
     NvmeNamespace   *namespaces;
-    NvmeSQueue      **sq;           //sq队列列表（io）
-    NvmeCQueue      **cq;           //cq队列列表（io）
-    NvmeSQueue      admin_sq;       //sq队列（admin）
-    NvmeCQueue      admin_cq;       //cq队列（admin）
+    NvmeSQueue      **sq;           ///<sq队列列表（io）
+    NvmeCQueue      **cq;           ///<cq队列列表（io）
+    NvmeSQueue      admin_sq;       ///<sq队列（admin）
+    NvmeCQueue      admin_cq;       ///<cq队列（admin）
     NvmeFeatureVal  features;
     NvmeIdCtrl      id_ctrl;
 
@@ -1301,11 +1301,11 @@ typedef struct FemuCtrl {
     pthread_spinlock_t chnl_locks[FEMU_MAX_NUM_CHNLS];
 
     /* Latency numbers for whitebox-mode only */
-    int64_t upg_rd_lat_ns; /* upper page in MLC/TLC/QLC */
-    int64_t cpg_rd_lat_ns; /* center page in TLC */
-    int64_t cupg_rd_lat_ns; /* center-upper page in QLC */
-    int64_t clpg_rd_lat_ns; /* center-lower page in QLC */
-    int64_t lpg_rd_lat_ns; /* lower page in MLC/TLC/QLC */
+    int64_t upg_rd_lat_ns; /**< upper page in MLC/TLC/QLC */
+    int64_t cpg_rd_lat_ns; /**< center page in TLC */
+    int64_t cupg_rd_lat_ns; /**< center-upper page in QLC */
+    int64_t clpg_rd_lat_ns; /**< center-lower page in QLC */
+    int64_t lpg_rd_lat_ns; /**< lower page in MLC/TLC/QLC */
     int64_t upg_wr_lat_ns;
     int64_t cpg_wr_lat_ns;
     int64_t cupg_wr_lat_ns;
@@ -1314,26 +1314,25 @@ typedef struct FemuCtrl {
     int64_t blk_er_lat_ns;
     int64_t chnl_pg_xfer_lat_ns;
 
-    struct ssd      *ssd;           // ssd（模拟）
-    SsdDramBackend  *mbe;           // femu后端内存（实际数据）
+    struct ssd      *ssd;           ///< ssd（模拟）
+    SsdDramBackend  *mbe;           ///< femu后端内存（实际数据）
     int             completed;
 
     char            devname[64];
-    struct rte_ring **to_ftl;       // 生产者：nvme poller；消费者：ftl
-    struct rte_ring **to_poller;    // 生产者：ftl；消费者：nvme poller
-    pqueue_t        **pq;           // pqueue，暂存req的队列
-    bool            *should_isr;    // 是否中断通知上层来取cq
+    struct rte_ring **to_ftl;       ///< 生产者：nvme poller；消费者：ftl
+    struct rte_ring **to_poller;    ///< 生产者：ftl；消费者：nvme poller
+    pqueue_t        **pq;           ///< pqueue，暂存req的队列
+    bool            *should_isr;    ///< 是否中断通知上层来取cq
     bool            poller_on;
 
-    int64_t         nr_tt_ios;              // 总io数量
-    int64_t         nr_tt_late_ios;         // 没有按预计时延（超时）返回的io数量
+    int64_t         nr_tt_ios;              ///< 总io数量
+    int64_t         nr_tt_late_ios;         ///< 没有按预计时延（超时）返回的io数量
     bool            print_log;
 
-    uint8_t         multipoller_enabled;    // 是否创建多个nvme poller
-    uint32_t        num_poller;             // nvme poller个数（前提是multupoller_enabled开启）
-
-    /* Nand Flash Type: SLC/MLC/TLC/QLC/PLC */
-    uint8_t         flash_type;
+    uint8_t         multipoller_enabled;    ///< 是否创建多个nvme poller
+    uint32_t        num_poller;             ///< nvme poller个数（前提是multupoller_enabled开启）
+ 
+    uint8_t         flash_type;             /**< Nand Flash Type: SLC/MLC/TLC/QLC/PLC */
 } FemuCtrl;
 
 typedef struct NvmePollerThreadArgument {

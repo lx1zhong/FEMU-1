@@ -3,7 +3,7 @@
 
 /**
  * @file dram.h
- * @brief dram后端相关定义
+ * @brief DRAM后端相关定义
  * 
  * @copyright Copyright (c) 2022
  * 
@@ -11,10 +11,13 @@
 
 #include <stdint.h>
 
-/* DRAM backend SSD address space */
+/**
+ * @brief  DRAM backend SSD address space
+ * 
+ */
 typedef struct SsdDramBackend {
     void    *logical_space;
-    int64_t size; /* in bytes */
+    int64_t size; /**< in bytes */
     int     femu_mode;
 } SsdDramBackend;
 
