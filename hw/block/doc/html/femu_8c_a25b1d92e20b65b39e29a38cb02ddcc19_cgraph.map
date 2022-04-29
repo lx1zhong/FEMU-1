@@ -1,8 +1,0 @@
-<map id="nvme_clear_ctrl" name="nvme_clear_ctrl">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,132,83"/>
-<area shape="rect" id="node2" href="$intr_8c.html#ad98adfb6254598edb5f608bbf2018c8c" title=" " alt="" coords="180,5,311,32"/>
-<area shape="rect" id="node5" href="$nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="188,56,303,83"/>
-<area shape="rect" id="node6" href="$nvme-util_8c.html#ae00a56019ece0039e9a209dfa7bc398e" title=" " alt="" coords="188,107,303,133"/>
-<area shape="rect" id="node3" href="$intr_8c.html#a9e513f85a2a84b262bdcb918d1785fea" title=" " alt="" coords="359,5,553,32"/>
-<area shape="rect" id="node4" href="$intr_8c.html#a1a56c08c52edde31f9e476178fb352a1" title=" " alt="" coords="601,5,816,32"/>
-</map>

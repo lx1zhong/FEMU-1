@@ -1,8 +1,0 @@
-<map id="rte_ring_enqueue" name="rte_ring_enqueue">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,140,57"/>
-<area shape="rect" id="node2" href="$rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d" title=" " alt="" coords="188,31,359,57"/>
-<area shape="rect" id="node3" href="$rte__ring_8h.html#a388f737bcdf0a8ee4cf6f75464ca5979" title=" " alt="" coords="407,31,579,57"/>
-<area shape="rect" id="node4" href="$rte__ring_8h.html#a22ab749e8f41b8e232a5c54a5c100d16" title=" " alt="" coords="627,5,832,32"/>
-<area shape="rect" id="node6" href="$rte__ring_8h.html#a269bf4b0dad1a7d2bb0396350f5e7976" title=" " alt="" coords="682,56,777,83"/>
-<area shape="rect" id="node5" href="$rte__atomic__x86_8h.html#a092485d3d43a2cd7ee61a1c2d2178d31" title=" " alt="" coords="880,5,1043,32"/>
-</map>

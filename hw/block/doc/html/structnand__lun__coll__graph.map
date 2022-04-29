@@ -1,6 +1,0 @@
-<map id="nand_lun" name="nand_lun">
-<area shape="rect" id="node1" title="晶圆" alt="" coords="13,273,95,300"/>
-<area shape="rect" id="node2" href="$structnand__plane.html" title="plane" alt="" coords="5,184,103,211"/>
-<area shape="rect" id="node3" href="$structnand__block.html" title="块" alt="" coords="6,95,102,121"/>
-<area shape="rect" id="node4" href="$structnand__page.html" title="页" alt="" coords="7,5,101,32"/>
-</map>
