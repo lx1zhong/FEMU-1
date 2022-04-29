@@ -1,6 +1,0 @@
-<map id="__rte_ring_do_dequeue" name="__rte_ring_do_dequeue">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,177,57"/>
-<area shape="rect" id="node2" href="$rte__ring_8h.html#a3a4127db74610c522be2a4f8f70c033d" title=" " alt="" coords="225,5,432,32"/>
-<area shape="rect" id="node4" href="$rte__ring_8h.html#a269bf4b0dad1a7d2bb0396350f5e7976" title=" " alt="" coords="281,56,376,83"/>
-<area shape="rect" id="node3" href="$rte__atomic__x86_8h.html#a092485d3d43a2cd7ee61a1c2d2178d31" title=" " alt="" coords="480,5,643,32"/>
-</map>

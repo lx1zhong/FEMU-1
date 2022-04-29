@@ -1,8 +1,0 @@
-<map id="nvme_setup_virq" name="nvme_setup_virq">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,140,133"/>
-<area shape="rect" id="node2" href="$intr_8c.html#a4546f8dc3153b6b272979b26d9ee3a5f" title=" " alt="" coords="188,5,377,32"/>
-<area shape="rect" id="node3" href="$intr_8c.html#a404cdb00218c3c3b27c4048b43d7d8db" title=" " alt="" coords="191,56,374,83"/>
-<area shape="rect" id="node4" href="$intr_8c.html#aef207536dce0a636e5d7c2467c73110a" title=" " alt="" coords="207,107,358,133"/>
-<area shape="rect" id="node5" href="$intr_8c.html#a05882837e726b101a16a02a652f3bbf0" title=" " alt="" coords="213,157,352,184"/>
-<area shape="rect" id="node6" href="$intr_8c.html#a1eff260b4323e3ba8942b9c13ac1c89d" title=" " alt="" coords="199,208,366,235"/>
-</map>
