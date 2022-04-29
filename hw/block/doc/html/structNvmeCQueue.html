@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: NvmeCQueue结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structNvmeCQueue.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">NvmeCQueue结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="nvme_8h_source.html">nvme.h</a>&gt;</code></p>
+<div class="dynheader">
+NvmeCQueue 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structNvmeCQueue__coll__graph.png" border="0" usemap="#NvmeCQueue_coll__map" alt="Collaboration graph"/></div>
+<map name="NvmeCQueue_coll__map" id="NvmeCQueue_coll__map">
+<area shape="rect" title=" " alt="" coords="1049,436,1161,463"/>
+<area shape="rect" href="structFemuCtrl.html" title="femu相关控制参数和数据成员" alt="" coords="1337,663,1419,689"/>
+<area shape="rect" href="structNvmeRequest.html" title=" " alt="" coords="1811,739,1925,765"/>
+<area shape="rect" href="structNvmeNamespace.html" title=" " alt="" coords="1579,784,1717,811"/>
+<area shape="rect" href="structNvmeSQueue.html" title=" " alt="" coords="1593,693,1703,720"/>
+<area shape="rect" href="structrte__ring.html" title=" " alt="" coords="820,335,892,361"/>
+<area shape="rect" href="structssd.html" title=" " alt="" coords="1083,204,1127,231"/>
+<area shape="rect" href="structrte__ring__headtail.html" title=" " alt="" coords="505,335,637,361"/>
+<area shape="rect" href="structOcCtrlParams.html" title=" " alt="" coords="1049,553,1160,580"/>
+<area shape="rect" href="structNvmeIdNs.html" title=" " alt="" coords="1333,827,1423,853"/>
+<area shape="rect" href="structNvmeLBAF.html" title=" " alt="" coords="1057,1060,1152,1087"/>
+<area shape="rect" href="structOc12Bbt.html" title=" " alt="" coords="1339,877,1417,904"/>
+<area shape="rect" href="structNvmeRangeType.html" title=" " alt="" coords="1312,928,1444,955"/>
+<area shape="rect" href="structNvmeBar.html" title=" " alt="" coords="1063,604,1146,631"/>
+<area shape="rect" href="structNvmeFeatureVal.html" title=" " alt="" coords="1039,655,1170,681"/>
+<area shape="rect" href="structNvmeCmd.html" title=" " alt="" coords="1603,835,1693,861"/>
+<area shape="rect" href="unionNvmeCmdDptr.html" title=" " alt="" coords="1319,1029,1437,1056"/>
+<area shape="rect" href="structNvmeSglDescriptor.html" title=" " alt="" coords="1031,1111,1179,1137"/>
+<area shape="rect" href="structNvmeCqe.html" title=" " alt="" coords="1605,885,1691,912"/>
+<area shape="rect" href="structNvmeZone.html" title=" " alt="" coords="1057,705,1152,732"/>
+<area shape="rect" href="structNvmeZoneDescr.html" title=" " alt="" coords="791,705,921,732"/>
+<area shape="rect" href="structFemuExtCtrlOps.html" title=" " alt="" coords="1041,756,1168,783"/>
+<area shape="rect" href="structOc12Ctrl.html" title=" " alt="" coords="1065,807,1144,833"/>
+<area shape="rect" href="structOc12IdCtrl.html" title=" " alt="" coords="811,857,901,884"/>
+<area shape="rect" href="structOc12IdGroup.html" title=" " alt="" coords="518,883,625,909"/>
+<area shape="rect" href="structOc12IdAddrFormat.html" title=" " alt="" coords="500,832,643,859"/>
+<area shape="rect" href="structOc12Params.html" title=" " alt="" coords="805,756,907,783"/>
+<area shape="rect" href="structOc12AddrF.html" title=" " alt="" coords="809,807,903,833"/>
+<area shape="rect" href="structNvmeParams.html" title=" " alt="" coords="1050,857,1159,884"/>
+<area shape="rect" href="structOc20Params.html" title=" " alt="" coords="805,908,907,935"/>
+<area shape="rect" href="structSsdDramBackend.html" title="DRAM backend SSD address space" alt="" coords="1037,908,1173,935"/>
+<area shape="rect" href="structNvmeIdNsZoned.html" title=" " alt="" coords="1039,959,1170,985"/>
+<area shape="rect" href="structNvmeLBAFE.html" title=" " alt="" coords="805,959,907,985"/>
+<area shape="rect" href="structNvmeErrorLog.html" title=" " alt="" coords="1047,1009,1162,1036"/>
+<area shape="rect" href="structpqueue__t.html" title=" " alt="" coords="530,75,613,101"/>
+<area shape="rect" href="structline__mgmt.html" title="记录各种line的列表和数量" alt="" coords="810,209,902,236"/>
+<area shape="rect" href="structssdparams.html" title="ssd参数" alt="" coords="809,159,903,185"/>
+<area shape="rect" href="structwrite__pointer.html" title="wp: record next write addr" alt="" coords="802,260,910,287"/>
+<area shape="rect" href="structline.html" title=" " alt="" coords="548,235,595,261"/>
+<area shape="rect" href="structppa.html" title="describe a physical page addr" alt="" coords="833,108,879,135"/>
+<area shape="rect" href="structssd__channel.html" title="通道" alt="" coords="805,7,907,33"/>
+<area shape="rect" href="structnand__lun.html" title="晶圆" alt="" coords="531,7,612,33"/>
+<area shape="rect" href="structnand__plane.html" title="plane" alt="" coords="337,7,435,33"/>
+<area shape="rect" href="structnand__block.html" title="块" alt="" coords="168,7,264,33"/>
+<area shape="rect" href="structnand__page.html" title="页" alt="" coords="5,7,99,33"/>
+<area shape="rect" href="structNvmeIdCtrl.html" title=" " alt="" coords="1057,503,1153,529"/>
+<area shape="rect" href="structNvmePSD.html" title=" " alt="" coords="813,503,899,529"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aba4665740dfbc47ba58be9e094c911cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#aba4665740dfbc47ba58be9e094c911cc">QTAILQ_HEAD</a> (sq_list, <a class="el" href="structNvmeSQueue.html">NvmeSQueue</a>) sq_list</td></tr>
+<tr class="separator:aba4665740dfbc47ba58be9e094c911cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dc35d1d3ef96b184f96c5a35d4ab74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#aa2dc35d1d3ef96b184f96c5a35d4ab74">QTAILQ_HEAD</a> (cq_req_list, <a class="el" href="structNvmeRequest.html">NvmeRequest</a>) req_list</td></tr>
+<tr class="separator:aa2dc35d1d3ef96b184f96c5a35d4ab74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a83ec5b565d4c97540ef1db6462f3efd2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structFemuCtrl.html">FemuCtrl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a83ec5b565d4c97540ef1db6462f3efd2">ctrl</a></td></tr>
+<tr class="separator:a83ec5b565d4c97540ef1db6462f3efd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376ae99c71a9fb4157bd4fb45b2a5090"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a376ae99c71a9fb4157bd4fb45b2a5090">phys_contig</a></td></tr>
+<tr class="memdesc:a376ae99c71a9fb4157bd4fb45b2a5090"><td class="mdescLeft">&#160;</td><td class="mdescRight">存储在mbe中的地址是否连续  <a href="structNvmeCQueue.html#a376ae99c71a9fb4157bd4fb45b2a5090">更多...</a><br /></td></tr>
+<tr class="separator:a376ae99c71a9fb4157bd4fb45b2a5090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550822923ef54d73d7efa7f4bf6159c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a550822923ef54d73d7efa7f4bf6159c3">phase</a></td></tr>
+<tr class="separator:a550822923ef54d73d7efa7f4bf6159c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81de77c41f0fe454ab844dff5914bae5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a81de77c41f0fe454ab844dff5914bae5">cqid</a></td></tr>
+<tr class="separator:a81de77c41f0fe454ab844dff5914bae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb1a433a87d65e986849bc91d4c46e0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#adbb1a433a87d65e986849bc91d4c46e0">irq_enabled</a></td></tr>
+<tr class="memdesc:adbb1a433a87d65e986849bc91d4c46e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">irq 中断用  <a href="structNvmeCQueue.html#adbb1a433a87d65e986849bc91d4c46e0">更多...</a><br /></td></tr>
+<tr class="separator:adbb1a433a87d65e986849bc91d4c46e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc816fae4f563f4f8c453cd1ec8726e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a7fc816fae4f563f4f8c453cd1ec8726e">head</a></td></tr>
+<tr class="separator:a7fc816fae4f563f4f8c453cd1ec8726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecbdfc4863d2633f279c2ae70dff1dd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a8ecbdfc4863d2633f279c2ae70dff1dd">tail</a></td></tr>
+<tr class="separator:a8ecbdfc4863d2633f279c2ae70dff1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7932bf4a5db62c73cd516a27f14f44"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a7e7932bf4a5db62c73cd516a27f14f44">virq</a></td></tr>
+<tr class="separator:a7e7932bf4a5db62c73cd516a27f14f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f6225e7294b5db037fd1e099a8060f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a42f6225e7294b5db037fd1e099a8060f">vector</a></td></tr>
+<tr class="separator:a42f6225e7294b5db037fd1e099a8060f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9699dd12674bbfdeba9ee84a1e6b2d79"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a9699dd12674bbfdeba9ee84a1e6b2d79">size</a></td></tr>
+<tr class="separator:a9699dd12674bbfdeba9ee84a1e6b2d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212c26a71132a5d3ca6e4c3992773235"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a212c26a71132a5d3ca6e4c3992773235">dma_addr</a></td></tr>
+<tr class="separator:a212c26a71132a5d3ca6e4c3992773235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71382828723bfcbe3c2430f490c0ac3"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#ae71382828723bfcbe3c2430f490c0ac3">dma_addr_hva</a></td></tr>
+<tr class="separator:ae71382828723bfcbe3c2430f490c0ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee73fe2f6a1749b69ee6edf4b08f751"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#abee73fe2f6a1749b69ee6edf4b08f751">prp_list</a></td></tr>
+<tr class="separator:abee73fe2f6a1749b69ee6edf4b08f751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246bac5db8d9de809ad1be3b186854e4"><td class="memItemLeft" align="right" valign="top">EventNotifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a246bac5db8d9de809ad1be3b186854e4">guest_notifier</a></td></tr>
+<tr class="separator:a246bac5db8d9de809ad1be3b186854e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36baa7a42f173ce2b03416a42a6042e"><td class="memItemLeft" align="right" valign="top">QEMUTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#ab36baa7a42f173ce2b03416a42a6042e">timer</a></td></tr>
+<tr class="separator:ab36baa7a42f173ce2b03416a42a6042e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d654f42e288f38b3ff2df34ed71eda"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a90d654f42e288f38b3ff2df34ed71eda">db_addr</a></td></tr>
+<tr class="separator:a90d654f42e288f38b3ff2df34ed71eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b8318d3c3040f22eff1fff5f1482e5"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a38b8318d3c3040f22eff1fff5f1482e5">db_addr_hva</a></td></tr>
+<tr class="separator:a38b8318d3c3040f22eff1fff5f1482e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae37027eeb09a4a07017b099f3faabe"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#acae37027eeb09a4a07017b099f3faabe">eventidx_addr</a></td></tr>
+<tr class="separator:acae37027eeb09a4a07017b099f3faabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31e498d59d5db90e6fe9d1e7127119d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#af31e498d59d5db90e6fe9d1e7127119d">eventidx_addr_hva</a></td></tr>
+<tr class="separator:af31e498d59d5db90e6fe9d1e7127119d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b941ba9a13366bf3348b3b7e73009a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeCQueue.html#a8b941ba9a13366bf3348b3b7e73009a1">is_active</a></td></tr>
+<tr class="separator:a8b941ba9a13366bf3348b3b7e73009a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa2dc35d1d3ef96b184f96c5a35d4ab74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2dc35d1d3ef96b184f96c5a35d4ab74">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NvmeCQueue::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype">cq_req_list&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeRequest.html">NvmeRequest</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba4665740dfbc47ba58be9e094c911cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4665740dfbc47ba58be9e094c911cc">&#9670;&nbsp;</a></span>QTAILQ_HEAD() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NvmeCQueue::QTAILQ_HEAD </td>
+          <td>(</td>
+          <td class="paramtype">sq_list&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeSQueue.html">NvmeSQueue</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a81de77c41f0fe454ab844dff5914bae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81de77c41f0fe454ab844dff5914bae5">&#9670;&nbsp;</a></span>cqid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCQueue::cqid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83ec5b565d4c97540ef1db6462f3efd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ec5b565d4c97540ef1db6462f3efd2">&#9670;&nbsp;</a></span>ctrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structFemuCtrl.html">FemuCtrl</a>* NvmeCQueue::ctrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90d654f42e288f38b3ff2df34ed71eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d654f42e288f38b3ff2df34ed71eda">&#9670;&nbsp;</a></span>db_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::db_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38b8318d3c3040f22eff1fff5f1482e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b8318d3c3040f22eff1fff5f1482e5">&#9670;&nbsp;</a></span>db_addr_hva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::db_addr_hva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a212c26a71132a5d3ca6e4c3992773235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212c26a71132a5d3ca6e4c3992773235">&#9670;&nbsp;</a></span>dma_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::dma_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae71382828723bfcbe3c2430f490c0ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71382828723bfcbe3c2430f490c0ac3">&#9670;&nbsp;</a></span>dma_addr_hva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::dma_addr_hva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acae37027eeb09a4a07017b099f3faabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae37027eeb09a4a07017b099f3faabe">&#9670;&nbsp;</a></span>eventidx_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::eventidx_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af31e498d59d5db90e6fe9d1e7127119d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31e498d59d5db90e6fe9d1e7127119d">&#9670;&nbsp;</a></span>eventidx_addr_hva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t NvmeCQueue::eventidx_addr_hva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a246bac5db8d9de809ad1be3b186854e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246bac5db8d9de809ad1be3b186854e4">&#9670;&nbsp;</a></span>guest_notifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventNotifier NvmeCQueue::guest_notifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fc816fae4f563f4f8c453cd1ec8726e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc816fae4f563f4f8c453cd1ec8726e">&#9670;&nbsp;</a></span>head</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCQueue::head</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbb1a433a87d65e986849bc91d4c46e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb1a433a87d65e986849bc91d4c46e0">&#9670;&nbsp;</a></span>irq_enabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t NvmeCQueue::irq_enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>irq 中断用 </p>
+
+</div>
+</div>
+<a id="a8b941ba9a13366bf3348b3b7e73009a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b941ba9a13366bf3348b3b7e73009a1">&#9670;&nbsp;</a></span>is_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NvmeCQueue::is_active</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a550822923ef54d73d7efa7f4bf6159c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550822923ef54d73d7efa7f4bf6159c3">&#9670;&nbsp;</a></span>phase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t NvmeCQueue::phase</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a376ae99c71a9fb4157bd4fb45b2a5090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a376ae99c71a9fb4157bd4fb45b2a5090">&#9670;&nbsp;</a></span>phys_contig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t NvmeCQueue::phys_contig</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>存储在mbe中的地址是否连续 </p>
+
+</div>
+</div>
+<a id="abee73fe2f6a1749b69ee6edf4b08f751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee73fe2f6a1749b69ee6edf4b08f751">&#9670;&nbsp;</a></span>prp_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* NvmeCQueue::prp_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9699dd12674bbfdeba9ee84a1e6b2d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9699dd12674bbfdeba9ee84a1e6b2d79">&#9670;&nbsp;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCQueue::size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ecbdfc4863d2633f279c2ae70dff1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecbdfc4863d2633f279c2ae70dff1dd">&#9670;&nbsp;</a></span>tail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCQueue::tail</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab36baa7a42f173ce2b03416a42a6042e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36baa7a42f173ce2b03416a42a6042e">&#9670;&nbsp;</a></span>timer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QEMUTimer* NvmeCQueue::timer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42f6225e7294b5db037fd1e099a8060f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f6225e7294b5db037fd1e099a8060f">&#9670;&nbsp;</a></span>vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t NvmeCQueue::vector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e7932bf4a5db62c73cd516a27f14f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e7932bf4a5db62c73cd516a27f14f44">&#9670;&nbsp;</a></span>virq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t NvmeCQueue::virq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>femu/<a class="el" href="nvme_8h_source.html">nvme.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structNvmeCQueue.html">NvmeCQueue</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

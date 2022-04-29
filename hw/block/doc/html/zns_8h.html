@@ -1,0 +1,1419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: femu/zns/zns.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('zns_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">zns.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="nvme_8h_source.html">../nvme.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+zns.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h__incl.png" border="0" usemap="#femu_2zns_2zns_8h" alt=""/></div>
+<map name="femu_2zns_2zns_8h" id="femu_2zns_2zns_8h">
+<area shape="rect" title=" " alt="" coords="876,5,996,32"/>
+<area shape="rect" href="nvme_8h.html" title="nvme相关数据声明" alt="" coords="895,80,977,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,120,181"/>
+<area shape="rect" title=" " alt="" coords="145,155,247,181"/>
+<area shape="rect" title=" " alt="" coords="272,155,379,181"/>
+<area shape="rect" title=" " alt="" coords="403,155,514,181"/>
+<area shape="rect" title=" " alt="" coords="539,155,651,181"/>
+<area shape="rect" title=" " alt="" coords="675,155,779,181"/>
+<area shape="rect" title=" " alt="" coords="803,155,933,181"/>
+<area shape="rect" title=" " alt="" coords="957,155,1053,181"/>
+<area shape="rect" title=" " alt="" coords="1078,155,1197,181"/>
+<area shape="rect" href="dram_8h.html" title="DRAM后端相关定义" alt="" coords="1221,155,1347,181"/>
+<area shape="rect" href="rte__ring_8h.html" title=" " alt="" coords="1372,155,1479,181"/>
+<area shape="rect" href="pqueue_8h.html" title="Priority Queue function declarations" alt="" coords="1503,155,1609,181"/>
+<area shape="rect" href="nand_8h.html" title=" " alt="" coords="1633,155,1735,181"/>
+<area shape="rect" href="timing_8h.html" title=" " alt="" coords="1760,155,1928,181"/>
+<area shape="rect" title=" " alt="" coords="1134,229,1205,256"/>
+<area shape="rect" title=" " alt="" coords="1229,229,1296,256"/>
+<area shape="rect" title=" " alt="" coords="1321,229,1421,256"/>
+<area shape="rect" title=" " alt="" coords="1445,229,1513,256"/>
+<area shape="rect" title=" " alt="" coords="1537,229,1639,256"/>
+<area shape="rect" href="rte__atomic__x86_8h.html" title=" " alt="" coords="1663,229,1798,256"/>
+<area shape="rect" href="rte__branch__prediction_8h.html" title=" " alt="" coords="1822,229,1997,256"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h__dep__incl.png" border="0" usemap="#femu_2zns_2zns_8hdep" alt=""/></div>
+<map name="femu_2zns_2zns_8hdep" id="femu_2zns_2zns_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" href="zns_8c.html" title=" " alt="" coords="6,80,125,107"/>
+</map>
+</div>
+</div>
+<p><a href="zns_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeZonedResult.html">NvmeZonedResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeIdCtrlZoned.html">NvmeIdCtrlZoned</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeZoneReportHeader.html">NvmeZoneReportHeader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeZoneDescr.html">NvmeZoneDescr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeLBAFE.html">NvmeLBAFE</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeZone.html">NvmeZone</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNvmeNamespaceParams.html">NvmeNamespaceParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a95af518abe4c85115e4473123f9a7269"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a95af518abe4c85115e4473123f9a7269">NVME_SET_CSI</a>(vec,  csi)&#160;&#160;&#160;(vec |= (uint8_t)(1 &lt;&lt; (csi)))</td></tr>
+<tr class="separator:a95af518abe4c85115e4473123f9a7269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:af39a7623a4d44dad972db09ba00a4e2b"><td class="memItemLeft" align="right" valign="top">typedef struct QEMU_PACKED <a class="el" href="structNvmeZonedResult.html">NvmeZonedResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#af39a7623a4d44dad972db09ba00a4e2b">NvmeZonedResult</a></td></tr>
+<tr class="separator:af39a7623a4d44dad972db09ba00a4e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7adf364f249708c677c0df1b1b84592"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structNvmeIdCtrlZoned.html">NvmeIdCtrlZoned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#ae7adf364f249708c677c0df1b1b84592">NvmeIdCtrlZoned</a></td></tr>
+<tr class="separator:ae7adf364f249708c677c0df1b1b84592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f19d3f42d1013ffcb74de021711223b"><td class="memItemLeft" align="right" valign="top">typedef struct QEMU_PACKED <a class="el" href="structNvmeZoneReportHeader.html">NvmeZoneReportHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a4f19d3f42d1013ffcb74de021711223b">NvmeZoneReportHeader</a></td></tr>
+<tr class="separator:a4f19d3f42d1013ffcb74de021711223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b7cd466fb58a480d24a7c8ed1fb2ee"><td class="memItemLeft" align="right" valign="top">typedef struct QEMU_PACKED <a class="el" href="structNvmeZoneDescr.html">NvmeZoneDescr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#af6b7cd466fb58a480d24a7c8ed1fb2ee">NvmeZoneDescr</a></td></tr>
+<tr class="separator:af6b7cd466fb58a480d24a7c8ed1fb2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f5ea45cfed68f96b91fea8458b0c5e"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a15f5ea45cfed68f96b91fea8458b0c5e">NvmeZoneState</a></td></tr>
+<tr class="separator:a15f5ea45cfed68f96b91fea8458b0c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7ab429205d4b93b2f1bca42337baff"><td class="memItemLeft" align="right" valign="top">typedef struct QEMU_PACKED <a class="el" href="structNvmeLBAFE.html">NvmeLBAFE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#abf7ab429205d4b93b2f1bca42337baff">NvmeLBAFE</a></td></tr>
+<tr class="separator:abf7ab429205d4b93b2f1bca42337baff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88961b4cf1ea2d2779a8d784037d3b9"><td class="memItemLeft" align="right" valign="top">typedef struct QEMU_PACKED <a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#aa88961b4cf1ea2d2779a8d784037d3b9">NvmeIdNsZoned</a></td></tr>
+<tr class="separator:aa88961b4cf1ea2d2779a8d784037d3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42214366454e5e3ec558b025e784fb30"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structNvmeZone.html">NvmeZone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a42214366454e5e3ec558b025e784fb30">NvmeZone</a></td></tr>
+<tr class="separator:a42214366454e5e3ec558b025e784fb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f445ac7deb2d192a96e75e87b83fc43"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structNvmeNamespaceParams.html">NvmeNamespaceParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a8f445ac7deb2d192a96e75e87b83fc43">NvmeNamespaceParams</a></td></tr>
+<tr class="separator:a8f445ac7deb2d192a96e75e87b83fc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a5b5faae59db38c0e3b1c5c6be4f90e99"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99">NvmeZoneAttr</a> { <a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99a396ca3a6e872ae1a374c5c8e60fbaa5a">NVME_ZA_FINISHED_BY_CTLR</a> = 1 &lt;&lt; 0, 
+<a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99a3798f1379309ea0d45c6c3fa1ced1460">NVME_ZA_FINISH_RECOMMENDED</a> = 1 &lt;&lt; 1, 
+<a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99a92c33f13b5c56d01826d1d227dd85956">NVME_ZA_RESET_RECOMMENDED</a> = 1 &lt;&lt; 2, 
+<a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99a0befe230ab3de39e04876554c3506be3">NVME_ZA_ZD_EXT_VALID</a> = 1 &lt;&lt; 7
+ }</td></tr>
+<tr class="separator:a5b5faae59db38c0e3b1c5c6be4f90e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175b9ee53a65f84e7ede4410eca5686c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a175b9ee53a65f84e7ede4410eca5686c">NvmeZoneReceiveAction</a> { <a class="el" href="zns_8h.html#a175b9ee53a65f84e7ede4410eca5686cae7fa22feb03f5e24adf5a3d1e8c62872">NVME_ZONE_REPORT</a> = 0, 
+<a class="el" href="zns_8h.html#a175b9ee53a65f84e7ede4410eca5686cad3280c3e4f22285e4865aff0184b7144">NVME_ZONE_REPORT_EXTENDED</a> = 1
+ }</td></tr>
+<tr class="separator:a175b9ee53a65f84e7ede4410eca5686c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a1a230fc044bbd799963b157b06c96"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96">NvmeZoneReportType</a> { <br />
+&#160;&#160;<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96ab5d96bcc1fd68002871e534bb0e88679">NVME_ZONE_REPORT_ALL</a> = 0, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96aeb60f762c578dc20b988c5f5d0895cab">NVME_ZONE_REPORT_EMPTY</a> = 1, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96a41833392f0ae7d34840885a6ed822e57">NVME_ZONE_REPORT_IMPLICITLY_OPEN</a> = 2, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96aed799eebe132cead31e3192550f5fafe">NVME_ZONE_REPORT_EXPLICITLY_OPEN</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96aa7bb2898d42b87813864238178fa9354">NVME_ZONE_REPORT_CLOSED</a> = 4, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96a92520822547e2ce8c33ec460a94d4240">NVME_ZONE_REPORT_FULL</a> = 5, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96a1470a143eb11896fd977b96133736274">NVME_ZONE_REPORT_READ_ONLY</a> = 6, 
+<a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96a4c0c7febda38f49b8f19fd9cc2e4fc03">NVME_ZONE_REPORT_OFFLINE</a> = 7
+<br />
+ }</td></tr>
+<tr class="separator:ad7a1a230fc044bbd799963b157b06c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c2dafc519a9ac21e152ff2167ac42c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a71c2dafc519a9ac21e152ff2167ac42c">NvmeZoneType</a> { <a class="el" href="zns_8h.html#a71c2dafc519a9ac21e152ff2167ac42cae1180cf1fc625f86b55a92fce25ed62d">NVME_ZONE_TYPE_RESERVED</a> = 0x00, 
+<a class="el" href="zns_8h.html#a71c2dafc519a9ac21e152ff2167ac42ca493593fedcfbf64c0571f0b8cb4cc603">NVME_ZONE_TYPE_SEQ_WRITE</a> = 0x02
+ }</td></tr>
+<tr class="separator:a71c2dafc519a9ac21e152ff2167ac42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8cc4b8399a19cd06d0f905ee30206b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206b">NvmeZoneSendAction</a> { <br />
+&#160;&#160;<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206ba49125882f214f138a9837291f080ec65">NVME_ZONE_ACTION_RSD</a> = 0x00, 
+<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206ba07ee30b06c2463c2264f7c73f2179674">NVME_ZONE_ACTION_CLOSE</a> = 0x01, 
+<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206ba011be216afb1020ab9d50fea6164cd1b">NVME_ZONE_ACTION_FINISH</a> = 0x02, 
+<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206bad14bc4f2128512e5370d033f7a11368c">NVME_ZONE_ACTION_OPEN</a> = 0x03, 
+<br />
+&#160;&#160;<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206ba3f1b6afd3836d3050b2c0c1e3f8af672">NVME_ZONE_ACTION_RESET</a> = 0x04, 
+<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206baf20618c3c1b0653fe4075b072cd6409a">NVME_ZONE_ACTION_OFFLINE</a> = 0x05, 
+<a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206bab89ed14a825ba30c52e5f5ef3829e375">NVME_ZONE_ACTION_SET_ZD_EXT</a> = 0x10
+<br />
+ }</td></tr>
+<tr class="separator:aaa8cc4b8399a19cd06d0f905ee30206b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e93736ade251765711cae3a888e25b9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a> { <br />
+&#160;&#160;<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a73c537f871c68924ea2c031d4a29eb9a">NVME_ZONE_STATE_RESERVED</a> = 0x00, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a21cdc4c6354dc259071ac0f4d16a4c08">NVME_ZONE_STATE_EMPTY</a> = 0x01, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a044a8bce6652c9e617f784a37f643d38">NVME_ZONE_STATE_IMPLICITLY_OPEN</a> = 0x02, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a65105422decdfd6860779463c8964b55">NVME_ZONE_STATE_EXPLICITLY_OPEN</a> = 0x03, 
+<br />
+&#160;&#160;<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a01e2b371b7d8606267e1d9636df79b9b">NVME_ZONE_STATE_CLOSED</a> = 0x04, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a9f9310a3aab3b20b1dc6ea8a2b658add">NVME_ZONE_STATE_READ_ONLY</a> = 0x0D, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9afc7fe17858da6497474a2307ab239967">NVME_ZONE_STATE_FULL</a> = 0x0E, 
+<a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9a5a871630ac0aaff6794aaed5587d7fd3">NVME_ZONE_STATE_OFFLINE</a> = 0x0F
+<br />
+ }</td></tr>
+<tr class="separator:a2e93736ade251765711cae3a888e25b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a02d63c56109c6c61c04a52bf22377497"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a02d63c56109c6c61c04a52bf22377497">zns_nsid</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a02d63c56109c6c61c04a52bf22377497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04721281dcdb77acc610b362cb5085ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structNvmeLBAF.html">NvmeLBAF</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a04721281dcdb77acc610b362cb5085ad">zns_ns_lbaf</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a04721281dcdb77acc610b362cb5085ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a81710dc2a7e2e61f2b7ace02a538a"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a">zns_ns_lbads</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a63a81710dc2a7e2e61f2b7ace02a538a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9c3e6b619d9dca6883a7fe3cb4daa9"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a0b9c3e6b619d9dca6883a7fe3cb4daa9">zns_ns_nlbas</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a0b9c3e6b619d9dca6883a7fe3cb4daa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686c1e6209d4c3eaf3897e73484bdf9f"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a686c1e6209d4c3eaf3897e73484bdf9f">zns_l2b</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, uint64_t <a class="el" href="oc12_8h.html#aafa9f203f0abc59a4b08b3833f39b92c">lba</a>)</td></tr>
+<tr class="separator:a686c1e6209d4c3eaf3897e73484bdf9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a677294d02c732b61b18d610041851e4b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a677294d02c732b61b18d610041851e4b">zns_get_zone_state</a> (<a class="el" href="structNvmeZone.html">NvmeZone</a> *zone)</td></tr>
+<tr class="separator:a677294d02c732b61b18d610041851e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc856385776185b67188b43c7569469"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#afdc856385776185b67188b43c7569469">zns_set_zone_state</a> (<a class="el" href="structNvmeZone.html">NvmeZone</a> *zone, <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a> <a class="el" href="oc12_8h.html#a1b0c7bd4d79798ef4e0ce23894c9aeb2">state</a>)</td></tr>
+<tr class="separator:afdc856385776185b67188b43c7569469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03c395f4bba42d5fc5b8ef247b082ae"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#aa03c395f4bba42d5fc5b8ef247b082ae">zns_zone_rd_boundary</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, <a class="el" href="structNvmeZone.html">NvmeZone</a> *zone)</td></tr>
+<tr class="separator:aa03c395f4bba42d5fc5b8ef247b082ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2a423f30678b841f4aaf3f09d0e7de"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a1f2a423f30678b841f4aaf3f09d0e7de">zns_zone_wr_boundary</a> (<a class="el" href="structNvmeZone.html">NvmeZone</a> *zone)</td></tr>
+<tr class="separator:a1f2a423f30678b841f4aaf3f09d0e7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad064d2d81e65c1f8d539bafbee8cf353"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#ad064d2d81e65c1f8d539bafbee8cf353">zns_wp_is_valid</a> (<a class="el" href="structNvmeZone.html">NvmeZone</a> *zone)</td></tr>
+<tr class="separator:ad064d2d81e65c1f8d539bafbee8cf353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c9d24f2afaea78ba6081a0cbb5c6cf"><td class="memItemLeft" align="right" valign="top">static uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#af2c9d24f2afaea78ba6081a0cbb5c6cf">zns_get_zd_extension</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns, uint32_t zone_idx)</td></tr>
+<tr class="separator:af2c9d24f2afaea78ba6081a0cbb5c6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456d13e8923adbff0acc0ab45e47ec8f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a456d13e8923adbff0acc0ab45e47ec8f">zns_aor_inc_open</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a456d13e8923adbff0acc0ab45e47ec8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a74756029b38a3ee3d4bc79383ee6b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a14a74756029b38a3ee3d4bc79383ee6b">zns_aor_dec_open</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a14a74756029b38a3ee3d4bc79383ee6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa89459701c0f4b283d7ae01ea614877c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#aa89459701c0f4b283d7ae01ea614877c">zns_aor_inc_active</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:aa89459701c0f4b283d7ae01ea614877c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad289f1f71a7a4a355201b3bd3bdb5f16"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#ad289f1f71a7a4a355201b3bd3bdb5f16">zns_aor_dec_active</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:ad289f1f71a7a4a355201b3bd3bdb5f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23ed6cd90a43d43bad4b9196673fd1bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf">zns_ns_shutdown</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a23ed6cd90a43d43bad4b9196673fd1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aeaacfe11cad1ce307443e1a420ec4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zns_8h.html#a0aeaacfe11cad1ce307443e1a420ec4a">zns_ns_cleanup</a> (<a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *ns)</td></tr>
+<tr class="separator:a0aeaacfe11cad1ce307443e1a420ec4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a95af518abe4c85115e4473123f9a7269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95af518abe4c85115e4473123f9a7269">&#9670;&nbsp;</a></span>NVME_SET_CSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NVME_SET_CSI</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">vec, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">csi&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(vec |= (uint8_t)(1 &lt;&lt; (csi)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ae7adf364f249708c677c0df1b1b84592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7adf364f249708c677c0df1b1b84592">&#9670;&nbsp;</a></span>NvmeIdCtrlZoned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structNvmeIdCtrlZoned.html">NvmeIdCtrlZoned</a> <a class="el" href="structNvmeIdCtrlZoned.html">NvmeIdCtrlZoned</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa88961b4cf1ea2d2779a8d784037d3b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88961b4cf1ea2d2779a8d784037d3b9">&#9670;&nbsp;</a></span>NvmeIdNsZoned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct QEMU_PACKED <a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a> <a class="el" href="structNvmeIdNsZoned.html">NvmeIdNsZoned</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf7ab429205d4b93b2f1bca42337baff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf7ab429205d4b93b2f1bca42337baff">&#9670;&nbsp;</a></span>NvmeLBAFE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct QEMU_PACKED <a class="el" href="structNvmeLBAFE.html">NvmeLBAFE</a> <a class="el" href="structNvmeLBAFE.html">NvmeLBAFE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f445ac7deb2d192a96e75e87b83fc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f445ac7deb2d192a96e75e87b83fc43">&#9670;&nbsp;</a></span>NvmeNamespaceParams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structNvmeNamespaceParams.html">NvmeNamespaceParams</a> <a class="el" href="structNvmeNamespaceParams.html">NvmeNamespaceParams</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42214366454e5e3ec558b025e784fb30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42214366454e5e3ec558b025e784fb30">&#9670;&nbsp;</a></span>NvmeZone</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structNvmeZone.html">NvmeZone</a> <a class="el" href="structNvmeZone.html">NvmeZone</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6b7cd466fb58a480d24a7c8ed1fb2ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b7cd466fb58a480d24a7c8ed1fb2ee">&#9670;&nbsp;</a></span>NvmeZoneDescr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct QEMU_PACKED <a class="el" href="structNvmeZoneDescr.html">NvmeZoneDescr</a> <a class="el" href="structNvmeZoneDescr.html">NvmeZoneDescr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af39a7623a4d44dad972db09ba00a4e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39a7623a4d44dad972db09ba00a4e2b">&#9670;&nbsp;</a></span>NvmeZonedResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct QEMU_PACKED <a class="el" href="structNvmeZonedResult.html">NvmeZonedResult</a> <a class="el" href="structNvmeZonedResult.html">NvmeZonedResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f19d3f42d1013ffcb74de021711223b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f19d3f42d1013ffcb74de021711223b">&#9670;&nbsp;</a></span>NvmeZoneReportHeader</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct QEMU_PACKED <a class="el" href="structNvmeZoneReportHeader.html">NvmeZoneReportHeader</a> <a class="el" href="structNvmeZoneReportHeader.html">NvmeZoneReportHeader</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15f5ea45cfed68f96b91fea8458b0c5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f5ea45cfed68f96b91fea8458b0c5e">&#9670;&nbsp;</a></span>NvmeZoneState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a> <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a5b5faae59db38c0e3b1c5c6be4f90e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b5faae59db38c0e3b1c5c6be4f90e99">&#9670;&nbsp;</a></span>NvmeZoneAttr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#a5b5faae59db38c0e3b1c5c6be4f90e99">NvmeZoneAttr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a5b5faae59db38c0e3b1c5c6be4f90e99a396ca3a6e872ae1a374c5c8e60fbaa5a"></a>NVME_ZA_FINISHED_BY_CTLR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5b5faae59db38c0e3b1c5c6be4f90e99a3798f1379309ea0d45c6c3fa1ced1460"></a>NVME_ZA_FINISH_RECOMMENDED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5b5faae59db38c0e3b1c5c6be4f90e99a92c33f13b5c56d01826d1d227dd85956"></a>NVME_ZA_RESET_RECOMMENDED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5b5faae59db38c0e3b1c5c6be4f90e99a0befe230ab3de39e04876554c3506be3"></a>NVME_ZA_ZD_EXT_VALID&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a175b9ee53a65f84e7ede4410eca5686c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175b9ee53a65f84e7ede4410eca5686c">&#9670;&nbsp;</a></span>NvmeZoneReceiveAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#a175b9ee53a65f84e7ede4410eca5686c">NvmeZoneReceiveAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a175b9ee53a65f84e7ede4410eca5686cae7fa22feb03f5e24adf5a3d1e8c62872"></a>NVME_ZONE_REPORT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a175b9ee53a65f84e7ede4410eca5686cad3280c3e4f22285e4865aff0184b7144"></a>NVME_ZONE_REPORT_EXTENDED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ad7a1a230fc044bbd799963b157b06c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a1a230fc044bbd799963b157b06c96">&#9670;&nbsp;</a></span>NvmeZoneReportType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#ad7a1a230fc044bbd799963b157b06c96">NvmeZoneReportType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96ab5d96bcc1fd68002871e534bb0e88679"></a>NVME_ZONE_REPORT_ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96aeb60f762c578dc20b988c5f5d0895cab"></a>NVME_ZONE_REPORT_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96a41833392f0ae7d34840885a6ed822e57"></a>NVME_ZONE_REPORT_IMPLICITLY_OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96aed799eebe132cead31e3192550f5fafe"></a>NVME_ZONE_REPORT_EXPLICITLY_OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96aa7bb2898d42b87813864238178fa9354"></a>NVME_ZONE_REPORT_CLOSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96a92520822547e2ce8c33ec460a94d4240"></a>NVME_ZONE_REPORT_FULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96a1470a143eb11896fd977b96133736274"></a>NVME_ZONE_REPORT_READ_ONLY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad7a1a230fc044bbd799963b157b06c96a4c0c7febda38f49b8f19fd9cc2e4fc03"></a>NVME_ZONE_REPORT_OFFLINE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="aaa8cc4b8399a19cd06d0f905ee30206b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8cc4b8399a19cd06d0f905ee30206b">&#9670;&nbsp;</a></span>NvmeZoneSendAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#aaa8cc4b8399a19cd06d0f905ee30206b">NvmeZoneSendAction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206ba49125882f214f138a9837291f080ec65"></a>NVME_ZONE_ACTION_RSD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206ba07ee30b06c2463c2264f7c73f2179674"></a>NVME_ZONE_ACTION_CLOSE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206ba011be216afb1020ab9d50fea6164cd1b"></a>NVME_ZONE_ACTION_FINISH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206bad14bc4f2128512e5370d033f7a11368c"></a>NVME_ZONE_ACTION_OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206ba3f1b6afd3836d3050b2c0c1e3f8af672"></a>NVME_ZONE_ACTION_RESET&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206baf20618c3c1b0653fe4075b072cd6409a"></a>NVME_ZONE_ACTION_OFFLINE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa8cc4b8399a19cd06d0f905ee30206bab89ed14a825ba30c52e5f5ef3829e375"></a>NVME_ZONE_ACTION_SET_ZD_EXT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2e93736ade251765711cae3a888e25b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e93736ade251765711cae3a888e25b9">&#9670;&nbsp;</a></span>NvmeZoneState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a73c537f871c68924ea2c031d4a29eb9a"></a>NVME_ZONE_STATE_RESERVED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a21cdc4c6354dc259071ac0f4d16a4c08"></a>NVME_ZONE_STATE_EMPTY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a044a8bce6652c9e617f784a37f643d38"></a>NVME_ZONE_STATE_IMPLICITLY_OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a65105422decdfd6860779463c8964b55"></a>NVME_ZONE_STATE_EXPLICITLY_OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a01e2b371b7d8606267e1d9636df79b9b"></a>NVME_ZONE_STATE_CLOSED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a9f9310a3aab3b20b1dc6ea8a2b658add"></a>NVME_ZONE_STATE_READ_ONLY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9afc7fe17858da6497474a2307ab239967"></a>NVME_ZONE_STATE_FULL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2e93736ade251765711cae3a888e25b9a5a871630ac0aaff6794aaed5587d7fd3"></a>NVME_ZONE_STATE_OFFLINE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a71c2dafc519a9ac21e152ff2167ac42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c2dafc519a9ac21e152ff2167ac42c">&#9670;&nbsp;</a></span>NvmeZoneType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="zns_8h.html#a71c2dafc519a9ac21e152ff2167ac42c">NvmeZoneType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a71c2dafc519a9ac21e152ff2167ac42cae1180cf1fc625f86b55a92fce25ed62d"></a>NVME_ZONE_TYPE_RESERVED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a71c2dafc519a9ac21e152ff2167ac42ca493593fedcfbf64c0571f0b8cb4cc603"></a>NVME_ZONE_TYPE_SEQ_WRITE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ad289f1f71a7a4a355201b3bd3bdb5f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad289f1f71a7a4a355201b3bd3bdb5f16">&#9670;&nbsp;</a></span>zns_aor_dec_active()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zns_aor_dec_active </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_ad289f1f71a7a4a355201b3bd3bdb5f16_icgraph.png" border="0" usemap="#zns_8h_ad289f1f71a7a4a355201b3bd3bdb5f16_icgraph" alt=""/></div>
+<map name="zns_8h_ad289f1f71a7a4a355201b3bd3bdb5f16_icgraph" id="zns_8h_ad289f1f71a7a4a355201b3bd3bdb5f16_icgraph">
+<area shape="rect" title=" " alt="" coords="1559,157,1708,184"/>
+<area shape="rect" href="zns_8c.html#a7cf84991a322dded9376491f5d98dedb" title=" " alt="" coords="1334,157,1505,184"/>
+<area shape="rect" href="zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="1347,41,1491,82"/>
+<area shape="rect" href="zns_8c.html#ad642783946555e5f78ea1651c02404cb" title=" " alt="" coords="1150,208,1274,235"/>
+<area shape="rect" href="zns_8c.html#aea339e52add6067aeb466ab8b0f56a1d" title=" " alt="" coords="1359,107,1480,133"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="1328,259,1511,285"/>
+<area shape="rect" href="zns_8c.html#a7c7e09c6f357c1f77c724c664f6c0128" title=" " alt="" coords="1151,157,1273,184"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="929,132,1096,159"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,56,881,83"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,56,735,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1159,5,1265,32"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="971,56,1055,83"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="944,5,1081,32"/>
+<area shape="rect" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf" title=" " alt="" coords="1144,259,1280,285"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14a74756029b38a3ee3d4bc79383ee6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a74756029b38a3ee3d4bc79383ee6b">&#9670;&nbsp;</a></span>zns_aor_dec_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zns_aor_dec_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a14a74756029b38a3ee3d4bc79383ee6b_icgraph.png" border="0" usemap="#zns_8h_a14a74756029b38a3ee3d4bc79383ee6b_icgraph" alt=""/></div>
+<map name="zns_8h_a14a74756029b38a3ee3d4bc79383ee6b_icgraph" id="zns_8h_a14a74756029b38a3ee3d4bc79383ee6b_icgraph">
+<area shape="rect" title=" " alt="" coords="1769,132,1911,159"/>
+<area shape="rect" href="zns_8c.html#a7cf84991a322dded9376491f5d98dedb" title=" " alt="" coords="1543,5,1713,32"/>
+<area shape="rect" href="zns_8c.html#a02ec33ad0c6f39ad701ac9ea780811c4" title=" " alt="" coords="1535,157,1721,184"/>
+<area shape="rect" href="zns_8c.html#af29e49b46b70e9dc142f1bb3bf7e65da" title=" " alt="" coords="1347,56,1469,83"/>
+<area shape="rect" href="zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="1336,209,1480,250"/>
+<area shape="rect" href="zns_8c.html#ad642783946555e5f78ea1651c02404cb" title=" " alt="" coords="1566,107,1690,133"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="1537,267,1719,293"/>
+<area shape="rect" href="zns_8c.html#a7c7e09c6f357c1f77c724c664f6c0128" title=" " alt="" coords="1347,5,1469,32"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="1115,81,1281,108"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,157,881,184"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,157,735,184"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,157,527,184"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,157,284,184"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,157,129,184"/>
+<area shape="rect" href="zns_8c.html#ad5f4088354d2555f9d66e2ba441592ff" title=" " alt="" coords="1329,157,1487,184"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1145,208,1251,235"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1156,157,1240,184"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,208,1067,235"/>
+<area shape="rect" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf" title=" " alt="" coords="1340,275,1476,301"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa89459701c0f4b283d7ae01ea614877c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89459701c0f4b283d7ae01ea614877c">&#9670;&nbsp;</a></span>zns_aor_inc_active()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zns_aor_inc_active </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_aa89459701c0f4b283d7ae01ea614877c_icgraph.png" border="0" usemap="#zns_8h_aa89459701c0f4b283d7ae01ea614877c_icgraph" alt=""/></div>
+<map name="zns_8h_aa89459701c0f4b283d7ae01ea614877c_icgraph" id="zns_8h_aa89459701c0f4b283d7ae01ea614877c_icgraph">
+<area shape="rect" title=" " alt="" coords="1564,132,1709,159"/>
+<area shape="rect" href="zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="1345,56,1516,83"/>
+<area shape="rect" href="zns_8c.html#a8f09f2d274ee382c164ad442bb4f3e47" title=" " alt="" coords="1370,107,1491,133"/>
+<area shape="rect" href="zns_8c.html#aea339e52add6067aeb466ab8b0f56a1d" title=" " alt="" coords="1370,157,1491,184"/>
+<area shape="rect" href="zns_8c.html#a52eacdcbc504ab2769e6b194295e2355" title=" " alt="" coords="1370,208,1491,235"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1153,5,1259,32"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="956,56,1040,83"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,5,1067,32"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,56,881,83"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,56,735,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="1115,107,1297,133"/>
+<area shape="rect" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf" title=" " alt="" coords="930,107,1066,133"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="1123,157,1289,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a456d13e8923adbff0acc0ab45e47ec8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456d13e8923adbff0acc0ab45e47ec8f">&#9670;&nbsp;</a></span>zns_aor_inc_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zns_aor_inc_open </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a456d13e8923adbff0acc0ab45e47ec8f_icgraph.png" border="0" usemap="#zns_8h_a456d13e8923adbff0acc0ab45e47ec8f_icgraph" alt=""/></div>
+<map name="zns_8h_a456d13e8923adbff0acc0ab45e47ec8f_icgraph" id="zns_8h_a456d13e8923adbff0acc0ab45e47ec8f_icgraph">
+<area shape="rect" title=" " alt="" coords="1548,81,1685,108"/>
+<area shape="rect" href="zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="1329,56,1500,83"/>
+<area shape="rect" href="zns_8c.html#aea339e52add6067aeb466ab8b0f56a1d" title=" " alt="" coords="1354,107,1475,133"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1145,5,1251,32"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="956,56,1040,83"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,5,1067,32"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,56,881,83"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,56,735,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="1115,107,1281,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2c9d24f2afaea78ba6081a0cbb5c6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c9d24f2afaea78ba6081a0cbb5c6cf">&#9670;&nbsp;</a></span>zns_get_zd_extension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t* zns_get_zd_extension </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>zone_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_af2c9d24f2afaea78ba6081a0cbb5c6cf_icgraph.png" border="0" usemap="#zns_8h_af2c9d24f2afaea78ba6081a0cbb5c6cf_icgraph" alt=""/></div>
+<map name="zns_8h_af2c9d24f2afaea78ba6081a0cbb5c6cf_icgraph" id="zns_8h_af2c9d24f2afaea78ba6081a0cbb5c6cf_icgraph">
+<area shape="rect" title=" " alt="" coords="1144,31,1309,57"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="931,5,1094,32"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="929,56,1096,83"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,31,881,57"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,31,735,57"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,31,527,57"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,31,284,57"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,31,129,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a677294d02c732b61b18d610041851e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a677294d02c732b61b18d610041851e4b">&#9670;&nbsp;</a></span>zns_get_zone_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a> zns_get_zone_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a677294d02c732b61b18d610041851e4b_icgraph.png" border="0" usemap="#zns_8h_a677294d02c732b61b18d610041851e4b_icgraph" alt=""/></div>
+<map name="zns_8h_a677294d02c732b61b18d610041851e4b_icgraph" id="zns_8h_a677294d02c732b61b18d610041851e4b_icgraph">
+<area shape="rect" title=" " alt="" coords="2013,479,2164,505"/>
+<area shape="rect" href="zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="1329,477,1500,504"/>
+<area shape="rect" href="zns_8c.html#a7cf84991a322dded9376491f5d98dedb" title=" " alt="" coords="1556,107,1727,133"/>
+<area shape="rect" href="zns_8c.html#a819d2621fbd145acef21bd41486156a3" title=" " alt="" coords="1789,307,1959,333"/>
+<area shape="rect" href="zns_8c.html#ad5f4088354d2555f9d66e2ba441592ff" title=" " alt="" coords="1336,376,1493,403"/>
+<area shape="rect" href="zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="1569,513,1713,554"/>
+<area shape="rect" href="zns_8c.html#a52eacdcbc504ab2769e6b194295e2355" title=" " alt="" coords="1581,56,1702,83"/>
+<area shape="rect" href="zns_8c.html#aa9deb4d27a553448ab81440798d09fb7" title=" " alt="" coords="1798,9,1950,36"/>
+<area shape="rect" href="zns_8c.html#a48ae04e0f8dcb34ff3803282d5b0ad17" title=" " alt="" coords="1577,5,1705,32"/>
+<area shape="rect" href="zns_8c.html#a3357eef3f827fdab1d88e5c95ae3c386" title=" " alt="" coords="1791,646,1957,687"/>
+<area shape="rect" href="zns_8c.html#a841382c8c3024053a641811800230a23" title=" " alt="" coords="1791,581,1957,622"/>
+<area shape="rect" href="zns_8c.html#a8f09f2d274ee382c164ad442bb4f3e47" title=" " alt="" coords="1813,813,1935,840"/>
+<area shape="rect" href="zns_8h.html#ad064d2d81e65c1f8d539bafbee8cf353" title=" " alt="" coords="1811,712,1937,739"/>
+<area shape="rect" href="zns_8c.html#a81321b3c5f8d3e0069c181e2dfa4f452" title=" " alt="" coords="1783,763,1965,789"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1145,477,1251,504"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1156,567,1240,593"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,503,1067,529"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,567,881,593"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,567,735,593"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,567,527,593"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,567,284,593"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,567,129,593"/>
+<area shape="rect" href="zns_8c.html#a7c7e09c6f357c1f77c724c664f6c0128" title=" " alt="" coords="1353,107,1476,133"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="1115,183,1281,209"/>
+<area shape="rect" href="zns_8c.html#a02ec33ad0c6f39ad701ac9ea780811c4" title=" " alt="" coords="1548,360,1735,387"/>
+<area shape="rect" href="zns_8c.html#af29e49b46b70e9dc142f1bb3bf7e65da" title=" " alt="" coords="1353,157,1476,184"/>
+<area shape="rect" href="zns_8c.html#ad642783946555e5f78ea1651c02404cb" title=" " alt="" coords="1353,208,1477,235"/>
+<area shape="rect" href="zns_8c.html#a21f29cc79d1f772a1244c0f512171c0a" title=" " alt="" coords="1349,259,1480,285"/>
+<area shape="rect" href="zns_8c.html#aea339e52add6067aeb466ab8b0f56a1d" title=" " alt="" coords="1354,309,1475,336"/>
+<area shape="rect" href="zns_8c.html#a9a270c9ffa0fb88a1c6d57ecfe3e6815" title=" " alt="" coords="1560,680,1723,707"/>
+<area shape="rect" href="zns_8c.html#a232d1c0fc6117ae692ff092d05f473e6" title=" " alt="" coords="958,643,1038,669"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1558,629,1725,656"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="1550,813,1733,840"/>
+<area shape="rect" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf" title=" " alt="" coords="1347,813,1483,840"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="1560,731,1723,757"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a686c1e6209d4c3eaf3897e73484bdf9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686c1e6209d4c3eaf3897e73484bdf9f">&#9670;&nbsp;</a></span>zns_l2b()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t zns_l2b </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>lba</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_cgraph.png" border="0" usemap="#zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_cgraph" alt=""/></div>
+<map name="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_cgraph" id="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
+<area shape="rect" href="zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a" title=" " alt="" coords="124,5,232,32"/>
+<area shape="rect" href="zns_8h.html#a04721281dcdb77acc610b362cb5085ad" title=" " alt="" coords="280,5,379,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_icgraph.png" border="0" usemap="#zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_icgraph" alt=""/></div>
+<map name="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_icgraph" id="zns_8h_a686c1e6209d4c3eaf3897e73484bdf9f_icgraph">
+<area shape="rect" title=" " alt="" coords="1484,53,1555,80"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1269,28,1436,55"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1115,28,1221,55"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1126,79,1210,105"/>
+<area shape="rect" href="zns_8c.html#a232d1c0fc6117ae692ff092d05f473e6" title=" " alt="" coords="958,129,1038,156"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,28,1067,55"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,79,881,105"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,79,735,105"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,79,527,105"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,79,284,105"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,79,129,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0aeaacfe11cad1ce307443e1a420ec4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aeaacfe11cad1ce307443e1a420ec4a">&#9670;&nbsp;</a></span>zns_ns_cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zns_ns_cleanup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63a81710dc2a7e2e61f2b7ace02a538a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63a81710dc2a7e2e61f2b7ace02a538a">&#9670;&nbsp;</a></span>zns_ns_lbads()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t zns_ns_lbads </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_cgraph.png" border="0" usemap="#zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_cgraph" alt=""/></div>
+<map name="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_cgraph" id="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" href="zns_8h.html#a04721281dcdb77acc610b362cb5085ad" title=" " alt="" coords="161,5,260,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_icgraph.png" border="0" usemap="#zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_icgraph" alt=""/></div>
+<map name="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_icgraph" id="zns_8h_a63a81710dc2a7e2e61f2b7ace02a538a_icgraph">
+<area shape="rect" title=" " alt="" coords="1712,107,1820,133"/>
+<area shape="rect" href="zns_8c.html#ac4fd6eccdc41d46c3c9ad323e89019d2" title=" " alt="" coords="1484,19,1664,45"/>
+<area shape="rect" href="zns_8h.html#a686c1e6209d4c3eaf3897e73484bdf9f" title=" " alt="" coords="1539,107,1609,133"/>
+<area shape="rect" href="zns_8h.html#a0b9c3e6b619d9dca6883a7fe3cb4daa9" title=" " alt="" coords="1520,183,1628,209"/>
+<area shape="rect" href="zns_8c.html#aa65a4a4ae802bdd6f8cc362247c6325b" title=" " alt="" coords="962,5,1034,32"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,107,735,133"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,107,527,133"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,107,284,133"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,107,129,133"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1269,81,1436,108"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1115,81,1221,108"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1126,132,1210,159"/>
+<area shape="rect" href="zns_8c.html#a232d1c0fc6117ae692ff092d05f473e6" title=" " alt="" coords="1128,183,1208,209"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,81,1067,108"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,132,881,159"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="1271,233,1434,260"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a04721281dcdb77acc610b362cb5085ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04721281dcdb77acc610b362cb5085ad">&#9670;&nbsp;</a></span>zns_ns_lbaf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structNvmeLBAF.html">NvmeLBAF</a>* zns_ns_lbaf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a04721281dcdb77acc610b362cb5085ad_icgraph.png" border="0" usemap="#zns_8h_a04721281dcdb77acc610b362cb5085ad_icgraph" alt=""/></div>
+<map name="zns_8h_a04721281dcdb77acc610b362cb5085ad_icgraph" id="zns_8h_a04721281dcdb77acc610b362cb5085ad_icgraph">
+<area shape="rect" title=" " alt="" coords="1868,107,1967,133"/>
+<area shape="rect" href="zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a" title=" " alt="" coords="1712,107,1820,133"/>
+<area shape="rect" href="zns_8c.html#ac4fd6eccdc41d46c3c9ad323e89019d2" title=" " alt="" coords="1484,19,1664,45"/>
+<area shape="rect" href="zns_8h.html#a686c1e6209d4c3eaf3897e73484bdf9f" title=" " alt="" coords="1539,107,1609,133"/>
+<area shape="rect" href="zns_8h.html#a0b9c3e6b619d9dca6883a7fe3cb4daa9" title=" " alt="" coords="1520,183,1628,209"/>
+<area shape="rect" href="zns_8c.html#aa65a4a4ae802bdd6f8cc362247c6325b" title=" " alt="" coords="962,5,1034,32"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,107,735,133"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,107,527,133"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,107,284,133"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,107,129,133"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1269,81,1436,108"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1115,81,1221,108"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1126,132,1210,159"/>
+<area shape="rect" href="zns_8c.html#a232d1c0fc6117ae692ff092d05f473e6" title=" " alt="" coords="1128,183,1208,209"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,81,1067,108"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,132,881,159"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="1271,233,1434,260"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b9c3e6b619d9dca6883a7fe3cb4daa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9c3e6b619d9dca6883a7fe3cb4daa9">&#9670;&nbsp;</a></span>zns_ns_nlbas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t zns_ns_nlbas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_cgraph.png" border="0" usemap="#zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_cgraph" alt=""/></div>
+<map name="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_cgraph" id="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" href="zns_8h.html#a63a81710dc2a7e2e61f2b7ace02a538a" title=" " alt="" coords="161,5,269,32"/>
+<area shape="rect" href="zns_8h.html#a04721281dcdb77acc610b362cb5085ad" title=" " alt="" coords="317,5,416,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_icgraph.png" border="0" usemap="#zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_icgraph" alt=""/></div>
+<map name="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_icgraph" id="zns_8h_a0b9c3e6b619d9dca6883a7fe3cb4daa9_icgraph">
+<area shape="rect" title=" " alt="" coords="1140,5,1248,32"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="929,5,1092,32"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,5,881,32"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,5,735,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23ed6cd90a43d43bad4b9196673fd1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ed6cd90a43d43bad4b9196673fd1bf">&#9670;&nbsp;</a></span>zns_ns_shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zns_ns_shutdown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a23ed6cd90a43d43bad4b9196673fd1bf_cgraph.png" border="0" usemap="#zns_8h_a23ed6cd90a43d43bad4b9196673fd1bf_cgraph" alt=""/></div>
+<map name="zns_8h_a23ed6cd90a43d43bad4b9196673fd1bf_cgraph" id="zns_8h_a23ed6cd90a43d43bad4b9196673fd1bf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,141,83"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="189,56,372,83"/>
+<area shape="rect" href="zns_8h.html#ad289f1f71a7a4a355201b3bd3bdb5f16" title=" " alt="" coords="420,5,569,32"/>
+<area shape="rect" href="zns_8h.html#a14a74756029b38a3ee3d4bc79383ee6b" title=" " alt="" coords="424,56,565,83"/>
+<area shape="rect" href="zns_8c.html#a8f09f2d274ee382c164ad442bb4f3e47" title=" " alt="" coords="434,107,555,133"/>
+<area shape="rect" href="zns_8h.html#aa89459701c0f4b283d7ae01ea614877c" title=" " alt="" coords="620,56,765,83"/>
+<area shape="rect" href="zns_8h.html#a677294d02c732b61b18d610041851e4b" title=" " alt="" coords="617,107,768,133"/>
+<area shape="rect" href="zns_8h.html#afdc856385776185b67188b43c7569469" title=" " alt="" coords="618,157,767,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02d63c56109c6c61c04a52bf22377497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d63c56109c6c61c04a52bf22377497">&#9670;&nbsp;</a></span>zns_nsid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t zns_nsid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afdc856385776185b67188b43c7569469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc856385776185b67188b43c7569469">&#9670;&nbsp;</a></span>zns_set_zone_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zns_set_zone_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zns_8h.html#a2e93736ade251765711cae3a888e25b9">NvmeZoneState</a>&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_afdc856385776185b67188b43c7569469_icgraph.png" border="0" usemap="#zns_8h_afdc856385776185b67188b43c7569469_icgraph" alt=""/></div>
+<map name="zns_8h_afdc856385776185b67188b43c7569469_icgraph" id="zns_8h_afdc856385776185b67188b43c7569469_icgraph">
+<area shape="rect" title=" " alt="" coords="2001,477,2151,504"/>
+<area shape="rect" href="zns_8c.html#a819d2621fbd145acef21bd41486156a3" title=" " alt="" coords="1783,233,1953,260"/>
+<area shape="rect" href="zns_8c.html#a8f09f2d274ee382c164ad442bb4f3e47" title=" " alt="" coords="1807,528,1929,555"/>
+<area shape="rect" href="zns_8c.html#a12ca668cf37e73d231f247d41d5990f9" title=" " alt="" coords="1789,477,1947,504"/>
+<area shape="rect" href="zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="1329,376,1500,403"/>
+<area shape="rect" href="zns_8c.html#a7cf84991a322dded9376491f5d98dedb" title=" " alt="" coords="1556,259,1727,285"/>
+<area shape="rect" href="zns_8c.html#a02ec33ad0c6f39ad701ac9ea780811c4" title=" " alt="" coords="1548,425,1735,452"/>
+<area shape="rect" href="zns_8c.html#af29e49b46b70e9dc142f1bb3bf7e65da" title=" " alt="" coords="1353,5,1476,32"/>
+<area shape="rect" href="zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="1343,310,1487,351"/>
+<area shape="rect" href="zns_8c.html#ad642783946555e5f78ea1651c02404cb" title=" " alt="" coords="1353,56,1477,83"/>
+<area shape="rect" href="zns_8c.html#a21f29cc79d1f772a1244c0f512171c0a" title=" " alt="" coords="1576,107,1707,133"/>
+<area shape="rect" href="zns_8c.html#aea339e52add6067aeb466ab8b0f56a1d" title=" " alt="" coords="1581,157,1702,184"/>
+<area shape="rect" href="zns_8c.html#a52eacdcbc504ab2769e6b194295e2355" title=" " alt="" coords="1581,208,1702,235"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1145,351,1251,377"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1156,401,1240,428"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="929,351,1067,377"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,376,881,403"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,413,735,440"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,413,527,440"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,413,284,440"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,413,129,440"/>
+<area shape="rect" href="zns_8c.html#a7c7e09c6f357c1f77c724c664f6c0128" title=" " alt="" coords="1353,259,1476,285"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="1115,157,1281,184"/>
+<area shape="rect" href="zns_8c.html#ad5f4088354d2555f9d66e2ba441592ff" title=" " alt="" coords="1336,427,1493,453"/>
+<area shape="rect" href="zns_8c.html#a5a340f34f865c916bb163abd16dc637f" title=" " alt="" coords="1550,528,1733,555"/>
+<area shape="rect" href="zns_8h.html#a23ed6cd90a43d43bad4b9196673fd1bf" title=" " alt="" coords="1347,528,1483,555"/>
+<area shape="rect" href="zns_8c.html#a54625ca641142f536befa8182db6164e" title=" " alt="" coords="1558,477,1725,504"/>
+<area shape="rect" href="zns_8c.html#aa65a4a4ae802bdd6f8cc362247c6325b" title=" " alt="" coords="962,464,1034,491"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad064d2d81e65c1f8d539bafbee8cf353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad064d2d81e65c1f8d539bafbee8cf353">&#9670;&nbsp;</a></span>zns_wp_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool zns_wp_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_cgraph.png" border="0" usemap="#zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_cgraph" alt=""/></div>
+<map name="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_cgraph" id="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" href="zns_8h.html#a677294d02c732b61b18d610041851e4b" title=" " alt="" coords="180,5,331,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_icgraph.png" border="0" usemap="#zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_icgraph" alt=""/></div>
+<map name="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_icgraph" id="zns_8h_ad064d2d81e65c1f8d539bafbee8cf353_icgraph">
+<area shape="rect" title=" " alt="" coords="1509,81,1636,108"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1295,56,1461,83"/>
+<area shape="rect" href="zns_8c.html#a6e03af0f3d0b7c597d9137a0b18bca56" title=" " alt="" coords="929,107,1092,133"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1140,5,1247,32"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1151,56,1235,83"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="942,5,1079,32"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,56,881,83"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,56,735,83"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,56,527,83"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,56,284,83"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,56,129,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa03c395f4bba42d5fc5b8ef247b082ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03c395f4bba42d5fc5b8ef247b082ae">&#9670;&nbsp;</a></span>zns_zone_rd_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t zns_zone_rd_boundary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeNamespace.html">NvmeNamespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td>
+          <td class="paramname"><em>zone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_aa03c395f4bba42d5fc5b8ef247b082ae_icgraph.png" border="0" usemap="#zns_8h_aa03c395f4bba42d5fc5b8ef247b082ae_icgraph" alt=""/></div>
+<map name="zns_8h_aa03c395f4bba42d5fc5b8ef247b082ae_icgraph" id="zns_8h_aa03c395f4bba42d5fc5b8ef247b082ae_icgraph">
+<area shape="rect" title=" " alt="" coords="1268,5,1439,32"/>
+<area shape="rect" href="zns_8c.html#a9a270c9ffa0fb88a1c6d57ecfe3e6815" title=" " alt="" coords="1057,5,1220,32"/>
+<area shape="rect" href="zns_8c.html#a232d1c0fc6117ae692ff092d05f473e6" title=" " alt="" coords="929,5,1009,32"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,5,881,32"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,5,735,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f2a423f30678b841f4aaf3f09d0e7de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2a423f30678b841f4aaf3f09d0e7de">&#9670;&nbsp;</a></span>zns_zone_wr_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t zns_zone_wr_boundary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structNvmeZone.html">NvmeZone</a> *&#160;</td>
+          <td class="paramname"><em>zone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="zns_8h_a1f2a423f30678b841f4aaf3f09d0e7de_icgraph.png" border="0" usemap="#zns_8h_a1f2a423f30678b841f4aaf3f09d0e7de_icgraph" alt=""/></div>
+<map name="zns_8h_a1f2a423f30678b841f4aaf3f09d0e7de_icgraph" id="zns_8h_a1f2a423f30678b841f4aaf3f09d0e7de_icgraph">
+<area shape="rect" title=" " alt="" coords="1517,85,1691,112"/>
+<area shape="rect" href="zns_8c.html#a94c5876f1b68a759a109b78003852924" title=" " alt="" coords="1299,5,1469,32"/>
+<area shape="rect" href="zns_8c.html#a5fa5b88257a067bda683c7f981b39524" title=" " alt="" coords="1301,56,1467,83"/>
+<area shape="rect" href="zns_8c.html#a61f038c076c83ca5f99341b71c9b8e10" title=" " alt="" coords="1312,107,1456,149"/>
+<area shape="rect" href="zns_8c.html#ad642783946555e5f78ea1651c02404cb" title=" " alt="" coords="1322,173,1446,200"/>
+<area shape="rect" href="zns_8c.html#a84203495e6de57d698b7e393f7106984" title=" " alt="" coords="1144,107,1251,133"/>
+<area shape="rect" href="zns_8c.html#abcb43c9722f5f6a3346b15dfd3872008" title=" " alt="" coords="1155,56,1239,83"/>
+<area shape="rect" href="zns_8c.html#a4285aad08edb64a1c6aea72ad77f8338" title=" " alt="" coords="944,107,1081,133"/>
+<area shape="rect" href="zns_8c.html#ab23b42610e0276e68ccaac4d13e18bfa" title=" " alt="" coords="783,107,881,133"/>
+<area shape="rect" href="zns_8c.html#a08aeb05994f79207836886d8a1475372" title=" " alt="" coords="575,107,735,133"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title=" " alt="" coords="332,107,527,133"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title=" " alt="" coords="177,107,284,133"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title=" " alt="" coords="5,107,129,133"/>
+<area shape="rect" href="zns_8c.html#afbd33ad1ba3c29a67e6f3f7d2d63859c" title=" " alt="" coords="929,157,1096,184"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_a482d5bde24295b7334c8aec815f3a1a.html">femu</a></li><li class="navelem"><a class="el" href="dir_4e88a7e674beb8de6ce1089da07fe4bc.html">zns</a></li><li class="navelem"><a class="el" href="zns_8h.html">zns.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
