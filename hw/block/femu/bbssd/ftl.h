@@ -248,14 +248,14 @@ struct ssd {
     char *ssdname;
     struct ssdparams sp;
     struct ssd_channel *ch;
-    struct ppa *maptbl; /**< page level mapping table */
-    uint64_t *rmap;     /**< reverse mapptbl, assume it's stored in OOB */
+    struct ppa *maptbl;             ///< 页映射表
+    uint64_t *rmap;                 ///< 反向映射表, assume it's stored in OOB
     struct write_pointer wp;
     struct line_mgmt lm;
 
     /* lockless ring for communication with NVMe IO thread */
-    struct rte_ring **to_ftl;
-    struct rte_ring **to_poller;
+    struct rte_ring **to_ftl;       ///< 无锁ring队列，用于接收nvme下传的req
+    struct rte_ring **to_poller;    ///< 存放完成的req，交给nvme线程
     bool *dataplane_started_ptr;
     QemuThread ftl_thread;
 };
