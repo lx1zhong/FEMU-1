@@ -1,0 +1,52 @@
+<map id="nvme_admin_cmd" name="nvme_admin_cmd">
+<area shape="rect" id="node1" title="识别、执行admin命令" alt="" coords="5,547,148,574"/>
+<area shape="rect" id="node2" href="$nvme-admin_8c.html#abd65f91764a2624cdc4e608f3dc7932e" title=" " alt="" coords="217,91,345,118"/>
+<area shape="rect" id="node7" href="$nvme-admin_8c.html#af3ddf1e4e280aa3f367a5b2b44879b41" title=" " alt="" coords="217,446,346,473"/>
+<area shape="rect" id="node18" href="$nvme-admin_8c.html#a2c43f1bdb51a2e35c2ecdb9ed9db64ec" title=" " alt="" coords="217,319,346,346"/>
+<area shape="rect" id="node20" href="$nvme-admin_8c.html#ac1090eb738e0aa389ef5a647e647a09f" title=" " alt="" coords="227,395,335,422"/>
+<area shape="rect" id="node21" href="$nvme-admin_8c.html#a6f5c22b725b5eca5912f17066e95cf67" title=" " alt="" coords="227,243,335,270"/>
+<area shape="rect" id="node27" href="$nvme-admin_8c.html#af11a6f9497c3496eb41dda00362bac96" title=" " alt="" coords="226,547,337,574"/>
+<area shape="rect" id="node30" href="$nvme-admin_8c.html#abf593ed87b332bec6cb6fca0e2bed1be" title=" " alt="" coords="211,598,352,625"/>
+<area shape="rect" id="node32" href="$nvme-admin_8c.html#ace67c34426486b78b1b20cba61ab28b8" title=" " alt="" coords="224,725,339,751"/>
+<area shape="rect" id="node38" href="$nvme-admin_8c.html#ae23b14397c30828a57903ec27a4c150c" title=" " alt="" coords="224,1054,339,1081"/>
+<area shape="rect" id="node47" href="$nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="196,1206,367,1233"/>
+<area shape="rect" id="node49" href="$nvme-admin_8c.html#ad712f926297fd28d117c32d18e3566dc" title=" " alt="" coords="211,1307,351,1334"/>
+<area shape="rect" id="node3" href="$dma_8c.html#a0ac25a907651fbfbf9710b15dc45e484" title=" " alt="" coords="453,41,583,67"/>
+<area shape="rect" id="node4" href="$dma_8c.html#a08f51254313a657c3826f77e6bd9a1b8" title=" " alt="" coords="907,142,1041,169"/>
+<area shape="rect" id="node5" href="$nvme-util_8c.html#ab586dd53da50fb72e2a7359e5f5ce7b6" title=" " alt="" coords="449,243,587,270"/>
+<area shape="rect" id="node6" href="$nvme_8h.html#ab5c77706290dc892f52e14dfe39504b6" title="地址不连续时取cmd地址" alt="" coords="911,41,1037,67"/>
+<area shape="rect" id="node8" href="$nvme-util_8c.html#a7c210df43397e8f04e184a472f8efe0e" title=" " alt="" coords="449,345,587,371"/>
+<area shape="rect" id="node9" href="$nvme-util_8c.html#accdd9730e70228b02a109051bcd3ac93" title=" " alt="" coords="461,395,575,422"/>
+<area shape="rect" id="node10" href="$nvme-util_8c.html#a6410408d19dd2986cba9a815d25871a8" title=" " alt="" coords="463,446,573,473"/>
+<area shape="rect" id="node12" href="$intr_8c.html#aa6089f663c0aef824344bde303c46238" title=" " alt="" coords="451,497,585,523"/>
+<area shape="rect" id="node11" href="$nvme-util_8c.html#a9d8a42fcd63a79e262250aa8f54522da" title=" " alt="" coords="680,294,848,321"/>
+<area shape="rect" id="node13" href="$intr_8c.html#a4546f8dc3153b6b272979b26d9ee3a5f" title=" " alt="" coords="669,573,859,599"/>
+<area shape="rect" id="node14" href="$intr_8c.html#a404cdb00218c3c3b27c4048b43d7d8db" title=" " alt="" coords="673,370,855,397"/>
+<area shape="rect" id="node15" href="$intr_8c.html#aef207536dce0a636e5d7c2467c73110a" title=" " alt="" coords="689,421,839,447"/>
+<area shape="rect" id="node16" href="$intr_8c.html#a05882837e726b101a16a02a652f3bbf0" title=" " alt="" coords="695,471,833,498"/>
+<area shape="rect" id="node17" href="$intr_8c.html#a1eff260b4323e3ba8942b9c13ac1c89d" title=" " alt="" coords="681,522,847,549"/>
+<area shape="rect" id="node19" href="$nvme-util_8c.html#ac3b74834e78afe9ce3db5074e8398a0f" title="初始化sq队列，预分配空间" alt="" coords="463,294,573,321"/>
+<area shape="rect" id="node22" href="$nvme-util_8c.html#ae00a56019ece0039e9a209dfa7bc398e" title=" " alt="" coords="461,193,575,219"/>
+<area shape="rect" id="node23" href="$nvme-io_8c.html#a03a3accd495e0b00d01b80e009af5c9f" title="将剩余的req都填入cq" alt="" coords="443,142,593,169"/>
+<area shape="rect" id="node24" href="$nvme-util_8c.html#a4e852fdb44ac17526a5b317eb3e4dac7" title=" " alt="" coords="709,193,819,219"/>
+<area shape="rect" id="node25" href="$intr_8c.html#ac07d39a331aa32f4da4f27f31f1abc1c" title="中断通知上层取cq" alt="" coords="691,243,837,270"/>
+<area shape="rect" id="node26" href="$nvme-io_8c.html#aa412c2f46a5bc43ac2234173c9743abe" title="将req实际封装入cq" alt="" coords="702,142,826,169"/>
+<area shape="rect" id="node28" href="$nvme-admin_8c.html#a1068e4177c9ff25ec1cc15b18d26356b" title=" " alt="" coords="422,547,614,574"/>
+<area shape="rect" id="node29" href="$nvme_8h.html#ab5233c5c538a64df4e9b391949d334e3" title=" " alt="" coords="729,623,799,650"/>
+<area shape="rect" id="node31" href="$dma_8c.html#a83e01cb3ebf3721ca1fd024940ed6aa6" title=" " alt="" coords="707,953,821,979"/>
+<area shape="rect" id="node33" href="$nvme_8h.html#ae412c484b40ac7903597a299757a7a83" title=" " alt="" coords="446,750,590,777"/>
+<area shape="rect" id="node34" href="$nvme-admin_8c.html#aff81480a8e081d70ea6fc2b09a02af21" title=" " alt="" coords="445,649,591,675"/>
+<area shape="rect" id="node35" href="$nvme-admin_8c.html#a4e3add88b587075ed1a120f75f73ea44" title=" " alt="" coords="440,699,596,726"/>
+<area shape="rect" id="node36" href="$nvme-admin_8c.html#a295e47dd4c386bd7ad30d98ea4b45929" title=" " alt="" coords="448,801,588,827"/>
+<area shape="rect" id="node37" href="$nvme-admin_8c.html#af7d9ef3eb88525869cf3506520028cf0" title=" " alt="" coords="450,851,586,878"/>
+<area shape="rect" id="node39" href="$nvme-admin_8c.html#a834f603280a3a10a14da324da6bd9a62" title=" " alt="" coords="429,1003,607,1030"/>
+<area shape="rect" id="node40" href="$nvme-admin_8c.html#a6a27adda12530ad69ecc17512ede9ddd" title=" " alt="" coords="447,1054,589,1081"/>
+<area shape="rect" id="node41" href="$nvme-admin_8c.html#a7db584730c5821def2e8208f0aaf3f05" title=" " alt="" coords="434,1105,602,1131"/>
+<area shape="rect" id="node42" href="$nvme-admin_8c.html#a9896b513919b735c2049dd8e59d588c0" title=" " alt="" coords="449,1155,587,1182"/>
+<area shape="rect" id="node43" href="$nvme-admin_8c.html#a50ae77ec77f7a89c1a067df80c5cd767" title=" " alt="" coords="437,1206,599,1233"/>
+<area shape="rect" id="node44" href="$nvme-admin_8c.html#aeb087910e36564f94d4dc54c6af7622c" title=" " alt="" coords="415,1257,621,1283"/>
+<area shape="rect" id="node45" href="$nvme-admin_8c.html#a9eeb98def2fad8039662200e9854b7e7" title=" " alt="" coords="439,902,597,929"/>
+<area shape="rect" id="node46" href="$nvme-admin_8c.html#a1067c1ab64f621b7e8d68043437c04eb" title=" " alt="" coords="427,953,609,979"/>
+<area shape="rect" id="node48" href="$nvme-io_8c.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="443,1307,593,1334"/>
+<area shape="rect" id="node50" href="$dma_8c.html#adef0f21bc237d992b4ae8b29258645a8" title=" " alt="" coords="459,1358,577,1385"/>
+</map>

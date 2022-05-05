@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: ssd结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structssd.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">ssd结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>模拟一个ssd  
+ <a href="structssd.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ftl_8h_source.html">ftl.h</a>&gt;</code></p>
+<div class="dynheader">
+ssd 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structssd__coll__graph.png" border="0" usemap="#ssd_coll__map" alt="Collaboration graph"/></div>
+<map name="ssd_coll__map" id="ssd_coll__map">
+<area shape="rect" title="模拟一个ssd" alt="" coords="343,481,387,508"/>
+<area shape="rect" href="structrte__ring.html" title=" " alt="" coords="35,377,107,404"/>
+<area shape="rect" href="structrte__ring__headtail.html" title=" " alt="" coords="5,273,137,300"/>
+<area shape="rect" href="structssdparams.html" title="ssd参数" alt="" coords="131,377,225,404"/>
+<area shape="rect" href="structwrite__pointer.html" title="wp: record next write addr" alt="" coords="249,377,357,404"/>
+<area shape="rect" href="structline.html" title="line" alt="" coords="309,273,356,300"/>
+<area shape="rect" href="structline__mgmt.html" title="记录各种line的列表和数量" alt="" coords="381,377,473,404"/>
+<area shape="rect" href="structpqueue__t.html" title=" " alt="" coords="409,273,491,300"/>
+<area shape="rect" href="structppa.html" title="describe a physical page addr" alt="" coords="497,377,544,404"/>
+<area shape="rect" href="structssd__channel.html" title="通道" alt="" coords="568,377,671,404"/>
+<area shape="rect" href="structnand__lun.html" title="晶圆" alt="" coords="579,273,660,300"/>
+<area shape="rect" href="structnand__plane.html" title="plane" alt="" coords="571,184,668,211"/>
+<area shape="rect" href="structnand__block.html" title="块" alt="" coords="571,95,667,121"/>
+<area shape="rect" href="structnand__page.html" title="页" alt="" coords="573,5,666,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a8724ca69d768471877affbeadbe3c244"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a8724ca69d768471877affbeadbe3c244">ssdname</a></td></tr>
+<tr class="separator:a8724ca69d768471877affbeadbe3c244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c0adb782ca9d8a1accf3ec8d7455eb"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structssdparams.html">ssdparams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a36c0adb782ca9d8a1accf3ec8d7455eb">sp</a></td></tr>
+<tr class="separator:a36c0adb782ca9d8a1accf3ec8d7455eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ffa7f5fbc77044d9fb80e65d477a632"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structssd__channel.html">ssd_channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a6ffa7f5fbc77044d9fb80e65d477a632">ch</a></td></tr>
+<tr class="separator:a6ffa7f5fbc77044d9fb80e65d477a632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1cef93bbb35d5d9ee62073e99e53b0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structppa.html">ppa</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a9d1cef93bbb35d5d9ee62073e99e53b0">maptbl</a></td></tr>
+<tr class="memdesc:a9d1cef93bbb35d5d9ee62073e99e53b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">页映射表  <a href="structssd.html#a9d1cef93bbb35d5d9ee62073e99e53b0">更多...</a><br /></td></tr>
+<tr class="separator:a9d1cef93bbb35d5d9ee62073e99e53b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49bd8bfc26a6a8f1a992d84e0cc862c"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#ae49bd8bfc26a6a8f1a992d84e0cc862c">rmap</a></td></tr>
+<tr class="memdesc:ae49bd8bfc26a6a8f1a992d84e0cc862c"><td class="mdescLeft">&#160;</td><td class="mdescRight">反向映射表, assume it's stored in OOB  <a href="structssd.html#ae49bd8bfc26a6a8f1a992d84e0cc862c">更多...</a><br /></td></tr>
+<tr class="separator:ae49bd8bfc26a6a8f1a992d84e0cc862c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce888a31348d5b2fa1d914dde456166"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structwrite__pointer.html">write_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a8ce888a31348d5b2fa1d914dde456166">wp</a></td></tr>
+<tr class="separator:a8ce888a31348d5b2fa1d914dde456166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58bcbabc96ec3acaa19fac4ecf7956dc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structline__mgmt.html">line_mgmt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a58bcbabc96ec3acaa19fac4ecf7956dc">lm</a></td></tr>
+<tr class="separator:a58bcbabc96ec3acaa19fac4ecf7956dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1863ea3d676d7f2a9db127e2ced4c87"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#af1863ea3d676d7f2a9db127e2ced4c87">to_ftl</a></td></tr>
+<tr class="memdesc:af1863ea3d676d7f2a9db127e2ced4c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">无锁ring队列，用于接收nvme下传的req  <a href="structssd.html#af1863ea3d676d7f2a9db127e2ced4c87">更多...</a><br /></td></tr>
+<tr class="separator:af1863ea3d676d7f2a9db127e2ced4c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ac3e7f4169f686b1279f054413e84f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structrte__ring.html">rte_ring</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#af5ac3e7f4169f686b1279f054413e84f">to_poller</a></td></tr>
+<tr class="memdesc:af5ac3e7f4169f686b1279f054413e84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">存放完成的req，交给nvme线程  <a href="structssd.html#af5ac3e7f4169f686b1279f054413e84f">更多...</a><br /></td></tr>
+<tr class="separator:af5ac3e7f4169f686b1279f054413e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0e9503ff5811ff40f5b426d137692e"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a2b0e9503ff5811ff40f5b426d137692e">dataplane_started_ptr</a></td></tr>
+<tr class="separator:a2b0e9503ff5811ff40f5b426d137692e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6952886e09ff0a561ea0f61786904637"><td class="memItemLeft" align="right" valign="top">QemuThread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structssd.html#a6952886e09ff0a561ea0f61786904637">ftl_thread</a></td></tr>
+<tr class="separator:a6952886e09ff0a561ea0f61786904637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>模拟一个ssd </p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a id="a6ffa7f5fbc77044d9fb80e65d477a632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ffa7f5fbc77044d9fb80e65d477a632">&#9670;&nbsp;</a></span>ch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structssd__channel.html">ssd_channel</a>* ssd::ch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b0e9503ff5811ff40f5b426d137692e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0e9503ff5811ff40f5b426d137692e">&#9670;&nbsp;</a></span>dataplane_started_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* ssd::dataplane_started_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6952886e09ff0a561ea0f61786904637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6952886e09ff0a561ea0f61786904637">&#9670;&nbsp;</a></span>ftl_thread</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QemuThread ssd::ftl_thread</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58bcbabc96ec3acaa19fac4ecf7956dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58bcbabc96ec3acaa19fac4ecf7956dc">&#9670;&nbsp;</a></span>lm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structline__mgmt.html">line_mgmt</a> ssd::lm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d1cef93bbb35d5d9ee62073e99e53b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1cef93bbb35d5d9ee62073e99e53b0">&#9670;&nbsp;</a></span>maptbl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structppa.html">ppa</a>* ssd::maptbl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>页映射表 </p>
+
+</div>
+</div>
+<a id="ae49bd8bfc26a6a8f1a992d84e0cc862c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49bd8bfc26a6a8f1a992d84e0cc862c">&#9670;&nbsp;</a></span>rmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* ssd::rmap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>反向映射表, assume it's stored in OOB </p>
+
+</div>
+</div>
+<a id="a36c0adb782ca9d8a1accf3ec8d7455eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c0adb782ca9d8a1accf3ec8d7455eb">&#9670;&nbsp;</a></span>sp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structssdparams.html">ssdparams</a> ssd::sp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8724ca69d768471877affbeadbe3c244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8724ca69d768471877affbeadbe3c244">&#9670;&nbsp;</a></span>ssdname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ssd::ssdname</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1863ea3d676d7f2a9db127e2ced4c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1863ea3d676d7f2a9db127e2ced4c87">&#9670;&nbsp;</a></span>to_ftl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>** ssd::to_ftl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>无锁ring队列，用于接收nvme下传的req </p>
+
+</div>
+</div>
+<a id="af5ac3e7f4169f686b1279f054413e84f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ac3e7f4169f686b1279f054413e84f">&#9670;&nbsp;</a></span>to_poller</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structrte__ring.html">rte_ring</a>** ssd::to_poller</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>存放完成的req，交给nvme线程 </p>
+
+</div>
+</div>
+<a id="a8ce888a31348d5b2fa1d914dde456166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce888a31348d5b2fa1d914dde456166">&#9670;&nbsp;</a></span>wp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structwrite__pointer.html">write_pointer</a> ssd::wp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>femu/bbssd/<a class="el" href="ftl_8h_source.html">ftl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structssd.html">ssd</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,902 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FEMU: femu/inc/pqueue.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">FEMU
+   &#160;<span id="projectnumber">原版 master 7e238cc</span>
+   </div>
+   <div id="projectbrief">FEMU: Accurate, Scalable and Extensible NVMe SSD Emulator (FAST&#39;18)</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pqueue_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a>  </div>
+  <div class="headertitle">
+<div class="title">pqueue.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Priority Queue function declarations  
+<a href="#details">更多...</a></p>
+<div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h__dep__incl.png" border="0" usemap="#femu_2inc_2pqueue_8hdep" alt=""/></div>
+<map name="femu_2inc_2pqueue_8hdep" id="femu_2inc_2pqueue_8hdep">
+<area shape="rect" title="Priority Queue function declarations" alt="" coords="998,5,1141,32"/>
+<area shape="rect" href="nvme_8h.html" title="nvme相关数据声明" alt="" coords="941,80,1051,107"/>
+<area shape="rect" href="pqueue_8c.html" title=" " alt="" coords="1075,80,1213,107"/>
+<area shape="rect" href="dram_8c.html" title="dram后端操作函数定义" alt="" coords="5,155,168,181"/>
+<area shape="rect" href="bb_8c.html" title="bb &lt;==&gt; BlackBox" alt="" coords="141,229,270,256"/>
+<area shape="rect" href="ftl_8h.html" title="ftl相关数据声明" alt="" coords="243,155,370,181"/>
+<area shape="rect" href="dma_8c.html" title=" " alt="" coords="394,155,494,181"/>
+<area shape="rect" href="femu_8c.html" title=" " alt="" coords="518,155,623,181"/>
+<area shape="rect" href="intr_8c.html" title="中断通知host相关函数定义" alt="" coords="647,155,739,181"/>
+<area shape="rect" href="nand_8c.html" title=" " alt="" coords="764,155,903,181"/>
+<area shape="rect" href="nop_8c.html" title=" " alt="" coords="927,155,1065,181"/>
+<area shape="rect" href="nvme-admin_8c.html" title="nvme处理admin command相关操作" alt="" coords="1089,155,1244,181"/>
+<area shape="rect" href="nvme-io_8c.html" title="nvme处理io command相关操作" alt="" coords="1268,155,1393,181"/>
+<area shape="rect" href="nvme-util_8c.html" title="nvme工具函数定义" alt="" coords="1418,155,1553,181"/>
+<area shape="rect" href="oc12_8h.html" title=" " alt="" coords="1577,155,1721,181"/>
+<area shape="rect" href="oc20_8h.html" title=" " alt="" coords="1745,155,1889,181"/>
+<area shape="rect" href="timing_8c.html" title=" " alt="" coords="1913,155,2119,181"/>
+<area shape="rect" href="zns_8h.html" title=" " alt="" coords="2143,155,2263,181"/>
+<area shape="rect" href="ftl_8c.html" title="ftl主体" alt="" coords="294,229,421,256"/>
+<area shape="rect" href="oc12_8c.html" title=" " alt="" coords="1578,229,1721,256"/>
+<area shape="rect" href="oc20_8c.html" title=" " alt="" coords="1746,229,1889,256"/>
+<area shape="rect" href="zns_8c.html" title=" " alt="" coords="2143,229,2262,256"/>
+</map>
+</div>
+</div>
+<p><a href="pqueue_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpqueue__t.html">pqueue_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8239ddc32134716f57e54bb972f6bf0"><td class="memItemLeft" align="right" valign="top">typedef unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a></td></tr>
+<tr class="separator:ad8239ddc32134716f57e54bb972f6bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84f0100faf971295df5aed226c390a6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#aa84f0100faf971295df5aed226c390a6">pqueue_get_pri_f</a>) (void *a)</td></tr>
+<tr class="separator:aa84f0100faf971295df5aed226c390a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792d634f9284f7328c817ec4b8ed4230"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a792d634f9284f7328c817ec4b8ed4230">pqueue_set_pri_f</a>) (void *a, <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> pri)</td></tr>
+<tr class="separator:a792d634f9284f7328c817ec4b8ed4230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c3f02694b2a0ec19584c395a88bb6f9"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a1c3f02694b2a0ec19584c395a88bb6f9">pqueue_cmp_pri_f</a>) (<a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> next, <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> curr)</td></tr>
+<tr class="separator:a1c3f02694b2a0ec19584c395a88bb6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ca7927983005bd7866021819ad7037"><td class="memItemLeft" align="right" valign="top">typedef size_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a31ca7927983005bd7866021819ad7037">pqueue_get_pos_f</a>) (void *a)</td></tr>
+<tr class="separator:a31ca7927983005bd7866021819ad7037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc8f52cbc45181ef375df22917bc4f9"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#afdc8f52cbc45181ef375df22917bc4f9">pqueue_set_pos_f</a>) (void *a, size_t pos)</td></tr>
+<tr class="separator:afdc8f52cbc45181ef375df22917bc4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614d5575a4e34ef0dcb513afc8965ded"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a614d5575a4e34ef0dcb513afc8965ded">pqueue_print_entry_f</a>) (FILE *out, void *a)</td></tr>
+<tr class="separator:a614d5575a4e34ef0dcb513afc8965ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e211b59fd9be5939218e11d1132167"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structpqueue__t.html">pqueue_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a05e211b59fd9be5939218e11d1132167">pqueue_t</a></td></tr>
+<tr class="separator:a05e211b59fd9be5939218e11d1132167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c27c13ed1c988e9fc7b259e6820ca8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a2c27c13ed1c988e9fc7b259e6820ca8c">pqueue_init</a> (size_t n, <a class="el" href="pqueue_8h.html#a1c3f02694b2a0ec19584c395a88bb6f9">pqueue_cmp_pri_f</a> cmppri, <a class="el" href="pqueue_8h.html#aa84f0100faf971295df5aed226c390a6">pqueue_get_pri_f</a> getpri, <a class="el" href="pqueue_8h.html#a792d634f9284f7328c817ec4b8ed4230">pqueue_set_pri_f</a> setpri, <a class="el" href="pqueue_8h.html#a31ca7927983005bd7866021819ad7037">pqueue_get_pos_f</a> getpos, <a class="el" href="pqueue_8h.html#afdc8f52cbc45181ef375df22917bc4f9">pqueue_set_pos_f</a> setpos)</td></tr>
+<tr class="separator:a2c27c13ed1c988e9fc7b259e6820ca8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acceacc4429dd9cd31d5af09f3f473cb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#acceacc4429dd9cd31d5af09f3f473cb0">pqueue_free</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q)</td></tr>
+<tr class="separator:acceacc4429dd9cd31d5af09f3f473cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0cf88c8360a5f08ada81feaaeb40505"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#ae0cf88c8360a5f08ada81feaaeb40505">pqueue_size</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q)</td></tr>
+<tr class="separator:ae0cf88c8360a5f08ada81feaaeb40505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd8cdfbc8c47b8cdd7eb4c4560de7aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#addd8cdfbc8c47b8cdd7eb4c4560de7aa">pqueue_insert</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q, void *d)</td></tr>
+<tr class="separator:addd8cdfbc8c47b8cdd7eb4c4560de7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dfaa607ca404b915355d4b123c669ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a7dfaa607ca404b915355d4b123c669ee">pqueue_change_priority</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q, <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> new_pri, void *d)</td></tr>
+<tr class="separator:a7dfaa607ca404b915355d4b123c669ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec9363c7a9cc89190bf0925a4a1652c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#abec9363c7a9cc89190bf0925a4a1652c">pqueue_pop</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q)</td></tr>
+<tr class="separator:abec9363c7a9cc89190bf0925a4a1652c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a509654dacb6be3d34ff7a4958ab4dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a9a509654dacb6be3d34ff7a4958ab4dd">pqueue_remove</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q, void *d)</td></tr>
+<tr class="separator:a9a509654dacb6be3d34ff7a4958ab4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2919d3e817688b81da746d4123f51ba3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a2919d3e817688b81da746d4123f51ba3">pqueue_peek</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q)</td></tr>
+<tr class="separator:a2919d3e817688b81da746d4123f51ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5b724e07dbf478147835a06ed64d42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#a8c5b724e07dbf478147835a06ed64d42">pqueue_print</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q, FILE *out, <a class="el" href="pqueue_8h.html#a614d5575a4e34ef0dcb513afc8965ded">pqueue_print_entry_f</a> print)</td></tr>
+<tr class="separator:a8c5b724e07dbf478147835a06ed64d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae438267d8665f75709c9a9248923f32e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#ae438267d8665f75709c9a9248923f32e">pqueue_dump</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q, FILE *out, <a class="el" href="pqueue_8h.html#a614d5575a4e34ef0dcb513afc8965ded">pqueue_print_entry_f</a> print)</td></tr>
+<tr class="separator:ae438267d8665f75709c9a9248923f32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb92aa04f03ad7866508bc27778d7e9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pqueue_8h.html#aecb92aa04f03ad7866508bc27778d7e9">pqueue_is_valid</a> (<a class="el" href="structpqueue__t.html">pqueue_t</a> *q)</td></tr>
+<tr class="separator:aecb92aa04f03ad7866508bc27778d7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Priority Queue function declarations </p>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="a1c3f02694b2a0ec19584c395a88bb6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3f02694b2a0ec19584c395a88bb6f9">&#9670;&nbsp;</a></span>pqueue_cmp_pri_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* pqueue_cmp_pri_f) (<a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> next, <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> curr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31ca7927983005bd7866021819ad7037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ca7927983005bd7866021819ad7037">&#9670;&nbsp;</a></span>pqueue_get_pos_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef size_t(* pqueue_get_pos_f) (void *a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>callback functions to get/set the position of an element </p>
+
+</div>
+</div>
+<a id="aa84f0100faf971295df5aed226c390a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84f0100faf971295df5aed226c390a6">&#9670;&nbsp;</a></span>pqueue_get_pri_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a>(* pqueue_get_pri_f) (void *a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>callback functions to get/set/compare the priority of an element </p>
+
+</div>
+</div>
+<a id="ad8239ddc32134716f57e54bb972f6bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8239ddc32134716f57e54bb972f6bf0">&#9670;&nbsp;</a></span>pqueue_pri_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long long <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>priority data type </p>
+
+</div>
+</div>
+<a id="a614d5575a4e34ef0dcb513afc8965ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614d5575a4e34ef0dcb513afc8965ded">&#9670;&nbsp;</a></span>pqueue_print_entry_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* pqueue_print_entry_f) (FILE *out, void *a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>debug callback function to print a entry </p>
+
+</div>
+</div>
+<a id="afdc8f52cbc45181ef375df22917bc4f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc8f52cbc45181ef375df22917bc4f9">&#9670;&nbsp;</a></span>pqueue_set_pos_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* pqueue_set_pos_f) (void *a, size_t pos)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a792d634f9284f7328c817ec4b8ed4230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a792d634f9284f7328c817ec4b8ed4230">&#9670;&nbsp;</a></span>pqueue_set_pri_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* pqueue_set_pri_f) (void *a, <a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a> pri)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05e211b59fd9be5939218e11d1132167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e211b59fd9be5939218e11d1132167">&#9670;&nbsp;</a></span>pqueue_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structpqueue__t.html">pqueue_t</a> <a class="el" href="structpqueue__t.html">pqueue_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the priority queue handle </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a7dfaa607ca404b915355d4b123c669ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dfaa607ca404b915355d4b123c669ee">&#9670;&nbsp;</a></span>pqueue_change_priority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqueue_change_priority </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#ad8239ddc32134716f57e54bb972f6bf0">pqueue_pri_t</a>&#160;</td>
+          <td class="paramname"><em>new_pri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>move an existing entry to a different priority </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+    <tr><td class="paramname">new_pri</td><td>the new priority </td></tr>
+    <tr><td class="paramname">d</td><td>the entry </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_cgraph.png" border="0" usemap="#pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_cgraph" alt=""/></div>
+<map name="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_cgraph" id="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,184,57"/>
+<area shape="rect" href="pqueue_8c.html#a918fcd7df850b9a0c17111abc9c323b1" title=" " alt="" coords="250,5,339,32"/>
+<area shape="rect" href="pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="232,56,357,83"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="405,56,488,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_icgraph.png" border="0" usemap="#pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_icgraph" alt=""/></div>
+<map name="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_icgraph" id="pqueue_8h_a7dfaa607ca404b915355d4b123c669ee_icgraph">
+<area shape="rect" title=" " alt="" coords="1477,5,1656,32"/>
+<area shape="rect" href="ftl_8c.html#adaaf0f3e032de3124ddc61a6111b25db" title="update SSD status about one page from PG_VALID &#45;&gt; PG_INVALID" alt="" coords="1283,5,1429,32"/>
+<area shape="rect" href="ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="1151,5,1235,32"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="1019,5,1103,32"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="899,5,971,32"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="784,5,851,32"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title="注册blackbox相关函数" alt="" coords="575,5,736,32"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title="注册NOSSD/BBSSD/ZNSSD/OCSSD" alt="" coords="332,5,527,32"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title="femu初始化，分配空间" alt="" coords="177,5,284,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae438267d8665f75709c9a9248923f32e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae438267d8665f75709c9a9248923f32e">&#9670;&nbsp;</a></span>pqueue_dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqueue_dump </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#a614d5575a4e34ef0dcb513afc8965ded">pqueue_print_entry_f</a>&#160;</td>
+          <td class="paramname"><em>print</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>dump the queue and it's internal structure </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_ae438267d8665f75709c9a9248923f32e_cgraph.png" border="0" usemap="#pqueue_8h_ae438267d8665f75709c9a9248923f32e_cgraph" alt=""/></div>
+<map name="pqueue_8h_ae438267d8665f75709c9a9248923f32e_cgraph" id="pqueue_8h_ae438267d8665f75709c9a9248923f32e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="168,5,251,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acceacc4429dd9cd31d5af09f3f473cb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acceacc4429dd9cd31d5af09f3f473cb0">&#9670;&nbsp;</a></span>pqueue_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqueue_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>free all memory used by the queue </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_acceacc4429dd9cd31d5af09f3f473cb0_icgraph.png" border="0" usemap="#pqueue_8h_acceacc4429dd9cd31d5af09f3f473cb0_icgraph" alt=""/></div>
+<map name="pqueue_8h_acceacc4429dd9cd31d5af09f3f473cb0_icgraph" id="pqueue_8h_acceacc4429dd9cd31d5af09f3f473cb0_icgraph">
+<area shape="rect" title=" " alt="" coords="520,31,623,57"/>
+<area shape="rect" href="femu_8c.html#a749caeadb2968b6c63c5f1b2d646eb5a" title=" " alt="" coords="313,5,472,32"/>
+<area shape="rect" href="pqueue_8c.html#a8c5b724e07dbf478147835a06ed64d42" title=" " alt="" coords="339,56,446,83"/>
+<area shape="rect" href="femu_8c.html#a340aa0343b4141d520e32a9e4bc303a0" title=" " alt="" coords="177,5,265,32"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,5,129,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2c27c13ed1c988e9fc7b259e6820ca8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c27c13ed1c988e9fc7b259e6820ca8c">&#9670;&nbsp;</a></span>pqueue_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpqueue__t.html">pqueue_t</a>* pqueue_init </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#a1c3f02694b2a0ec19584c395a88bb6f9">pqueue_cmp_pri_f</a>&#160;</td>
+          <td class="paramname"><em>cmppri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#aa84f0100faf971295df5aed226c390a6">pqueue_get_pri_f</a>&#160;</td>
+          <td class="paramname"><em>getpri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#a792d634f9284f7328c817ec4b8ed4230">pqueue_set_pri_f</a>&#160;</td>
+          <td class="paramname"><em>setpri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#a31ca7927983005bd7866021819ad7037">pqueue_get_pos_f</a>&#160;</td>
+          <td class="paramname"><em>getpos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#afdc8f52cbc45181ef375df22917bc4f9">pqueue_set_pos_f</a>&#160;</td>
+          <td class="paramname"><em>setpos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>initialize the queue</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the initial estimate of the number of queue items for which memory should be preallocated </td></tr>
+    <tr><td class="paramname">cmppri</td><td>The callback function to run to compare two elements This callback should return 0 for 'lower' and non-zero for 'higher', or vice versa if reverse priority is desired </td></tr>
+    <tr><td class="paramname">setpri</td><td>the callback function to run to assign a score to an element </td></tr>
+    <tr><td class="paramname">getpri</td><td>the callback function to run to set a score to an element </td></tr>
+    <tr><td class="paramname">getpos</td><td>the callback function to get the current element's position </td></tr>
+    <tr><td class="paramname">setpos</td><td>the callback function to set the current element's position</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the handle or NULL for insufficent memory </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a2c27c13ed1c988e9fc7b259e6820ca8c_icgraph.png" border="0" usemap="#pqueue_8h_a2c27c13ed1c988e9fc7b259e6820ca8c_icgraph" alt=""/></div>
+<map name="pqueue_8h_a2c27c13ed1c988e9fc7b259e6820ca8c_icgraph" id="pqueue_8h_a2c27c13ed1c988e9fc7b259e6820ca8c_icgraph">
+<area shape="rect" title=" " alt="" coords="1455,56,1553,83"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="1256,5,1407,32"/>
+<area shape="rect" href="pqueue_8c.html#a8c5b724e07dbf478147835a06ed64d42" title=" " alt="" coords="1278,56,1385,83"/>
+<area shape="rect" href="ftl_8c.html#a75e82f66648a13506f57f7bb0fce7a10" title="初始化lines，所有line加入free_line_list，而full_line_list和victim_line_pq为空" alt="" coords="1276,107,1387,133"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="1037,5,1208,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="847,5,989,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="612,5,799,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="373,5,560,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="177,5,321,32"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="1087,107,1159,133"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="885,107,951,133"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title="注册blackbox相关函数" alt="" coords="625,107,786,133"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title="注册NOSSD/BBSSD/ZNSSD/OCSSD" alt="" coords="369,107,564,133"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title="femu初始化，分配空间" alt="" coords="196,107,303,133"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,107,129,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="addd8cdfbc8c47b8cdd7eb4c4560de7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd8cdfbc8c47b8cdd7eb4c4560de7aa">&#9670;&nbsp;</a></span>pqueue_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pqueue_insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>insert an item into the queue. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+    <tr><td class="paramname">d</td><td>the item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_cgraph.png" border="0" usemap="#pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_cgraph" alt=""/></div>
+<map name="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_cgraph" id="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="pqueue_8c.html#a918fcd7df850b9a0c17111abc9c323b1" title=" " alt="" coords="168,5,257,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_icgraph.png" border="0" usemap="#pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_icgraph" alt=""/></div>
+<map name="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_icgraph" id="pqueue_8h_addd8cdfbc8c47b8cdd7eb4c4560de7aa_icgraph">
+<area shape="rect" title=" " alt="" coords="2495,69,2609,96"/>
+<area shape="rect" href="ftl_8c.html#adaaf0f3e032de3124ddc61a6111b25db" title="update SSD status about one page from PG_VALID &#45;&gt; PG_INVALID" alt="" coords="2053,157,2200,184"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title="从to_poller队列中取req，放入cq中，然后通知上层操作已完成" alt="" coords="2265,12,2429,39"/>
+<area shape="rect" href="ftl_8c.html#a52df9249316530eb887e0412ca51f048" title="写指针后移，每次写操作结束后调用" alt="" coords="2248,69,2447,96"/>
+<area shape="rect" href="ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="1475,107,1559,133"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="1262,81,1346,108"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="1033,81,1105,108"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="823,81,889,108"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title="注册blackbox相关函数" alt="" coords="575,81,736,108"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title="注册NOSSD/BBSSD/ZNSSD/OCSSD" alt="" coords="332,81,527,108"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title="femu初始化，分配空间" alt="" coords="177,81,284,108"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,81,129,108"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title="nvme poller线程函数，不断处理sq和生成cq" alt="" coords="2075,5,2178,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="1855,5,2005,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="1636,5,1807,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="1445,5,1588,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="1211,5,1397,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="976,5,1163,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="784,5,928,32"/>
+<area shape="rect" href="ftl_8c.html#a5b0fd3628f9c01d4151a9f849e03a6a8" title="gc产生的写" alt="" coords="2069,56,2185,83"/>
+<area shape="rect" href="ftl_8c.html#ae4d530364d4008be453c27d200eacddf" title="gc清理一个block，将有效页转移" alt="" coords="1865,56,1995,83"/>
+<area shape="rect" href="ftl_8c.html#aedba9d148f29a3ea880cf3abbbc07fad" title="gc函数，清理一整个line" alt="" coords="1691,56,1751,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aecb92aa04f03ad7866508bc27778d7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb92aa04f03ad7866508bc27778d7e9">&#9670;&nbsp;</a></span>pqueue_is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pqueue_is_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>checks that the pq is in the right order, etc </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_aecb92aa04f03ad7866508bc27778d7e9_cgraph.png" border="0" usemap="#pqueue_8h_aecb92aa04f03ad7866508bc27778d7e9_cgraph" alt=""/></div>
+<map name="pqueue_8h_aecb92aa04f03ad7866508bc27778d7e9_cgraph" id="pqueue_8h_aecb92aa04f03ad7866508bc27778d7e9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" href="pqueue_8c.html#aaa65a8fd39dc6a0a5bae297f37b7046c" title=" " alt="" coords="180,5,308,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2919d3e817688b81da746d4123f51ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2919d3e817688b81da746d4123f51ba3">&#9670;&nbsp;</a></span>pqueue_peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* pqueue_peek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>access highest-ranking item without removing it. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>NULL on error, otherwise the entry </dd></dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a2919d3e817688b81da746d4123f51ba3_icgraph.png" border="0" usemap="#pqueue_8h_a2919d3e817688b81da746d4123f51ba3_icgraph" alt=""/></div>
+<map name="pqueue_8h_a2919d3e817688b81da746d4123f51ba3_icgraph" id="pqueue_8h_a2919d3e817688b81da746d4123f51ba3_icgraph">
+<area shape="rect" title=" " alt="" coords="2015,31,2124,57"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title="从to_poller队列中取req，放入cq中，然后通知上层操作已完成" alt="" coords="1803,5,1967,32"/>
+<area shape="rect" href="ftl_8c.html#ae5f2680b1c6531f6394723c150f11e1c" title="为gc选择一个victim line，优先队列中出队即可" alt="" coords="1815,56,1955,83"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title="nvme poller线程函数，不断处理sq和生成cq" alt="" coords="1652,5,1755,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="1453,5,1604,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="1235,5,1405,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="1044,5,1187,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="809,5,996,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="575,5,761,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="357,5,501,32"/>
+<area shape="rect" href="ftl_8c.html#aedba9d148f29a3ea880cf3abbbc07fad" title="gc函数，清理一整个line" alt="" coords="1673,56,1733,83"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="1278,81,1362,108"/>
+<area shape="rect" href="ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="1487,107,1571,133"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="1079,81,1151,108"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="869,81,936,108"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title="注册blackbox相关函数" alt="" coords="587,81,749,108"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title="注册NOSSD/BBSSD/ZNSSD/OCSSD" alt="" coords="332,81,527,108"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title="femu初始化，分配空间" alt="" coords="177,81,284,108"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,81,129,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abec9363c7a9cc89190bf0925a4a1652c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec9363c7a9cc89190bf0925a4a1652c">&#9670;&nbsp;</a></span>pqueue_pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* pqueue_pop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pop the highest-ranking item from the queue. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>NULL on error, otherwise the entry </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_cgraph.png" border="0" usemap="#pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_cgraph" alt=""/></div>
+<map name="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_cgraph" id="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,107,32"/>
+<area shape="rect" href="pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="155,5,280,32"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="328,5,411,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_icgraph.png" border="0" usemap="#pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_icgraph" alt=""/></div>
+<map name="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_icgraph" id="pqueue_8h_abec9363c7a9cc89190bf0925a4a1652c_icgraph">
+<area shape="rect" title=" " alt="" coords="2015,56,2116,83"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title="从to_poller队列中取req，放入cq中，然后通知上层操作已完成" alt="" coords="1803,5,1967,32"/>
+<area shape="rect" href="pqueue_8c.html#a8c5b724e07dbf478147835a06ed64d42" title=" " alt="" coords="1831,56,1938,83"/>
+<area shape="rect" href="ftl_8c.html#ae5f2680b1c6531f6394723c150f11e1c" title="为gc选择一个victim line，优先队列中出队即可" alt="" coords="1815,107,1955,133"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title="nvme poller线程函数，不断处理sq和生成cq" alt="" coords="1652,5,1755,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="1453,5,1604,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="1235,5,1405,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="1044,5,1187,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="809,5,996,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="575,5,761,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="357,5,501,32"/>
+<area shape="rect" href="ftl_8c.html#aedba9d148f29a3ea880cf3abbbc07fad" title="gc函数，清理一整个line" alt="" coords="1673,107,1733,133"/>
+<area shape="rect" href="ftl_8c.html#a3716c928ff3ccf16e82ae281fd3dd6d3" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="1278,107,1362,133"/>
+<area shape="rect" href="ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="1487,132,1571,159"/>
+<area shape="rect" href="ftl_8h.html#af3f6de830b620d1f3060c7de8c8ddec0" title="初始化ssd参数，为ssd各层结构体分配空间，创建ftl线程" alt="" coords="1079,107,1151,133"/>
+<area shape="rect" href="bb_8c.html#a3fc7384f815cca2f52003206b20324df" title=" " alt="" coords="869,107,936,133"/>
+<area shape="rect" href="nvme_8h.html#a5b8b300920ee99be86c5e3e80a6f7949" title="注册blackbox相关函数" alt="" coords="587,107,749,133"/>
+<area shape="rect" href="femu_8c.html#a76a47b73caa1fa75fb706e3ed8f16a73" title="注册NOSSD/BBSSD/ZNSSD/OCSSD" alt="" coords="332,107,527,133"/>
+<area shape="rect" href="femu_8c.html#a966fbeb7afc495936413dbc445a0dd45" title="femu初始化，分配空间" alt="" coords="177,107,284,133"/>
+<area shape="rect" href="femu_8c.html#aeb3b70286609648db37222148efcf8d3" title="femu启动" alt="" coords="5,107,129,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8c5b724e07dbf478147835a06ed64d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c5b724e07dbf478147835a06ed64d42">&#9670;&nbsp;</a></span>pqueue_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqueue_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pqueue_8h.html#a614d5575a4e34ef0dcb513afc8965ded">pqueue_print_entry_f</a>&#160;</td>
+          <td class="paramname"><em>print</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>print the queue </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a8c5b724e07dbf478147835a06ed64d42_cgraph.png" border="0" usemap="#pqueue_8h_a8c5b724e07dbf478147835a06ed64d42_cgraph" alt=""/></div>
+<map name="pqueue_8h_a8c5b724e07dbf478147835a06ed64d42_cgraph" id="pqueue_8h_a8c5b724e07dbf478147835a06ed64d42_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,112,133"/>
+<area shape="rect" href="pqueue_8c.html#acceacc4429dd9cd31d5af09f3f473cb0" title=" " alt="" coords="160,5,263,32"/>
+<area shape="rect" href="pqueue_8c.html#a2c27c13ed1c988e9fc7b259e6820ca8c" title=" " alt="" coords="162,56,261,83"/>
+<area shape="rect" href="pqueue_8c.html#abec9363c7a9cc89190bf0925a4a1652c" title=" " alt="" coords="161,107,262,133"/>
+<area shape="rect" href="pqueue_8c.html#afb834e980c25bd436c8c1ad10fd91532" title=" " alt="" coords="175,157,247,184"/>
+<area shape="rect" href="pqueue_8c.html#a1de33eff030939b5f511acd4de320d2f" title=" " alt="" coords="178,208,245,235"/>
+<area shape="rect" href="pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="311,107,436,133"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="484,107,567,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9a509654dacb6be3d34ff7a4958ab4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a509654dacb6be3d34ff7a4958ab4dd">&#9670;&nbsp;</a></span>pqueue_remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pqueue_remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>remove an item from the queue. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+    <tr><td class="paramname">d</td><td>the entry </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0 on success </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_a9a509654dacb6be3d34ff7a4958ab4dd_cgraph.png" border="0" usemap="#pqueue_8h_a9a509654dacb6be3d34ff7a4958ab4dd_cgraph" alt=""/></div>
+<map name="pqueue_8h_a9a509654dacb6be3d34ff7a4958ab4dd_cgraph" id="pqueue_8h_a9a509654dacb6be3d34ff7a4958ab4dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,132,57"/>
+<area shape="rect" href="pqueue_8c.html#a918fcd7df850b9a0c17111abc9c323b1" title=" " alt="" coords="198,5,287,32"/>
+<area shape="rect" href="pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="180,56,305,83"/>
+<area shape="rect" href="pqueue_8c.html#a3e99f0cb15bfac6eeee46df9c875073a" title=" " alt="" coords="353,56,436,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae0cf88c8360a5f08ada81feaaeb40505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0cf88c8360a5f08ada81feaaeb40505">&#9670;&nbsp;</a></span>pqueue_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t pqueue_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpqueue__t.html">pqueue_t</a> *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>return the size of the queue. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="pqueue_8h_ae0cf88c8360a5f08ada81feaaeb40505_icgraph.png" border="0" usemap="#pqueue_8h_ae0cf88c8360a5f08ada81feaaeb40505_icgraph" alt=""/></div>
+<map name="pqueue_8h_ae0cf88c8360a5f08ada81feaaeb40505_icgraph" id="pqueue_8h_ae0cf88c8360a5f08ada81feaaeb40505_icgraph">
+<area shape="rect" title=" " alt="" coords="1637,5,1740,32"/>
+<area shape="rect" href="nvme-io_8c.html#a581e208522e056298eed5248b50af242" title="从to_poller队列中取req，放入cq中，然后通知上层操作已完成" alt="" coords="1425,5,1589,32"/>
+<area shape="rect" href="nvme-io_8c.html#acb7bf552fb77faee4d0aa021d51af4b7" title="nvme poller线程函数，不断处理sq和生成cq" alt="" coords="1275,5,1377,32"/>
+<area shape="rect" href="nvme_8h.html#a81f7e8af7ddcdfe9bef6af6c0333462d" title="创建poller线程，以及两个ring queue：to_ftl和to_poller" alt="" coords="1076,5,1227,32"/>
+<area shape="rect" href="nvme-admin_8c.html#a8b2764426b75545dfc03229b811607eb" title=" " alt="" coords="857,5,1028,32"/>
+<area shape="rect" href="nvme-admin_8c.html#ac726ef5f792706a8a28f07f19c5097b1" title="识别、执行admin命令" alt="" coords="667,5,809,32"/>
+<area shape="rect" href="nvme_8h.html#a7042f589909852500d6f26c36b78850b" title="处理admin命令的sq队列" alt="" coords="432,5,619,32"/>
+<area shape="rect" href="femu_8c.html#ac83bc83578ac4c5c414ec892ca2169e3" title=" " alt="" coords="197,5,384,32"/>
+<area shape="rect" href="femu_8c.html#a78a5db5b8b1cead9d84276dfeeb4b066" title=" " alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_a482d5bde24295b7334c8aec815f3a1a.html">femu</a></li><li class="navelem"><a class="el" href="dir_d816535559b32a2c0ba0585e530a580a.html">inc</a></li><li class="navelem"><a class="el" href="pqueue_8h.html">pqueue.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

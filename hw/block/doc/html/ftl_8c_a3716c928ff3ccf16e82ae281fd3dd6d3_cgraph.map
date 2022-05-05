@@ -1,0 +1,52 @@
+<map id="ftl_thread" name="ftl_thread">
+<area shape="rect" id="node1" title="ftl线程函数，不断从to_ftl中取req，处理（计算出时延）后放入to_poller" alt="" coords="5,980,89,1007"/>
+<area shape="rect" id="node2" href="$ftl_8c.html#aedba9d148f29a3ea880cf3abbbc07fad" title="gc函数，清理一整个line" alt="" coords="393,429,453,456"/>
+<area shape="rect" id="node31" href="$rte__ring_8h.html#a96ef17a77ac3deecdb8a1fb71b6bdf63" title=" " alt="" coords="147,980,278,1007"/>
+<area shape="rect" id="node33" href="$rte__ring_8h.html#ab2417e0e85ffd0e61ec4b0ee263ab809" title=" " alt="" coords="137,1031,288,1057"/>
+<area shape="rect" id="node38" href="$rte__ring_8h.html#a3afc06d02f63e84fe1569c99955af57a" title=" " alt="" coords="137,1081,288,1108"/>
+<area shape="rect" id="node42" href="$ftl_8c.html#a6722c643872772d48598187782365209" title="空闲gc阈值" alt="" coords="169,1132,256,1159"/>
+<area shape="rect" id="node43" href="$ftl_8c.html#a306780893a49a72da761566ca918b35e" title=" " alt="" coords="173,904,253,931"/>
+<area shape="rect" id="node47" href="$ftl_8c.html#a8610a939b22b60851e3b88e0137b7ede" title="ssd写延迟模拟" alt="" coords="171,676,255,703"/>
+<area shape="rect" id="node3" href="$ftl_8c.html#ae4d530364d4008be453c27d200eacddf" title="gc清理一个block，将有效页转移" alt="" coords="579,347,710,373"/>
+<area shape="rect" id="node5" href="$ftl_8c.html#a0299da5e7e5dd1eb868d80914de35ee8" title="根据操作类型，给出模拟的时延" alt="" coords="1056,43,1209,69"/>
+<area shape="rect" id="node6" href="$ftl_8c.html#adc3fd6a4f50d3279de8a77eb9d605a8d" title=" " alt="" coords="1791,93,1861,120"/>
+<area shape="rect" id="node25" href="$ftl_8c.html#a5313a5ca429ce56095c0c1052c301c15" title="将一个空block中所有页标记为PG_FREE" alt="" coords="579,411,710,437"/>
+<area shape="rect" id="node26" href="$ftl_8c.html#a2c41ad05315023bfa77846568e4f7282" title="将该line加入空闲line队列" alt="" coords="585,487,705,513"/>
+<area shape="rect" id="node27" href="$ftl_8c.html#ae5f2680b1c6531f6394723c150f11e1c" title="为gc选择一个victim line，优先队列中出队即可" alt="" coords="1063,651,1203,677"/>
+<area shape="rect" id="node4" href="$ftl_8c.html#a4b9026945c9fcc578ba0f7a7a84a1af1" title="gc产生的读page" alt="" coords="826,245,938,272"/>
+<area shape="rect" id="node8" href="$ftl_8c.html#a5b0fd3628f9c01d4151a9f849e03a6a8" title="gc产生的写" alt="" coords="824,347,940,373"/>
+<area shape="rect" id="node14" href="$ftl_8c.html#a340d3d702f25d601cb40dbd85a30dd82" title=" " alt="" coords="1534,372,1605,399"/>
+<area shape="rect" id="node17" href="$ftl_8c.html#a3cfafde63950110fe49516abc429ef66" title=" " alt="" coords="1336,448,1403,475"/>
+<area shape="rect" id="node7" href="$ftl_8c.html#aadf575bf139734453ba8fa6af20b1ac3" title=" " alt="" coords="1909,195,1975,221"/>
+<area shape="rect" id="node9" href="$ftl_8c.html#a2db76f519a8218ea9cda35e61552a4ec" title="获取新的page（wpp已经更新，取其指向的page地址即可）" alt="" coords="1075,803,1191,829"/>
+<area shape="rect" id="node11" href="$ftl_8c.html#a92e6cdd7677ef48c1830b6fbba09a28a" title=" " alt="" coords="1077,296,1189,323"/>
+<area shape="rect" id="node13" href="$ftl_8c.html#a03834614ca890f0367e871939f0ffc3b" title="将一个page从PG_FREE标记为PG_VALID" alt="" coords="1065,448,1200,475"/>
+<area shape="rect" id="node18" href="$ftl_8c.html#ab02c4873ff387abfd6f268ae711fd0b5" title="赋值一个page映射表项" alt="" coords="1071,752,1194,779"/>
+<area shape="rect" id="node19" href="$ftl_8c.html#aac3ae48a56045829a6e2f1bf933b1d5b" title="赋值一个反向映射表项（rmap[page_no(ppa)] &#45;&gt; lpn）" alt="" coords="1077,195,1188,221"/>
+<area shape="rect" id="node20" href="$ftl_8c.html#a52df9249316530eb887e0412ca51f048" title="写指针后移，每次写操作结束后调用" alt="" coords="1033,701,1232,728"/>
+<area shape="rect" id="node24" href="$ftl_8c.html#a4a3067e8cef7d5c0e777cc82cf9c40c3" title=" " alt="" coords="1092,245,1173,272"/>
+<area shape="rect" id="node10" href="$structppa.html#a4dc2d1cdc8cce18cdf002f309395cba8" title=" " alt="" coords="1330,904,1409,931"/>
+<area shape="rect" id="node12" href="$ftl_8c.html#a3c2e22192ca991c459c54bead5b1ff98" title=" " alt="" coords="1324,220,1415,247"/>
+<area shape="rect" id="node16" href="$ftl_8c.html#a080e38a63b4626bd7cf314fcf74f2fb2" title=" " alt="" coords="1332,499,1407,525"/>
+<area shape="rect" id="node15" href="$ftl_8c.html#a8f0b10088699a4513219eafe0e2e4bc6" title=" " alt="" coords="1680,359,1743,385"/>
+<area shape="rect" id="node21" href="$ftl_8c.html#a0b6eca1c9bf137587f4c3c7aed0ea914" title=" " alt="" coords="1321,853,1417,880"/>
+<area shape="rect" id="node22" href="$ftl_8c.html#a659c0c25af9ae17e1771fc5bf7bca444" title=" " alt="" coords="1298,803,1441,829"/>
+<area shape="rect" id="node23" href="$pqueue_8h.html#addd8cdfbc8c47b8cdd7eb4c4560de7aa" title=" " alt="" coords="1312,701,1427,728"/>
+<area shape="rect" id="node28" href="$pqueue_8h.html#a2919d3e817688b81da746d4123f51ba3" title=" " alt="" coords="1315,651,1424,677"/>
+<area shape="rect" id="node29" href="$pqueue_8h.html#abec9363c7a9cc89190bf0925a4a1652c" title=" " alt="" coords="1319,752,1420,779"/>
+<area shape="rect" id="node30" href="$pqueue_8c.html#a69ad19c161ae75369d1a444c83f4600c" title=" " alt="" coords="1507,676,1632,703"/>
+<area shape="rect" id="node32" href="$rte__ring_8h.html#abc8376d2c6e609707d52032860880b34" title=" " alt="" coords="366,1005,481,1032"/>
+<area shape="rect" id="node34" href="$rte__ring_8h.html#a8742d4b89ce43dbd93cc2ef48518ccf0" title=" " alt="" coords="336,1056,511,1083"/>
+<area shape="rect" id="node35" href="$rte__ring_8h.html#a201b5c512389dd58216906866aba1ec5" title=" " alt="" coords="559,1056,731,1083"/>
+<area shape="rect" id="node36" href="$rte__ring_8h.html#a3a4127db74610c522be2a4f8f70c033d" title=" " alt="" coords="779,1031,985,1057"/>
+<area shape="rect" id="node37" href="$rte__ring_8h.html#a269bf4b0dad1a7d2bb0396350f5e7976" title=" " alt="" coords="835,1081,929,1108"/>
+<area shape="rect" id="node39" href="$rte__ring_8h.html#ab8debfb458e927d559e7ce750048502d" title=" " alt="" coords="338,1107,509,1133"/>
+<area shape="rect" id="node40" href="$rte__ring_8h.html#a388f737bcdf0a8ee4cf6f75464ca5979" title=" " alt="" coords="559,1107,731,1133"/>
+<area shape="rect" id="node41" href="$rte__ring_8h.html#a22ab749e8f41b8e232a5c54a5c100d16" title=" " alt="" coords="779,1132,985,1159"/>
+<area shape="rect" id="node44" href="$ftl_8c.html#af93eee663d18640559cfd06afdeb5409" title=" " alt="" coords="361,904,485,931"/>
+<area shape="rect" id="node45" href="$ftl_8c.html#a6e8a2a542e569fe2662cbb8cf647590b" title=" " alt="" coords="370,853,477,880"/>
+<area shape="rect" id="node46" href="$ftl_8c.html#a4237c1400d2e5e24f32b77e347163ab9" title="判断ppa地址是否越界" alt="" coords="381,955,466,981"/>
+<area shape="rect" id="node48" href="$ftl_8c.html#adaaf0f3e032de3124ddc61a6111b25db" title="update SSD status about one page from PG_VALID &#45;&gt; PG_INVALID" alt="" coords="1059,600,1206,627"/>
+<area shape="rect" id="node50" href="$ftl_8c.html#a4494881726f0faee876d503fa1f2e312" title="gc阈值" alt="" coords="362,499,485,525"/>
+<area shape="rect" id="node49" href="$pqueue_8h.html#a7dfaa607ca404b915355d4b123c669ee" title=" " alt="" coords="1280,600,1459,627"/>
+</map>
