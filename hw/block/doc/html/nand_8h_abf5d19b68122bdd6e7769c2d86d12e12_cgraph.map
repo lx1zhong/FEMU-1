@@ -1,7 +1,0 @@
-<map id="init_nand_flash" name="init_nand_flash">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,125,108"/>
-<area shape="rect" id="node2" href="$nand_8c.html#ac06b76cb4e1499cd0f5086d231a92bf2" title=" " alt="" coords="175,5,341,32"/>
-<area shape="rect" id="node3" href="$nand_8c.html#a37e87937b3211fc7dbe4b940ba9b6797" title=" " alt="" coords="173,56,343,83"/>
-<area shape="rect" id="node4" href="$nand_8c.html#a7710f745cac37cb6e8bce3f23563ae3f" title=" " alt="" coords="178,107,338,133"/>
-<area shape="rect" id="node5" href="$nand_8c.html#a8cb0a9f52feff4b7ff071d57c217cf86" title=" " alt="" coords="179,157,337,184"/>
-</map>
