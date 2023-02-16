@@ -80,7 +80,7 @@ struct ppa {
 
 struct finger_entry {
     unsigned char sha1[SHA_DIGEST_LENGTH];
-    struct ppa ppa;
+    struct ppa vba;
     uint8_t count; // reduntance count
     // struct finger_entry *next;
 };
@@ -103,7 +103,7 @@ struct segment {
 
 /* search sha1 in seg, return 1 and result written into lba if found, 
     if not found, return 0 and insert sha1 into seg. */
-int search_in_segment(struct segment *seg, unsigned char *sha1, struct ppa *vba);
+int search_in_segment(struct ssd *ssd, unsigned char *sha1, struct ppa *vba);
 
 
 struct ppa_ref {

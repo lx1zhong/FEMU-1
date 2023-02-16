@@ -23,6 +23,12 @@
 // 	Cost += elapsed;
 // }
 
+static void mark_page_invalid(struct ssd *ssd, struct ppa *ppa);
+static inline void set_rmap_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa);
+static struct ppa get_new_vba(struct ssd *ssd);
+static void ssd_advance_vba(struct ssd *ssd);
+static void *ftl_thread(void *arg);
+
 static inline unsigned int get_seg_num(unsigned char *sha1) {
     return *(unsigned short *)sha1 >> (8*sizeof(unsigned short) - SEG_NUM_BITS);
 }
@@ -42,7 +48,7 @@ static int search_in_bucket(struct bucket *p_bkt, unsigned char *sha1, struct pp
     // todo
     for (; p_entry < p_bkt->first_entry+p_bkt->nentries; p_entry++) {
         if (!sha1_cmp(sha1, p_entry->sha1)) {
-            vba->ppa = p_entry->ppa.ppa;
+            vba->ppa = p_entry->vba.ppa;
             p_entry->count ++;  //
             femu_debug("[search]: sha1 found in seg#%u,bkt#%d,entry#%ld\n",get_seg_num(sha1),p_bkt->number,p_entry-p_bkt->first_entry);
             return 1;
@@ -52,7 +58,7 @@ static int search_in_bucket(struct bucket *p_bkt, unsigned char *sha1, struct pp
 }
 
 static inline void set_entry(struct finger_entry *entry, unsigned char *sha1, struct ppa *vba, uint8_t count) {
-    entry->ppa.ppa = vba->ppa;
+    entry->vba.ppa = vba->ppa;
     entry->count = count;
     memcpy(entry->sha1, sha1, SHA_DIGEST_LENGTH);
 }
@@ -69,8 +75,11 @@ static int find_least_cnt_entry(struct bucket *bkt) {
     return res;
 }
 
-static void add_sha1_to_seg(struct segment *seg, unsigned char *sha1, struct ppa *vba) {
+static void add_sha1_to_seg(struct ssd *ssd, struct segment *seg, unsigned char *sha1, struct ppa *vba) {
     struct bucket *p_bkt = seg->cur_bkt;
+    struct ppa new_vba = get_new_vba(ssd);
+    ssd_advance_vba(ssd);
+    vba->ppa = new_vba.ppa;
     if (seg->nbkts < NUM_BKT_PER_SEG ) {
         // seg not full,
         if (seg->nbkts == 0 || p_bkt->nentries >= NUM_ENTRY_PER_BKT) {
@@ -128,13 +137,14 @@ static void add_sha1_to_seg(struct segment *seg, unsigned char *sha1, struct ppa
     }
 }
 
-int search_in_segment(struct segment *seg, unsigned char *sha1, struct ppa *vba) {
+int search_in_segment(struct ssd *ssd,  unsigned char *sha1, struct ppa *vba) {
     unsigned int n = get_seg_num(sha1);
+    struct segment *seg = ssd->seg;
     femu_debug("[search]:seg_num=%d, there're %d bkts\n",n,seg[n].nbkts);
-
+    
     struct segment *p_seg = seg + n;
     if (!p_seg->nbkts) {
-        add_sha1_to_seg(p_seg, sha1, vba);
+        add_sha1_to_seg(ssd, p_seg, sha1, vba);
         return 0;
     }
 
@@ -144,14 +154,10 @@ int search_in_segment(struct segment *seg, unsigned char *sha1, struct ppa *vba)
             return 1;
         }
     }
-    add_sha1_to_seg(p_seg, sha1, vba);
+    add_sha1_to_seg(ssd, p_seg, sha1, vba);
     return 0;
 }
 
-
-static void mark_page_invalid(struct ssd *ssd, struct ppa *ppa);
-static inline void set_rmap_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa);
-static void *ftl_thread(void *arg);
 
 static inline bool should_gc(struct ssd *ssd)
 {
@@ -189,6 +195,9 @@ static inline uint8_t get_secmaptbl_ref(struct ssd *ssd, uint64_t vbn)
 static inline void set_maptbl_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa)
 {
     ftl_assert(lpn < ssd->sp.tt_pgs);
+    if (ppa->g.rsv==0) {
+        femu_err("ppa->g.rsv==0, lpn=%lu,ppa=%lu\n",lpn,ppa->ppa);
+    }
     ssd->maptbl[lpn] = *ppa;
 }
 
@@ -223,35 +232,48 @@ static inline void minus_secmaptbl_ref(struct ssd *ssd, struct ppa *vba)
     else {
         femu_err("secmaptbl[%lu].reference=%d\n", vba2.ppa, ssd->secmaptbl[vba2.ppa].reference);
     }
+    if (ssd->secmaptbl[vba2.ppa].reference == 0) {
+        mark_page_invalid(ssd, &(ssd->secmaptbl[vba2.ppa].ppa));
+        ssd->valid_vba_cnt--;
+        set_rmap_ent(ssd, INVALID_LPN, &(ssd->secmaptbl[vba2.ppa].ppa));
+    }
 }
 
 // get next vba of secmaptbl
 static void ssd_advance_vba(struct ssd *ssd) {
-    if (ssd->cur_vba + 1 < ssd->sp.tt_pgs/10) {
-        while (get_secmaptbl_ref(ssd, ssd->cur_vba) != 0 && ssd->cur_vba + 1 < ssd->sp.tt_pgs/10) {
+    ssd->cur_vba++;
+    if (get_secmaptbl_ref(ssd, ssd->cur_vba) == 0) {
+        //todo
+        // struct ppa ppa = get_secmaptbl_ent2(ssd, ssd->cur_vba)
+        // if (mapped_ppa(&ppa)) {
+        //     mark_page_invalid(ssd, &ppa);
+        // }
+        return;
+    }
+    while (ssd->cur_vba + 1 < ssd->sp.tt_pgs/10) {
+        if (get_secmaptbl_ref(ssd, ssd->cur_vba) != 0) {
             ssd->cur_vba++;
         }
-    } else {
-        // find a empty vba entry from the beginning
-        for(uint64_t vbn=0; vbn<ssd->sp.tt_pgs/10; vbn++) {
-            if(get_secmaptbl_ref(ssd, vbn) == 0) {
-                // ref == 0, page invalid
-                struct ppa ppa =get_secmaptbl_ent2(ssd, vbn);
-                mark_page_invalid(ssd, &ppa);
-                ssd->valid_vba_cnt--;
-                ssd->cur_vba = vbn;
-                set_rmap_ent(ssd, INVALID_LPN, &ppa);
-            }
+        else return;
+    } 
+
+    // find a empty vba entry from the beginning
+    for(uint64_t vbn=0; vbn<ssd->sp.tt_pgs/10; vbn++) {
+        if(get_secmaptbl_ref(ssd, vbn) == 0) {
+            // ref == 0, page invalid
+            ssd->cur_vba = vbn;
+            return;
         }
     }
+    femu_err("no empty vba!\n");
 }
 
 static struct ppa get_new_vba(struct ssd *ssd) {
-    struct ppa ppa;
-    ppa.ppa = ssd->cur_vba;
-    ppa.g.rsv = 1;
+    struct ppa vba;
+    vba.ppa = ssd->cur_vba;
+    vba.g.rsv = 1;
     ssd->valid_vba_cnt++;
-    return ppa;
+    return vba;
 }
 
 static uint64_t ppa2pgidx(struct ssd *ssd, struct ppa *ppa)
@@ -468,10 +490,10 @@ static void ssd_init_params(struct ssdparams *spp)
     spp->secsz = 512;
     spp->secs_per_pg = 8;
     spp->pgs_per_blk = 512;
-    spp->blks_per_pl = 256; /* 256GB */
+    spp->blks_per_pl = 1024; /* 256GB */
     spp->pls_per_lun = 2;
-    spp->luns_per_ch = 16;
-    spp->nchs = 16;
+    spp->luns_per_ch = 8;
+    spp->nchs = 8;
 
     spp->pg_rd_lat = NAND_READ_LATENCY;
     spp->pg_wr_lat = NAND_PROG_LATENCY;
@@ -1024,7 +1046,6 @@ static int do_gc(struct ssd *ssd, bool force)
 
 static uint64_t ssd_read(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
 {
-    // femu_log("ssd_read begin\n");
     struct ssdparams *spp = &ssd->sp;
     uint64_t lba = req->slba;
     int nsecs = req->nlb;
@@ -1092,7 +1113,6 @@ static uint64_t ssd_read(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
     }
     
     qemu_sglist_destroy(qsg);
-    // femu_log("ssd_read end\n");
     return maxlat;
 }
 
@@ -1107,7 +1127,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
     uint64_t lpn;
     uint64_t curlat = 0, maxlat = 0;
     int r;
-    bool hash_flag = 0;
+    bool hash_flag = true;
 
     if (end_lpn >= spp->tt_pgs) {
         ftl_err("start_lpn=%"PRIu64",tt_pgs=%d\n", start_lpn, ssd->sp.tt_pgs);
@@ -1136,8 +1156,6 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
     void *mb = n->mbe->logical_space;
 
     for (lpn = start_lpn; lpn <= end_lpn; lpn++) {
-
-        
         if (hash_flag) {
             // get data from memory backend
             assert(sg_cur_index < qsg->nsg);
@@ -1155,20 +1173,20 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             uint64_t stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
             SHA1(mb + data_offset, cur_len, sha1);
             uint64_t etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            femu_debug("sha1 cost: %luns\n", etime-stime);
+            femu_log("sha1 cost: %luns\n", etime-stime);
             // femu_debug("[write]: lpn=%lu, SHA1=%lu,%lu\n", lpn, *(unsigned long*)sha1,*((unsigned long*)sha1+1));
             
             // lookup hash
             stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            int res = search_in_segment(ssd->seg, sha1, &vba);
+            int res = search_in_segment(ssd, sha1, &vba);
             etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            femu_debug("[search]: time=%luns, lpn=%lu, SHA1=%lu, res=%d, lba=%lu\n", etime-stime, lpn, *(unsigned long*)sha1,res,lba);
+            femu_log("[search]: time=%luns, lpn=%lu, SHA1=%lu, res=%d, vba=%lu\n", etime-stime, lpn, *(unsigned long*)sha1,res,vba.ppa << 1 >> 1);
             
             if (res) {
                 // found, just map to secmaptbl
                 ppa = get_maptbl_ent(ssd, lpn);
                 if (ppa.ppa == vba.ppa) {
-                    femu_debug("[hit]: same lpn->vba\n");
+                    femu_log("[hit]: same lpn->vba\n");
                 }
                 else {
                     if (mapped_vba(&ppa)) {
@@ -1176,28 +1194,30 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
                     }
                     set_maptbl_ent(ssd, lpn, &vba);
                     add_secmaptbl_res(ssd, &vba);
-                    femu_debug("[hit]:map%lu ---> vba%ld, ref=%d\n", lpn, (long)vba.ppa, get_secmaptbl_ref(ssd, vba.ppa));
+                    femu_log("[hit]:map%lu ---> vba%ld, ref=%d\n", lpn, (long)vba.ppa, get_secmaptbl_ref(ssd, vba.ppa));
                 }
             } 
             else {
                 // not found, map to secmaptbl and map secmaptbl to ppa
                 
-                // old ppa
+                // old
                 ppa = get_maptbl_ent(ssd, lpn);
                 if (mapped_ppa(&ppa)) {
                     /* update old page information first */
+                    femu_log("1:lpn=%lu,ppa.sign=%d, ppa=%lu\n",lpn,ppa.g.rsv,ppa.ppa);
                     mark_page_invalid(ssd, &ppa);   
+                    femu_log("2\n");
                     set_rmap_ent(ssd, INVALID_LPN, &ppa);
                 }
                 else if (mapped_vba(&ppa)) {
-                    /* update old page information first */
+                    femu_log("4\n");
+                    /* update old vba information first */
                     minus_secmaptbl_ref(ssd, &ppa);
                 }
 
                 /* new write */
                 ppa = get_new_page(ssd);
                 /* update secmaptbl */
-                vba= get_new_vba(ssd);
                 set_secmaptbl_ent(ssd, &vba, &ppa);
 
                 /* update maptbl */
@@ -1208,7 +1228,6 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
 
                 /* need to advance the write pointer here */
                 ssd_advance_write_pointer(ssd);
-                ssd_advance_vba(ssd);
 
                 struct nand_cmd swr;
                 swr.type = USER_IO;
@@ -1217,7 +1236,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
                 /* get latency statistics */
                 curlat = ssd_advance_status(ssd, &ppa, &swr);
                 maxlat = (curlat > maxlat) ? curlat : maxlat;
-                femu_debug("[miss]:map%lu ---> vba%ld ---> ppa%lu, maxlat=%luns\n", lpn, (long)vba.ppa, ppa.ppa, maxlat);
+                femu_log("[miss]:map%lu ---> vba%ld ---> ppa%lu, maxlat=%luns\n", lpn, (long)vba.ppa, ppa.ppa, maxlat);
             }
         }
         else {
@@ -1226,7 +1245,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             ppa = get_maptbl_ent(ssd, lpn);
             if (mapped_ppa(&ppa)) {
                 /* update old page information first */
-                mark_page_invalid(ssd, &ppa);   // todo
+                mark_page_invalid(ssd, &ppa);
                 set_rmap_ent(ssd, INVALID_LPN, &ppa);
             }
 
@@ -1250,7 +1269,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             curlat = ssd_advance_status(ssd, &ppa, &swr);
             maxlat = (curlat > maxlat) ? curlat : maxlat;
         }
-        
+
         sg_cur_byte += cur_len;
         if (sg_cur_byte == qsg->sg[sg_cur_index].len) {
             sg_cur_byte = 0;
