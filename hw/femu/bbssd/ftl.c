@@ -6,23 +6,6 @@
 
 // #define FEMU_DEBUG_FTL
 
-
-// struct timeval Start; /*only used for recording the cost*/
-// double Cost = 0;
-
-// static inline void cost_start(void) {
-// 	Cost = 0;
-// 	gettimeofday(&Start, NULL);
-// }
-
-// static inline void cost_end(void) {
-// 	double elapsed;
-// 	struct timeval costEnd;
-// 	gettimeofday(&costEnd, NULL);
-// 	elapsed = ((costEnd.tv_sec*1000000+costEnd.tv_usec)-(Start.tv_sec*1000000+Start.tv_usec));
-// 	Cost += elapsed;
-// }
-
 static void mark_page_invalid(struct ssd *ssd, struct ppa *ppa);
 static inline void set_rmap_ent(struct ssd *ssd, uint64_t lpn, struct ppa *ppa);
 static struct ppa get_new_vba(struct ssd *ssd);
@@ -50,7 +33,7 @@ static int search_in_bucket(struct bucket *p_bkt, unsigned char *sha1, struct pp
         if (!sha1_cmp(sha1, p_entry->sha1)) {
             vba->ppa = p_entry->vba.ppa;
             p_entry->count ++;  //
-            femu_debug("[search]: sha1 found in seg#%u,bkt#%d,entry#%ld\n",get_seg_num(sha1),p_bkt->number,p_entry-p_bkt->first_entry);
+            femu_log("[search]: sha1 found in seg#%u,bkt#%d,entry#%ld\n",get_seg_num(sha1),p_bkt->number,p_entry-p_bkt->first_entry);
             return 1;
         }
     }
@@ -140,7 +123,7 @@ static void add_sha1_to_seg(struct ssd *ssd, struct segment *seg, unsigned char 
 int search_in_segment(struct ssd *ssd,  unsigned char *sha1, struct ppa *vba) {
     unsigned int n = get_seg_num(sha1);
     struct segment *seg = ssd->seg;
-    femu_debug("[search]:seg_num=%d, there're %d bkts\n",n,seg[n].nbkts);
+    femu_log("[search]:seg_num=%d, there're %d bkts\n",n,seg[n].nbkts);
     
     struct segment *p_seg = seg + n;
     if (!p_seg->nbkts) {
@@ -1169,24 +1152,28 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             // femu_log("crc32 cost: %luns\n", etime-stime);
             // femu_debug("[write]: lpn=%lu, crc32=%u\n", lpn, crc);u32 crc = 
             
-            unsigned char sha1[SHA_DIGEST_LENGTH];
-            uint64_t stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            SHA1(mb + data_offset, cur_len, sha1);
-            uint64_t etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            femu_log("sha1 cost: %luns\n", etime-stime);
+            unsigned char *sha1 = req->sha1_list[sg_cur_index];
+            // unsigned char sha1[SHA_DIGEST_LENGTH];
+            // stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
+            // SHA1(mb + data_offset, cur_len, sha1);
+            // etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
+            
+            // femu_debug("sha1 cost: %luns\n", etime-stime);
             // femu_debug("[write]: lpn=%lu, SHA1=%lu,%lu\n", lpn, *(unsigned long*)sha1,*((unsigned long*)sha1+1));
             
             // lookup hash
-            stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
+            uint64_t stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
             int res = search_in_segment(ssd, sha1, &vba);
-            etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
+            uint64_t etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
             femu_log("[search]: time=%luns, lpn=%lu, SHA1=%lu, res=%d, vba=%lu\n", etime-stime, lpn, *(unsigned long*)sha1,res,vba.ppa << 1 >> 1);
-            
+            // free(sha1_);
+
             if (res) {
+                n->dedup_pgs++;
                 // found, just map to secmaptbl
                 ppa = get_maptbl_ent(ssd, lpn);
                 if (ppa.ppa == vba.ppa) {
-                    femu_log("[hit]: same lpn->vba\n");
+                    femu_debug("[hit]: same lpn->vba\n");
                 }
                 else {
                     if (mapped_vba(&ppa)) {
@@ -1194,23 +1181,27 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
                     }
                     set_maptbl_ent(ssd, lpn, &vba);
                     add_secmaptbl_res(ssd, &vba);
-                    femu_log("[hit]:map%lu ---> vba%ld, ref=%d\n", lpn, (long)vba.ppa, get_secmaptbl_ref(ssd, vba.ppa));
+                    femu_debug("[hit](%lu/%lu):map%lu ---> vba%ld, ref=%d\n", n->dedup_pgs, n->no_dedup_pgs, lpn, (long)vba.ppa, get_secmaptbl_ref(ssd, vba.ppa));
+                    if (n->dedup_pgs % 5000 == 0) {
+                        femu_log("[hit/miss]:[%lu/%lu],search time=%luns\n", n->dedup_pgs, n->no_dedup_pgs, etime-stime);
+                    }
                 }
             } 
             else {
+                n->no_dedup_pgs++;
                 // not found, map to secmaptbl and map secmaptbl to ppa
                 
                 // old
                 ppa = get_maptbl_ent(ssd, lpn);
                 if (mapped_ppa(&ppa)) {
                     /* update old page information first */
-                    femu_log("1:lpn=%lu,ppa.sign=%d, ppa=%lu\n",lpn,ppa.g.rsv,ppa.ppa);
+                    femu_debug("1:lpn=%lu,ppa.sign=%d, ppa=%lu\n",lpn,ppa.g.rsv,ppa.ppa);
                     mark_page_invalid(ssd, &ppa);   
-                    femu_log("2\n");
+                    femu_debug("2\n");
                     set_rmap_ent(ssd, INVALID_LPN, &ppa);
                 }
                 else if (mapped_vba(&ppa)) {
-                    femu_log("4\n");
+                    femu_debug("4\n");
                     /* update old vba information first */
                     minus_secmaptbl_ref(ssd, &ppa);
                 }
@@ -1236,7 +1227,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
                 /* get latency statistics */
                 curlat = ssd_advance_status(ssd, &ppa, &swr);
                 maxlat = (curlat > maxlat) ? curlat : maxlat;
-                femu_log("[miss]:map%lu ---> vba%ld ---> ppa%lu, maxlat=%luns\n", lpn, (long)vba.ppa, ppa.ppa, maxlat);
+                femu_debug("[miss]:map%lu ---> vba%ld ---> ppa%lu, maxlat=%luns\n", lpn, (long)vba.ppa, ppa.ppa, maxlat);
             }
         }
         else {
@@ -1279,6 +1270,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
     }
     
     qemu_sglist_destroy(qsg);
+    free(req->sha1_list);
     return maxlat;
 }
 

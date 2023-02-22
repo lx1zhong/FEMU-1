@@ -1,5 +1,5 @@
 #include "../nvme.h"
-
+#include <openssl/sha.h>
 /* Coperd: FEMU Memory Backend (mbe) for emulated SSD */
 
 int init_dram_backend(SsdDramBackend **mbe, int64_t nbytes)
@@ -26,7 +26,7 @@ void free_dram_backend(SsdDramBackend *b)
     }
 }
 
-int backend_rw(SsdDramBackend *b, QEMUSGList *qsg, uint64_t *lbal, bool is_write)
+int backend_rw(unsigned char **sha1_list, SsdDramBackend *b, QEMUSGList *qsg, uint64_t *lbal, bool is_write)
 {
     int sg_cur_index = 0;
     dma_addr_t sg_cur_byte = 0;
@@ -45,6 +45,13 @@ int backend_rw(SsdDramBackend *b, QEMUSGList *qsg, uint64_t *lbal, bool is_write
         cur_len = qsg->sg[sg_cur_index].len - sg_cur_byte;
         if (dma_memory_rw(qsg->as, cur_addr, mb + mb_oft, cur_len, dir, MEMTXATTRS_UNSPECIFIED)) {
             error_report("FEMU: dma_memory_rw error");
+        }
+
+        if (sha1_list != NULL && is_write) {
+            unsigned char *sha1 = (unsigned char *)malloc(SHA_DIGEST_LENGTH);
+            SHA1(mb + mb_oft, cur_len, sha1);
+            sha1_list[sg_cur_index] = sha1;
+            // femu_log("sg_cur_index=%d,mb=%p, sha1=%lu, mb_oft=%lu\n",sg_cur_index,mb, *(unsigned long*)sha1,mb_oft);
         }
 
         sg_cur_byte += cur_len;

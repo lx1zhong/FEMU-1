@@ -63,7 +63,6 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
         QTAILQ_REMOVE(&sq->req_list, req, entry);
         memset(&req->cqe, 0, sizeof(req->cqe));
         /* Coperd: record req->stime at earliest convenience */
-        req->expire_time = req->stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
         req->cqe.cid = cmd.cid;
         req->cmd_opcode = cmd.opcode;
         memcpy(&req->cmd, &cmd, sizeof(NvmeCmd));
@@ -72,8 +71,12 @@ static void nvme_process_sq_io(void *opaque, int index_poller)
             femu_debug("%s,cid:%d\n", __func__, cmd.cid);
         }
 
+        // backend 读写
         status = nvme_io_cmd(n, &cmd, req);
-        if (1 && status == NVME_SUCCESS) {
+        
+        req->expire_time = req->stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
+
+        if (1 && status == NVME_SUCCESS) { // && status
             req->status = status;
 
             int rc = femu_ring_enqueue(n->to_ftl[index_poller], (void *)&req, 1);
@@ -149,6 +152,7 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
     while ((req = pqueue_peek(pq))) {
         now = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
         if (now < req->expire_time) {
+            // femu_log("cur_time earlier than expire_time %lu ns, lat=%luns\n", req->expire_time - now, req->reqlat);
             break;
         }
 
@@ -162,8 +166,9 @@ static void nvme_process_cq_cpl(void *arg, int index_poller)
         n->nr_tt_ios++;
         if (now - req->expire_time >= 20000) {
             n->nr_tt_late_ios++;
-            if (n->print_log) {
-                femu_debug("%s,diff,pq.count=%lu,%" PRId64 ", %lu/%lu\n",
+            // if (n->print_log) {
+            if (n->nr_tt_ios % 10000 == 0) {
+                femu_log("%s,diff,pq.count=%lu,%" PRId64 ", %lu/%lu\n",
                            n->devname, pqueue_size(pq), now - req->expire_time,
                            n->nr_tt_late_ios, n->nr_tt_ios);
             }
@@ -342,7 +347,8 @@ uint16_t nvme_rw(FemuCtrl *n, NvmeNamespace *ns, NvmeCmd *cmd, NvmeRequest *req)
     req->status = NVME_SUCCESS;
     req->nlb = nlb;
 
-    ret = backend_rw(n->mbe, &req->qsg, &data_offset, req->is_write);
+    req->sha1_list = (unsigned char **)malloc(sizeof(unsigned char *) * nlb);
+    ret = backend_rw(req->sha1_list, n->mbe, &req->qsg, &data_offset, req->is_write);
     if (!ret) {
         return NVME_SUCCESS;
     }

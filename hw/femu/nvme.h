@@ -964,9 +964,9 @@ typedef struct NvmeRequest {
     struct NvmeCQueue       *cq;
     struct NvmeNamespace    *ns;
     uint16_t                status;
-    uint64_t                slba;
+    uint64_t                slba;       // starting Logical block address
     uint16_t                is_write;
-    uint16_t                nlb;
+    uint16_t                nlb;        // num of logical block
     uint16_t                ctrl;
     uint64_t                meta_size;
     uint64_t                mptr;
@@ -983,6 +983,8 @@ typedef struct NvmeRequest {
     int64_t                 reqlat;
     int64_t                 gcrt;
     int64_t                 expire_time;
+
+    unsigned char           **sha1_list;
 
     /* OC2.0: sector offset relative to slba where reads become invalid */
     uint64_t predef;
@@ -1318,6 +1320,8 @@ typedef struct FemuCtrl {
 
     int64_t         nr_tt_ios;
     int64_t         nr_tt_late_ios;
+    int64_t         dedup_pgs;
+    int64_t         no_dedup_pgs;
     bool            print_log;
 
     uint8_t         multipoller_enabled;
@@ -1478,7 +1482,7 @@ static inline uint16_t nvme_check_mdts(FemuCtrl *n, size_t len)
 #define MN_MAX_LEN (64)
 #define ID_MAX_LEN (4)
 
-//#define FEMU_DEBUG_NVME
+// #define FEMU_DEBUG_NVME
 #ifdef FEMU_DEBUG_NVME
 #define femu_debug(fmt, ...) \
     do { printf("[FEMU] Dbg: " fmt, ## __VA_ARGS__); } while (0)

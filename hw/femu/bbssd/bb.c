@@ -54,6 +54,8 @@ static void bb_flip(FemuCtrl *n, NvmeCmd *cmd)
     case FEMU_RESET_ACCT:
         n->nr_tt_ios = 0;
         n->nr_tt_late_ios = 0;
+        n->dedup_pgs = 0;
+        n->no_dedup_pgs = 0;
         femu_log("%s,Reset tt_late_ios/tt_ios,%lu/%lu\n", n->devname,
                 n->nr_tt_late_ios, n->nr_tt_ios);
         break;
