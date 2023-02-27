@@ -67,6 +67,11 @@ static void bb_flip(FemuCtrl *n, NvmeCmd *cmd)
         n->print_log = false;
         femu_log("%s,Log print [Disabled]!\n", n->devname);
         break;
+    case FEMU_RESET_FINGERPRINT:
+        map_deinit(&(n->ssd->figerprint_map));
+        map_init(&(n->ssd->figerprint_map));
+        femu_log("figerprint_map reset!\n");
+        break;
     default:
         printf("FEMU:%s,Not implemented flip cmd (%lu)\n", n->devname, cdw10);
     }

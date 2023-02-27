@@ -1,7 +1,7 @@
 #include <openssl/sha.h>
 #include "ftl.h"
+#include "map.c"
 #include "crc32.h"
-#include <sys/time.h>
 #include <string.h>
 
 // #define FEMU_DEBUG_FTL
@@ -58,6 +58,19 @@ static int find_least_cnt_entry(struct bucket *bkt) {
     return res;
 }
 
+
+// static void sort_bucket(struct bucket *p_bkt, int n) {
+//     int pos;
+//     if (n == p_bkt->nentries - 1) {
+//         pos = binary_search(p_bkt, 0, n-1);
+//     }
+//     else {
+//         if (n > 0 && sha1_cmp((p_bkt->first_entry+n-1)->sha1, (p_bkt->first_entry+n)->sha1) < 0) {
+//             pos = binary_search(p_bkt, 0, n-1);
+//         }
+//     }
+// }
+
 static void add_sha1_to_seg(struct ssd *ssd, struct segment *seg, unsigned char *sha1, struct ppa *vba) {
     struct bucket *p_bkt = seg->cur_bkt;
     struct ppa new_vba = get_new_vba(ssd);
@@ -100,6 +113,7 @@ static void add_sha1_to_seg(struct ssd *ssd, struct segment *seg, unsigned char 
             else if (sha1_cmp(sha1, p_bkt->max_sha1) > 0) {
                 memcpy(p_bkt->max_sha1, sha1, SHA_DIGEST_LENGTH);
             }
+            // sort_bucket(p_bkt, p_bkt->nentries-1);
         }
     }
     else {
@@ -111,6 +125,7 @@ static void add_sha1_to_seg(struct ssd *ssd, struct segment *seg, unsigned char 
         int n = find_least_cnt_entry(p_bkt);
         set_entry(p_bkt->first_entry+n, sha1, vba, 1);
         p_bkt->nentries++;
+        // sort_bucket(p_bkt, n);
         if (sha1_cmp(sha1, p_bkt->min_sha1) < 0) {
             memcpy(p_bkt->min_sha1, sha1, SHA_DIGEST_LENGTH);
         }
@@ -189,12 +204,12 @@ static inline void set_secmaptbl_ent(struct ssd *ssd, struct ppa *vba, struct pp
     struct ppa vba2;
     vba2.ppa = vba->ppa;
     vba2.g.rsv = 0;
-    ftl_assert(vba2.ppn < ssd->sp.tt_pgs / 10);
+    ftl_assert(vba2.ppn < ssd->sp.tt_pgs / 2);
     ssd->secmaptbl[vba2.ppa].ppa = *ppa;
     ssd->secmaptbl[vba2.ppa].reference= 1;
 }
 
-static inline void add_secmaptbl_res(struct ssd *ssd, struct ppa *vba)
+static inline void add_secmaptbl_ref(struct ssd *ssd, struct ppa *vba)
 {
     struct ppa vba2;
     vba2.ppa = vba->ppa;
@@ -233,7 +248,7 @@ static void ssd_advance_vba(struct ssd *ssd) {
         // }
         return;
     }
-    while (ssd->cur_vba + 1 < ssd->sp.tt_pgs/10) {
+    while (ssd->cur_vba + 1 < ssd->sp.tt_pgs / 2) {
         if (get_secmaptbl_ref(ssd, ssd->cur_vba) != 0) {
             ssd->cur_vba++;
         }
@@ -241,7 +256,7 @@ static void ssd_advance_vba(struct ssd *ssd) {
     } 
 
     // find a empty vba entry from the beginning
-    for(uint64_t vbn=0; vbn<ssd->sp.tt_pgs/10; vbn++) {
+    for(uint64_t vbn=0; vbn<ssd->sp.tt_pgs / 2; vbn++) {
         if(get_secmaptbl_ref(ssd, vbn) == 0) {
             // ref == 0, page invalid
             ssd->cur_vba = vbn;
@@ -590,8 +605,8 @@ static void ssd_init_maptbl(struct ssd *ssd)
         ssd->maptbl[i].ppa = UNMAPPED_PPA;
     }
 
-    ssd->secmaptbl = g_malloc0(sizeof(struct ppa_ref) * spp->tt_pgs / 10);
-    for (int i = 0; i < spp->tt_pgs/10; i++) {
+    ssd->secmaptbl = g_malloc0(sizeof(struct ppa_ref) * spp->tt_pgs / 2);
+    for (int i = 0; i < spp->tt_pgs / 2; i++) {
         ssd->secmaptbl[i].ppa.ppa = UNMAPPED_PPA;
         ssd->secmaptbl[i].reference = 0;
     }
@@ -629,6 +644,8 @@ void ssd_init(FemuCtrl *n)
     for (int i = 0; i < NUM_SEG; i++) {
         ssd_init_seg(&(ssd->seg[i]));
     }
+
+    map_init(&ssd->figerprint_map);
 
     /* initialize maptbl */
     ssd_init_maptbl(ssd);
@@ -1044,17 +1061,17 @@ static uint64_t ssd_read(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
 
     // status = nvme_io_cmd(n, &cmd, req);
     
-    NvmeRwCmd *rw = (NvmeRwCmd *)(&(req->cmd));
-    uint64_t slba = le64_to_cpu(rw->slba);
-    NvmeNamespace *ns = req->ns;
-    const uint8_t lba_index = NVME_ID_NS_FLBAS_INDEX(ns->id_ns.flbas);
-    const uint8_t data_shift = ns->id_ns.lbaf[lba_index].lbads;
-    uint64_t data_offset = slba << data_shift;
+    // NvmeRwCmd *rw = (NvmeRwCmd *)(&(req->cmd));
+    // uint64_t slba = le64_to_cpu(rw->slba);
+    // NvmeNamespace *ns = req->ns;
+    // const uint8_t lba_index = NVME_ID_NS_FLBAS_INDEX(ns->id_ns.flbas);
+    // const uint8_t data_shift = ns->id_ns.lbaf[lba_index].lbads;
+    // uint64_t data_offset = slba << data_shift;
     
-    QEMUSGList *qsg = &req->qsg;
-    int sg_cur_index = 0;
-    dma_addr_t sg_cur_byte = 0;
-    dma_addr_t cur_len;
+    // QEMUSGList *qsg = &req->qsg;
+    // int sg_cur_index = 0;
+    // dma_addr_t sg_cur_byte = 0;
+    // dma_addr_t cur_len;
     // void *mb = n->mbe->logical_space;
 
     
@@ -1071,20 +1088,20 @@ static uint64_t ssd_read(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
         // hash engine
 
         // get data from memory backend
-        assert(sg_cur_index < qsg->nsg);
-        cur_len = qsg->sg[sg_cur_index].len - sg_cur_byte;
+        // assert(sg_cur_index < qsg->nsg);
+        // cur_len = qsg->sg[sg_cur_index].len - sg_cur_byte;
         
         // unsigned char sha1[SHA_DIGEST_LENGTH];
         // SHA1(mb + data_offset, cur_len, sha1);
         
         // femu_log("[read]: lpn=%lu, SHA1=%lu,%lu\n", lpn, *(unsigned long*)sha1,*((unsigned long*)sha1+1));
 
-        sg_cur_byte += cur_len;
-        if (sg_cur_byte == qsg->sg[sg_cur_index].len) {
-            sg_cur_byte = 0;
-            ++sg_cur_index;
-        }
-        data_offset += cur_len;
+        // sg_cur_byte += cur_len;
+        // if (sg_cur_byte == qsg->sg[sg_cur_index].len) {
+        //     sg_cur_byte = 0;
+        //     ++sg_cur_index;
+        // }
+        // data_offset += cur_len;
 
 
         struct nand_cmd srd;
@@ -1095,7 +1112,7 @@ static uint64_t ssd_read(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
         maxlat = (sublat > maxlat) ? sublat : maxlat;
     }
     
-    qemu_sglist_destroy(qsg);
+    // qemu_sglist_destroy(qsg);
     return maxlat;
 }
 
@@ -1125,24 +1142,24 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
 
     // status = nvme_io_cmd(n, &(req->cmd), req);
     
-    NvmeRwCmd *rw = (NvmeRwCmd *)(&(req->cmd));
-    uint64_t slba = le64_to_cpu(rw->slba);
-    NvmeNamespace *ns = req->ns;
-    const uint8_t lba_index = NVME_ID_NS_FLBAS_INDEX(ns->id_ns.flbas);
-    const uint8_t data_shift = ns->id_ns.lbaf[lba_index].lbads;
-    uint64_t data_offset = slba << data_shift;
+    // NvmeRwCmd *rw = (NvmeRwCmd *)(&(req->cmd));
+    // uint64_t slba = le64_to_cpu(rw->slba);
+    // NvmeNamespace *ns = req->ns;
+    // const uint8_t lba_index = NVME_ID_NS_FLBAS_INDEX(ns->id_ns.flbas);
+    // const uint8_t data_shift = ns->id_ns.lbaf[lba_index].lbads;
+    // uint64_t data_offset = slba << data_shift;
     
-    QEMUSGList *qsg = &req->qsg;
-    int sg_cur_index = 0;
-    dma_addr_t sg_cur_byte = 0;
-    dma_addr_t cur_len;
-    void *mb = n->mbe->logical_space;
+    // QEMUSGList *qsg = &req->qsg;
+    // int sg_cur_index = 0;
+    // dma_addr_t sg_cur_byte = 0;
+    // dma_addr_t cur_len;
+    // void *mb = n->mbe->logical_space;
 
     for (lpn = start_lpn; lpn <= end_lpn; lpn++) {
         if (hash_flag) {
             // get data from memory backend
-            assert(sg_cur_index < qsg->nsg);
-            cur_len = qsg->sg[sg_cur_index].len - sg_cur_byte;
+            // assert(sg_cur_index < qsg->nsg);
+            // cur_len = qsg->sg[sg_cur_index].len - sg_cur_byte;
             
             // hash engine
 
@@ -1152,7 +1169,7 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             // femu_log("crc32 cost: %luns\n", etime-stime);
             // femu_debug("[write]: lpn=%lu, crc32=%u\n", lpn, crc);u32 crc = 
             
-            unsigned char *sha1 = req->sha1_list[sg_cur_index];
+            unsigned char *sha1 = req->sha1_list[lpn-start_lpn];
             // unsigned char sha1[SHA_DIGEST_LENGTH];
             // stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
             // SHA1(mb + data_offset, cur_len, sha1);
@@ -1163,9 +1180,20 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             
             // lookup hash
             uint64_t stime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            int res = search_in_segment(ssd, sha1, &vba);
+            uint64_t *t = (uint64_t *)map_get(&ssd->figerprint_map, (const char *)sha1);
+            // int res = search_in_segment(ssd, sha1, &vba);
+            int res;
+            if (t) {
+                res = 1;
+                vba.ppa = *t;
+            } else {
+                res = 0;
+                vba = get_new_vba(ssd);
+                ssd_advance_vba(ssd);
+                map_set(&ssd->figerprint_map, (const char *)sha1, vba.ppa);
+            }
             uint64_t etime = qemu_clock_get_ns(QEMU_CLOCK_REALTIME);
-            femu_log("[search]: time=%luns, lpn=%lu, SHA1=%lu, res=%d, vba=%lu\n", etime-stime, lpn, *(unsigned long*)sha1,res,vba.ppa << 1 >> 1);
+            femu_debug("[search]: time=%luns, lpn=%lu, SHA1=%lu, res=%d, vba=%lu\n", etime-stime, lpn, *(unsigned long*)sha1,res,vba.ppa << 1 >> 1);
             // free(sha1_);
 
             if (res) {
@@ -1180,15 +1208,17 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
                         minus_secmaptbl_ref(ssd, &ppa);
                     }
                     set_maptbl_ent(ssd, lpn, &vba);
-                    add_secmaptbl_res(ssd, &vba);
+                    add_secmaptbl_ref(ssd, &vba);
                     femu_debug("[hit](%lu/%lu):map%lu ---> vba%ld, ref=%d\n", n->dedup_pgs, n->no_dedup_pgs, lpn, (long)vba.ppa, get_secmaptbl_ref(ssd, vba.ppa));
-                    if (n->dedup_pgs % 5000 == 0) {
-                        femu_log("[hit/miss]:[%lu/%lu],search time=%luns\n", n->dedup_pgs, n->no_dedup_pgs, etime-stime);
-                    }
+                    
                 }
             } 
             else {
                 n->no_dedup_pgs++;
+                
+                if (n->no_dedup_pgs % 1000 == 0) {
+                    femu_log("[hit/miss]:[%lu/%lu],search time=%luns\n", n->dedup_pgs, n->no_dedup_pgs, etime-stime);
+                }
                 // not found, map to secmaptbl and map secmaptbl to ppa
                 
                 // old
@@ -1261,15 +1291,15 @@ static uint64_t ssd_write(FemuCtrl *n, struct ssd *ssd, NvmeRequest *req)
             maxlat = (curlat > maxlat) ? curlat : maxlat;
         }
 
-        sg_cur_byte += cur_len;
-        if (sg_cur_byte == qsg->sg[sg_cur_index].len) {
-            sg_cur_byte = 0;
-            ++sg_cur_index;
-        }
-        data_offset += cur_len;
+        // sg_cur_byte += cur_len;
+        // if (sg_cur_byte == qsg->sg[sg_cur_index].len) {
+        //     sg_cur_byte = 0;
+        //     ++sg_cur_index;
+        // }
+        // data_offset += cur_len;
     }
     
-    qemu_sglist_destroy(qsg);
+    // qemu_sglist_destroy(qsg);
     free(req->sha1_list);
     return maxlat;
 }

@@ -71,7 +71,7 @@ int backend_rw(unsigned char **sha1_list, SsdDramBackend *b, QEMUSGList *qsg, ui
         }
     }
 
-    // qemu_sglist_destroy(qsg);
+    qemu_sglist_destroy(qsg);
 
     return 0;
 }

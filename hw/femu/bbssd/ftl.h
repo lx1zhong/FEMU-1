@@ -3,6 +3,7 @@
 
 #include "../nvme.h"
 #include <openssl/sha.h>
+#include "map.h"
 
 #define INVALID_PPA     (~(0ULL))
 #define INVALID_LPN     (~(0ULL))
@@ -51,6 +52,7 @@ enum {
     FEMU_RESET_ACCT = 5,
     FEMU_ENABLE_LOG = 6,
     FEMU_DISABLE_LOG = 7,
+    FEMU_RESET_FINGERPRINT = 8,
 };
 
 
@@ -248,6 +250,8 @@ struct ssd {
     struct write_pointer wp;
     struct line_mgmt lm;
     struct segment *seg;
+
+    map_ppa_t figerprint_map;
 
     /* lockless ring for communication with NVMe IO thread */
     struct rte_ring **to_ftl;
